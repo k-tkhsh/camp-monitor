@@ -1,0 +1,9 @@
+camp_debug*.py
+camp_debug*.html
+camp_debug*.png
+camp_monitor.log
+camp_last_status.json
+*.log
+.claude/
+__pycache__/
+*.pyc
