@@ -60,6 +60,7 @@ async def check_availability() -> str:
         browser = await p.chromium.launch(headless=True)
         context = await browser.new_context(
             locale="ja-JP",
+            ignore_https_errors=True,
             user_agent=(
                 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                 "AppleWebKit/537.36 (KHTML, like Gecko) "
