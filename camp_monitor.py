@@ -23,6 +23,7 @@ STATUS_FILE = Path("camp_last_status.json")
 GMAIL_SENDER = os.environ.get("GMAIL_SENDER", "")
 GMAIL_RECIPIENT = os.environ.get("GMAIL_RECIPIENT", "")
 GMAIL_APP_PASSWORD = os.environ.get("GMAIL_APP_PASSWORD", "")
+TEST_EMAIL = os.environ.get("TEST_EMAIL", "").lower() in ("1", "true", "yes")
 
 # スタンダードカーサイト: planno=5, rtypno=5
 PLAN_NO = 5
@@ -129,13 +130,26 @@ async def check_availability() -> str:
 
 
 
-def send_gmail_notification() -> None:
+def send_gmail_notification(test_mode: bool = False) -> None:
     if not all([GMAIL_SENDER, GMAIL_RECIPIENT, GMAIL_APP_PASSWORD]):
         print("[ERROR] Gmail環境変数が未設定")
         return
 
-    subject = "【キャンセル空き】タキノキャンプ場 6/20 スタンダードカーサイト"
-    body = f"""タキノキャンプ場に空きが出ました！
+    if test_mode:
+        subject = "【テスト】タキノキャンプ場 監視スクリプト疎通確認"
+        body = f"""これはタキノキャンプ場 監視スクリプトのテスト送信です。
+
+■ 監視対象: 2026年6月20日（土）/ スタンダードカーサイト
+■ 人数: 大人男1名・大人女1名・幼児2名
+■ 予約ページ: {BASE_URL}
+
+このメールが届いていれば、空きが検出された際にも通知が届きます。
+
+※このメールは自動送信されています。
+"""
+    else:
+        subject = "【キャンセル空き】タキノキャンプ場 6/20 スタンダードカーサイト"
+        body = f"""タキノキャンプ場に空きが出ました！
 
 ■ 日付: 2026年6月20日（土）
 ■ サイト: スタンダードカーサイト
@@ -167,6 +181,14 @@ async def main() -> None:
     print("タキノキャンプ場 キャンセル監視 開始")
     print(f"対象: {TARGET_DATE} / スタンダードカーサイト")
     print("=" * 50)
+
+    if TEST_EMAIL:
+        print("[INFO] テストメールモード。空き状況の確認はスキップします。")
+        send_gmail_notification(test_mode=True)
+        print("=" * 50)
+        print("テスト送信終了")
+        print("=" * 50)
+        return
 
     last_status = load_last_status()
     print(f"[INFO] 前回ステータス: {last_status}")
