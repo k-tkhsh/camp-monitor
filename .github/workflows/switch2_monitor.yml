@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "*/15 * * * *"
   workflow_dispatch:
+    inputs:
+      test_email:
+        description: "テストメールを送信する（在庫監視はスキップ）"
+        type: boolean
+        default: false
 
 jobs:
   monitor:
@@ -43,4 +48,5 @@ jobs:
           GMAIL_SENDER: ${{ secrets.GMAIL_SENDER }}
           GMAIL_RECIPIENT: ${{ secrets.GMAIL_RECIPIENT }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          SWITCH2_TEST_EMAIL: ${{ inputs.test_email }}
         run: python switch2_monitor.py

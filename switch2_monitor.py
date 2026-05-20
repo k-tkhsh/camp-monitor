@@ -319,7 +319,28 @@ def send_notification(new_available: list[dict]) -> None:
         raise
 
 
+def send_test_email() -> None:
+    """送信経路の疎通確認用ダミー通知。"""
+    print("[INFO] テストメールモード: ダミー通知を送信します")
+    dummy = [
+        {
+            "name": "（テスト送信）マイニンテンドーストア",
+            "url": "https://store-jp.nintendo.com/hardware-switch2-japan",
+            "price": TARGET_PRICE_YEN,
+            "detail": "これはメール疎通確認用のテスト送信です（実際の在庫ではありません）",
+        }
+    ]
+    send_notification(dummy)
+
+
 async def main() -> None:
+    if os.environ.get("SWITCH2_TEST_EMAIL", "").lower() in ("1", "true", "yes"):
+        print("=" * 60)
+        print("Nintendo Switch 2 監視 — テストメール送信モード")
+        print("=" * 60)
+        send_test_email()
+        return
+
     print("=" * 60)
     print("Nintendo Switch 2 本体 在庫監視 開始")
     print(f"定価: {TARGET_PRICE_YEN:,}円（税込）")
