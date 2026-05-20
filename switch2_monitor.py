@@ -257,7 +257,11 @@ async def check_site(context: BrowserContext, site: dict) -> dict:
 
 async def check_all_sites() -> list[dict]:
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+        browser = await p.chromium.launch(
+            headless=True,
+            # 一部サイト(ビックカメラ等)で発生する net::ERR_HTTP2_PROTOCOL_ERROR 回避のため HTTP/1.1 を強制
+            args=["--disable-http2"],
+        )
         context = await browser.new_context(
             locale="ja-JP",
             user_agent=USER_AGENT,
