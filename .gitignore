@@ -4,9 +4,6 @@ camp_debug*.png
 camp_monitor.log
 camp_last_status.json
 iphone17_last_status.json
-switch2_last_status.json
-switch2_debug*.html
-switch2_debug*.png
 *.log
 .claude/
 __pycache__/
