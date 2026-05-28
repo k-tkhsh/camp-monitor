@@ -17,8 +17,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: iphone17_last_status.json
-          key: iphone17-refurbished-status
-          restore-keys: iphone17-refurbished-status
+          key: iphone17-refurbished-status-${{ github.run_id }}
+          restore-keys: |
+            iphone17-refurbished-status-
 
       - name: Cache Playwright browsers
         uses: actions/cache@v4
