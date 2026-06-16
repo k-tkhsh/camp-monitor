@@ -1,8 +1,6 @@
 name: タキノキャンプ場 キャンセル監視
 
 on:
-  schedule:
-    - cron: "*/15 * * * *"
   workflow_dispatch:
     inputs:
       test_email:
