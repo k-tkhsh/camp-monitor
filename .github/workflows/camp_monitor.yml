@@ -1,9 +1,6 @@
 name: タキノキャンプ場 キャンセル監視
 
 on:
-  schedule:
-    # 毎時0分は混雑して間引かれやすいため分をオフセット（iphone17監視の 0,30分 とも重複回避）
-    - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
 
 jobs:
