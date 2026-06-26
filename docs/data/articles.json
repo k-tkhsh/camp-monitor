@@ -1,8 +1,68 @@
 {
-  "last_updated": "2026-06-26T14:20:34.367335+09:00",
-  "last_run_new_count": 21,
-  "total_articles": 282,
+  "last_updated": "2026-06-26T14:41:50.058447+09:00",
+  "last_run_new_count": 5,
+  "total_articles": 287,
   "articles": [
+    {
+      "id": "b6c3944b7f509317c5fdf345ff01b332",
+      "title": "7 tiny gadgets that give your iPhone useful superpowers (and they're cheap) - ZDNET",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1QV0dGRGJKb1o4VlYwdTBjNVotVVExMGI2bEttRUpnMGNqSEY0NWdRME8zSVlCenhfSmVlNlZzT1BiSXEzQThKZlZYME5UNHpKOWU1Zzg4aUM2OXFqbTNxaEZISGpYMkxMTDNFUVRNRjdoSmFRbkhUZFhJSkQ?oc=5",
+      "source": "ZDNET",
+      "published": "2026-06-25T18:00:00+09:00",
+      "summary": "",
+      "category": "apple",
+      "category_label": "🍎 Apple",
+      "keyword": "Apple iPhone",
+      "first_seen": "2026-06-26T14:41:01.108275+09:00"
+    },
+    {
+      "id": "297c83c108cf8adad2a200905f64e09a",
+      "title": "If Your iPhone Battery's Draining Faster After iOS 26.5, Don't Panic - CNET",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQXzRHM1F0VVlaWFhOaXNydEpjME8tRU5BOXA1bHk5dU40b1ZkWExJZ0VHSFo0VkhQclltbVVNYjZqdHY2b2Z0SVlGYW5WRlZFNmg5RDI2LUk3bjZkYjhzU3JvTnp6QVlabWlPTGFMa0N4aU81V0hNNmcxUkZlTFplNm1qLWU2UnltLThsYm5xUS1HLXlyN0Q4X2FrUk1OTkRfVEt0VTd2WkV5bzFITXc3di1YWEI?oc=5",
+      "source": "CNET",
+      "published": "2026-05-17T16:00:00+09:00",
+      "summary": "",
+      "category": "apple",
+      "category_label": "🍎 Apple",
+      "keyword": "iOS update",
+      "first_seen": "2026-06-26T14:41:01.108275+09:00"
+    },
+    {
+      "id": "ddaad586a3d55d58ff79ad41f63a5133",
+      "title": "Apple Products Go on Rare Sale for Prime Day, Including iPads, MacBooks, Airpods and More - Variety",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWV8xTmsxWFJLQlNqYnFkdW5yTTJBTkE3ZExqcFIwQlV5WVJPaEZaTklydk51TTdNd2JSS0hYcUZhd2ZhdzBnRm1laEFPSjZUcExaV2s1ZklkdnFYZy1lUW1oV0JwV3ZjMDRTdG5iZTk2aDVqLVhIVEtkN0Q2S08temxTcDEtcDVPQVE?oc=5",
+      "source": "Variety",
+      "published": "2026-06-24T22:00:00+09:00",
+      "summary": "Apple Products Go on Rare Sale for Prime Day, Including iPads, MacBooks, Airpods and More  VarietyPrime Day Deals Still Going Strong on AirPods, AirTag, and More  MacRumorsApple AirPods are a rare 28%",
+      "category": "apple",
+      "category_label": "🍎 Apple",
+      "keyword": "AirPods",
+      "first_seen": "2026-06-26T14:41:01.108275+09:00"
+    },
+    {
+      "id": "5c4e6022a0ecde07657045deb2ff2578",
+      "title": "【31年ぶりの金利”1.0％”】「日銀の利上げ→円高→物価安定」は可能なのか?市民は「金利上昇は資産運用にプラス」「住宅ローンの返済額が高くなり不安」あなたの暮らしはどうなる?〈北海道〉（FNNプライムオンライン） - Yahoo!ニュース",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5SZU94ZGk2THJJamNjZTRKUE1BWk16UzN2TGE3bkwyMzdqMGlrWFBQdE5GbEZLREJCZTBTYzloeFJQTFl4bElPb2xfalMtMERiWG9PR3EwSEFSbE5fbGFYQjY2WUpraHJIbDdLR0FyeW1odUJLMjEwem9HTGMydE0?oc=5",
+      "source": "Yahoo!ニュース",
+      "published": "2026-06-26T07:01:20+09:00",
+      "summary": "",
+      "category": "investment",
+      "category_label": "💹 投資",
+      "keyword": "金利 政策",
+      "first_seen": "2026-06-26T14:41:01.108275+09:00"
+    },
+    {
+      "id": "f215db0047a86ddf2ded7b74f74fa9ed",
+      "title": "日経平均株価 一時3100円超下落 大荒れの週明け株式市場 背景にアメリカの利上げ観測、NY市場でハイテク株中心に急落など - TBS NEWS DIG",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBUOE5KcTR5dERNUFJsVHpBM0FSWEJCb3B6NGE4OTJUa1ROdDhPdHAyS0RiUXE3NlN5RWFTMk5ZUkhKUXpQdHRVNEhER0dRc3pmR1dlQ1hhVQ?oc=5",
+      "source": "TBS NEWS DIG",
+      "published": "2026-06-08T16:00:00+09:00",
+      "summary": "",
+      "category": "investment",
+      "category_label": "💹 投資",
+      "keyword": "日経平均 週間",
+      "first_seen": "2026-06-26T14:41:01.108275+09:00"
+    },
     {
       "id": "33e797b79a82a97c08eda334dc412ef0",
       "title": "Apple raises Mac and iPad prices, spares iPhone for now - TechCrunch",
