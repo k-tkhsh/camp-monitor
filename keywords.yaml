@@ -1,0 +1,102 @@
+# ============================================================
+# 個人情報収集システム キーワード設定
+# カテゴリ・キーワードをここで管理します
+# ============================================================
+
+# ntfy 通知設定
+# NTFY_TOPIC は GitHub Secret に設定してください（keywords.yamlには書かない）
+ntfy:
+  server: "https://ntfy.sh"
+  # iPhone アプリで受け取るトピック名は GitHub Secret "NTFY_TOPIC" に設定
+
+# カテゴリ設定
+categories:
+
+  apple:
+    label: "🍎 Apple"
+    notify: true          # ntfy通知を送るか
+    priority: "high"      # ntfy優先度: min / low / default / high / urgent
+    lang: "en"            # en=英語ニュース / ja=日本語ニュース
+    keywords:
+      - "Apple iPhone"
+      - "MacBook Pro M"
+      - "iOS update"
+      - "AirPods"
+      - "Apple Watch"
+      - "Apple Vision Pro"
+
+  sake:
+    label: "🍶 日本酒"
+    notify: true
+    priority: "default"
+    lang: "ja"
+    keywords:
+      - "日本酒 新商品"
+      - "日本酒 限定"
+      - "日本酒 イベント"
+      - "十四代"
+      - "新政 酒造"
+      - "而今"
+      - "獺祭"
+      - "鍋島"
+
+  sapporo:
+    label: "🏗️ 札幌"
+    notify: false
+    priority: "default"
+    lang: "ja"
+    keywords:
+      - "札幌市 再開発"
+      - "札幌 商業施設 オープン"
+      - "北海道 建築計画"
+      - "札幌 都市計画"
+      - "大通 再開発"
+
+  camp:
+    label: "🏕️ キャンプ"
+    notify: true
+    priority: "default"
+    lang: "ja"
+    keywords:
+      - "北海道 キャンプ場 オープン 2026"
+      - "北海道 キャンプ場 予約 開始"
+      - "北海道 アウトドア イベント"
+
+  investment:
+    label: "💹 投資"
+    notify: false
+    priority: "low"
+    lang: "ja"
+    keywords:
+      - "インデックス投資 最新"
+      - "NISA 新着"
+      - "金利 政策"
+      - "日経平均 週間"
+      - "税制改正 投資"
+
+  music_ai:
+    label: "🎵 音楽AI"
+    notify: true
+    priority: "default"
+    lang: "en"
+    keywords:
+      - "Suno AI music"
+      - "Udio music generation"
+      - "AI music copyright"
+      - "音楽生成AI"
+
+  housing:
+    label: "🏠 住宅・補助金"
+    notify: false
+    priority: "low"
+    lang: "ja"
+    keywords:
+      - "北海道 住宅補助金"
+      - "住宅ローン 金利 2026"
+      - "省エネ住宅 補助金"
+
+# 収集設定
+settings:
+  max_articles_per_keyword: 8   # キーワード1件あたりの最大取得件数
+  max_total_articles: 600       # 保持する記事の最大件数
+  retention_days: 7             # 記事の保持日数
