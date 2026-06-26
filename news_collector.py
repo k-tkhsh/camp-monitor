@@ -18,6 +18,11 @@ from urllib.parse import quote
 
 import requests
 import yaml
+try:
+    from deep_translator import GoogleTranslator
+    _translator_available = True
+except ImportError:
+    _translator_available = False
 
 JST = timezone(timedelta(hours=9))
 DATA_FILE = Path("docs/data/articles.json")
@@ -167,6 +172,7 @@ def collect(config: dict) -> tuple[list[dict], dict]:
                             "category_label": label,
                             "keyword": keyword,
                             "first_seen": now_str,
+                            "lang": lang,
                         }
                     )
                     seen_ids.add(art_id)
@@ -219,6 +225,35 @@ def notify_ntfy(new_articles: list[dict], config: dict) -> None:
             print(f"[ERROR] ntfy 失敗 ({label}): {e}")
 
 
+def translate_en_titles(articles: list[dict]) -> list[dict]:
+    """lang==en の記事タイトルを日本語に翻訳する"""
+    if not _translator_available:
+        print("[WARN] deep-translator 未インストール。翻訳スキップ。")
+        return articles
+
+    targets = [(i, a) for i, a in enumerate(articles) if a.get("lang") == "en"]
+    if not targets:
+        return articles
+
+    titles = [a["title"] for _, a in targets]
+    print(f"[INFO] 英語タイトル {len(titles)} 件を翻訳中...")
+
+    try:
+        translator = GoogleTranslator(source="en", target="ja")
+        translated = translator.translate_batch(titles)
+
+        result = list(articles)
+        for (i, _), ja_title in zip(targets, translated):
+            if ja_title and ja_title != titles[0]:
+                orig = result[i]["title"]
+                result[i] = {**result[i], "title": ja_title, "title_en": orig}
+        return result
+
+    except Exception as e:
+        print(f"[WARN] 翻訳失敗: {e}")
+        return articles
+
+
 def prune(articles: list[dict], retention_days: int, max_total: int) -> list[dict]:
     cutoff = (datetime.now(JST) - timedelta(days=retention_days)).isoformat()
     recent = [a for a in articles if a.get("first_seen", "") >= cutoff]
@@ -240,6 +275,10 @@ def main() -> None:
     print("\n■ 記事収集中...")
     new_articles, existing = collect(config)
     print(f"\n[INFO] 新着: {len(new_articles)} 件")
+
+    if new_articles:
+        print("\n■ 英語タイトルを日本語翻訳中...")
+        new_articles = translate_en_titles(new_articles)
 
     all_articles = existing.get("articles", []) + new_articles
     all_articles = prune(all_articles, retention_days, max_total)
