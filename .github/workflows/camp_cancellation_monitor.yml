@@ -38,6 +38,8 @@ jobs:
           GMAIL_SENDER: ${{ secrets.GMAIL_SENDER }}
           GMAIL_RECIPIENT: ${{ secrets.GMAIL_RECIPIENT }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          CAMP_CHECKIN: ${{ secrets.CAMP_CHECKIN }}
+          CAMP_CHECKOUT: ${{ secrets.CAMP_CHECKOUT }}
         run: python camp_cancellation_monitor.py
 
       - name: Commit and push status

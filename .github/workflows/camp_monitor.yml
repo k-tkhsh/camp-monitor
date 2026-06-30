@@ -41,4 +41,8 @@ jobs:
           GMAIL_SENDER: ${{ secrets.GMAIL_SENDER }}
           GMAIL_RECIPIENT: ${{ secrets.GMAIL_RECIPIENT }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          CAMP_TARGET_DATE: ${{ secrets.CAMP_TARGET_DATE }}
+          CAMP_GUEST_ADULT_MALE: ${{ secrets.CAMP_GUEST_ADULT_MALE }}
+          CAMP_GUEST_ADULT_FEMALE: ${{ secrets.CAMP_GUEST_ADULT_FEMALE }}
+          CAMP_GUEST_INFANT: ${{ secrets.CAMP_GUEST_INFANT }}
         run: python camp_monitor.py

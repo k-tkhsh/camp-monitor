@@ -69,6 +69,11 @@ them:
 - `GMAIL_SENDER`, `GMAIL_RECIPIENT`, `GMAIL_APP_PASSWORD` — used by all three Gmail-notifying
   scripts via `smtplib.SMTP_SSL` to `smtp.gmail.com:465`. If any is unset, the script logs an error
   and skips sending rather than crashing.
+- `CAMP_TARGET_DATE` — target reservation date for `camp_monitor.py` (format: `YYYY/MM/DD`).
+- `CAMP_GUEST_ADULT_MALE`, `CAMP_GUEST_ADULT_FEMALE`, `CAMP_GUEST_INFANT` — guest counts for
+  `camp_monitor.py`. If any of these is unset, the script exits with an error rather than running.
+- `CAMP_CHECKIN`, `CAMP_CHECKOUT` — check-in/check-out dates for `camp_cancellation_monitor.py`
+  (format: `YYYY-MM-DD`). Required; script exits with an error if unset.
 - `NTFY_TOPIC` — used by `news_collector.py` to push notifications via ntfy.sh. Deliberately kept
   out of `keywords.yaml` (which is checked in) and set only as a secret.
 

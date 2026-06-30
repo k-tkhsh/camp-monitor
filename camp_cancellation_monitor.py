@@ -1,6 +1,6 @@
 """
 キャンセル空き監視スクリプト（複数キャンプ場対応）
-対象: 2026/7/4〜7/5（一泊） フリーサイト or カーサイト
+対象: 環境変数 CAMP_CHECKIN / CAMP_CHECKOUT で指定した日程（一泊） フリーサイト or カーサイト
   - 仲洞爺キャンプ場（なっぷ / campsite_id=13362）
   - オートリゾート苫小牧アルテン（なっぷ / campsite_id=13288）
   - 財田キャンプ場（489pro-x / オンライン予約再開を監視）
@@ -17,8 +17,9 @@ from pathlib import Path
 
 import requests
 
-CHECK_IN = "2026-07-04"
-CHECK_OUT = "2026-07-05"
+# 日程は GitHub Secrets 経由の環境変数で指定（コードに直接書かない）
+CHECK_IN = os.environ.get("CAMP_CHECKIN", "")    # 例: "2026-07-04"
+CHECK_OUT = os.environ.get("CAMP_CHECKOUT", "")  # 例: "2026-07-05"
 STATUS_FILE = Path("camp_cancellation_status.json")
 
 GMAIL_SENDER = os.environ.get("GMAIL_SENDER", "")
@@ -123,8 +124,11 @@ def send_gmail_notification(subject: str, body: str) -> None:
 def main() -> None:
     print("=" * 50)
     print("キャンセル空き監視 開始")
-    print(f"対象日程: {CHECK_IN} 〜 {CHECK_OUT}")
     print("=" * 50)
+
+    if not CHECK_IN or not CHECK_OUT:
+        print("[ERROR] CAMP_CHECKIN / CAMP_CHECKOUT の環境変数が未設定です。監視を中止します。")
+        return
 
     last_status = load_last_status()
     new_status = dict(last_status)
