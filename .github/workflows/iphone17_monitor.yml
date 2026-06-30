@@ -1,8 +1,10 @@
 name: Apple整備済品 iPhone 17 監視
 
+# 自動監視は停止中。手動実行（workflow_dispatch）のみ可能。
+# 再開する場合は schedule の cron をコメント解除してください。
 on:
-  schedule:
-    - cron: "*/30 * * * *"
+  # schedule:
+  #   - cron: "*/30 * * * *"
   workflow_dispatch:
 
 jobs:
