@@ -3,7 +3,7 @@
 対象: 2026/7/4〜7/5（一泊） フリーサイト or カーサイト
   - 仲洞爺キャンプ場（なっぷ / campsite_id=13362）
   - オートリゾート苫小牧アルテン（なっぷ / campsite_id=13288）
-  - 財田キャンプ場（489pro-x / オンライン予約再開を監視）
+  - 財田キャンプ場（489pro-x / searchCalendar API）
 通知: Gmail (smtplib)
 重複防止: camp_cancellation_status.json
 """
@@ -54,8 +54,19 @@ CAMPGROUNDS = [
     {
         "key": "takarada",
         "name": "財田キャンプ場（洞爺水辺の里財田キャンプ場）",
-        "kind": "takarada_resume",
-        "url": "https://www.489pro-x.com/ja/s/takarada108/",
+        "kind": "takarada",
+        # ケビン(id=1)を除くキャンプサイト（フリーサイト/カーサイト相当）のroom_id一覧
+        "room_ids": {
+            2: "キャンピングカーサイト",
+            3: "プライベートサイトA（管理棟側）",
+            4: "プライベートサイトB",
+            5: "オープンサイト（ステージ側）",
+            6: "フリーサイト",
+            7: "プライベートサイトA（湖側）",
+            8: "プライベートサイトB（管理棟側）",
+            9: "オープンサイト（湖側）",
+        },
+        "url": "https://www.489pro-x.com/ja/s/takarada108/search/?nights=1&r_num=1&num=2&show=room&isPriceTotalPerson=false&nights_unspecified=1&checkinDate=20260704",
     },
 ]
 
@@ -91,12 +102,30 @@ def check_napcamp(campsite_id: int, site_types: set) -> tuple[str, str]:
     return "full", ""
 
 
-def check_takarada_resume(url: str) -> tuple[str, str]:
-    resp = requests.get(url, headers=HEADERS, timeout=20)
-    resp.raise_for_status()
-    if "一時停止" in resp.text:
-        return "suspended", ""
-    return "resumed", ""
+def check_takarada(room_ids: dict) -> tuple[str, str]:
+    base_url = "https://www.489pro-x.com/api/searchCalendar/"
+    checkin_compact = CHECK_IN.replace("-", "")   # 20260704
+    checkout_compact = CHECK_OUT.replace("-", "")  # 20260705
+    available_names = []
+    for room_id, room_name in room_ids.items():
+        params = {
+            "nights": "1", "r_num": "1", "num": "2",
+            "show": "room", "isPriceTotalPerson": "false",
+            "nights_unspecified": "1",
+            "dt_from": checkin_compact, "dt_to": checkout_compact,
+            "g": "s", "f": "takarada108", "l": "ja",
+            "room_id": room_id,
+        }
+        resp = requests.get(base_url, params=params, headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+        month_data = resp.json().get("data", {})
+        # 7月のデータから7/4の price を確認（null=満室、数値=空き有り）
+        day_info = month_data.get("202607", {}).get("4", {})
+        if day_info.get("price") is not None:
+            available_names.append(room_name)
+    if available_names:
+        return "available", "、".join(available_names)
+    return "full", ""
 
 
 def send_gmail_notification(subject: str, body: str) -> None:
@@ -136,7 +165,7 @@ def main() -> None:
             if camp["kind"] == "napcamp":
                 status, detail = check_napcamp(camp["campsite_id"], camp["site_types"])
             else:
-                status, detail = check_takarada_resume(camp["url"])
+                status, detail = check_takarada(camp["room_ids"])
         except Exception as e:
             print(f"[ERROR] [{name}] チェック失敗: {e}")
             continue
@@ -152,16 +181,6 @@ def main() -> None:
                     f"{name} で {CHECK_IN}〜{CHECK_OUT}（一泊）の空きが見つかりました。\n\n"
                     f"■ 空きサイト: {detail}\n\n"
                     f"今すぐ予約ページを確認してください:\n{camp['url']}\n\n"
-                    f"※このメールは自動送信されています。"
-                ),
-            )
-        elif status == "resumed" and prev != "resumed":
-            print(f"[INFO] [{name}] オンライン予約再開を検出！メール送信します。")
-            send_gmail_notification(
-                subject=f"【予約再開】{name} のオンライン予約が再開しました",
-                body=(
-                    f"{name} のオンライン予約再開を検知しました。\n\n"
-                    f"予約ページで {CHECK_IN}〜{CHECK_OUT} の空き状況を確認してください:\n{camp['url']}\n\n"
                     f"※このメールは自動送信されています。"
                 ),
             )
