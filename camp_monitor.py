@@ -1,6 +1,6 @@
 """
 タキノキャンプ場 予約キャンセル監視スクリプト
-対象: 2026/6/20 / スタンダードカーサイト / 大人男1・大人女1・幼児2名
+対象: 環境変数 CAMP_TARGET_DATE / CAMP_GUEST_* で指定した日付・人数 / スタンダードカーサイト
 通知: Gmail (smtplib)
 重複防止: camp_last_status.json
 """
@@ -10,6 +10,7 @@ import json
 import os
 import re
 import smtplib
+from datetime import datetime
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
@@ -17,7 +18,8 @@ from pathlib import Path
 from playwright.async_api import async_playwright
 
 BASE_URL = "https://takino.otomari.info/vacancy/list.html"
-TARGET_DATE = "2026/06/20"
+# 日付・人数は GitHub Secrets 経由の環境変数で指定（コードに直接書かない）
+TARGET_DATE = os.environ.get("CAMP_TARGET_DATE", "")  # 例: "2026/06/20"
 STATUS_FILE = Path("camp_last_status.json")
 
 GMAIL_SENDER = os.environ.get("GMAIL_SENDER", "")
@@ -28,12 +30,11 @@ GMAIL_APP_PASSWORD = os.environ.get("GMAIL_APP_PASSWORD", "")
 PLAN_NO = 5
 RTYPE_NO = 5
 
-# 人数: 大人男1・大人女1・乳幼児(syug_4)2
-# syug_2=子供 / syug_3=シルバー(65歳以上) / syug_4=乳幼児
+# 人数: syug_2=子供 / syug_3=シルバー(65歳以上) / syug_4=乳幼児
 GUESTS = {
-    "syug_m": "1",   # 大人男性
-    "syug_f": "1",   # 大人女性
-    "syug_4": "2",   # 乳幼児
+    "syug_m": os.environ.get("CAMP_GUEST_ADULT_MALE", ""),
+    "syug_f": os.environ.get("CAMP_GUEST_ADULT_FEMALE", ""),
+    "syug_4": os.environ.get("CAMP_GUEST_INFANT", ""),
 }
 
 
@@ -56,6 +57,8 @@ def save_status(status: str) -> None:
 
 
 async def check_availability() -> str:
+    year, month, day = TARGET_DATE.split("/")
+
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         context = await browser.new_context(
@@ -80,44 +83,42 @@ async def check_availability() -> str:
                 for sid, val in GUESTS.items()
             )
             await page.evaluate(guest_js)
-            print(f"[INFO] 人数セット完了: {GUESTS}")
+            print("[INFO] 人数セット完了")
 
             # ③ CheckOnDetail(5,5,...) を JS で直接呼び出し → detail.html へ遷移
             print(f"[INFO] CheckOnDetail({PLAN_NO},{RTYPE_NO},...) 呼び出し")
             async with page.expect_navigation(timeout=30_000):
-                await page.evaluate(f"CheckOnDetail({PLAN_NO},{RTYPE_NO},'2026','04')")
+                await page.evaluate(f"CheckOnDetail({PLAN_NO},{RTYPE_NO},'{year}','04')")
             await page.wait_for_load_state("networkidle", timeout=30_000)
             print(f"[INFO] 遷移先URL: {page.url}")
 
-            # ④ 6月タブをクリック（value="06月" のボタン）
-            june_btn = await page.query_selector('input[value="06月"]')
-            if june_btn:
-                print("[INFO] 6月タブをクリック")
+            # ④ 対象月タブをクリック
+            month_btn = await page.query_selector(f'input[value="{month}月"]')
+            if month_btn:
+                print(f"[INFO] {month}月タブをクリック")
                 async with page.expect_navigation(timeout=30_000):
-                    await june_btn.click()
+                    await month_btn.click()
                 await page.wait_for_load_state("networkidle", timeout=30_000)
             else:
-                print("[WARN] 6月タブが見つかりません。現在の表示で確認します")
+                print("[WARN] 対象月タブが見つかりません。現在の表示で確認します")
 
-            # ⑤ 6/20 の空き確認
+            # ⑤ 空き確認
             page_content = await page.content()
 
-            # 6月カレンダーが正しく読み込まれているか確認
-            if "2026/06/" not in page_content:
-                print("[WARN] 6月カレンダーが読み込まれていません")
+            if f"{year}/{month}/" not in page_content:
+                print("[WARN] 対象月カレンダーが読み込まれていません")
                 return "error"
 
-            # CheckOnSubmit("2026/06/20",...) があれば空き有り（◎）
+            # CheckOnSubmit("YYYY/MM/DD",...) があれば空き有り（◎）
             pattern_available = re.compile(
-                r"CheckOnSubmit[^)]*2026/06/20",
+                rf"CheckOnSubmit[^)]*{re.escape(TARGET_DATE)}",
                 re.IGNORECASE | re.DOTALL,
             )
             if pattern_available.search(page_content):
-                print("[INFO] 6/20: 空き有り（◎）を検出！")
+                print("[INFO] 空き有り（◎）を検出！")
                 return "available"
 
-            # 6月は表示されているが 6/20 に予約リンクなし → 満室/予約不可（×）
-            print("[INFO] 6/20: 満室または予約不可（×）")
+            print("[INFO] 満室または予約不可（×）")
             return "full"
 
         except Exception as e:
@@ -133,12 +134,19 @@ def send_gmail_notification() -> None:
         print("[ERROR] Gmail環境変数が未設定")
         return
 
-    subject = "【キャンセル空き】タキノキャンプ場 6/20 スタンダードカーサイト"
+    dt = datetime.strptime(TARGET_DATE, "%Y/%m/%d")
+    weekday_jp = "月火水木金土日"[dt.weekday()]
+    date_str = dt.strftime(f"%Y年%m月%d日（{weekday_jp}）")
+    guest_str = (
+        f"大人男{GUESTS['syug_m']}名・大人女{GUESTS['syug_f']}名・乳幼児{GUESTS['syug_4']}名"
+    )
+
+    subject = f"【キャンセル空き】タキノキャンプ場 {dt.month}/{dt.day} スタンダードカーサイト"
     body = f"""タキノキャンプ場に空きが出ました！
 
-■ 日付: 2026年6月20日（土）
+■ 日付: {date_str}
 ■ サイト: スタンダードカーサイト
-■ 人数: 大人男1名・大人女1名・幼児2名
+■ 人数: {guest_str}
 
 今すぐ予約ページを確認してください:
 {BASE_URL}
@@ -164,8 +172,12 @@ def send_gmail_notification() -> None:
 async def main() -> None:
     print("=" * 50)
     print("タキノキャンプ場 キャンセル監視 開始")
-    print(f"対象: {TARGET_DATE} / スタンダードカーサイト")
+    print("対象: スタンダードカーサイト")
     print("=" * 50)
+
+    if not TARGET_DATE or not all(GUESTS.values()):
+        print("[ERROR] CAMP_TARGET_DATE / CAMP_GUEST_* の環境変数が未設定です。監視を中止します。")
+        return
 
     last_status = load_last_status()
     print(f"[INFO] 前回ステータス: {last_status}")

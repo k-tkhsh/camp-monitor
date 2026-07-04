@@ -1,6 +1,6 @@
 """
 キャンセル空き監視スクリプト（複数キャンプ場対応）
-対象: 2026/7/4〜7/5（一泊） フリーサイト or カーサイト
+対象: 環境変数 CAMP_CHECKIN / CAMP_CHECKOUT で指定した日程（一泊） フリーサイト or カーサイト
   - 仲洞爺キャンプ場（なっぷ / campsite_id=13362）
   - オートリゾート苫小牧アルテン（なっぷ / campsite_id=13288）
   - 財田キャンプ場（489pro-x / searchCalendar API）
@@ -17,8 +17,9 @@ from pathlib import Path
 
 import requests
 
-CHECK_IN = "2026-07-04"
-CHECK_OUT = "2026-07-05"
+# 日程は GitHub Secrets 経由の環境変数で指定（コードに直接書かない）
+CHECK_IN = os.environ.get("CAMP_CHECKIN", "")    # 例: "2026-07-04"
+CHECK_OUT = os.environ.get("CAMP_CHECKOUT", "")  # 例: "2026-07-05"
 STATUS_FILE = Path("camp_cancellation_status.json")
 
 GMAIL_SENDER = os.environ.get("GMAIL_SENDER", "")
@@ -66,7 +67,7 @@ CAMPGROUNDS = [
             8: "プライベートサイトB（管理棟側）",
             9: "オープンサイト（湖側）",
         },
-        "url": "https://www.489pro-x.com/ja/s/takarada108/search/?nights=1&r_num=1&num=2&show=room&isPriceTotalPerson=false&nights_unspecified=1&checkinDate=20260704",
+        "url": "https://www.489pro-x.com/ja/s/takarada108/",
     },
 ]
 
@@ -104,8 +105,10 @@ def check_napcamp(campsite_id: int, site_types: set) -> tuple[str, str]:
 
 def check_takarada(room_ids: dict) -> tuple[str, str]:
     base_url = "https://www.489pro-x.com/api/searchCalendar/"
-    checkin_compact = CHECK_IN.replace("-", "")   # 20260704
-    checkout_compact = CHECK_OUT.replace("-", "")  # 20260705
+    checkin_compact = CHECK_IN.replace("-", "")    # YYYYMMDD
+    checkout_compact = CHECK_OUT.replace("-", "")  # YYYYMMDD
+    month_key = CHECK_IN[:7].replace("-", "")      # YYYYMM
+    day_key = str(int(CHECK_IN[8:10]))             # D (先頭ゼロなし)
     available_names = []
     for room_id, room_name in room_ids.items():
         params = {
@@ -119,8 +122,8 @@ def check_takarada(room_ids: dict) -> tuple[str, str]:
         resp = requests.get(base_url, params=params, headers=HEADERS, timeout=20)
         resp.raise_for_status()
         month_data = resp.json().get("data", {})
-        # 7月のデータから7/4の price を確認（null=満室、数値=空き有り）
-        day_info = month_data.get("202607", {}).get("4", {})
+        # price が null=満室、数値=空き有り
+        day_info = month_data.get(month_key, {}).get(day_key, {})
         if day_info.get("price") is not None:
             available_names.append(room_name)
     if available_names:
@@ -152,8 +155,11 @@ def send_gmail_notification(subject: str, body: str) -> None:
 def main() -> None:
     print("=" * 50)
     print("キャンセル空き監視 開始")
-    print(f"対象日程: {CHECK_IN} 〜 {CHECK_OUT}")
     print("=" * 50)
+
+    if not CHECK_IN or not CHECK_OUT:
+        print("[ERROR] CAMP_CHECKIN / CAMP_CHECKOUT の環境変数が未設定です。監視を中止します。")
+        return
 
     last_status = load_last_status()
     new_status = dict(last_status)
