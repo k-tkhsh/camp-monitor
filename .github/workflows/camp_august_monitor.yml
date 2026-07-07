@@ -3,8 +3,12 @@ name: お盆キャンプ場 空き監視
 on:
   schedule:
     # 8月8日〜15日の空きを監視（毎時0/30分の混雑を避けて分をオフセット）
-    # 注: cron再登録のためファイル更新 2026-07-07
+    # 注: このリポジトリはschedule発火が大幅に間引かれるため、
+    #     確実に動いているニュース収集の完了にも連動させる（下のworkflow_run）
     - cron: "9,29,49 * * * *"
+  workflow_run:
+    workflows: ["個人情報収集システム"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
