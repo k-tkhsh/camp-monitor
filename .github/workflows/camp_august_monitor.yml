@@ -1,0 +1,73 @@
+name: お盆キャンプ場 空き監視
+
+on:
+  schedule:
+    # 8月8日〜15日の空きを監視（毎時0/30分の混雑を避けて分をオフセット）
+    - cron: "9,29,49 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Restore status cache
+        uses: actions/cache/restore@v4
+        with:
+          path: camp_august_status.json
+          key: camp-august-status-${{ github.run_id }}
+          restore-keys: camp-august-status-
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-camp-august-${{ hashFiles('camp_august_requirements.txt') }}
+          restore-keys: pip-camp-august-
+
+      - name: Install dependencies
+        run: pip install -r camp_august_requirements.txt
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ runner.os }}-${{ hashFiles('camp_august_requirements.txt') }}
+          restore-keys: playwright-chromium-${{ runner.os }}-
+
+      - name: Install Playwright browsers
+        run: playwright install chromium --with-deps
+
+      - name: Run monitor
+        env:
+          GMAIL_SENDER: ${{ secrets.GMAIL_SENDER }}
+          GMAIL_RECIPIENT: ${{ secrets.GMAIL_RECIPIENT }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python camp_august_monitor.py
+
+      - name: Upload debug artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: camp-august-debug-${{ github.run_id }}
+          path: camp_debug_morappu_*
+          if-no-files-found: ignore
+          retention-days: 3
+
+      - name: Save status cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: camp_august_status.json
+          key: camp-august-status-${{ github.run_id }}

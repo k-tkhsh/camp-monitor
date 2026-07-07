@@ -3,6 +3,8 @@ camp_debug*.html
 camp_debug*.png
 camp_monitor.log
 camp_last_status.json
+camp_august_status.json
+camp_debug_morappu_*
 iphone17_last_status.json
 *.log
 .claude/
