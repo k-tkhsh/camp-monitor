@@ -186,16 +186,29 @@ def check_qkamura_morappu() -> dict:
 
     stays = {}
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        context = browser.new_context(locale="ja-JP", user_agent=HEADERS["User-Agent"])
+        # Cloudflareのボット判定はヘッドレスを弾くため、xvfb上でヘッド付き起動する
+        # （GitHub Actionsでは xvfb-run 経由で実行）
+        headless = os.environ.get("MORAPPU_HEADLESS", "0") == "1"
+        browser = p.chromium.launch(
+            headless=headless,
+            args=["--disable-blink-features=AutomationControlled"],
+        )
+        context = browser.new_context(
+            locale="ja-JP",
+            timezone_id="Asia/Tokyo",
+            viewport={"width": 1280, "height": 900},
+        )
+        context.add_init_script(
+            "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
+        )
         page = context.new_page()
         try:
             print(f"[INFO] [morappu] ページ取得: {QKAMURA_MENU_URL}")
             page.goto(QKAMURA_MENU_URL, timeout=60_000, wait_until="domcontentloaded")
 
-            # Cloudflareチャレンジ通過待ち（最大90秒）
+            # Cloudflareチャレンジ通過待ち（最大120秒）
             html = ""
-            for _ in range(30):
+            for _ in range(40):
                 html = page.content()
                 if "initStockCalendarRe" in html:
                     break
