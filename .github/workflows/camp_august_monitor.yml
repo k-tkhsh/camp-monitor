@@ -55,7 +55,8 @@ jobs:
           GMAIL_SENDER: ${{ secrets.GMAIL_SENDER }}
           GMAIL_RECIPIENT: ${{ secrets.GMAIL_RECIPIENT }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: python camp_august_monitor.py
+        # Cloudflare対策: xvfb上でヘッド付きブラウザを起動する
+        run: xvfb-run --auto-servernum python camp_august_monitor.py
 
       - name: Upload debug artifacts
         if: always()
