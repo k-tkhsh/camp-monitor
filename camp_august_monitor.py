@@ -1,5 +1,8 @@
 """
-お盆キャンプ場 空き監視スクリプト（2026/8/8〜8/15・1泊または2泊）
+キャンプ場 空き監視スクリプト
+監視日程（WATCHES で定義）:
+  - お盆 2026/8/8〜8/15・1泊または2泊: アルテン / みさき台公園 / モラップ
+  - 海の日連休 2026/7/18・7/19 チェックイン・1泊: みさき台公園
 対象:
   - オートリゾート苫小牧アルテン（なっぷ / campsite_id=13288）
   - 初山別村みさき台公園オートキャンプ場（なっぷ / campsite_id=13293）
@@ -20,11 +23,23 @@ from pathlib import Path
 
 import requests
 
-# 監視対象期間: PERIOD_START チェックイン〜PERIOD_END チェックアウトの範囲内で
-# NIGHTS 泊の連続した空きを探す
-PERIOD_START = date.fromisoformat(os.environ.get("MONITOR_PERIOD_START", "2026-08-08"))
-PERIOD_END = date.fromisoformat(os.environ.get("MONITOR_PERIOD_END", "2026-08-15"))
-NIGHTS_LIST = [int(n) for n in os.environ.get("MONITOR_NIGHTS", "1,2").split(",")]
+# 監視日程: start チェックイン〜end チェックアウトの範囲内で nights 泊の連続した空きを探す
+WATCHES = [
+    {
+        "name": "お盆",
+        "camps": ["alten", "misakidai", "morappu"],
+        "start": date(2026, 8, 8),
+        "end": date(2026, 8, 15),
+        "nights": [1, 2],
+    },
+    {
+        "name": "海の日連休",
+        "camps": ["misakidai"],
+        "start": date(2026, 7, 18),  # 7/18・7/19チェックインの1泊
+        "end": date(2026, 7, 20),
+        "nights": [1],
+    },
+]
 
 STATUS_FILE = Path("camp_august_status.json")
 JST = timezone(timedelta(hours=9))
@@ -77,9 +92,9 @@ def stay_label(checkin: date, nights: int) -> str:
     )
 
 
-def iter_checkins(nights: int):
-    d = PERIOD_START
-    while d + timedelta(days=nights) <= PERIOD_END:
+def iter_checkins(start: date, end: date, nights: int):
+    d = start
+    while d + timedelta(days=nights) <= end:
         yield d
         d += timedelta(days=1)
 
@@ -104,11 +119,11 @@ def save_status(status: dict) -> None:
 # なっぷ (nap-camp.com)
 # ---------------------------------------------------------------------------
 
-def check_napcamp(campsite_id: int) -> dict:
+def check_napcamp(campsite_id: int, start: date, end: date, nights_list: list) -> dict:
     """{ "YYYY-MM-DD|nights": "空きサイトの説明" } を返す"""
     stays = {}
-    for nights in NIGHTS_LIST:
-        for checkin in iter_checkins(nights):
+    for nights in nights_list:
+        for checkin in iter_checkins(start, end, nights):
             checkout = checkin + timedelta(days=nights)
             url = f"https://www.nap-camp.com/api/campsite/{campsite_id}/plans"
             params = {"check_in": checkin.isoformat(), "check_out": checkout.isoformat()}
@@ -146,11 +161,11 @@ def parse_ypro_jsonp(text: str) -> dict:
     return json.loads(body)
 
 
-def parse_aki_date(s: str) -> date | None:
+def parse_aki_date(s: str, default_year: int) -> date | None:
     m = re.search(r"(?:(\d{4})\D)?(\d{1,2})\D(\d{1,2})", str(s))
     if not m:
         return None
-    year = int(m.group(1)) if m.group(1) else PERIOD_START.year
+    year = int(m.group(1)) if m.group(1) else default_year
     return date(year, int(m.group(2)), int(m.group(3)))
 
 
@@ -180,7 +195,7 @@ def extract_camp_plans(html: str) -> list:
     return result
 
 
-def check_qkamura_morappu() -> dict:
+def check_qkamura_morappu(start: date, end: date, nights_list: list) -> dict:
     """Playwrightで休暇村予約ページを開き、同一オリジンで在庫APIを叩いて空きを探す"""
     from playwright.sync_api import sync_playwright
 
@@ -225,8 +240,8 @@ def check_qkamura_morappu() -> dict:
                 Path("camp_debug_morappu_page.html").write_text(html, encoding="utf-8")
                 raise RuntimeError("宿泊プランが見つかりません（ページ構造変更?）")
 
-            start_str = f"{PERIOD_START.year}/{PERIOD_START.month}/{PERIOD_START.day}"
-            end_str = f"{PERIOD_END.year}/{PERIOD_END.month}/{PERIOD_END.day}"
+            start_str = f"{start.year}/{start.month}/{start.day}"
+            end_str = f"{end.year}/{end.month}/{end.day}"
 
             for pid, plan_name in plan_list:
                 api_url = (
@@ -248,13 +263,13 @@ def check_qkamura_morappu() -> dict:
                     room_name = room.get("room_name", "")
                     ok_dates = set()
                     for aki in room.get("aki", []):
-                        d = parse_aki_date(aki.get("aki_date", ""))
+                        d = parse_aki_date(aki.get("aki_date", ""), start.year)
                         num = str(aki.get("aki_num", "")).strip()
                         sold_out = str(aki.get("sold_out_f", "0")).strip()
                         if d and num.isdigit() and int(num) > 0 and sold_out != "1":
                             ok_dates.add(d)
-                    for nights in NIGHTS_LIST:
-                        for checkin in iter_checkins(nights):
+                    for nights in nights_list:
+                        for checkin in iter_checkins(start, end, nights):
                             need = {checkin + timedelta(days=i) for i in range(nights)}
                             if need <= ok_dates:
                                 key = f"{checkin.isoformat()}|{nights}"
@@ -291,12 +306,15 @@ def send_gmail_notification(subject: str, body: str) -> None:
 
 def main() -> None:
     print("=" * 50)
-    print(f"お盆キャンプ空き監視 開始 ({PERIOD_START}〜{PERIOD_END} / {NIGHTS_LIST}泊)")
+    print("キャンプ空き監視 開始")
+    for w in WATCHES:
+        print(f"  - {w['name']}: {w['start']}〜{w['end']} / {w['nights']}泊 / {w['camps']}")
     print("=" * 50)
 
     today = datetime.now(JST).date()
-    if today >= PERIOD_END:
-        print("[INFO] 監視期間を過ぎているため終了します。")
+    active_watches = [w for w in WATCHES if today < w["end"]]
+    if not active_watches:
+        print("[INFO] すべての監視期間を過ぎているため終了します。")
         return
 
     last_status = load_last_status()
@@ -309,11 +327,18 @@ def main() -> None:
     for camp in CAMPGROUNDS:
         key = camp["key"]
         name = camp["name"]
+        watches = [w for w in active_watches if key in w["camps"]]
+        if not watches:
+            continue
         try:
-            if camp["kind"] == "napcamp":
-                stays = check_napcamp(camp["campsite_id"])
-            else:
-                stays = check_qkamura_morappu()
+            stays = {}
+            for w in watches:
+                if camp["kind"] == "napcamp":
+                    stays.update(check_napcamp(
+                        camp["campsite_id"], w["start"], w["end"], w["nights"]))
+                else:
+                    stays.update(check_qkamura_morappu(
+                        w["start"], w["end"], w["nights"]))
         except Exception as e:
             print(f"[ERROR] [{name}] チェック失敗: {e}")
             error_count += 1
@@ -336,13 +361,9 @@ def main() -> None:
         new_available[key] = sorted(cur_keys)
 
     if notifications:
-        subject = (
-            f"【キャンプ空き】{PERIOD_START.month}/{PERIOD_START.day}"
-            f"〜{PERIOD_END.month}/{PERIOD_END.day} に空きが出ました"
-        )
+        subject = "【キャンプ空き】監視中の日程に空きが出ました"
         body = (
-            f"お盆期間（{PERIOD_START.month}/{PERIOD_START.day}〜"
-            f"{PERIOD_END.month}/{PERIOD_END.day}）に新しい空きが見つかりました。\n\n"
+            "監視中の日程で新しい空きが見つかりました。\n\n"
             + "\n\n".join(notifications)
             + "\n\n※このメールは自動送信されています。"
         )
@@ -359,7 +380,11 @@ def main() -> None:
     print("監視終了")
     print("=" * 50)
 
-    if error_count == len(CAMPGROUNDS):
+    checked_camps = sum(
+        1 for c in CAMPGROUNDS
+        if any(c["key"] in w["camps"] for w in active_watches)
+    )
+    if checked_camps > 0 and error_count == checked_camps:
         raise SystemExit(1)  # 全滅時のみ失敗にして気付けるようにする
 
 
