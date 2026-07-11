@@ -1,11 +1,12 @@
 """
 キャンプ場 空き監視スクリプト
 監視日程（WATCHES で定義）:
-  - お盆 2026/8/8〜8/15・1泊または2泊: アルテン / みさき台公園 / モラップ
+  - お盆 2026/8/8〜8/15・1泊または2泊: アルテン / みさき台公園 / ちっぷべつ / モラップ
   - 海の日連休 2026/7/18・7/19 チェックイン・1泊: みさき台公園
 対象:
   - オートリゾート苫小牧アルテン（なっぷ / campsite_id=13288）
   - 初山別村みさき台公園オートキャンプ場（なっぷ / campsite_id=13293）
+  - ベルパークちっぷべつキャンプ場（なっぷ / campsite_id=13088）
   - モラップキャンプ場（休暇村支笏湖 / 予約プロ ypro_stocksearch_api・Playwright経由）
 通知: Gmail (smtplib)
 重複防止: camp_august_status.json（「新しく出現した空き」だけを通知）
@@ -27,7 +28,7 @@ import requests
 WATCHES = [
     {
         "name": "お盆",
-        "camps": ["alten", "misakidai", "morappu"],
+        "camps": ["alten", "misakidai", "chippubetsu", "morappu"],
         "start": date(2026, 8, 8),
         "end": date(2026, 8, 15),
         "nights": [1, 2],
@@ -72,6 +73,13 @@ CAMPGROUNDS = [
         "kind": "napcamp",
         "campsite_id": 13293,
         "url": "https://www.nap-camp.com/hokkaido/13293",
+    },
+    {
+        "key": "chippubetsu",
+        "name": "ベルパークちっぷべつキャンプ場",
+        "kind": "napcamp",
+        "campsite_id": 13088,
+        "url": "https://www.nap-camp.com/hokkaido/13088",
     },
     {
         "key": "morappu",
