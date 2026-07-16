@@ -1,7 +1,7 @@
 """
 キャンプ場 空き監視スクリプト
 監視日程（WATCHES で定義）:
-  - お盆 2026/8/8〜8/15・1泊または2泊: アルテン / みさき台公園 / ちっぷべつ / モラップ
+  - 2026/7/24・7/25 チェックイン・各1泊: アルテン
 ※監視対象を変更したら MONITORING.txt も更新すること
 対象:
   - オートリゾート苫小牧アルテン（なっぷ / campsite_id=13288）
@@ -27,11 +27,11 @@ import requests
 # 監視日程: start チェックイン〜end チェックアウトの範囲内で nights 泊の連続した空きを探す
 WATCHES = [
     {
-        "name": "お盆",
-        "camps": ["alten", "misakidai", "chippubetsu", "morappu"],
-        "start": date(2026, 8, 8),
-        "end": date(2026, 8, 15),
-        "nights": [1, 2],
+        "name": "7月末週末",
+        "camps": ["alten"],
+        "start": date(2026, 7, 24),  # 7/24・7/25チェックインの1泊
+        "end": date(2026, 7, 26),
+        "nights": [1],
     },
 ]
 
