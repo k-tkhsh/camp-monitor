@@ -96,6 +96,20 @@ categories:
       - "住宅ローン 金利 2026"
       - "省エネ住宅 補助金"
 
+  sns_trends:
+    label: "🔥 SNS炎上・バズ"
+    notify: true
+    priority: "default"
+    lang: "ja"
+    keywords:
+      - "SNS 炎上"
+      - "Twitter 炎上"
+      - "X 炎上"
+      - "SNS バズ 話題"
+      - "ネットで話題"
+      - "SNS トレンド 話題"
+      - "炎上 謝罪"
+
 # 収集設定
 settings:
   max_articles_per_keyword: 8   # キーワード1件あたりの最大取得件数
