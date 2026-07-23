@@ -1,14 +1,16 @@
 name: お盆キャンプ場 空き監視
 
+# 監視対象がないため自動実行は停止中。手動実行（workflow_dispatch）のみ可能。
+# 再開する場合は schedule と workflow_run のコメントを解除すること。
 on:
-  schedule:
-    # 8月8日〜15日の空きを監視（毎時0/30分の混雑を避けて分をオフセット）
-    # 注: このリポジトリはschedule発火が大幅に間引かれるため、
-    #     確実に動いているニュース収集の完了にも連動させる（下のworkflow_run）
-    - cron: "9,29,49 * * * *"
-  workflow_run:
-    workflows: ["個人情報収集システム"]
-    types: [completed]
+  # schedule:
+  #   # 毎時0/30分の混雑を避けて分をオフセット
+  #   # 注: このリポジトリはschedule発火が大幅に間引かれるため、
+  #   #     確実に動いているニュース収集の完了にも連動させる（下のworkflow_run）
+  #   - cron: "9,29,49 * * * *"
+  # workflow_run:
+  #   workflows: ["個人情報収集システム"]
+  #   types: [completed]
   workflow_dispatch:
 
 permissions:
