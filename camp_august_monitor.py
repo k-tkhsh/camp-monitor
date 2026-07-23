@@ -1,8 +1,7 @@
 """
 キャンプ場 空き監視スクリプト
-監視日程（WATCHES で定義）:
-  - 2026/7/24・7/25 チェックイン・各1泊: アルテン
-※監視対象を変更したら MONITORING.txt も更新すること
+監視日程（WATCHES で定義）: 現在なし（監視休止中）
+※監視対象を変更したら MONITORING.txt とワークフローの schedule も更新すること
 対象:
   - オートリゾート苫小牧アルテン（なっぷ / campsite_id=13288）
   - 初山別村みさき台公園オートキャンプ場（なっぷ / campsite_id=13293）
@@ -25,15 +24,7 @@ from pathlib import Path
 import requests
 
 # 監視日程: start チェックイン〜end チェックアウトの範囲内で nights 泊の連続した空きを探す
-WATCHES = [
-    {
-        "name": "7月末週末",
-        "camps": ["alten"],
-        "start": date(2026, 7, 24),  # 7/24・7/25チェックインの1泊
-        "end": date(2026, 7, 26),
-        "nights": [1],
-    },
-]
+WATCHES = []  # 監視休止中。書式は git 履歴か MONITORING.txt を参照
 
 STATUS_FILE = Path("camp_august_status.json")
 JST = timezone(timedelta(hours=9))
