@@ -226,32 +226,41 @@ def notify_ntfy(new_articles: list[dict], config: dict) -> None:
 
 
 def translate_en_titles(articles: list[dict]) -> list[dict]:
-    """lang==en の記事タイトルを日本語に翻訳する"""
+    """lang==en かつ未翻訳の記事タイトルを日本語に翻訳する
+
+    1件ずつ翻訳し、失敗した記事はスキップして原文のまま残す。
+    （一括翻訳だと1件の失敗で全件が未翻訳のままになるため）
+    """
     if not _translator_available:
         print("[WARN] deep-translator 未インストール。翻訳スキップ。")
         return articles
 
-    targets = [(i, a) for i, a in enumerate(articles) if a.get("lang") == "en"]
+    targets = [
+        (i, a)
+        for i, a in enumerate(articles)
+        if a.get("lang") == "en" and "title_en" not in a
+    ]
     if not targets:
         return articles
 
-    titles = [a["title"] for _, a in targets]
-    print(f"[INFO] 英語タイトル {len(titles)} 件を翻訳中...")
+    print(f"[INFO] 英語タイトル {len(targets)} 件を翻訳中...")
+    translator = GoogleTranslator(source="en", target="ja")
 
-    try:
-        translator = GoogleTranslator(source="en", target="ja")
-        translated = translator.translate_batch(titles)
+    result = list(articles)
+    ok = 0
+    for i, art in targets:
+        orig = art["title"]
+        try:
+            ja_title = translator.translate(orig)
+        except Exception as e:
+            print(f"[WARN] 翻訳失敗（スキップ）: {orig[:50]}... → {e}")
+            continue
+        if ja_title and ja_title != orig:
+            result[i] = {**art, "title": ja_title, "title_en": orig}
+            ok += 1
 
-        result = list(articles)
-        for (i, _), ja_title in zip(targets, translated):
-            if ja_title and ja_title != titles[0]:
-                orig = result[i]["title"]
-                result[i] = {**result[i], "title": ja_title, "title_en": orig}
-        return result
-
-    except Exception as e:
-        print(f"[WARN] 翻訳失敗: {e}")
-        return articles
+    print(f"[INFO] 翻訳完了: {ok}/{len(targets)} 件")
+    return result
 
 
 def prune(articles: list[dict], retention_days: int, max_total: int) -> list[dict]:
@@ -276,12 +285,12 @@ def main() -> None:
     new_articles, existing = collect(config)
     print(f"\n[INFO] 新着: {len(new_articles)} 件")
 
-    if new_articles:
-        print("\n■ 英語タイトルを日本語翻訳中...")
-        new_articles = translate_en_titles(new_articles)
-
     all_articles = existing.get("articles", []) + new_articles
     all_articles = prune(all_articles, retention_days, max_total)
+
+    # 新着に加え、過去の未翻訳分もまとめて翻訳する
+    print("\n■ 英語タイトルを日本語翻訳中...")
+    all_articles = translate_en_titles(all_articles)
 
     output = {
         "last_updated": datetime.now(JST).isoformat(),
@@ -294,7 +303,9 @@ def main() -> None:
 
     if new_articles:
         print("\n■ ntfy 通知...")
-        notify_ntfy(new_articles, config)
+        # 翻訳後のタイトルで通知するため all_articles から新着分を引き直す
+        new_ids = {a["id"] for a in new_articles}
+        notify_ntfy([a for a in all_articles if a["id"] in new_ids], config)
 
     print("\n" + "=" * 60)
     print("完了")
