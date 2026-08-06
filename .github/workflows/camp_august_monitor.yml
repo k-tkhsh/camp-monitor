@@ -9,6 +9,12 @@ on:
   workflow_run:
     workflows: ["個人情報収集システム"]
     types: [completed]
+  # 監視スクリプト/ワークフロー更新時は即座に1回実行して動作確認できるようにする
+  push:
+    branches: [main]
+    paths:
+      - "camp_august_monitor.py"
+      - ".github/workflows/camp_august_monitor.yml"
   workflow_dispatch:
 
 permissions:
@@ -17,6 +23,7 @@ permissions:
 jobs:
   monitor:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout repository
@@ -44,23 +51,26 @@ jobs:
       - name: Install dependencies
         run: pip install -r camp_august_requirements.txt
 
-      - name: Cache Playwright browsers
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-chromium-${{ runner.os }}-${{ hashFiles('camp_august_requirements.txt') }}
-          restore-keys: playwright-chromium-${{ runner.os }}-
-
-      - name: Install Playwright browsers
-        run: playwright install chromium --with-deps
+      # モラップ（Playwright使用）は現在監視対象外のためブラウザ導入をスキップし、
+      # 実行を軽量化する。モラップを再開する場合は以下2ステップのコメントを解除し、
+      # 「Run monitor」を xvfb-run 付きのコマンドに戻すこと。
+      # - name: Cache Playwright browsers
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: ~/.cache/ms-playwright
+      #     key: playwright-chromium-${{ runner.os }}-${{ hashFiles('camp_august_requirements.txt') }}
+      #     restore-keys: playwright-chromium-${{ runner.os }}-
+      #
+      # - name: Install Playwright browsers
+      #   run: playwright install chromium --with-deps
 
       - name: Run monitor
         env:
           GMAIL_SENDER: ${{ secrets.GMAIL_SENDER }}
           GMAIL_RECIPIENT: ${{ secrets.GMAIL_RECIPIENT }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        # Cloudflare対策: xvfb上でヘッド付きブラウザを起動する
-        run: xvfb-run --auto-servernum python camp_august_monitor.py
+        # モラップ再開時は: xvfb-run --auto-servernum python camp_august_monitor.py
+        run: python camp_august_monitor.py
 
       - name: Upload debug artifacts
         if: always()
