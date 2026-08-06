@@ -1,4 +1,4 @@
-name: お盆キャンプ場 空き監視
+name: キャンプ場 空き監視
 
 on:
   schedule:
@@ -14,7 +14,7 @@ on:
     branches: [main]
     paths:
       - "camp_august_monitor.py"
-      - ".github/workflows/camp_august_monitor.yml"
+      - ".github/workflows/camp_watch.yml"
   workflow_dispatch:
 
 permissions:

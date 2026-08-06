@@ -2,7 +2,7 @@
 ============================================================
 最終更新: 2026-07-28
 スクリプト: camp_august_monitor.py
-実行: GitHub Actions (.github/workflows/camp_august_monitor.yml)
+実行: GitHub Actions (.github/workflows/camp_watch.yml)
   - cron 20分間隔（GitHub側の間引きにより実測は数時間に1回程度）
   - ニュース収集ワークフロー完了時にも実行（1日4回程度の保険）
   - 手動実行: Actionsタブ → Run workflow
