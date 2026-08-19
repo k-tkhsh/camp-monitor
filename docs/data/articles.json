@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-08-19T22:46:52.542667+09:00",
-  "last_run_new_count": 59,
+  "last_updated": "2026-08-20T07:37:22.988499+09:00",
+  "last_run_new_count": 0,
   "total_articles": 600,
   "articles": [
     {
@@ -592,7 +592,7 @@
     },
     {
       "id": "0407ae5679a07ec0171a6233bfb9f7d7",
-      "title": "AI Music Startup Suno Bets Anyone Can Be a Rock Star - Bloomberg.com",
+      "title": "AI音楽スタートアップのSuno、誰でもロックスターになれると賭ける - Bloomberg.com",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPa2pEdGtBTWVpUVdfcWpkMGJoOGYtMHhCQ3dHMUhmVjNCT1FRV241anV3UndSREJuM09ZNFpjaGFIaFJsZkthdHlPRTNfdTV1bm5HVm12SVFkd0tScnljclh3LUFlYm53a1V2QmdNMkItWHQzNExTRm9SdkNucHhXUFdHLXE5VWRYLWRZNjRKQVBJSDFsOW1MZUhIUTJ0b3MwU0dWSmhYRWJXWXFZLS1EQW1qWk5yYmFh?oc=5",
       "source": "Bloomberg.com",
       "published": "2026-08-13T01:34:27+09:00",
@@ -601,11 +601,12 @@
       "category_label": "🎵 音楽AI",
       "keyword": "Suno AI music",
       "first_seen": "2026-08-19T22:45:32.219596+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "AI Music Startup Suno Bets Anyone Can Be a Rock Star - Bloomberg.com"
     },
     {
       "id": "feec04410040c1b5763d83ce51127eae",
-      "title": "AI Music Is Growing, But Is India’s Copyright Law Ready? - outlookbusiness.com",
+      "title": "AI音楽は成長しているが、インドの著作権法の準備はできているのか? - Outlookbusiness.com",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQb1Rxb1lSYW9uNVlocElsRlUyY0l2bldRbUZvSnI4NFdBbTFzODVWUkpVSlMybEVOY0w4X1Y3cG9WTkx4MUh4VFVvaGV2VFFWenBkS01GUWwtdUxnVThscG5QZnE5NldBRk9PTVN1VnJoOW9rOUxreGhoOXM3N3hBaWhaS0RtZFZGYWJCT19qS3lNcllkYnFZNC16RGFSTEZ1RHJuZ1Q3NWRFeUhiZ3I1SE93SWl0NHY5LXhGeDVMVk1LQdIBzwFBVV95cUxPc3dNTWJRbjFXYURGWEQ4ZV9rNm9fVVZKYnYyMWh2dGNLa1JEcTBrYUN0dmhUSGJKY0dXdHloVHFnSm1CS01NV1NBbkhyVmhEV2lfMWVScnU4dk1sZmQ3cXl4SUl5MmJKTGdQY1hoM3d5bjVBQ3pBei00d1ZFLVFpZ211ODh0WTJaOXMyZUUtYXc3dklFbkZWVU1UWS0wNTI3NXNXTWw0cGpoeTdPeTZQUHNzSzdBSmtEQ2NWSkUtLWZUTDhNcE9RZUxCeHgtNkk?oc=5",
       "source": "outlookbusiness.com",
       "published": "2026-08-19T18:27:19+09:00",
@@ -614,7 +615,8 @@
       "category_label": "🎵 音楽AI",
       "keyword": "AI music copyright",
       "first_seen": "2026-08-19T22:45:32.219596+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "AI Music Is Growing, But Is India’s Copyright Law Ready? - outlookbusiness.com"
     },
     {
       "id": "430fde5cf0258d8cbd17f7dacb52bc0a",
