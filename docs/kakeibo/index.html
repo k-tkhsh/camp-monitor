@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="口座・カテゴリ・予算・資産推移をまとめて管理できる家計簿アプリ。データは端末内にのみ保存されます。">
+  <meta name="theme-color" content="#2e7d6b">
+  <title>かけいぼ</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="app-title">
+        <span class="app-logo" aria-hidden="true">💰</span>
+        <h1 id="appName">かけいぼ</h1>
+      </div>
+      <div class="period-nav">
+        <button type="button" id="prevPeriod" class="icon-btn" aria-label="前の月">‹</button>
+        <button type="button" id="periodLabel" class="period-label" aria-label="今月に戻る">—</button>
+        <button type="button" id="nextPeriod" class="icon-btn" aria-label="次の月">›</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="view-home" class="view" data-view="home"></section>
+    <section id="view-list" class="view" data-view="list" hidden></section>
+    <section id="view-analysis" class="view" data-view="analysis" hidden></section>
+    <section id="view-budget" class="view" data-view="budget" hidden></section>
+    <section id="view-settings" class="view" data-view="settings" hidden></section>
+  </main>
+
+  <button type="button" id="fab" class="fab" aria-label="入力する">＋</button>
+
+  <nav class="tabbar" aria-label="メインメニュー">
+    <button type="button" class="tab is-active" data-target="home"><span aria-hidden="true">🏠</span>ホーム</button>
+    <button type="button" class="tab" data-target="list"><span aria-hidden="true">📋</span>履歴</button>
+    <button type="button" class="tab" data-target="analysis"><span aria-hidden="true">📊</span>分析</button>
+    <button type="button" class="tab" data-target="budget"><span aria-hidden="true">🎯</span>予算</button>
+    <button type="button" class="tab" data-target="settings"><span aria-hidden="true">⚙️</span>設定</button>
+  </nav>
+
+  <div id="sheetRoot" class="sheet-root" hidden>
+    <div class="sheet-backdrop" data-close="1"></div>
+    <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <div class="sheet-head">
+        <h2 id="sheetTitle">—</h2>
+        <button type="button" class="icon-btn" id="sheetClose" aria-label="閉じる">✕</button>
+      </div>
+      <div class="sheet-body" id="sheetBody"></div>
+      <div class="sheet-foot" id="sheetFoot"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
