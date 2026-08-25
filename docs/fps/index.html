@@ -17,7 +17,7 @@
     <button type="button" id="btnFire" class="touch-btn fire" aria-label="撃つ">FIRE</button>
     <button type="button" id="btnSwap" class="touch-btn swap" aria-label="武器切替">⇄</button>
     <button type="button" id="btnPause" class="touch-btn pause" aria-label="ポーズ">❚❚</button>
-    <div id="stickHint" class="stick-hint">左：移動 ／ 右：視点</div>
+    <div id="stickHint" class="stick-hint">左：移動　右：ドラッグで視点／タップで射撃</div>
   </div>
 
   <!-- タイトル -->
@@ -26,6 +26,7 @@
       <h1>NEON BREACH</h1>
       <p class="lead">崩壊した施設に取り残された。押し寄せる敵をウェーブ単位で撃退しろ。</p>
       <button type="button" id="btnStart" class="primary">ゲーム開始</button>
+      <button type="button" id="btnFullscreen" class="ghost" hidden>全画面で遊ぶ</button>
       <div class="hiscore">ハイスコア <strong id="titleHiscore">0</strong></div>
 
       <div class="cols">
@@ -39,7 +40,10 @@
             <li><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> / <kbd>ホイール</kbd> 武器変更</li>
             <li><kbd>M</kbd> ミニマップ切替　<kbd>Esc</kbd> ポーズ</li>
           </ul>
-          <p class="note">スマホは画面左半分で移動、右半分のドラッグで視点、FIRE ボタンで射撃。</p>
+          <p class="note">
+            スマホ：画面左半分に指を置くとスティックが出て移動（端まで倒すとダッシュ）。
+            右半分はドラッグで視点、タップで射撃。FIRE ボタンは押しっぱなしで連射、⇄ で武器変更。
+          </p>
         </div>
         <div>
           <h2>設定</h2>

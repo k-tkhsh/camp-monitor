@@ -199,12 +199,14 @@ kbd {
 .stick-hint {
   position: absolute;
   left: 50%;
-  top: calc(max(16px, env(safe-area-inset-top)) + 58px);
+  top: 58%;
   transform: translateX(-50%);
-  color: rgba(200, 210, 240, 0.55);
-  font-size: 12px;
-  letter-spacing: 1px;
-  background: rgba(10, 12, 20, 0.5);
+  white-space: nowrap;
+  max-width: 92vw;
+  color: rgba(200, 210, 240, 0.6);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  background: rgba(10, 12, 20, 0.55);
   padding: 6px 12px;
   border-radius: 999px;
   animation: hint-fade 7s ease forwards;

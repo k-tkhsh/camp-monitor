@@ -96,13 +96,32 @@ const savedQuality = localStorage.getItem('fps.quality');
 if (savedQuality) { quality.value = savedQuality; quality.dispatchEvent(new Event('change')); }
 
 // ── スマホ操作 ──────────────────────────────────────────────
-if (window.matchMedia('(pointer: coarse)').matches) {
-  const touchUi = $('touchUi');
-  touchUi.hidden = false;
+let touchUiReady = false;
+function enableTouchUi() {
+  if (touchUiReady) return;
+  touchUiReady = true;
+  $('touchUi').hidden = false;
+  game.touchUi = true;
   game.input.bindButton($('btnFire'), 'fire', { hold: true });
   game.input.bindButton($('btnSwap'), 'swapWeapon');
   $('btnPause').addEventListener('click', () => (game.state === 'playing' ? game.pause() : game.resume()));
+  if (document.fullscreenEnabled) $('btnFullscreen').hidden = false;
+  // タッチ端末は解像度を落として始める（あとは自動調整）
+  if (game.qualityMode === 'auto') game.renderer.resize(Math.min(game.renderer.quality, 0.45));
 }
+
+// タッチ端末と判定できた場合と、実際に画面へ触れた場合の両方で有効化する
+if (window.matchMedia('(pointer: coarse)').matches) enableTouchUi();
+game.input.onFirstTouch = enableTouchUi;
+
+$('btnFullscreen').addEventListener('click', async () => {
+  try {
+    await document.documentElement.requestFullscreen();
+    if (screen.orientation?.lock) screen.orientation.lock('landscape').catch(() => {});
+  } catch {
+    $('btnFullscreen').hidden = true;      // 埋め込み表示などで許可されない場合
+  }
+});
 
 // デバッグ用（コンソールから状態を覗けるように）
 window.__game = game;

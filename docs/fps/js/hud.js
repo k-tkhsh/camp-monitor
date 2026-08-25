@@ -42,6 +42,7 @@ export class Hud {
     this.#crosshair(ctx, game, w, h, s);
     this.#stats(ctx, game, w, h, s);
     this.#minimap(ctx, game, w, h, s, dpr);
+    this.#stick(ctx, game, dpr);
     this.#messages(ctx, w, h, s);
     ctx.restore();
   }
@@ -354,7 +355,7 @@ export class Hud {
   // ── ミニマップ ────────────────────────────────────────────
   #minimap(ctx, game, w, h, s, dpr = 1) {
     if (!game.showMap) return;
-    const size = 190 * s;
+    const size = (game.touchUi ? 150 : 190) * s;   // タッチ操作時は FIRE ボタンと重ならない大きさに
     const x0 = w - size - 26 * s;
     const y0 = 26 * s + (game.touchUi ? 72 * dpr : 0);   // ポーズボタンの下に置く
     const map = game.map;
@@ -404,6 +405,42 @@ export class Hud {
     ctx.strokeStyle = 'rgba(255,255,255,0.15)';
     ctx.lineWidth = 1 * s;
     ctx.beginPath(); ctx.roundRect(x0, y0, size, size, 10 * s); ctx.stroke();
+  }
+
+  /** タッチ操作中だけ、指を置いた場所に仮想スティックを描く */
+  #stick(ctx, game, dpr) {
+    const move = game.input?.touch?.move;
+    if (!move?.active) return;
+    const r = move.radius * dpr;
+    const knobX = move.bx + move.x * dpr;
+    const knobY = move.by + move.y * dpr;
+
+    ctx.save();
+    ctx.strokeStyle = 'rgba(200, 220, 255, 0.35)';
+    ctx.lineWidth = 2 * dpr;
+    ctx.beginPath();
+    ctx.arc(move.bx, move.by, r, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.fillStyle = 'rgba(12, 16, 26, 0.35)';
+    ctx.fill();
+
+    // 端まで倒すとダッシュ。リングを光らせて知らせる
+    if (move.mag > 0.93) {
+      ctx.strokeStyle = 'rgba(127, 212, 255, 0.9)';
+      ctx.lineWidth = 3 * dpr;
+      ctx.beginPath();
+      ctx.arc(move.bx, move.by, r, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+
+    const grd = ctx.createRadialGradient(knobX, knobY, 0, knobX, knobY, r * 0.42);
+    grd.addColorStop(0, 'rgba(235, 243, 255, 0.85)');
+    grd.addColorStop(1, 'rgba(140, 165, 210, 0.55)');
+    ctx.fillStyle = grd;
+    ctx.beginPath();
+    ctx.arc(knobX, knobY, r * 0.42, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
   }
 
   #messages(ctx, w, h, s) {
