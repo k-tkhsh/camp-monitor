@@ -15,6 +15,15 @@ ES モジュールを使っているため、`index.html` を直接ファイル�
 GitHub Pages（`docs/` 公開）でもそのまま動きます。スマートフォンではホーム画面に追加すると
 全画面のアプリとして起動します（PWA・オフライン対応）。
 
+### サーバーを立てられないとき（1ファイル版）
+
+```bash
+node docs/hiragana/tools/build-standalone.mjs ~/Desktop/hiragana.html
+```
+
+CSS と JavaScript を埋め込んだ 1 枚の HTML を書き出します。ダブルクリックで開くだけで遊べ、
+そのまま家族に送ることもできます（`--fragment` を付けると `<body>` の中身だけを出力）。
+
 読み上げには端末の音声合成（Web Speech API）を使います。日本語の音声が入っていない端末では、
 音だけが手がかりになる「きいて さがそう」は自動的に休止し、その旨を表示します。
 
