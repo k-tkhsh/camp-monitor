@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="description" content="ブラウザだけで遊べるレイキャスティング方式の FPS シューティング。押し寄せる敵をウェーブ制で迎え撃つ。">
+  <meta name="theme-color" content="#0f1117">
+  <title>NEON BREACH — FPS シューティング</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔫</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="view"></canvas>
+
+  <!-- スマホ用の操作ボタン -->
+  <div id="touchUi" hidden>
+    <button type="button" id="btnFire" class="touch-btn fire" aria-label="撃つ">FIRE</button>
+    <button type="button" id="btnSwap" class="touch-btn swap" aria-label="武器切替">⇄</button>
+    <button type="button" id="btnPause" class="touch-btn pause" aria-label="ポーズ">❚❚</button>
+    <div id="stickHint" class="stick-hint">左：移動 ／ 右：視点</div>
+  </div>
+
+  <!-- タイトル -->
+  <section id="screen-title" class="screen">
+    <div class="panel">
+      <h1>NEON BREACH</h1>
+      <p class="lead">崩壊した施設に取り残された。押し寄せる敵をウェーブ単位で撃退しろ。</p>
+      <button type="button" id="btnStart" class="primary">ゲーム開始</button>
+      <div class="hiscore">ハイスコア <strong id="titleHiscore">0</strong></div>
+
+      <div class="cols">
+        <div>
+          <h2>操作</h2>
+          <ul class="keys">
+            <li><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> 移動</li>
+            <li><kbd>マウス</kbd> 視点（クリックで視点固定）</li>
+            <li><kbd>左クリック</kbd> / <kbd>Space</kbd> 射撃</li>
+            <li><kbd>Shift</kbd> ダッシュ</li>
+            <li><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> / <kbd>ホイール</kbd> 武器変更</li>
+            <li><kbd>M</kbd> ミニマップ切替　<kbd>Esc</kbd> ポーズ</li>
+          </ul>
+          <p class="note">スマホは画面左半分で移動、右半分のドラッグで視点、FIRE ボタンで射撃。</p>
+        </div>
+        <div>
+          <h2>設定</h2>
+          <label class="field">マウス感度 <span id="sensValue">1.0</span>
+            <input type="range" id="sens" min="0.3" max="2.5" step="0.1" value="1">
+          </label>
+          <label class="field">音量 <span id="volValue">50</span>
+            <input type="range" id="vol" min="0" max="100" step="5" value="50">
+          </label>
+          <label class="field">描画品質
+            <select id="quality">
+              <option value="auto" selected>自動</option>
+              <option value="0.4">低（軽い）</option>
+              <option value="0.55">中</option>
+              <option value="0.8">高（きれい）</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ポーズ -->
+  <section id="screen-pause" class="screen" hidden>
+    <div class="panel narrow">
+      <h1>PAUSE</h1>
+      <p class="lead">クリック（またはタップ）でゲームに戻る。</p>
+      <button type="button" id="btnResume" class="primary">再開</button>
+      <button type="button" id="btnQuit" class="ghost">タイトルに戻る</button>
+    </div>
+  </section>
+
+  <!-- ゲームオーバー -->
+  <section id="screen-gameover" class="screen" hidden>
+    <div class="panel narrow">
+      <h1 class="dead">GAME OVER</h1>
+      <dl class="result">
+        <div><dt>スコア</dt><dd id="resScore">0</dd></div>
+        <div><dt>到達ウェーブ</dt><dd id="resWave">0</dd></div>
+        <div><dt>撃破数</dt><dd id="resKills">0</dd></div>
+        <div><dt>命中率</dt><dd id="resAcc">0%</dd></div>
+        <div><dt>生存時間</dt><dd id="resTime">0:00</dd></div>
+        <div><dt>ハイスコア</dt><dd id="resHiscore">0</dd></div>
+      </dl>
+      <button type="button" id="btnRetry" class="primary">もう一度</button>
+      <button type="button" id="btnTitle" class="ghost">タイトルへ</button>
+    </div>
+  </section>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
