@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="description" content="3〜4歳がひらがなを読めるようになるための、音声つきの知育ゲーム。文字が読めなくても遊べます。">
+  <meta name="theme-color" content="#ffb300">
+  <title>ひらがな あそび</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐣</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ── ホーム ── -->
+  <section id="screen-home" class="screen">
+    <header class="home-head">
+      <h1><span class="chick" aria-hidden="true">🐣</span>ひらがな あそび</h1>
+      <button type="button" id="openSettings" class="gear" aria-label="おうちの人のせってい">⚙️</button>
+    </header>
+
+    <p class="stars-line"><span aria-hidden="true">⭐</span><span id="homeStars">0</span></p>
+
+    <div class="menu">
+      <button type="button" class="menu-btn" data-mode="listen">
+        <span class="menu-emoji" aria-hidden="true">👂</span>
+        <span class="menu-text"><b>きいて さがそう</b><small>きこえた もじは どれ？</small></span>
+      </button>
+      <button type="button" class="menu-btn" data-mode="picture">
+        <span class="menu-emoji" aria-hidden="true">🖼️</span>
+        <span class="menu-text"><b>はじめの おと</b><small>この えの さいしょの もじは？</small></span>
+      </button>
+      <button type="button" class="menu-btn" data-mode="word">
+        <span class="menu-emoji" aria-hidden="true">🧩</span>
+        <span class="menu-text"><b>ことば パズル</b><small>□に はいる もじは どれ？</small></span>
+      </button>
+      <button type="button" class="menu-btn menu-sub" data-screen="table">
+        <span class="menu-emoji" aria-hidden="true">📖</span>
+        <span class="menu-text"><b>ひらがな ひょう</b><small>さわると よんでくれるよ</small></span>
+      </button>
+      <button type="button" class="menu-btn menu-sub" data-screen="stickers">
+        <span class="menu-emoji" aria-hidden="true">🎖️</span>
+        <span class="menu-text"><b>ステッカー</b><small>あつめた ごほうび</small></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ── ゲーム ── -->
+  <section id="screen-game" class="screen" hidden>
+    <header class="game-head">
+      <button type="button" class="home-btn" data-home aria-label="おうちにもどる">🏠</button>
+      <div class="dots" id="dots" aria-hidden="true"></div>
+      <span class="star-count"><span aria-hidden="true">⭐</span><span id="gameStars">0</span></span>
+    </header>
+
+    <div class="stage">
+      <div id="prompt" class="prompt"></div>
+      <div id="choices" class="choices"></div>
+      <p id="hint" class="hint" role="status"></p>
+    </div>
+  </section>
+
+  <!-- ── ひらがなひょう ── -->
+  <section id="screen-table" class="screen" hidden>
+    <header class="game-head">
+      <button type="button" class="home-btn" data-home aria-label="おうちにもどる">🏠</button>
+      <h2 class="screen-title">ひらがな ひょう</h2>
+      <span class="star-count"><span aria-hidden="true">⭐</span><span id="tableStars">0</span></span>
+    </header>
+    <div id="kanaTable" class="kana-table"></div>
+    <div id="tableCard" class="table-card" hidden></div>
+  </section>
+
+  <!-- ── ステッカー ── -->
+  <section id="screen-stickers" class="screen" hidden>
+    <header class="game-head">
+      <button type="button" class="home-btn" data-home aria-label="おうちにもどる">🏠</button>
+      <h2 class="screen-title">ステッカー</h2>
+      <span class="star-count"><span aria-hidden="true">⭐</span><span id="stickerStars">0</span></span>
+    </header>
+    <p class="sticker-note">ほしを 10こ あつめると、ステッカーが 1まい もらえるよ！</p>
+    <div id="stickerBoard" class="sticker-board"></div>
+  </section>
+
+  <!-- ── おうちの人のせってい ── -->
+  <section id="screen-settings" class="screen" hidden>
+    <header class="game-head">
+      <button type="button" class="home-btn" data-home aria-label="もどる">🏠</button>
+      <h2 class="screen-title">おうちの人へ</h2>
+      <span></span>
+    </header>
+    <div class="settings">
+      <div class="card">
+        <h3>いまの ようす</h3>
+        <p id="summaryLine" class="summary-line"></p>
+        <div id="summaryTable" class="mini-table"></div>
+        <p class="legend">
+          <span class="sw lv0"></span>まだ
+          <span class="sw lv1"></span>みた
+          <span class="sw lv2"></span>できる
+          <span class="sw lv3"></span>とくい
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>出題する ひらがな</h3>
+        <label class="row"><input type="radio" name="rowMode" value="auto"> できたら つぎの行が でてくる（おすすめ）</label>
+        <label class="row"><input type="radio" name="rowMode" value="custom"> 行を えらぶ</label>
+        <div id="rowPicker" class="row-picker"></div>
+      </div>
+
+      <div class="card">
+        <h3>音</h3>
+        <label class="row"><input type="checkbox" id="soundToggle"> こうかおん を ならす</label>
+        <label class="row">よみあげの はやさ
+          <input type="range" id="rateRange" min="0.5" max="1.2" step="0.05">
+          <output id="rateOut"></output>
+        </label>
+        <label class="row">こえ
+          <select id="voiceSelect"><option value="">じどう</option></select>
+        </label>
+        <p id="voiceWarn" class="warn" hidden>この端末には日本語の音声が見つかりませんでした。iOS/Android の「設定 → 読み上げ」で日本語の音声を追加すると読み上げできます。</p>
+      </div>
+
+      <div class="card">
+        <h3>きろく</h3>
+        <button type="button" id="resetBtn" class="danger">さいしょから やりなおす</button>
+        <p class="fine">きろくは この端末の中だけに保存されます。</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="celebrate" class="celebrate" hidden aria-live="polite"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+/* 小さい子が指でさわる前提の、大きく・はっきりした画面。 */
+:root {
+  --bg: #fff8e7;
+  --bg2: #ffeec2;
+  --ink: #40342a;
+  --ink-soft: #7d6a58;
+  --card: #ffffff;
+  --line: #f0dcb4;
+  --accent: #ff9800;
+  --accent-deep: #ef6c00;
+  --pink: #ff7597;
+  --blue: #4fc3f7;
+  --green: #66bb6a;
+  --radius: 22px;
+  --shadow: 0 6px 0 rgba(0, 0, 0, 0.10);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+body {
+  background: radial-gradient(circle at 50% 0%, var(--bg2), var(--bg) 60%);
+  color: var(--ink);
+  font-family: "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ ProN", "Hiragino Sans", "Yu Gothic",
+               -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  touch-action: manipulation;
+  user-select: none;
+}
+
+button { font: inherit; color: inherit; cursor: pointer; border: none; background: none; }
+
+.screen { max-width: 720px; margin: 0 auto; padding: 12px 14px 28px; }
+
+/* ── ホーム ── */
+.home-head { display: flex; align-items: center; justify-content: space-between; padding: 10px 2px 2px; }
+.home-head h1 { font-size: clamp(24px, 7vw, 34px); letter-spacing: 1px; display: flex; align-items: center; gap: 8px; }
+.chick { font-size: 1.15em; animation: bob 2.4s ease-in-out infinite; }
+@keyframes bob { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
+.gear { font-size: 22px; opacity: 0.5; padding: 8px; }
+
+.stars-line { font-size: 20px; font-weight: 700; color: var(--accent-deep); margin: 6px 4px 14px; }
+.stars-line span + span { margin-left: 6px; }
+
+.menu { display: grid; gap: 12px; }
+.menu-btn {
+  display: flex; align-items: center; gap: 14px; text-align: left;
+  background: var(--card); border: 3px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 16px 18px; transition: transform .1s ease;
+}
+.menu-btn:active { transform: translateY(4px); box-shadow: 0 2px 0 rgba(0,0,0,.10); }
+.menu-emoji { font-size: 40px; line-height: 1; }
+.menu-text { display: flex; flex-direction: column; gap: 3px; }
+.menu-text b { font-size: 22px; letter-spacing: 1px; }
+.menu-text small { font-size: 13px; color: var(--ink-soft); }
+.menu-sub { background: #fffdf6; }
+
+/* ── 画面の上のバー ── */
+.game-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 6px 0 10px; }
+.home-btn { font-size: 26px; background: var(--card); border: 3px solid var(--line); border-radius: 50%;
+  width: 54px; height: 54px; box-shadow: var(--shadow); }
+.home-btn:active { transform: translateY(3px); box-shadow: none; }
+.screen-title { font-size: 20px; letter-spacing: 1px; }
+.star-count { font-weight: 700; color: var(--accent-deep); font-size: 20px; }
+.star-count span + span { margin-left: 4px; }
+
+.dots { display: flex; gap: 7px; }
+.dot { width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 2px solid var(--line); }
+.dot.on { background: var(--accent); border-color: var(--accent-deep); }
+
+/* ── 出題 ── */
+.stage { display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 18px; min-height: calc(100dvh - 110px); }
+.prompt {
+  background: var(--card); border: 4px solid var(--line); border-radius: 28px;
+  box-shadow: var(--shadow); width: 100%; padding: 18px 16px;
+  display: flex; flex-direction: column; align-items: center; gap: 10px; min-height: 190px;
+  justify-content: center;
+}
+.prompt-emoji { font-size: clamp(78px, 26vw, 130px); line-height: 1; }
+.speak-btn {
+  font-size: clamp(60px, 20vw, 92px); line-height: 1; border-radius: 50%; padding: 10px 18px;
+  background: #fff5da; border: 4px solid var(--line);
+}
+.speak-btn:active { transform: scale(.94); }
+.speak-btn.playing { animation: pulse 1s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { transform: scale(1) } 50% { transform: scale(1.08) } }
+.prompt-label { font-size: 16px; color: var(--ink-soft); letter-spacing: 1px; }
+
+.word-line { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+.word-char {
+  font-size: clamp(34px, 11vw, 54px); font-weight: 700; min-width: 1.1em; text-align: center;
+  border-bottom: 5px solid transparent;
+}
+.word-char.blank { color: transparent; border-bottom-color: var(--accent); background: #fff3d6; border-radius: 8px; }
+.word-char.blank.filled { color: var(--green); }
+
+/* ── 選択肢 ── */
+.choices { display: grid; gap: 12px; width: 100%; grid-template-columns: repeat(2, 1fr); }
+.choices.n3 { grid-template-columns: repeat(3, 1fr); }
+.choices.n4 { grid-template-columns: repeat(2, 1fr); }
+.choice {
+  background: var(--card); border: 4px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center;
+  font-size: clamp(52px, 17vw, 88px); font-weight: 700; line-height: 1; transition: transform .1s ease;
+}
+.choices.n3 .choice { font-size: clamp(40px, 13vw, 72px); }
+.choice:active { transform: translateY(4px); box-shadow: none; }
+.choice.correct { background: #e6f7e6; border-color: var(--green); animation: pop .45s ease; }
+.choice.wrong { background: #fdeaea; border-color: #ef9a9a; animation: shake .4s ease; opacity: .55; }
+.choice.hintme { animation: glow 1s ease-in-out infinite; }
+.choice[disabled] { cursor: default; }
+@keyframes pop { 0% { transform: scale(1) } 45% { transform: scale(1.18) } 100% { transform: scale(1) } }
+@keyframes shake { 0%,100% { transform: translateX(0) } 25% { transform: translateX(-8px) } 75% { transform: translateX(8px) } }
+@keyframes glow { 0%,100% { box-shadow: var(--shadow) } 50% { box-shadow: 0 0 0 8px rgba(255,152,0,.35) } }
+
+.hint { min-height: 28px; font-size: 18px; color: var(--accent-deep); font-weight: 700; letter-spacing: 1px; }
+
+/* ── ひらがなひょう ── */
+#screen-table { padding-bottom: 130px; }   /* 下に出るカードで最後の行が隠れないように */
+.kana-table { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.kana-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; width: 100%; }
+.kana-cell {
+  background: var(--card); border: 3px solid var(--line); border-radius: 14px; box-shadow: 0 3px 0 rgba(0,0,0,.08);
+  aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center;
+  font-size: clamp(22px, 6.5vw, 34px); font-weight: 700;
+}
+.kana-cell:active { transform: translateY(3px); box-shadow: none; }
+.kana-cell.empty { visibility: hidden; }
+.kana-cell.lv1 { background: #fff6e0; }
+.kana-cell.lv2 { background: #ffe7bb; }
+.kana-cell.lv3 { background: #ffd280; border-color: var(--accent); }
+.kana-cell.active { outline: 5px solid var(--accent); }
+
+.table-card {
+  position: fixed; inset: auto 0 0 0; margin: 0 auto 14px; max-width: 380px;
+  background: var(--card); border: 4px solid var(--accent); border-radius: 24px; box-shadow: 0 8px 22px rgba(0,0,0,.18);
+  padding: 14px 18px; display: flex; align-items: center; gap: 14px; animation: pop .3s ease;
+}
+.table-card .big { font-size: 54px; line-height: 1; }
+.table-card .txt { display: flex; flex-direction: column; gap: 2px; }
+.table-card .txt b { font-size: 26px; letter-spacing: 2px; }
+.table-card .txt small { font-size: 13px; color: var(--ink-soft); }
+
+/* ── ステッカー ── */
+.sticker-note { font-size: 15px; color: var(--ink-soft); margin: 4px 4px 12px; }
+.sticker-board {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); gap: 10px;
+  background: var(--card); border: 4px dashed var(--line); border-radius: var(--radius); padding: 14px;
+}
+.sticker { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; font-size: 40px;
+  background: #fff8ec; border-radius: 50%; border: 2px solid var(--line); }
+.sticker.empty { opacity: .25; font-size: 26px; }
+
+/* ── せってい（おうちの人向け・ふつうの大きさ） ── */
+.settings { display: grid; gap: 14px; font-size: 15px; }
+.card { background: var(--card); border: 2px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+.card h3 { font-size: 16px; margin-bottom: 10px; }
+.row { display: flex; align-items: center; gap: 8px; padding: 7px 0; flex-wrap: wrap; }
+.row input[type="range"] { flex: 1; min-width: 140px; }
+.summary-line { font-size: 15px; margin-bottom: 10px; color: var(--ink-soft); }
+.mini-table { display: grid; grid-template-columns: repeat(10, 1fr); gap: 3px; }
+.mini-cell { aspect-ratio: 1/1; border-radius: 4px; background: #f3ece0; font-size: 11px;
+  display: flex; align-items: center; justify-content: center; }
+.mini-cell.lv1 { background: #ffeec2; }
+.mini-cell.lv2 { background: #ffd280; }
+.mini-cell.lv3 { background: #ffab40; }
+.legend { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-soft); margin-top: 10px; flex-wrap: wrap; }
+.sw { width: 14px; height: 14px; border-radius: 3px; display: inline-block; background: #f3ece0; }
+.sw.lv1 { background: #ffeec2; } .sw.lv2 { background: #ffd280; } .sw.lv3 { background: #ffab40; }
+.row-picker { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.row-chip { border: 2px solid var(--line); border-radius: 999px; padding: 6px 12px; background: #fffdf6; font-size: 14px; }
+.row-chip.on { background: var(--accent); border-color: var(--accent-deep); color: #fff; font-weight: 700; }
+.row-picker[hidden] { display: none; }
+.danger { background: #fdeaea; border: 2px solid #ef9a9a; border-radius: 12px; padding: 10px 16px; color: #c62828; }
+.fine, .warn { font-size: 12px; color: var(--ink-soft); margin-top: 8px; line-height: 1.6; }
+.warn { color: #c62828; }
+
+/* ── おいわい ── */
+.celebrate { position: fixed; inset: 0; pointer-events: none; z-index: 50;
+  display: flex; align-items: center; justify-content: center; }
+.celebrate .msg {
+  background: rgba(255,255,255,.95); border: 5px solid var(--accent); border-radius: 28px;
+  padding: 22px 30px; font-size: clamp(22px, 6vw, 30px); font-weight: 700; text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.2); animation: pop .5s ease; letter-spacing: 2px;
+}
+.confetti { position: absolute; top: -30px; font-size: 26px; animation: fall linear forwards; }
+@keyframes fall { to { transform: translateY(105vh) rotate(540deg); opacity: .9; } }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #241d16; --bg2: #33291d; --ink: #fdf3e3; --ink-soft: #c3b2a0;
+    --card: #33291f; --line: #574535; --shadow: 0 6px 0 rgba(0,0,0,.35);
+  }
+  .menu-sub, .row-chip, .table-card, .sticker { background: #3b3025; }
+  .kana-cell.lv1 { background: #4a3b27; } .kana-cell.lv2 { background: #6b5122; } .kana-cell.lv3 { background: #8c6413; }
+  .mini-cell { background: #453729; }
+  .choice.correct { background: #2f4a2f; } .choice.wrong { background: #4a2f2f; }
+  .word-char.blank { background: #4a3b27; }
+  .celebrate .msg { background: rgba(51,41,31,.96); }
+  .danger { background: #4a2f2f; color: #ffcdd2; }
+}

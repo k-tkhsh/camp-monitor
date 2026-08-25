@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="ひらがな あそび">
+  <rect width="512" height="512" rx="96" fill="#ffb300"/>
+  <circle cx="256" cy="256" r="176" fill="#fff8e7"/>
+  <text x="256" y="256" font-size="230" text-anchor="middle" dominant-baseline="central"
+        font-family="Hiragino Maru Gothic ProN, Hiragino Sans, sans-serif" fill="#ef6c00">あ</text>
+</svg>
