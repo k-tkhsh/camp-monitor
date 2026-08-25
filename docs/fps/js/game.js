@@ -43,7 +43,10 @@ export class Game {
     this.touchUi = this.isTouch();
 
     this.input.onLockChange = (locked) => {
-      if (!locked && this.state === 'playing' && !this.isTouch()) this.pause();
+      if (!locked && this.state === 'playing' && !this.isTouch() && !this.input.freeLook) this.pause();
+    };
+    this.input.onFreeLook = () => {
+      this.hud.message('マウスをそのまま動かして視点操作（Esc でポーズ）', '#7fd4ff', 3.5);
     };
     window.addEventListener('resize', () => this.renderer.resize());
     this.reset();

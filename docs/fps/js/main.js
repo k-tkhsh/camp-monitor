@@ -58,7 +58,7 @@ $('btnTitle').addEventListener('click', toTitle);
 // ポーズ中に画面をクリックしたら再開（ポインタロックを取り直す）
 canvas.addEventListener('click', () => {
   if (game.state === 'paused') game.resume();
-  else if (game.state === 'playing' && !game.input.locked && !game.isTouch()) game.input.requestLock();
+  else if (game.state === 'playing' && !game.input.locked && !game.input.freeLook && !game.isTouch()) game.input.requestLock();
 });
 
 // ── 設定 ────────────────────────────────────────────────────

@@ -26,6 +26,7 @@ export class Input {
     this.firing = false;
     this.sensitivity = 1;
     this.locked = false;
+    this.freeLook = false;      // ポインタロックが使えない環境（iframe など）用
     this.touch = { move: { x: 0, y: 0, active: false, id: null, ox: 0, oy: 0 }, lookId: null, lookX: 0, lookY: 0 };
     this.onLockChange = null;
     this.#bind();
@@ -60,9 +61,9 @@ export class Input {
     window.addEventListener('mouseup', (e) => { if (e.button === 0) this.firing = false; });
     this.canvas.addEventListener('contextmenu', (e) => e.preventDefault());
     window.addEventListener('mousemove', (e) => {
-      if (!this.locked) return;
-      this.mouseDX += e.movementX * 0.0022 * this.sensitivity;
-      this.mouseDY += e.movementY * 0.0018 * this.sensitivity;
+      if (!this.locked && !this.freeLook) return;
+      this.mouseDX += (e.movementX || 0) * 0.0022 * this.sensitivity;
+      this.mouseDY += (e.movementY || 0) * 0.0018 * this.sensitivity;
     });
     this.canvas.addEventListener('wheel', (e) => {
       this.pressed.add(e.deltaY > 0 ? 'nextWeapon' : 'prevWeapon');
@@ -73,6 +74,8 @@ export class Input {
       this.locked = document.pointerLockElement === this.canvas;
       if (this.onLockChange) this.onLockChange(this.locked);
     });
+    // ロックを拒否された場合はカーソルを出したまま視点移動できるようにする
+    document.addEventListener('pointerlockerror', () => this.#enableFreeLook());
 
     // ── タッチ（左半分＝移動スティック / 右半分＝視点）──────
     const rect = () => this.canvas.getBoundingClientRect();
@@ -143,8 +146,21 @@ export class Input {
     el.addEventListener('mouseleave', end);
   }
 
+  #enableFreeLook() {
+    if (this.freeLook) return;
+    this.freeLook = true;
+    this.locked = false;
+    if (this.onFreeLook) this.onFreeLook();
+  }
+
   requestLock() {
-    if (this.canvas.requestPointerLock) this.canvas.requestPointerLock();
+    if (this.freeLook || !this.canvas.requestPointerLock) return;
+    try {
+      const p = this.canvas.requestPointerLock();
+      if (p && typeof p.catch === 'function') p.catch(() => this.#enableFreeLook());
+    } catch {
+      this.#enableFreeLook();
+    }
   }
 
   exitLock() {
