@@ -1,6 +1,6 @@
 // オフラインでも遊べるようにアプリ本体をキャッシュする。
 // 更新の取りこぼしを避けるため、通信できるときは常にネットワークを優先する。
-const CACHE = 'hiragana-v1';
+const CACHE = 'hiragana-v2';
 const ASSETS = [
   './',
   'index.html',
@@ -10,6 +10,11 @@ const ASSETS = [
   'js/app.js',
   'js/core.js',
   'js/data.js',
+  'js/strokes.js',
+  'js/trace.js',
+  'js/action.js',
+  'js/balloon.js',
+  'js/write.js',
   'js/store.js',
   'js/audio.js',
 ];
