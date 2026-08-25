@@ -8,6 +8,7 @@ export function emptyProgress() {
     version: PROGRESS_VERSION,
     stats: {},            // かな -> { seen, correct, wrong, streak }
     unlocked: ['あ'],     // じゅんばんモードで開放済みの行
+    written: {},          // かな -> なぞって書けた回数
     stars: 0,             // ためた星
     stickers: [],         // もらったステッカー
   };
@@ -44,6 +45,24 @@ export function recordAnswer(progress, k, correct) {
     stats: { ...progress.stats, [k]: stat },
     stars: progress.stars + (correct ? 1 : 0),
   };
+}
+
+/** なぞりがきを1回できたことを記録する（読みの習熟度とは別に数える）。 */
+export function recordWriting(progress, k) {
+  const written = { ...(progress.written || {}) };
+  written[k] = (written[k] || 0) + 1;
+  return { ...progress, written, stars: progress.stars + 1 };
+}
+
+export const writtenCount = (progress, k) => (progress.written || {})[k] || 0;
+
+/** なぞりがきの出題。まだ書いていない字・書いた回数の少ない字から出す。 */
+export function pickWritingTarget(progress, pool, rand = Math.random, avoid = null) {
+  const candidates = pool.length > 1 && avoid ? pool.filter((e) => e.k !== avoid) : pool.slice();
+  if (!candidates.length) return null;
+  const fewest = Math.min(...candidates.map((e) => writtenCount(progress, e.k)));
+  const rare = candidates.filter((e) => writtenCount(progress, e.k) === fewest);
+  return rare[Math.floor(rand() * rare.length)];
 }
 
 /** 行のかな一覧 */
@@ -215,6 +234,7 @@ export function summary(progress) {
     seen: levels.filter((l) => l >= 1).length,
     can: levels.filter((l) => l >= 2).length,
     good: levels.filter((l) => l === 3).length,
+    wrote: Object.keys(progress.written || {}).length,
     stars: progress.stars || 0,
   };
 }

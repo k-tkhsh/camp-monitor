@@ -3,6 +3,8 @@ import { KANA, ROWS, BY_KANA, STICKERS } from './data.js';
 import * as core from './core.js';
 import * as store from './store.js';
 import * as audio from './audio.js';
+import { startBalloon, stopBalloon } from './balloon.js';
+import { startWrite, stopWrite } from './write.js';
 
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -32,9 +34,11 @@ audio.configure(state.settings);
 function show(screen) {
   state.screen = screen;
   clearNudge();
-  ['home', 'game', 'table', 'stickers', 'settings'].forEach((id) => {
+  ['home', 'game', 'balloon', 'write', 'table', 'stickers', 'settings'].forEach((id) => {
     $(`#screen-${id}`).hidden = id !== screen;
   });
+  if (screen !== 'balloon') stopBalloon();
+  if (screen !== 'write') stopWrite();
   audio.stopSpeaking();
   window.scrollTo(0, 0);
   if (screen === 'home') renderHome();
@@ -50,7 +54,7 @@ function saveAll() {
 
 function refreshStars() {
   const n = state.progress.stars || 0;
-  ['#homeStars', '#gameStars', '#tableStars', '#stickerStars'].forEach((sel) => {
+  ['#homeStars', '#gameStars', '#balloonStars', '#writeStars', '#tableStars', '#stickerStars'].forEach((sel) => {
     const el = $(sel);
     if (el) el.textContent = n;
   });
@@ -229,21 +233,35 @@ async function onChoice(btn) {
   const entry = BY_KANA.get(q.target.k);
   await audio.speak(`せいかい！ ${entry.word} の ${q.target.k}`);
 
+  const reward = { ...rewardsFor(before), round: state.roundHits >= ROUND };
+  if (reward.round) {
+    state.roundHits = 0;
+    renderDots();
+  }
+  await celebrateReward(reward);
+
+  if (state.screen === 'game') nextQuestion();
+}
+
+/** 星・ステッカー・行の開放をまとめて計算する。 */
+function rewardsFor(before) {
   const sticker = awardSticker(before);
   const unlocked = maybeUnlockRow();
   saveAll();
+  refreshStars();
+  return { sticker, unlocked, round: false };
+}
 
-  if (unlocked) {
-    await celebrate(`あたらしい もじ！\n${rowLabel(unlocked)}`, `あたらしい もじだよ。 ${rowLabel(unlocked)}`);
-  } else if (sticker) {
-    await celebrate(`ステッカー ゲット！\n${sticker}`, 'ステッカーを もらったよ！');
-  } else if (state.roundHits >= ROUND) {
-    state.roundHits = 0;
-    renderDots();
+/** もらったものに応じて おいわいを出す。 */
+async function celebrateReward(reward) {
+  if (!reward) return;
+  if (reward.unlocked) {
+    await celebrate(`あたらしい もじ！\n${rowLabel(reward.unlocked)}`, `あたらしい もじだよ。 ${rowLabel(reward.unlocked)}`);
+  } else if (reward.sticker) {
+    await celebrate(`ステッカー ゲット！\n${reward.sticker}`, 'ステッカーを もらったよ！');
+  } else if (reward.round) {
     await celebrate('よく できました！\n🎉', 'よく できました！');
   }
-
-  if (state.screen === 'game') nextQuestion();
 }
 
 function rowLabel(rowId) {
@@ -270,6 +288,33 @@ function maybeUnlockRow() {
   state.progress = { ...state.progress, unlocked: [...state.progress.unlocked, next] };
   return next;
 }
+
+/* ────────────── ふうせんわり・なぞりがきに渡す道具 ────────────── */
+
+const gameCtx = {
+  pool: (mode) => core.poolFor(state.progress, state.settings, mode),
+  pickTarget: (pool, avoid) => core.pickTarget(state.progress, pool, Math.random, avoid),
+  pickWritingTarget: (pool, avoid) => core.pickWritingTarget(state.progress, pool, Math.random, avoid),
+  speech: () => speechAvailable(),
+  isActive: () => state.screen === 'balloon' || state.screen === 'write',
+  celebrateReward,
+  /** せいかい（読み）: 星とステッカーと行の開放をまとめて返す */
+  async award(kana) {
+    const before = state.progress;
+    state.progress = core.recordAnswer(state.progress, kana, true);
+    return rewardsFor(before);
+  },
+  /** なぞりがき1字ぶん: 読みの習熟度は動かさず、星だけ増やす */
+  async awardWriting(kana) {
+    const before = state.progress;
+    state.progress = core.recordWriting(state.progress, kana);
+    return rewardsFor(before);
+  },
+  miss(kana) {
+    state.progress = core.recordAnswer(state.progress, kana, false);
+    saveAll();
+  },
+};
 
 /* ────────────── おいわい演出 ────────────── */
 
@@ -305,7 +350,7 @@ function renderTable() {
     const cells = core.kanaOfRow(row.id);
     const padded = cells.concat(Array(5 - cells.length).fill(null));
     return `<div class="kana-row">${padded.map((e) => (e
-      ? `<button type="button" class="kana-cell lv${core.levelOf(state.progress, e.k)}" data-k="${e.k}">${e.k}</button>`
+      ? `<button type="button" class="kana-cell lv${core.levelOf(state.progress, e.k)}${core.writtenCount(state.progress, e.k) ? ' written' : ''}" data-k="${e.k}">${e.k}</button>`
       : '<span class="kana-cell empty"></span>')).join('')}</div>`;
   }).join('');
   $('#tableCard').hidden = true;
@@ -348,7 +393,7 @@ function renderStickers() {
 function renderSettings() {
   const s = core.summary(state.progress);
   $('#summaryLine').textContent =
-    `よんだ ${s.seen} / ${s.total} 字、できる ${s.can} 字、とくい ${s.good} 字、ほし ${s.stars} こ`;
+    `よんだ ${s.seen} / ${s.total} 字、できる ${s.can} 字、とくい ${s.good} 字、なぞった ${s.wrote} 字、ほし ${s.stars} こ`;
   $('#summaryTable').innerHTML = KANA.map((e) =>
     `<span class="mini-cell lv${core.levelOf(state.progress, e.k)}">${e.k}</span>`).join('');
 
@@ -432,6 +477,8 @@ function bind() {
     btn.addEventListener('click', () => {
       audio.sfx.tap();
       if (btn.dataset.mode) startGame(btn.dataset.mode);
+      else if (btn.dataset.screen === 'balloon') { show('balloon'); startBalloon(gameCtx); }
+      else if (btn.dataset.screen === 'write') { show('write'); startWrite(gameCtx); }
       else show(btn.dataset.screen);
     });
   });

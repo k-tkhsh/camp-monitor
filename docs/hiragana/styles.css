@@ -133,6 +133,8 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
 .kana-cell.lv2 { background: #ffe7bb; }
 .kana-cell.lv3 { background: #ffd280; border-color: var(--accent); }
 .kana-cell.active { outline: 5px solid var(--accent); }
+.kana-cell.written { position: relative; }
+.kana-cell.written::after { content: "✏️"; position: absolute; right: 2px; bottom: 1px; font-size: 11px; }
 
 .table-card {
   position: fixed; inset: auto 0 0 0; margin: 0 auto 14px; max-width: 380px;
@@ -205,4 +207,77 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
   .word-char.blank { background: #4a3b27; }
   .celebrate .msg { background: rgba(51,41,31,.96); }
   .danger { background: #4a2f2f; color: #ffcdd2; }
+}
+
+/* ── ふうせんわり ── */
+.sky-wrap { position: relative; height: calc(100dvh - 168px); border-radius: 26px; overflow: hidden;
+  background: linear-gradient(#cdeafd, #eaf7ff 62%, #fdf6e3);
+  border: 4px solid var(--line); box-shadow: var(--shadow); }
+.sky { position: absolute; inset: 0; }
+.ground { position: absolute; left: 0; right: 0; bottom: 0; height: 34px;
+  background: linear-gradient(#8bd17c, #6fbb61); }
+.target-chip { width: fit-content; margin: 0 auto 10px;
+  display: flex; align-items: center; gap: 10px; background: var(--card);
+  border: 3px solid var(--accent); border-radius: 999px; padding: 6px 18px; box-shadow: var(--shadow); }
+.chip-speak { font-size: 30px; line-height: 1; }
+.chip-speak:active { transform: scale(.92); }
+.chip-emoji { font-size: 32px; line-height: 1; }
+.chip-kana { font-size: 30px; font-weight: 700; color: var(--ink); }
+
+.balloon { position: absolute; width: 21%; max-width: 108px; aspect-ratio: 1 / 1.18;
+  transform: translateX(-50%); background: var(--c);
+  border-radius: 50% 50% 46% 46% / 46% 46% 54% 54%;
+  box-shadow: inset -7px -9px 0 rgba(0,0,0,.09), 0 3px 8px rgba(0,0,0,.14);
+  display: flex; align-items: center; justify-content: center; }
+/* 小さい指でも当たるよう、見た目より少し広く受ける */
+.balloon::before { content: ""; position: absolute; inset: -14px; border-radius: 50%; }
+.balloon::after { content: ""; position: absolute; bottom: -11px; left: 50%; width: 2px; height: 12px;
+  background: rgba(0,0,0,.28); transform: translateX(-50%); }
+.balloon-kana { font-size: clamp(26px, 8vw, 44px); font-weight: 700; color: #4a3520; }
+.balloon.pop { animation: burst .3s ease forwards; pointer-events: none; }
+@keyframes burst { to { transform: translateX(-50%) scale(1.7); opacity: 0; } }
+.balloon.shake { animation: shake .4s ease; }
+.piece { position: absolute; transform: translateX(-50%); font-size: 22px; pointer-events: none;
+  animation: fly .65s ease-out forwards; }
+@keyframes fly { to { transform: translate(calc(-50% + var(--dx)), var(--dy)); opacity: 0; } }
+
+/* ── なぞりがき ── */
+.write-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; min-height: calc(100dvh - 110px); }
+.write-word { display: flex; align-items: center; gap: 12px; background: var(--card);
+  border: 3px solid var(--line); border-radius: 999px; padding: 8px 20px; box-shadow: var(--shadow); }
+.write-emoji { font-size: 38px; line-height: 1; }
+.write-text { display: flex; flex-direction: column; line-height: 1.15; }
+.write-text b { font-size: 30px; }
+.write-text small { font-size: 13px; color: var(--ink-soft); }
+
+#writePad { width: min(86vw, 380px); aspect-ratio: 1 / 1; touch-action: none;
+  border-radius: 26px; box-shadow: var(--shadow); }
+.pad-bg { fill: var(--card); stroke: var(--line); stroke-width: 2; }
+.pad-grid { stroke: var(--line); stroke-width: 1; stroke-dasharray: 4 4; }
+.s-guide { fill: none; stroke: rgba(140,120,95,.18); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+.s-current { fill: none; stroke: var(--accent); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; opacity: .45; }
+.s-current.flash { opacity: .9; }
+.s-done { fill: none; stroke: var(--accent-deep); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+.s-start { fill: #fff; stroke: var(--accent-deep); stroke-width: 2.5; animation: startpulse 1.6s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+@keyframes startpulse { 0%, 100% { r: 7.5; } 50% { r: 9; } }
+.s-num { fill: var(--accent-deep); font-size: 10px; font-weight: 700; text-anchor: middle; }
+.s-ink { fill: none; stroke: #29b6f6; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; opacity: .85; }
+.s-ink.miss { animation: inkfade .42s ease forwards; }
+@keyframes inkfade { to { opacity: 0; stroke: #ef9a9a; } }
+.s-dot { fill: #fff; stroke: var(--accent-deep); stroke-width: 3; transition: opacity .2s; }
+#wDone.cheer { animation: pop .6s ease; transform-origin: center; transform-box: fill-box; }
+
+.write-actions { display: flex; gap: 12px; }
+.write-btn { background: var(--card); border: 3px solid var(--line); border-radius: 999px;
+  padding: 10px 20px; font-size: 17px; font-weight: 700; box-shadow: var(--shadow); }
+.write-btn:active { transform: translateY(3px); box-shadow: none; }
+
+@media (prefers-color-scheme: dark) {
+  .sky-wrap { background: linear-gradient(#243447, #2c3a44 62%, #33291f); }
+  .ground { background: linear-gradient(#4a7a45, #3c6339); }
+  .target-chip { background: rgba(51,41,31,.94); }
+  .balloon-kana { color: #2b2016; }
+  .write-word, .write-btn { background: #3b3025; }
+  .s-guide { stroke: rgba(255,240,215,.16); }
 }

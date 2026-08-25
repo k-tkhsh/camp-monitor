@@ -31,6 +31,14 @@
         <span class="menu-emoji" aria-hidden="true">🖼️</span>
         <span class="menu-text"><b>はじめの おと</b><small>この えの さいしょの もじは？</small></span>
       </button>
+      <button type="button" class="menu-btn" data-screen="balloon">
+        <span class="menu-emoji" aria-hidden="true">🎈</span>
+        <span class="menu-text"><b>ふうせん わり</b><small>きこえた もじを わろう！</small></span>
+      </button>
+      <button type="button" class="menu-btn" data-screen="write">
+        <span class="menu-emoji" aria-hidden="true">✏️</span>
+        <span class="menu-text"><b>なぞりがき</b><small>かきじゅんどおりに なぞろう</small></span>
+      </button>
       <button type="button" class="menu-btn" data-mode="word">
         <span class="menu-emoji" aria-hidden="true">🧩</span>
         <span class="menu-text"><b>ことば パズル</b><small>□に はいる もじは どれ？</small></span>
@@ -58,6 +66,47 @@
       <div id="prompt" class="prompt"></div>
       <div id="choices" class="choices"></div>
       <p id="hint" class="hint" role="status"></p>
+    </div>
+  </section>
+
+  <!-- ── ふうせんわり（アクション） ── -->
+  <section id="screen-balloon" class="screen" hidden>
+    <header class="game-head">
+      <button type="button" class="home-btn" data-home aria-label="おうちにもどる">🏠</button>
+      <div class="dots" id="balloonDots" aria-hidden="true"></div>
+      <span class="star-count"><span aria-hidden="true">⭐</span><span id="balloonStars">0</span></span>
+    </header>
+    <div class="target-chip" id="balloonTarget"></div>
+    <div class="sky-wrap">
+      <div class="sky" id="sky"></div>
+      <div class="ground" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- ── なぞりがき（書き順） ── -->
+  <section id="screen-write" class="screen" hidden>
+    <header class="game-head">
+      <button type="button" class="home-btn" data-home aria-label="おうちにもどる">🏠</button>
+      <div class="dots" id="writeCount" aria-hidden="true"></div>
+      <span class="star-count"><span aria-hidden="true">⭐</span><span id="writeStars">0</span></span>
+    </header>
+    <div class="write-wrap">
+      <div class="write-word" id="writeWord"></div>
+      <svg id="writePad" viewBox="0 0 109 109" role="img" aria-label="なぞりがきの ますめ">
+        <rect x="1" y="1" width="107" height="107" rx="8" class="pad-bg"/>
+        <line x1="54.5" y1="4" x2="54.5" y2="105" class="pad-grid"/>
+        <line x1="4" y1="54.5" x2="105" y2="54.5" class="pad-grid"/>
+        <g id="wGuide"></g>
+        <path id="wCurrent" class="s-current"/>
+        <g id="wDone"></g>
+        <g id="wStart"></g>
+        <path id="wInk" class="s-ink"/>
+        <circle id="wDot" class="s-dot" r="5" cx="-10" cy="-10"/>
+      </svg>
+      <div class="write-actions">
+        <button type="button" id="writeDemo" class="write-btn"><span aria-hidden="true">👀</span> おてほん</button>
+        <button type="button" id="writeNext" class="write-btn"><span aria-hidden="true">▶</span> つぎの もじ</button>
+      </div>
     </div>
   </section>
 

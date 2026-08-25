@@ -12,7 +12,11 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const MODULES = ['data.js', 'core.js', 'store.js', 'audio.js', 'app.js'];   // 依存の順に並べる
+// 依存の順に並べる（先に定義されたものを後ろのファイルが使う）
+const MODULES = [
+  'data.js', 'strokes.js', 'core.js', 'trace.js', 'action.js',
+  'store.js', 'audio.js', 'balloon.js', 'write.js', 'app.js',
+];
 
 const read = (rel) => fs.readFileSync(path.join(DIR, rel), 'utf8');
 
@@ -36,11 +40,15 @@ function buildScript() {
     if (seen.has(id)) throw new Error(`名前が重複しています: ${id}（${seen.get(id)} と ${p.ns}）`);
     seen.set(id, p.ns);
   }));
+  // 各モジュールを関数で包み、export した名前だけを外に出す。
+  // こうしないと、別々のファイルで同じ名前の内部変数（ctx や target など）がぶつかる。
   return parts.map((p) => [
     `/* ── ${p.ns}.js ── */`,
+    `const ${p.ns} = (() => {`,
     p.body,
-    // app.js の core.xxx / store.xxx / audio.xxx をそのまま動かすための名前空間
-    p.exported.length ? `const ${p.ns} = { ${p.exported.join(', ')} };` : '',
+    `return { ${p.exported.join(', ')} };`,
+    `})();`,
+    p.exported.length ? `const { ${p.exported.join(', ')} } = ${p.ns};` : '',
   ].filter(Boolean).join('\n')).join('\n\n');
 }
 

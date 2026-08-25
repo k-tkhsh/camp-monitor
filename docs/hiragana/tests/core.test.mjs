@@ -209,3 +209,24 @@ test('練習が足りないうちは つぎの行に進まない', () => {
   assert.equal(core.isRowReady(p, 'あ'), false, '「お」を1度も出していない');
   assert.equal(core.nextRowToUnlock(p), null);
 });
+
+test('なぞりがきは 読みの習熟度とは別に数え、星だけ増える', () => {
+  let p = core.emptyProgress();
+  p = core.recordWriting(p, 'あ');
+  p = core.recordWriting(p, 'あ');
+  assert.equal(core.writtenCount(p, 'あ'), 2);
+  assert.equal(core.levelOf(p, 'あ'), 0, '書いても 読めることにはしない');
+  assert.equal(p.stars, 2);
+  assert.equal(core.summary(p).wrote, 1);
+});
+
+test('なぞりがきは 書いた回数の少ない字から出す', () => {
+  const settings = { rowMode: 'custom', rows: ['あ'] };
+  const pool = core.poolFor(core.emptyProgress(), settings, 'write');
+  let p = core.emptyProgress();
+  Array.from('あいうえ').forEach((k) => { p = core.recordWriting(p, k); });
+  for (let i = 0; i < 20; i += 1) {
+    assert.equal(core.pickWritingTarget(p, pool, Math.random).k, 'お');
+  }
+  assert.notEqual(core.pickWritingTarget(p, pool, Math.random, 'お'), null, '直前と同じ字は さける');
+});
