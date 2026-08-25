@@ -4,6 +4,15 @@
 import { Game } from './game.js';
 import { readHiscore } from './core.js';
 
+// 1 ファイルに固めて別ページへ埋め込んだ場合など、viewport 指定が無いと
+// スマホで 980px 幅として扱われ、表示もタッチ座標もずれるため補っておく
+if (!document.querySelector('meta[name="viewport"]')) {
+  const meta = document.createElement('meta');
+  meta.name = 'viewport';
+  meta.content = 'width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no';
+  document.head.appendChild(meta);
+}
+
 const $ = (id) => document.getElementById(id);
 const canvas = $('view');
 
