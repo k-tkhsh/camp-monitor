@@ -8,6 +8,7 @@ export const defaultSettings = () => ({
   rowMode: 'auto',      // 'auto' = できたら次の行が出てくる / 'custom' = 行を指定
   rows: ['あ'],
   rate: 0.8,            // 読み上げの速さ
+  kanaRepeat: true,     // 1文字を 2回くりかえして読む
   sound: true,          // 効果音
   voiceURI: '',         // 使う音声（未指定なら自動）
 });

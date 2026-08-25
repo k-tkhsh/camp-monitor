@@ -62,8 +62,13 @@ function nextKana() {
   strokes = (STROKES[target.k] || []).map((d) => sample(d));
   renderWord();
   renderStrokes();
-  audio.speak(`${target.k}。 ${target.word} の ${target.k}。 なぞって みよう`)
-    .then(() => { if (active) playDemo(); });
+  (async () => {
+    audio.sfx.listen();
+    await new Promise((r) => setTimeout(r, 240));
+    await audio.speakKana(target.k);
+    await audio.speak(`${target.word} の もじ。 なぞって みよう`);
+    if (active) playDemo();
+  })();
 }
 
 /** 見本の線を、等間隔の点の列にする（判定と見本アニメーションに使う）。 */
@@ -226,7 +231,8 @@ async function finishKana() {
   layers.done.classList.add('cheer');
   setTimeout(() => layers.done.classList.remove('cheer'), 700);
   const reward = await ctx.awardWriting(target.k);
-  await audio.speak(`かけたね！ ${target.word} の ${target.k}`);
+  await audio.speak(`かけたね！ ${target.word} の`);
+  await audio.speakKana(target.k, { repeat: false });
   await ctx.celebrateReward(reward);
   if (!ctx.isActive()) return;
   setTimeout(() => { if (active) nextKana(); }, 300);

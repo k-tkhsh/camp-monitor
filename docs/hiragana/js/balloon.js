@@ -85,9 +85,11 @@ function renderTargetChip() {
   chip.querySelector('.chip-speak')?.addEventListener('click', () => { audio.sfx.tap(); sayTarget(); });
 }
 
-function sayTarget() {
-  if (!target) return;
-  if (ctx.speech()) audio.speakKana(target);
+async function sayTarget() {
+  if (!target || !ctx.speech()) return;
+  audio.sfx.listen();
+  await new Promise((r) => setTimeout(r, 240));
+  await audio.speakKana(target);
 }
 
 function tick(now) {

@@ -162,6 +162,7 @@
       <div class="card">
         <h3>音</h3>
         <label class="row"><input type="checkbox" id="soundToggle"> こうかおん を ならす</label>
+        <label class="row"><input type="checkbox" id="repeatToggle"> もじを 2回 くりかえして よむ</label>
         <label class="row">よみあげの はやさ
           <input type="range" id="rateRange" min="0.5" max="1.2" step="0.05">
           <output id="rateOut"></output>
@@ -169,6 +170,7 @@
         <label class="row">こえ
           <select id="voiceSelect"><option value="">じどう</option></select>
         </label>
+        <div class="row"><button type="button" id="tryVoice" class="write-btn">🔊 「あ」を きいてみる</button></div>
         <p id="voiceWarn" class="warn" hidden>この端末には日本語の音声が見つかりませんでした。iOS/Android の「設定 → 読み上げ」で日本語の音声を追加すると読み上げできます。</p>
       </div>
 

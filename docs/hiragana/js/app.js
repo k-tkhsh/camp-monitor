@@ -7,6 +7,7 @@ import { startBalloon, stopBalloon } from './balloon.js';
 import { startWrite, stopWrite } from './write.js';
 
 const $ = (sel) => document.querySelector(sel);
+const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 
 const ROUND = 5;            // ○問ごとに おいわい
@@ -178,6 +179,8 @@ async function askPrompt() {
   btn?.classList.add('playing');
   clearNudge();
   if (q.mode === 'listen') {
+    audio.sfx.listen();                       // 「きくよ」の合図。出だしの聞きのがしを防ぐ
+    await wait(260);
     await audio.speakKana(q.target.k);
   } else if (q.mode === 'picture') {
     await audio.speak(`${q.entry.word}。 ${q.entry.word} の はじめの おとは？`);
@@ -207,7 +210,8 @@ async function onChoice(btn) {
       const right = $$('#choices .choice').find((b) => b.dataset.id === q.correctId);
       right?.classList.add('hintme');
       const entry = BY_KANA.get(q.correctId);
-      await audio.speak(`こたえは、 ${entry.word} の ${q.correctId}`, { rate: 0.7 });
+      await audio.speak(`こたえは、 ${entry.word} の`, { rate: 0.7 });
+      await audio.speakKana(q.correctId, { repeat: false });
     } else {
       askPrompt();
     }
@@ -231,7 +235,8 @@ async function onChoice(btn) {
   $('#hint').textContent = ['やったね！', 'すごい！', 'せいかい！', 'じょうず！', 'ばっちり！'][Math.floor(Math.random() * 5)];
 
   const entry = BY_KANA.get(q.target.k);
-  await audio.speak(`せいかい！ ${entry.word} の ${q.target.k}`);
+  await audio.speak(`せいかい！ ${entry.word} の`);
+  await audio.speakKana(q.target.k, { repeat: false });   // 文字の音を もう一度はっきりと
 
   const reward = { ...rewardsFor(before), round: state.roundHits >= ROUND };
   if (reward.round) {
@@ -371,10 +376,14 @@ async function showTableCard(k) {
   card.innerHTML = `
     <span class="big" aria-hidden="true">${e.emoji}</span>
     <span class="txt"><b>${k}</b><small>${e.note ? e.note : `${e.word}`}</small></span>`;
-  audio.sfx.tap();
+  audio.sfx.listen();
+  await wait(220);
   await audio.speakKana(k);
   if (e.note) await audio.speak(e.note.replace(/「|」/g, ' '));
-  else await audio.speak(`${e.word} の ${k}`);
+  else {
+    await audio.speak(`${e.word} の`);
+    await audio.speakKana(k, { repeat: false });
+  }
 }
 
 /* ────────────── ステッカー ────────────── */
@@ -417,6 +426,7 @@ function renderSettings() {
   });
 
   $('#soundToggle').checked = state.settings.sound !== false;
+  $('#repeatToggle').checked = state.settings.kanaRepeat !== false;
   $('#rateRange').value = state.settings.rate;
   $('#rateOut').textContent = `${Number(state.settings.rate).toFixed(2)}倍`;
   renderVoiceOptions();
@@ -450,7 +460,18 @@ function bindSettings() {
     audio.configure(state.settings);
     saveAll();
   });
-  $('#rateRange').addEventListener('change', () => audio.speak('こんにちは。ひらがな あそび'));
+  $('#rateRange').addEventListener('change', () => audio.speakKana('あ'));
+  $('#repeatToggle').addEventListener('change', (ev) => {
+    state.settings = { ...state.settings, kanaRepeat: ev.target.checked };
+    audio.configure(state.settings);
+    saveAll();
+    audio.speakKana('あ');
+  });
+  $('#tryVoice').addEventListener('click', async () => {
+    audio.sfx.listen();
+    await wait(260);
+    audio.speakKana('あ');
+  });
   $('#voiceSelect').addEventListener('change', (ev) => {
     state.settings = { ...state.settings, voiceURI: ev.target.value };
     audio.configure(state.settings);

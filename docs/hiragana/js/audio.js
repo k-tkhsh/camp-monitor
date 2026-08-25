@@ -3,6 +3,7 @@
 let ctx = null;
 let enabled = true;
 let rate = 0.8;
+let kanaRepeat = true;
 let voice = null;
 let voiceURI = '';
 
@@ -46,6 +47,7 @@ if (synth) {
 export function configure(opts = {}) {
   if (typeof opts.rate === 'number') rate = opts.rate;
   if (typeof opts.sound === 'boolean') enabled = opts.sound;
+  if (typeof opts.kanaRepeat === 'boolean') kanaRepeat = opts.kanaRepeat;
   if (typeof opts.voiceURI === 'string') { voiceURI = opts.voiceURI; chooseVoice(); }
 }
 
@@ -71,30 +73,56 @@ export function stopSpeaking() {
 /** 日本語で読み上げる。読み終わり（または失敗）で解決する Promise を返す。 */
 export function speak(text, opts = {}) {
   if (!synth || !text) return Promise.resolve(false);
+  const speed = opts.rate ?? rate;
   return new Promise((resolve) => {
     try {
+      // cancel した直後に speak すると、頭が切れたり鳴らないことがある端末があるため、
+      // 何か話していたときだけ すこし間をあける。
+      const busy = synth.speaking || synth.pending;
       synth.cancel();
       const u = new SpeechSynthesisUtterance(text);
       u.lang = 'ja-JP';
-      u.rate = opts.rate ?? rate;
-      u.pitch = opts.pitch ?? 1.1;
+      u.rate = speed;
+      u.pitch = opts.pitch ?? 1.05;
       if (voice) u.voice = voice;
       let done = false;
       const finish = () => { if (!done) { done = true; resolve(true); } };
       u.onend = finish;
       u.onerror = () => { if (!done) { done = true; resolve(false); } };
-      // 端末によっては onend が来ないことがあるので、長さから見積もった時間で打ち切る
-      setTimeout(finish, 1200 + Array.from(text).length * 260);
-      synth.speak(u);
+      // 端末によっては onend が来ないことがあるので、長さと速さから見積もった時間で打ち切る
+      setTimeout(finish, speakTimeout(text, speed) + (busy ? 160 : 0));
+      if (busy) setTimeout(() => synth.speak(u), 160);
+      else synth.speak(u);
     } catch {
       resolve(false);
     }
   });
 }
 
-/** 1文字だけだと読み飛ばす音声があるため、少し伸ばして読ませる。 */
-export function speakKana(k) {
-  return speak(k === 'ん' ? 'ん、' : `${k}っ`, { rate: Math.min(rate, 0.75) });
+/** onend が来ない端末のための、読み終わりの見積もり時間（ミリ秒）。 */
+export function speakTimeout(text, speed = 1) {
+  return Math.round(1200 + (Array.from(text).length * 260) / Math.max(0.3, speed));
+}
+
+/**
+ * 1文字を読ませるときの言い方。
+ * 「あっ」のように促音をつけると音がつまって聞き取りにくいので、
+ * 句点で区切って ゆっくり2回くりかえす（「あ。 あ」）。
+ * 先頭の全角スペースは、出だしが切れる端末むけの助走。
+ */
+export function kanaSpeechText(k, repeat = true) {
+  return repeat ? `　${k}。　${k}。` : `　${k}。`;
+}
+
+/** 1文字のときの速さ。ふつうの読み上げより ゆっくりにする。 */
+export function kanaRate(base = rate) {
+  return Math.max(0.4, Math.min(0.62, base * 0.75));
+}
+
+/** ひらがな1文字を、はっきり ゆっくり読む。 */
+export function speakKana(k, opts = {}) {
+  const repeat = opts.repeat ?? kanaRepeat;
+  return speak(kanaSpeechText(k, repeat), { rate: kanaRate(), pitch: 1 });
 }
 
 function tone(freq, start, dur, type = 'sine', gain = 0.18) {
@@ -113,6 +141,8 @@ function tone(freq, start, dur, type = 'sine', gain = 0.18) {
 
 export const sfx = {
   tap()     { tone(660, 0, 0.08, 'triangle', 0.10); },
+  /** これから 文字を読むよ、という合図。読み上げの出だしが切れても気づけるようにする。 */
+  listen()  { tone(880, 0, 0.10, 'sine', 0.10); tone(1175, 0.11, 0.14, 'sine', 0.09); },
   correct() { [784, 988, 1319].forEach((f, i) => tone(f, i * 0.09, 0.22, 'triangle', 0.16)); },
   wrong()   { tone(300, 0, 0.16, 'sine', 0.10); tone(240, 0.12, 0.20, 'sine', 0.09); },
   fanfare() {
