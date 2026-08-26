@@ -17,6 +17,9 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
+/* 画面のはしを 引っぱったときの「引き下げて更新／閉じる」を起こさない */
+html { overscroll-behavior: none; }
+
 body {
   background: radial-gradient(circle at 50% 0%, var(--bg2), var(--bg) 60%);
   color: var(--ink);
@@ -28,7 +31,13 @@ body {
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   touch-action: manipulation;
   user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  overscroll-behavior: none;
 }
+
+/* なぞりがき・ふうせんわりの あいだは ページを動かさない */
+body.no-scroll { overflow: hidden; height: 100dvh; }
 
 button { font: inherit; color: inherit; cursor: pointer; border: none; background: none; }
 
@@ -243,7 +252,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
 
 /* ── なぞりがき ── */
 .write-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 12px; min-height: calc(100dvh - 110px); }
+  gap: 12px; min-height: calc(100dvh - 110px); touch-action: none; }
 .write-word { display: flex; align-items: center; gap: 12px; background: var(--card);
   border: 3px solid var(--line); border-radius: 999px; padding: 8px 20px; box-shadow: var(--shadow); }
 .write-emoji { font-size: 38px; line-height: 1; }

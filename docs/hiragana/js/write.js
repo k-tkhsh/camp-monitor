@@ -37,6 +37,12 @@ export function startWrite(context) {
     pad.addEventListener('pointermove', onMove);
     pad.addEventListener('pointerup', onUp);
     pad.addEventListener('pointercancel', onUp);
+    // 指で下になぞったときに、画面がスクロールしたり
+    // 引き下げて閉じる動作になったりしないようにする。
+    // pointermove の preventDefault では止まらないので、touchmove を直接おさえる。
+    pad.addEventListener('touchstart', blockTouch, { passive: false });
+    pad.addEventListener('touchmove', blockTouch, { passive: false });
+    pad.addEventListener('touchend', blockTouch, { passive: false });
     document.getElementById('writeDemo').addEventListener('click', () => { audio.sfx.tap(); playDemo(); });
     document.getElementById('writeNext').addEventListener('click', () => { audio.sfx.tap(); nextKana(); });
     pad.dataset.bound = '1';
@@ -48,6 +54,10 @@ export function startWrite(context) {
 export function stopWrite() {
   active = false;
   cancelAnimationFrame(demoRaf);
+}
+
+function blockTouch(ev) {
+  if (ev.cancelable) ev.preventDefault();
 }
 
 /* ────────────── 出題 ────────────── */

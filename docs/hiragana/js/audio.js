@@ -111,12 +111,15 @@ export function speakTimeout(text, speed = 1) {
  * 先頭の全角スペースは、出だしが切れる端末むけの助走。
  */
 export function kanaSpeechText(k, repeat = true) {
-  return repeat ? `　${k}。　${k}。` : `　${k}。`;
+  return repeat ? `　${k}。　　${k}。` : `　${k}。`;   // 2回のあいだにも 少し間をとる
 }
 
-/** 1文字のときの速さ。ふつうの読み上げより ゆっくりにする。 */
+/**
+ * 1文字のときの速さ。ふつうの読み上げより かなり ゆっくりにする。
+ * 0.3 より遅いと音がつぶれる端末があるため、下限をもうける。
+ */
 export function kanaRate(base = rate) {
-  return Math.max(0.4, Math.min(0.62, base * 0.75));
+  return Math.max(0.35, Math.min(0.55, base * 0.55));
 }
 
 /** ひらがな1文字を、はっきり ゆっくり読む。 */

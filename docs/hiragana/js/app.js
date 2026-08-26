@@ -40,6 +40,8 @@ function show(screen) {
   });
   if (screen !== 'balloon') stopBalloon();
   if (screen !== 'write') stopWrite();
+  // 画面いっぱいで遊ぶゲームでは、指の動きでページが動かないようにする
+  document.body.classList.toggle('no-scroll', screen === 'balloon' || screen === 'write');
   audio.stopSpeaking();
   window.scrollTo(0, 0);
   if (screen === 'home') renderHome();
