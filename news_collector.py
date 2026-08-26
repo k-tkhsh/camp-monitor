@@ -18,11 +18,6 @@ from urllib.parse import quote
 
 import requests
 import yaml
-try:
-    from deep_translator import GoogleTranslator
-    _translator_available = True
-except ImportError:
-    _translator_available = False
 
 JST = timezone(timedelta(hours=9))
 DATA_FILE = Path("docs/data/articles.json")
@@ -225,16 +220,54 @@ def notify_ntfy(new_articles: list[dict], config: dict) -> None:
             print(f"[ERROR] ntfy 失敗 ({label}): {e}")
 
 
+MAX_TRANSLATE_PER_RUN = 60
+
+
+def _translate_google(text: str) -> str | None:
+    """Google 翻訳の公開エンドポイントで翻訳する
+
+    データセンター IP からは HTTP 429 で弾かれることが多いため、
+    成功しなかった場合は None を返して呼び出し側でフォールバックさせる。
+    """
+    resp = requests.get(
+        "https://translate.googleapis.com/translate_a/single",
+        params={"client": "gtx", "sl": "en", "tl": "ja", "dt": "t", "q": text},
+        headers=HEADERS,
+        timeout=15,
+    )
+    if resp.status_code != 200:
+        return None
+    segments = resp.json()[0]
+    return "".join(seg[0] for seg in segments if seg[0]) or None
+
+
+def _translate_mymemory(text: str) -> str | None:
+    """MyMemory で翻訳する（Google が使えないときのフォールバック）"""
+    resp = requests.get(
+        "https://api.mymemory.translated.net/get",
+        params={"q": text, "langpair": "en|ja"},
+        headers=HEADERS,
+        timeout=20,
+    )
+    if resp.status_code != 200:
+        return None
+    body = resp.json()
+    translated = (body.get("responseData") or {}).get("translatedText") or ""
+    # 1日の無料枠を使い切ると警告文が訳文として返ってくるので弾く
+    if body.get("quotaFinished") or "MYMEMORY WARNING" in translated.upper():
+        return None
+    return translated or None
+
+
+TRANSLATORS = (("google", _translate_google), ("mymemory", _translate_mymemory))
+
+
 def translate_en_titles(articles: list[dict]) -> list[dict]:
     """lang==en かつ未翻訳の記事タイトルを日本語に翻訳する
 
-    1件ずつ翻訳し、失敗した記事はスキップして原文のまま残す。
-    （一括翻訳だと1件の失敗で全件が未翻訳のままになるため）
+    翻訳先を順に試し、1件ずつ処理する。どの翻訳先でも失敗した記事は
+    原文のまま残し、次回の実行で再挑戦する。
     """
-    if not _translator_available:
-        print("[WARN] deep-translator 未インストール。翻訳スキップ。")
-        return articles
-
     targets = [
         (i, a)
         for i, a in enumerate(articles)
@@ -243,23 +276,47 @@ def translate_en_titles(articles: list[dict]) -> list[dict]:
     if not targets:
         return articles
 
-    print(f"[INFO] 英語タイトル {len(targets)} 件を翻訳中...")
-    translator = GoogleTranslator(source="en", target="ja")
+    total = len(targets)
+    targets = targets[:MAX_TRANSLATE_PER_RUN]
+    if total > len(targets):
+        print(f"[INFO] 未翻訳 {total} 件中 {len(targets)} 件を今回翻訳（残りは次回）")
+    else:
+        print(f"[INFO] 英語タイトル {total} 件を翻訳中...")
 
     result = list(articles)
     ok = 0
+    used: dict[str, int] = {}
+    misses: dict[str, int] = {}
+    # レート制限などで連続失敗する翻訳先は、その回の残りの記事では試さない
+    give_up_after = 3
+
     for i, art in targets:
         orig = art["title"]
-        try:
-            ja_title = translator.translate(orig)
-        except Exception as e:
-            print(f"[WARN] 翻訳失敗（スキップ）: {orig[:50]}... → {e}")
-            continue
-        if ja_title and ja_title != orig:
-            result[i] = {**art, "title": ja_title, "title_en": orig}
-            ok += 1
+        for name, translate in TRANSLATORS:
+            if misses.get(name, 0) >= give_up_after:
+                continue
+            try:
+                ja_title = translate(orig)
+            except Exception as e:
+                print(f"[WARN] {name} 翻訳エラー: {type(e).__name__}: {e}")
+                ja_title = None
 
-    print(f"[INFO] 翻訳完了: {ok}/{len(targets)} 件")
+            if ja_title:
+                result[i] = {**art, "title": ja_title, "title_en": orig}
+                used[name] = used.get(name, 0) + 1
+                misses[name] = 0
+                ok += 1
+                break
+
+            misses[name] = misses.get(name, 0) + 1
+            if misses[name] == give_up_after:
+                print(f"[WARN] {name} は応答しないため今回は以降スキップします")
+        else:
+            print(f"[WARN] 翻訳失敗（次回再挑戦）: {orig[:60]}")
+        time.sleep(0.5)
+
+    detail = "、".join(f"{k} {v}件" for k, v in used.items()) or "なし"
+    print(f"[INFO] 翻訳完了: {ok}/{len(targets)} 件（内訳: {detail}）")
     return result
 
 

@@ -1,11 +1,713 @@
 {
-  "last_updated": "2026-08-26T07:35:16.232972+09:00",
-  "last_run_new_count": 45,
+  "last_updated": "2026-08-26T12:43:13.900381+09:00",
+  "last_run_new_count": 14,
   "total_articles": 600,
   "articles": [
     {
+      "id": "6ab5f420cafbedd38fe365013e2dc41d",
+      "title": "Apple、9月上旬に2,000 $以上の折りたたみ式「iPhone Ultra」を発売：レポート- Fortune",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRkdwZjBaOENsOUIxX09QNWNfdUZ2OGlicnJiQ09HQU9aN0xNM19nczBFMDN6NmpUdHBqSkM2LUFKT0R3b1U5czlpdVl1N3hOMVBSRmlhRU16dDlhY2J2TDZ5UFlpRXdOelhBb0pXWlMyLURIcmgzaUtYV3h4M1E0Q0dqQVNnUUVs?oc=5",
+      "source": "Fortune",
+      "published": "2026-08-24T19:05:00+09:00",
+      "summary": "",
+      "category": "apple",
+      "category_label": "🍎 Apple",
+      "keyword": "Apple iPhone",
+      "first_seen": "2026-08-26T12:40:49.669537+09:00",
+      "lang": "en",
+      "title_en": "Apple to launch $2,000-plus foldable ‘iPhone Ultra’ in early September: report - Fortune"
+    },
+    {
+      "id": "21c741684b40a80cfb3eed9e23533288",
+      "title": "好き＆飲んでみたい「秋田県の地酒」ランキング！ 2位「新政（あらまさ）」を抑えた1位は？ 【2025年調査】 - All About ニュース",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9VT004Wng1NGVFeTJMRnUzNkpZMEFXck9iRnJIV0FPcF9XZnZONGkxMGVURDNLYWQtVTBGYkdXNmJ2M0MxbXA4OXN4cWNHakFHdzNsd3hoOXJkdw?oc=5",
+      "source": "All About ニュース",
+      "published": "2025-12-06T17:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新政 北海道",
+      "first_seen": "2026-08-26T12:40:49.669537+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "fbcf1cffeee040f6510aa152034ee31b",
+      "title": "日本酒もDX NECグループの技術で伝統を継承へ「このサービスのおかげで受賞できた」: NEC Stories - NEC",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE95aF9GNHpUcmx5d0dRVHQ1bXR4UjhNeGRFMXdhcFp6VzVPZVU3ZVhzeDhybkRsZXhrakQwSGRnRGJMXzJkaTZKWS0tWmRpSXdaQ21jYlpsVDVXajdE?oc=5",
+      "source": "NEC",
+      "published": "2023-10-01T16:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新政 北海道",
+      "first_seen": "2026-08-26T12:40:49.669537+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "a18fa4034f26c4ce05bf76872c7378f0",
+      "title": "28日に「獺祭」と会食を愉しむ会 宇都宮東武ホテルグランデ - 下野新聞社",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9tUTJJR0hPZnQwUkN6aG1pWWFObUFQekc1X2hicC1wOEYxNm9xcUZrV0JjZ1oyUy1qdUQtMTZPc1k2S0tfd01hbmc4TjJlNEhBZl9zT0ZydGc5c1E?oc=5",
+      "source": "下野新聞社",
+      "published": "2026-02-08T17:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "獺祭 札幌",
+      "first_seen": "2026-08-26T12:40:49.669537+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "61a148b65e216f3c37e3a95b9dd7f597",
+      "title": "鍋島に生ドーナツ店「クリーム・ディー」 「乃が美はなれ佐賀店」内に出店 - 佐賀経済新聞",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFAzbTdOTmxVT3BMd1dka3ZxbF96NGVsS04tQXczWFVTSmNHaTFSb1NWSU5sSXZjbVZCUk1zTXdOcjNzem9sUXhRQnQzZmM4QnM?oc=5",
+      "source": "佐賀経済新聞",
+      "published": "2026-03-26T16:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "鍋島 北海道",
+      "first_seen": "2026-08-26T12:40:49.669537+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "18c40386df7bcb0f66709420a032d31d",
+      "title": "JR札幌駅に新・エキナカ商業施設、2027年度末開業 - リアルエコノミー",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9DM1k0cXBkQ1JlZWRZN0o1aVVycDdkSFdZazh5VmpLeUhraS1ybzZXV09QR1FZRk15UDlQVzNKcVpNcmROSjhneWNwYW8yRGRt?oc=5",
+      "source": "リアルエコノミー",
+      "published": "2026-05-23T16:00:00+09:00",
+      "summary": "",
+      "category": "sapporo",
+      "category_label": "🏗️ 札幌",
+      "keyword": "札幌 商業施設 オープン",
+      "first_seen": "2026-08-26T12:40:49.669537+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "1f77f2371abc3320f6001e30c3f0044c",
+      "title": "札幌に新ランドマーク「アーバンネット札幌リンクタワー」完成！潜入取材で見えた最新機能、アンヌ遥香さん「すごい良いセレクション」多彩な飲食店は9月1日以降順次オープン - TBS NEWS DIG",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBSSFdUODZma2xhaFh3NjJXb3VnT1hjZ2h0V1RWc2YxNkRRaGVCU1MtSDRBSlBNMnpMaVRxTHJ6Mm5sWXhhSTJLNXJEQV9sOUpxOGpnVEFyalF2VE9oWjVuRnE4SDh0TGM?oc=5",
+      "source": "TBS NEWS DIG",
+      "published": "2026-07-09T16:00:00+09:00",
+      "summary": "",
+      "category": "sapporo",
+      "category_label": "🏗️ 札幌",
+      "keyword": "札幌 商業施設 オープン",
+      "first_seen": "2026-08-26T12:40:49.669537+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "f50acd6d0cda6dc03f788d2da9b0fd8d",
+      "title": "［敗軍の将］北海道八雲町、資材高騰で隈氏監修の新庁舎が白紙に - 日経ビジネス電子版",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1qOTJaaFlUaVNhVFN0WWMyTUxNNE8yM3I4ZThLOFhLa0ZiZTNPQ2Mwbzh3SloxWU5MdXpZTW05YzNkVFFqU3Y2enA5dHN0bGNLdlFxTGhQbkhiZTJoUlhJLVZ3?oc=5",
+      "source": "日経ビジネス電子版",
+      "published": "2026-04-24T16:00:00+09:00",
+      "summary": "",
+      "category": "sapporo",
+      "category_label": "🏗️ 札幌",
+      "keyword": "北海道 建築計画",
+      "first_seen": "2026-08-26T12:40:49.669537+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "e8c87365ce066b24047eb4872bb7cab8",
+      "title": "新さっぽろ駅周辺地区における複合開発プロジェクトが日本都市計画学会 学会賞「計画設計賞」を受賞(ニュースレター) - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5zVGxqN0VUVVhiVUlLMTFFUHZmS1R6bVRXVEdXTmdNSlp6Vjlsak5OT1poYWlrdWxlR3RJYXdjYjVTaXpDdUhWeGVmdmV0QUluS1VCRmtjLTJ1V3A1YVV6djdRQWh3TVluLXc?oc=5",
+      "source": "PR TIMES",
+      "published": "2026-06-09T16:00:00+09:00",
+      "summary": "",
+      "category": "sapporo",
+      "category_label": "🏗️ 札幌",
+      "keyword": "札幌 都市計画",
+      "first_seen": "2026-08-26T12:40:49.669537+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "b0dca4b299657963bda833c3894a4124",
+      "title": "【北海道えりも町】百人浜オートキャンプ場で、「受付無人運営」を見据えた実証実験を開始 - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5WMnU4NDUwdzlTd2p4Skw3dEc3czVGVHV4aURzS2lxSWNGeG1UVkVqVjZiSXpzY0p1c21XTjllbThwU0lpVHI5dGcyS3hlY0YyaUZhU3pOZHZCeFlWcDlhZ21NLUxFbmg3MVE?oc=5",
+      "source": "PR TIMES",
+      "published": "2026-05-26T16:00:00+09:00",
+      "summary": "",
+      "category": "camp",
+      "category_label": "🏕️ キャンプ",
+      "keyword": "北海道 キャンプ場 予約 開始",
+      "first_seen": "2026-08-26T12:40:49.669537+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "ffa3e6511fde4515d8a932fd6763e71b",
+      "title": "中小の事業承継、成長投資・賃上げなら贈与・相続税免除 経産省要望へ - 日本経済新聞",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBCOEhZZzJvS1NoMjhORzdXcVc2SFdTMFNKa01VMk9UWmZWVms1RWw4UmFXSmc4M1NZdTVDUnZBd3pqTjQ3Uy1pNG1Rc2RiX3JJdTRvblBlOE1YTHROM21DMUIyWlJTS2NsZUxLYw?oc=5",
+      "source": "日本経済新聞",
+      "published": "2026-08-22T18:00:00+09:00",
+      "summary": "",
+      "category": "investment",
+      "category_label": "💹 投資",
+      "keyword": "税制改正 投資",
+      "first_seen": "2026-08-26T12:40:49.669537+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "61abbf28ce856485108f33d722196a65",
+      "title": "ネット銀行の普通預金 金利おすすめランキング｜【2026年8月】好金利で預けられる銀行はどこか徹底比較！！ - 株探",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBVLTFOVlhvbFFueE45UzFraERkVlhxX3ZaSDJUS21mV0hLMk51OFRGS2pHa2g2YW84ZG9Jdi1MVDhnQ0JQeE1aOWNPN25zQ2FCN3ltX0d1dTk0Sms?oc=5",
+      "source": "株探",
+      "published": "2026-08-20T16:00:00+09:00",
+      "summary": "",
+      "category": "housing",
+      "category_label": "🏠 住宅・補助金",
+      "keyword": "住宅ローン 金利 2026",
+      "first_seen": "2026-08-26T12:40:49.669537+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "83723b7fa5ec38626442eec83b76925d",
+      "title": "「SNSで“謎デザート”と話題」成城石井“1週間で5000個売れた”スイーツの正体。異例の“一発合格”から3年越しでバズったワケ - 女子SPA!",
+      "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE1pamVwQ1p5UDJUQ3JMQUZKcnhhRGJoRkFjT05NZmpCaE5OamdRaUZOT2R4OWZqd0RrQzZ5ZnNPU3RTbmVa?oc=5",
+      "source": "女子SPA!",
+      "published": "2026-08-14T16:00:00+09:00",
+      "summary": "",
+      "category": "sns_trends",
+      "category_label": "🔥 SNS炎上・バズ",
+      "keyword": "SNS バズ 話題",
+      "first_seen": "2026-08-26T12:40:49.669537+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "d84b9e50f53b2ff836afe35c71400eed",
+      "title": "ゴルフ広告が女性を突き倒す場面で炎上、キャロウェイCEOが承認を謝罪 - Межа. Новини України.",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBQRlNXSC1PUmN6UXNqUEpjbjhWY29BYlJyLWprSHlHTmlhMnNSTHdQQURYQjV3LXFmeHZfbktMcmxFTUxDMjF5d00wZFdidVR1SkltRHZOeWVYYUQ1OHIycXZzczVNSTBWNHRWS2hrVQ?oc=5",
+      "source": "Межа. Новини України.",
+      "published": "2026-08-26T05:31:44+09:00",
+      "summary": "",
+      "category": "sns_trends",
+      "category_label": "🔥 SNS炎上・バズ",
+      "keyword": "炎上 謝罪",
+      "first_seen": "2026-08-26T12:40:49.669537+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "eacaec56755a7bed331c786be54a82ee",
+      "title": "すべてのAppleウォレットユーザーが知っておくべき10のハック- Lifehacker",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE44Z1RTLV9rTmVMZ2dMYWhOUkdWVHpNSVVUTjQxd1FKcFY2dTFjeGZ1VW1tRnVTZnU2ZEJmMks1LWs0eVd2Y3pnUU9kUXRxeFpRZm5JRDV1MEpXdFJPWm1BMHg1YnFlbUN1LUxNOWtzUmNvU2p5cW9uTVpPbzY?oc=5",
+      "source": "Lifehacker",
+      "published": "2026-08-26T07:44:22+09:00",
+      "summary": "",
+      "category": "apple",
+      "category_label": "🍎 Apple",
+      "keyword": "Apple iPhone",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "en",
+      "title_en": "10 Hacks Every Apple Wallet User Should Know - Lifehacker"
+    },
+    {
+      "id": "a61d336dae9a407ecd47d63ab401a010",
+      "title": "これらの29台のiPhoneはiOS 27とパブリックベータをサポートしています。あなたのものはリストにありますか？ - Mashable",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNYkdyQ2lLRU56MEtZZHVtcGZoSlRUUkg1VS03MFpQMlB1TXkweU8wSEV6SE5uYjBJV3hHSHpmYTltTDJPNnlRc28xUTkyQVpJNEdxdjRuRFcxcndDSzZ4aWtCSThwUkotempaNXpuZWhHdkRIM2ZTWDBjNzNsdE9JYmxsME90Qk1MUFNZT29SZUV4QzQ?oc=5",
+      "source": "Mashable",
+      "published": "2026-07-13T16:00:00+09:00",
+      "summary": "",
+      "category": "apple",
+      "category_label": "🍎 Apple",
+      "keyword": "iOS update",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "en",
+      "title_en": "These 29 iPhones support iOS 27 and the public beta: Is yours on the list? - Mashable"
+    },
+    {
+      "id": "bbcda0cd99429e3752a4d44a59ff448f",
+      "title": "iOS 26.6とiPhoneセキュリティアップデートのスコアが利用可能になりました- CNET",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPY1pZejgwVENaV2FSNXJseG44MjF1VlIzWHJLTDFvdkc5d0dFZ0RjUUtpRGFieEJIMDVZclNTNV9oczlLTGZnRlNJWmdja05Fem5HYUVQSG1kcTBNS3VGS1E1Y0x4U043TmNxd0Exd0xaRlBjRVlQR2FCMGdWeUtSSE9MTWhDS0syMXFJUHEwZDhzVWhheElUV1lwa25HaFRiTkRhWU4wZEZ2MXo2QUdN?oc=5",
+      "source": "CNET",
+      "published": "2026-07-27T16:00:00+09:00",
+      "summary": "",
+      "category": "apple",
+      "category_label": "🍎 Apple",
+      "keyword": "iOS update",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "en",
+      "title_en": "iOS 26.6 with Scores of iPhone Security Updates Now Available - CNET"
+    },
+    {
+      "id": "4b7edd828a00c92bd7f4af4b91850d89",
+      "title": "AppleのEarPodsはAirPodsよりも優れたオーディオ品質を持っていますか？ - bgr.com",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbkhnaEdoRE1jMHVuY1hvNEkya3NyTjRlenZ4UVRqb2ZnZHBtLUVBV3FBajNkVDluM1U5eDBWRk1RVC1jLXVnaHdSZXlpQ1Y5UFhoWHlDYllDdExxRjJPOTNQVUNzajMxbUVnSUZ1VHRvZGhoeGFEakd4X3Q5bTdJVm5nTG9jSFlNLVA4dw?oc=5",
+      "source": "bgr.com",
+      "published": "2026-08-26T08:17:00+09:00",
+      "summary": "",
+      "category": "apple",
+      "category_label": "🍎 Apple",
+      "keyword": "AirPods",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "en",
+      "title_en": "Do Apple's EarPods Have Better Audio Quality Than AirPods? - bgr.com"
+    },
+    {
+      "id": "f3a9349a18cd221c844bdd9c17d706d5",
+      "title": "Apple、Siri、Vision Proの没入型ビデオおよびゲームチームの雇用を削減- Bloomberg.com",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQOEY0T0xmU2N1UmtxZHFIaXRVb2Q1bmhiaG1KR1RyYlBRTjZ3TnN3ZWlLZjFvTDNrMnJIYS1qcnU4ak0zMk5lUDV3T1NaRUVyZ2tRUktYODVTSnBUOG1vZEV5MkRKeFowdjhjTlp0Vm0wbkhKUzlOVEVlUjFZTkc4ZG84Q2I4RVliZEx6UUtWWnQ0LTdYYWlpZ3Y2RVRIbnVuVmRfNzFLM2JsOEhmYzJqU0RVeDBKdmloakE?oc=5",
+      "source": "Bloomberg.com",
+      "published": "2026-08-22T03:45:32+09:00",
+      "summary": "",
+      "category": "apple",
+      "category_label": "🍎 Apple",
+      "keyword": "Apple Vision Pro",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "en",
+      "title_en": "Apple Cuts Jobs in Siri, Vision Pro Immersive Video and Gaming Teams - Bloomberg.com"
+    },
+    {
+      "id": "93e2c43bdc42aa905e96499cd9479c09",
+      "title": "【銘酒泥棒】飲食店からブランド物の日本酒など盗んだ疑い＿元従業員で福岡県の33歳男を逮捕＿転売換金目的とみて余罪捜査中〈北海道札幌市〉 - Yahoo!ニュース",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBNMjZRV0tnUmVoa0JvYVExY2JKRWwzQWZ6SHlVYjJVOGZVdmR0Ri1TeERoOVpka05RYUFCTmpJOGhnVmNNNUVsRi1jaHFmbGdOYnB0Y3d4RVVLM0dJZWV2a1ZJNnM2bDk2VjU0TVBjTG9FX28zWkJYRDhuTjc4V28?oc=5",
+      "source": "Yahoo!ニュース",
+      "published": "2026-08-05T16:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "日本酒 札幌",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "51dfc04d6ef7b4d9f826b5c2219fb650",
+      "title": "【個室完備】全国47都道府県の日本酒 旬の海鮮 サケビヨリ 札幌大通店(居酒屋)の写真 - ホットペッパーグルメ",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE94aU03Qm0tY2huWkIzdVNBNmFoVHIzc3FGdnNGTHE2TWZLQ09zaXBZSmtxNXd6Q1JUbFlWYVZlWTlfeDFZUDZoal9lYkxXeW5VTG5PQzExZzU?oc=5",
+      "source": "ホットペッパーグルメ",
+      "published": "2026-02-26T22:17:27+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "日本酒 札幌",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "630aa6d00365541182c751f735428aa3",
+      "title": "最高の一杯を見つけよう！札幌で日本酒アワード_道産酒米で作った42銘柄が集結_一般審査員がお気に入りの味に投票_「純米酒部門」と「吟醸酒部門」、「ラベルデザイン部門」でグランプリ争う〈札幌市〉 - UHB 北海道文化放送",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9IY3ZFXzlYSFNlU0FBUjRSNkxneGsxSV92QUZpYktGb0Q4eDhvSFJlRWozcGw2SC1qQ05hME5vNDNURU9GRkU4ZklVS0pBYmNBcXlURnd2OA?oc=5",
+      "source": "UHB 北海道文化放送",
+      "published": "2026-05-30T16:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "日本酒 札幌",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "ae56c7bc54a8adf7958be93bc6347ad1",
+      "title": "「男山」がレモンサワーを売り出した本当のねらい｜Infoseekニュース - Infoseek",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE10N1VMUHhYZlZsT0Nfb2c0RDNBeTlmTk45SXJLdFJma1cyNUFiTDc2SlBBWTU3Z0NUYkhmM1pMWDZNZUlSRFExMEZXNzBrYnExMmZ0QWhhcG4taFE?oc=5",
+      "source": "Infoseek",
+      "published": "2025-12-09T17:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "日本酒 北海道 新商品",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "91f36bbb8ced2f4f6185d68eebb091b2",
+      "title": "（評・美術）「岡崎乾二郎 而今而後」展 奔放な美の快楽、裏に潜む摂理 - 朝日新聞",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5wRVVPeThVdWo5NkVMX05PUS1oOEx2blk1SVVTZW9zVUlsYWYxc3VtZm5qTjRPeS1TbW16ZXNMRVQ4SUJMN1pGMVBfY213bm55YjFDWmNONkswd3JR?oc=5",
+      "source": "朝日新聞",
+      "published": "2025-06-17T16:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "而今 北海道",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "7f73e79f2ce31bd6fad07cebc69c0680",
+      "title": "札幌駅 エキナカ商業施設 2028年春リニューアル！テナントは？最新情報も！ - 出店ウォッチ",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB4Vkp0WTVpMHh3bzNEN2RkT0YwQmtlT1hwd0hzVHZJR1JwRTBhV3MxcXNxcXJnSm9rVVU3dGdZeE5lWENrWG9keGdhTUV1NGhrV0E?oc=5",
+      "source": "出店ウォッチ",
+      "published": "2026-06-06T16:00:00+09:00",
+      "summary": "",
+      "category": "sapporo",
+      "category_label": "🏗️ 札幌",
+      "keyword": "札幌 商業施設 オープン",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "91cebf88ce0fba792202978ea931017a",
+      "title": "《北海道八雲町の新庁舎》隈研吾設計の建設計画を白紙撤回に「英断だと思う」設計費1.9億円で世間から“批判と賛同” - 週刊女性PRIME",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE41TmdfclA2dm9SZHBJdFgyV0xNQlFuY0lCMHVKbnhkVmxFbmlDeUluTl9aUDJuMHFYMThla0xNLU1tYjc1RzJ5OHd2SEJjak1kOG8zdzA3bjBYSC1D?oc=5",
+      "source": "週刊女性PRIME",
+      "published": "2026-03-03T17:00:00+09:00",
+      "summary": "",
+      "category": "sapporo",
+      "category_label": "🏗️ 札幌",
+      "keyword": "北海道 建築計画",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "30217eb1bc2780838f7e354f839a54f8",
+      "title": "世界的建築家・隈研吾氏デザイン監修の新庁舎が「白紙」に…資材高騰で建築費が約9億円も増加_新庁舎建設は振り出しへ_現在の庁舎は築64年で老朽化が進み建て替えが急務_どうなる？北海道八雲町 - UHB 北海道文化放送",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1Rd0FMb3VPekRJRmQ5Ukl3aWdreFU0bmpZVkVoS1RhOFBhVjZqUkNZb1ZCeGxrMzUzTkRDUENGTmVobHJZQWZpQjQ2UEY5OUduZDhtVkgwWQ?oc=5",
+      "source": "UHB 北海道文化放送",
+      "published": "2026-01-22T17:00:00+09:00",
+      "summary": "",
+      "category": "sapporo",
+      "category_label": "🏗️ 札幌",
+      "keyword": "北海道 建築計画",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "90d66a612465b20cc65d5b5c2a7e301a",
+      "title": "【北海道・札幌】北海道キャンピングカー＆アウトドアショー2026開催! 軽自動車で4人就寝の「オフタイムBASE」も登場 - JAF Mate Online",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9yVkdUbTk0S3ctUUNJajc3aU5OOXdzNXlIaWJXbGJNZGNtN3VYMjBqbm5aVEVSd1FXY0h1d1p0Ml9VcWxuU2xqYVB0VS1XeEdtRGtfQ3N4MjRvR2VNTVdHNWJObThzejVoLWRN?oc=5",
+      "source": "JAF Mate Online",
+      "published": "2026-08-26T09:30:23+09:00",
+      "summary": "",
+      "category": "camp",
+      "category_label": "🏕️ キャンプ",
+      "keyword": "北海道 アウトドア イベント",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "def7635bb39b5202f876c38ebffb5cde",
+      "title": "焦点：日銀「3カ月ぶり利上げ」判断へ、マイナス金利解除後初 物価高進を警戒 - ロイター",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8yX2tPMnlFS2x0TXVjb2ZSWWFjTkc3bDRtcHNacUs5aVpJQTAwRjNNd214RVJNa0hKOEdRb3daS2pPUXRyckNTYzBjcE1KWWstdGdoVVBXd0ZRUFMxOUNZYjRabjdBMmtrZFp5MWRlcFhSZm5zX2VPRFpXemd5dw?oc=5",
+      "source": "ロイター",
+      "published": "2026-08-13T16:00:00+09:00",
+      "summary": "",
+      "category": "investment",
+      "category_label": "💹 投資",
+      "keyword": "金利 政策",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "d53dc3e51c306110ab0fd3e66b2d6fb6",
+      "title": "ACTU、主要インフレ期待調査をRBAから撤回 金利政策をめぐる対立が激化 - BigGo ファイナンス",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5MemRHbVExQXM3T0s3Y0dxZGlvM3NrV1h3eENydlJGejlVakRrVE8xTlVMMGFGY0pIY1ctQ09EQ3B4ZFpzbGNYQktqUUVqd1VUb2pQUVBfOE0tLWczYTJMR1pFN3drdUR6VEdnNTl0TUdnTUYz?oc=5",
+      "source": "BigGo ファイナンス",
+      "published": "2026-08-25T03:31:00+09:00",
+      "summary": "",
+      "category": "investment",
+      "category_label": "💹 投資",
+      "keyword": "金利 政策",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "3127f2e52c1fc3d683654eea4d9cd682",
+      "title": "ボストン連銀総裁、金融引き締めが適切－インフレ鈍化の証拠なければ - TBS NEWS DIG",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9kbi1OYzJ5SzRnektIWHhmOTZEcS1UZXl6RWt1eUhuOGtRTHFrU0NBVDhIWlVZVHRBczgxVDE2ME0tcWhEZ3pkZmlyOW5IeXRYR1dYQ2Z5bUotMHAtTnl0QkZMR2tHOVY1aUE4VkZLWm1Cc2pr?oc=5",
+      "source": "TBS NEWS DIG",
+      "published": "2026-08-26T08:30:00+09:00",
+      "summary": "",
+      "category": "investment",
+      "category_label": "💹 投資",
+      "keyword": "金利 政策",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "0c076efddc0f85f8d80a59b9f2294f31",
+      "title": "定期預金の金利30年ぶり水準も 広島などの中国地方の地場銀、顧客獲得へ金利上げ続々 - 47NEWS",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5QcTNQYmtaQ1lETDVoc2Q2QmtOMmU0Mk5CN2IzaEdZc0RFYWg4bTRwYkRqcmJpRDZjeGtzR1pNLUJYUmlPTGpnQTZkUQ?oc=5",
+      "source": "47NEWS",
+      "published": "2026-08-26T10:18:57+09:00",
+      "summary": "",
+      "category": "investment",
+      "category_label": "💹 投資",
+      "keyword": "金利 政策",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "820f148c60053c1e9701819e0904c412",
+      "title": "来年度税制改正で個人向け国債への税優遇を検討か #エキスパートトピ（久保田博幸） - エキスパート - Yahoo!ニュース",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQYWt3RlNnV1F5QVhvekhNeGlDS1FsUGRDNFlrSV9lYVBWcFhHcDYtbTR0eGlDRlhZc25PSDEtYWM4TzBSYWlrbDRTRHI1eE5sOFl6eTV0VHZZOEJQemN5UzhQUThqX1VSWXN1TnVrRE9CaTdLM2tKRlNuTVFwc0gteEFaQTdNdUJO?oc=5",
+      "source": "Yahoo!ニュース",
+      "published": "2026-08-26T10:36:52+09:00",
+      "summary": "",
+      "category": "investment",
+      "category_label": "💹 投資",
+      "keyword": "税制改正 投資",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "c4a95d9fd05406d437c629e1e3359c20",
+      "title": "Mark My Words ： AI音楽はアーティストエコノミーの終わりです。- Hypebot",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNckM1RzZKbWh1S1lzVE5tUEZPZHFKRmNnOXVRMm04ZGFlT25PY2pIV2ZVOHdOb0VZVE5IYmo0dm5kNEVGcEtxYmZfZTlOOTh4eEhxQUdMbS0xcm5sNmFKX3AxQ2Y3WXVnQzRIWDBCaVgwb3ZsZ1ctZEpVdFhTVlhveFJXdmE4bVU?oc=5",
+      "source": "Hypebot",
+      "published": "2026-08-26T01:47:15+09:00",
+      "summary": "",
+      "category": "music_ai",
+      "category_label": "🎵 音楽AI",
+      "keyword": "Suno AI music",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "en",
+      "title_en": "Mark My Words: AI Music Is the End of the Artist Economy. - Hypebot"
+    },
+    {
+      "id": "59179957a07e2f3184639fd139bb5c24",
+      "title": "ベストAIミュージックジェネレーター： Suno Wins、$ 0 - $ 30 [2026] - tech-insider.org",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1NTEhxamR4RzhVU2FvOHljakdBNGJwYXJzdnI2X0FoQlpWeWJiWmh6dmFieV9WaDdpRVU2Y3ZNUnhHOE9MLV94VU9VbzBiYTh0MjJ1UHhRazBiUF9MRk5xZ2I5b0c?oc=5",
+      "source": "tech-insider.org",
+      "published": "2026-07-04T16:00:00+09:00",
+      "summary": "",
+      "category": "music_ai",
+      "category_label": "🎵 音楽AI",
+      "keyword": "Udio music generation",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "en",
+      "title_en": "Best AI Music Generator: Suno Wins, $0-$30 [2026] - tech-insider.org"
+    },
+    {
+      "id": "8e6238f344cad7d2bf2b9387cdab642d",
+      "title": "オーストラリア、公式音楽チャートからジェネレーティブA.I.を禁止-ニューヨーク・タイムズ",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQS2lIMXdTUWVicGpiek1qLUdheVN1d3FNNmwwVDdFdjluY0xpT1F3OG13RmZwTWJPZ25tSDBjUWJ2eVN0VmR0RUVTZml6WjdKWWNySDh4Y1p4blh1X3RyNG01WWdmWUZ1T0pqaFQzQXp1aVFaRnRtY0NuaExXb2ROTUl5Zy1MNXBoZlI2bA?oc=5",
+      "source": "The New York Times",
+      "published": "2026-08-25T17:04:49+09:00",
+      "summary": "",
+      "category": "music_ai",
+      "category_label": "🎵 音楽AI",
+      "keyword": "AI music copyright",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "en",
+      "title_en": "Australia Bans Generative A.I. From Official Music Charts - The New York Times"
+    },
+    {
+      "id": "00e246f91d4f3706c31e281516977ecd",
+      "title": "韓国音楽著作権協会、AI音楽登録基準改定を撤回…「国会・政府と協議」- 아시아경제",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBQUHFEcXBsYklIV1NLV2l2WFk2R25yQ2tPZTdhcmJ0MUYxaGJGel9aUExKT1pFbkUydEhuTW0zUm9rOHZGR1dSQU85WmlsT21Wc3JqWVkxV3RkTEhVMzFReXluMHg?oc=5",
+      "source": "아시아경제",
+      "published": "2026-08-26T08:48:54+09:00",
+      "summary": "",
+      "category": "music_ai",
+      "category_label": "🎵 音楽AI",
+      "keyword": "AI music copyright",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "en",
+      "title_en": "Korean Music Copyright Association Withdraws AI Music Registration Standards Revision... \"To Discuss with National Assembly and Government\" - 아시아경제"
+    },
+    {
+      "id": "40907d22557d63d5e8c4cf2214735272",
+      "title": "AIミュージックジェネレータが著作権侵害で有罪判決- Inbox.eu",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNX01KOG12a1hMVF9tcldOYU40YkZpMnhTVVBCWEd2OUNpSEpTOEVLVWxOU1Q1ZHRROGN1cTRERHo3clpwQjRGUm44UmxqMjBMeDRoWFpjUUhfSmtPbVNBLWp4eHV0T29LYVAyVWJicUdhUW8xY0F4cWxqckZRZnJqeGducG01S0FlcW9FZUtjeXN5WXBtbVR0QVlhT2dxd3dL?oc=5",
+      "source": "Inbox.eu",
+      "published": "2026-08-26T06:33:32+09:00",
+      "summary": "",
+      "category": "music_ai",
+      "category_label": "🎵 音楽AI",
+      "keyword": "AI music copyright",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "en",
+      "title_en": "AI Music Generator Found Guilty of Copyright Infringement - Inbox.eu"
+    },
+    {
+      "id": "e126ef388d3ae898e82e54cc2c43a0b7",
+      "title": "オーストラリアは、マドンナのカバーがバイラルになった後、チャートからAI製の曲を完全に禁止しています- CBC",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNSHhjNTl5V180SlNoZ0taNlB6cmRkWjhVVHVjbFVqcmd0LUVUT1ZjYmNHTVlDT3hsYmZuYnlwTFoxSVRkRjdwUDhzY3F6U0w4VE1vSzRGRzFRYlBuVFlreUpjSnh2S09LcTYyMy1PTHhaWl93eUl5ZGE0b3pMYkp5WEd3?oc=5",
+      "source": "CBC",
+      "published": "2026-08-26T03:12:22+09:00",
+      "summary": "",
+      "category": "music_ai",
+      "category_label": "🎵 音楽AI",
+      "keyword": "AI music copyright",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "en",
+      "title_en": "Australia bans fully AI-made songs from charts after Madonna cover goes viral - CBC"
+    },
+    {
+      "id": "c06cf6a977f1f7c368afd0291f81efc7",
+      "title": "5つの新機能：ジェミニドロップ（ 2026年3月） - jetstream.blog",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5vcy1pR2N3LUtpeWRwa2ZhQmJMMFFLTzZqdkI1X00tTVl1TlQxU18waEJnWVJickFseEtsT1o5WXQwZ2hiRUFTNDlxZmkzdWp5M3czYTk1eDJoYU5zVGc?oc=5",
+      "source": "jetstream.blog",
+      "published": "2026-03-28T16:00:00+09:00",
+      "summary": "",
+      "category": "music_ai",
+      "category_label": "🎵 音楽AI",
+      "keyword": "音楽生成AI",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "en",
+      "title_en": "5 New Features: Gemini Drop (March 2026) - jetstream.blog"
+    },
+    {
+      "id": "1a3ac5014253c503f17e05c05e1c932f",
+      "title": "2026エコ替えキャンペーンの開始について - hepco.co.jp",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5PLTlyWkNPVjBnc1lOVm9HcW53YTlaUlNObDVVNVJPMkUyMlFWeWlkR3dRcFV6d01Ga1BZOVRCMHVVaTJ4SnBzY0dReUMwM2RZYU9lNWFvbGx6Q2MxQjF4cjBtWFhaQQ?oc=5",
+      "source": "hepco.co.jp",
+      "published": "2026-04-01T16:00:00+09:00",
+      "summary": "",
+      "category": "housing",
+      "category_label": "🏠 住宅・補助金",
+      "keyword": "北海道 住宅補助金",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "95130fa13446192eaf3635bfd4327161",
+      "title": "せんだい健幸省エネ住宅補助金（新築向け） - city.sendai.jp",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBxX2FHNlNUYWp1SUpGaDFFSkd6OG45ZXU5VjNrMWMxQXhBb0xkWEJSVXk3ZUJzSkhoUnJPdWJsaUxMZUw3bGUtLVV0elZWTWNsalhhZWtzdm4tdlNuaWNXWHdSZEIybHk1VmxjZnFVcUw?oc=5",
+      "source": "city.sendai.jp",
+      "published": "2026-08-06T16:00:00+09:00",
+      "summary": "",
+      "category": "housing",
+      "category_label": "🏠 住宅・補助金",
+      "keyword": "省エネ住宅 補助金",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "8c7775e873260d66523d1d4a0b65d3f7",
+      "title": "【発表】ネット炎上レポート 2026年上期版 - 株式会社エルテス",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBDLTBHLUJTMnctc1FCc0FadnVodldJUEE3QVFLbjc2TkNISlBuUHlDTUFCOE1hTVJVV1BRTER0QzFfU0p2NFA0Ng?oc=5",
+      "source": "株式会社エルテス",
+      "published": "2026-08-04T13:31:43+09:00",
+      "summary": "",
+      "category": "sns_trends",
+      "category_label": "🔥 SNS炎上・バズ",
+      "keyword": "SNS 炎上",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "7bce49873e73a9b90ca6c4d282a0e8f5",
+      "title": "吉野家ドラクエコラボで店員フィギュア仕分け動画が炎上 - x.com",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5icUNXdlU5SDBrN1REVVI4N2luaWh2R1dQVlRmYV9kamI1MmF1V21GLVZJTUJvWF95RTdFa1hDb1A2cGp2VXRISUluUGJDaUNBS2VoaUJ6RQ?oc=5",
+      "source": "x.com",
+      "published": "2026-07-20T16:00:00+09:00",
+      "summary": "",
+      "category": "sns_trends",
+      "category_label": "🔥 SNS炎上・バズ",
+      "keyword": "Twitter 炎上",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "09b8e5918e5b3974fbe3c4ded6a18b24",
+      "title": "「【最新調査】『Xで見た』の裏側にある“見えない震源” 〜炎上の構造と、BtoB取引に悪影響を及ぼす『サイレント目撃者』の実態〜」セミナー開催のお知らせ - シエンプレ株式会社",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5FT05tYUl3ZzBNTVI1NVpQdkdyZXRtSFQxT0d5c2JGeTNZZ25UTVRtQUxDS0FWYm1kTG9VeV9uTURRblBpcjFvOGFJWndBbEdCMFU2ejFOMTZYNGtMcEhONzB6RlNTY1NsSWpB?oc=5",
+      "source": "シエンプレ株式会社",
+      "published": "2026-08-26T08:38:26+09:00",
+      "summary": "",
+      "category": "sns_trends",
+      "category_label": "🔥 SNS炎上・バズ",
+      "keyword": "X 炎上",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "03fe5e26cb9ffb7cce638b3b302c1e96",
+      "title": "面白い広告まとめ | ネットでバズった話題の広告 - アドクロ",
+      "url": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE5rdk9ON2Vob3pubEU0eW9wQmlFemlCV0Y2SnRTVy15UmE4eVZMTVR4dWVfWlhrUFpOa3J5T1prbFJnWkE?oc=5",
+      "source": "アドクロ",
+      "published": "2026-07-28T16:00:00+09:00",
+      "summary": "",
+      "category": "sns_trends",
+      "category_label": "🔥 SNS炎上・バズ",
+      "keyword": "SNS バズ 話題",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "4f92ca5015cfe9ed15237872fba54cab",
+      "title": "SNSでバズるテレビ番組の特徴とは？2025年度 X（旧ツイッター）ポスト数ランキングから分析 - 株式会社ビデオリサーチ",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5GdmgyWXhVRDJNNmFOYmxVYXYwY29CU0FiTzdQamJOODRnRk5kQkxGOUV2S0s3T21KMVZvMlpqSXVRRGRVcExkTDYtTFYzWGlQX01EYW8yZy1ZTEFzd210TVhEQ1dxT2VY?oc=5",
+      "source": "株式会社ビデオリサーチ",
+      "published": "2026-06-26T16:00:00+09:00",
+      "summary": "",
+      "category": "sns_trends",
+      "category_label": "🔥 SNS炎上・バズ",
+      "keyword": "SNS バズ 話題",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "112b62122d0651990e4affb92521a649",
+      "title": "【FIFAワールドカップ2026】試合の裏で話題沸騰！バズった選手・監督・サポーター7選――SNSで世界を席巻した“もう一つの勝者”たち - Yahoo!ニュース",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE94Vm02RFpxYkF6RkFBX1IzN05yRWtqNzJ2VVFxSHFhakRCNkhmTFZXVlpHV0dRbzRvYVJlWktRajNURk53QWxBbEp3dkR1SXZ0b1k5WG04MUNfbHhQb05rcjcxZWg0SzV1cTJFVk1VMGtPYkxzOV9vVVBrTUtPSEk?oc=5",
+      "source": "Yahoo!ニュース",
+      "published": "2026-06-30T16:00:00+09:00",
+      "summary": "",
+      "category": "sns_trends",
+      "category_label": "🔥 SNS炎上・バズ",
+      "keyword": "SNS バズ 話題",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "e2c4adbe357e1483b0da00473eeac2b9",
+      "title": "「整形級メイク×エンタメ」がおもしろいと話題！SNSで大バズ中の【いよ】を徹底解剖 - vivi.tv",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBENUFLTlFkVVk4RTZOR2xteGVrdW1UWjdGTmJ5UFlpRU1oN1FKTzdYWUJ6S054MjhLYlE5UVZVdU1rNlZMVkE?oc=5",
+      "source": "vivi.tv",
+      "published": "2026-03-12T16:00:00+09:00",
+      "summary": "",
+      "category": "sns_trends",
+      "category_label": "🔥 SNS炎上・バズ",
+      "keyword": "SNS バズ 話題",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "1c5667158a6cedeed55d325cb13f4d56",
+      "title": "【再重版】SNSで話題の“バズ図表”が分かりやすいと大好評！「けんたろ式“見るだけ”ことば雑学辞典」が３刷出来 - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9EYkRZZkEtV18xTEVzazZNaGl5Smk4ZUlkdEdBcmJMazhuTFI1MGFxTHhEZGU0cmVwUFA3ZTl4VFpyX0xZRWVIYW9YSi1ESUJjVlJLMlhuZk9lVEYtRmJKQW8zSjRlXzFSYlE?oc=5",
+      "source": "PR TIMES",
+      "published": "2026-03-13T16:00:00+09:00",
+      "summary": "",
+      "category": "sns_trends",
+      "category_label": "🔥 SNS炎上・バズ",
+      "keyword": "SNS バズ 話題",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "2dc8e99618b6e6a8c359dee6bf9f181c",
+      "title": "前田拳太郎が映画初主演！ネットで話題の都市伝説ホラー 元乃木坂46・久保史緒里と共演 - au Webポータル",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFA4czBnYWxDS0RvNG9qNjlUS1RvUTFWY29BNEZkR1ZPVlB0UGw0aTVxcU5IdnVyV1VyaXNINkwtaHpDV0psaDlDU1lZSEN1UFM2UVJmb2tJQ3hWbi1pclE4VjNwaWhsZk5WUlJ2LWFNdFV5YlROcERSTA?oc=5",
+      "source": "au Webポータル",
+      "published": "2026-08-21T08:35:11+09:00",
+      "summary": "",
+      "category": "sns_trends",
+      "category_label": "🔥 SNS炎上・バズ",
+      "keyword": "ネットで話題",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "75ec0b507893b99ee4383a38c250f34c",
+      "title": "ダイアン津田篤宏主演『タイムトラベルダディ』（C）テレビ朝日 - 産経ニュース",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQajBZeXBWa2ZZZ3BaSHdZdDJFczRMRmgzdFA2VTFsNjBGQTRRcWlneTYzdGJVSTJEZWxQZ0JZYnZEcURnVFdodndNbTc4SEVkdXNVQWMxdENlcS1GZnFHWkVRUzNXcVJjTVU2aDBoQUx2SnZaT1lScW1TNmExUUNMbGRnTFVlMWJsMGpBY2dsb0tEYkxUcFpJY1hVQ3lWNUhfenc?oc=5",
+      "source": "産経ニュース",
+      "published": "2026-08-03T16:00:00+09:00",
+      "summary": "",
+      "category": "sns_trends",
+      "category_label": "🔥 SNS炎上・バズ",
+      "keyword": "ネットで話題",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "296903d21fb7fc13d28931718fcae1e2",
+      "title": "【Z世代のSNSトレンド調査】話題のVlogアプリ「Setlog（セットログ）」の利用実態を学生479名に調査！認知率91.4%、利用者の9割が「3ヶ月以内」に利用開始と急拡大【2026年8月発表】 - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5aQ2M2N21XeDZxdXZRZHJUUktzdHUwSUhqZlkyb1dQOS1raGFJVC14dVVoWHVEZmpSajJ1UHpwM3dJSjhtM19LTFhNNVZnMlM1dXpKcW5TNkdHVkJmczFCYm93ZDU3Umhuemc?oc=5",
+      "source": "PR TIMES",
+      "published": "2026-08-03T16:00:00+09:00",
+      "summary": "",
+      "category": "sns_trends",
+      "category_label": "🔥 SNS炎上・バズ",
+      "keyword": "SNS トレンド 話題",
+      "first_seen": "2026-08-26T12:37:47.750899+09:00",
+      "lang": "ja"
+    },
+    {
       "id": "73e957cbbf272903b019da5ac9367462",
-      "title": "Apple Maps launches ads on iPhone, here’s what’s new - 9to5Mac",
+      "title": "Apple MapsがiPhoneに広告を掲載、新機能をご紹介- 9 to 5 Mac",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOd1pROVBrN0hMR19iMDNfSGVoZk5LemEyYmRMdEJHaGl2QnNnYUd4bE5TR3V4bmV5Z0NfQUFSRWtRcHRDR3BpRmZoNlJtR3A2eUNMMUVGMzcxSFl2c01Pek9hVXBUeTVYWHJEY3ZKOVduRGNPQWhFb0lmNjdZRFFqQW9IZWtJNGtY?oc=5",
       "source": "9to5Mac",
       "published": "2026-08-26T03:33:00+09:00",
@@ -14,11 +716,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Maps launches ads on iPhone, here’s what’s new - 9to5Mac"
     },
     {
       "id": "971f9bb10290a493507e6a294133af94",
-      "title": "The latest iPhone Ultra rumors and leaks: Everything we know about Apple's first foldable - Mashable",
+      "title": "最新のiPhone Ultraの噂とリーク： Appleの最初の折りたたみ式- Mashableについて知っているすべて",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbExWWUowcTRnQ2FGY1Z0Qmg2NkprWmdST1VYZGNtYjNFaTlaNlFPTklaRl9SSncwTFczeFlWMUtNYndSSDl6dlFJVVJOVzF0cmJvY1NSUXBTWVMwNTRheDRaa3Y1b1M0TlRVZWFjbko5cnd3TTRkTncwRnZhdTYwMkMxLTZ0RnlO?oc=5",
       "source": "Mashable",
       "published": "2026-08-25T22:57:03+09:00",
@@ -27,11 +730,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "The latest iPhone Ultra rumors and leaks: Everything we know about Apple's first foldable - Mashable"
     },
     {
       "id": "b0d99a5fdc5567902905a610e24b9cde",
-      "title": "iPhone 18 Preorders Are Coming. Here’s Everything We Know and a Few Predictions - CNET",
+      "title": "iPhone 18の予約受付中です。ここに私たちが知っているすべてといくつかの予測があります- CNET",
       "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9qSnpNbEhEaF9EaWduR2pSb2gzWmxPRnN0Q2dpRDFRQ0ROTkJ4ZVV5OFpoSXB5UlFHZ0JXNjcwODRLV2Jha1gxaUxZb3dzZHdWeTh1RnNpOGtVUlQxQXJwZGp5V3pUS1RzVld4T0tzS0RON2s?oc=5",
       "source": "CNET",
       "published": "2026-08-25T19:26:33+09:00",
@@ -40,11 +744,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "iPhone 18 Preorders Are Coming. Here’s Everything We Know and a Few Predictions - CNET"
     },
     {
       "id": "620fd52fc1b56c602bcfb01bf3e2f0e1",
-      "title": "Apple readies new Mac mini as it gears up for foldable iPhone and a wave of gadgets - Los Angeles Times",
+      "title": "Apple、折りたたみ可能なiPhoneとガジェットの波に備えて新しいMac miniを準備-ロサンゼルス・タイムズ",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPbnhab1JsOGs2NmNHOHhMVXBVZk8yTWpvWGZuOEFZTElKWThzYmhmM05zWFlzX0NWSEFwUFZCd2RwYUMtYkEyenVyWVBQcHZOMVJvVy1zTGtkQlBwQVZSUTdQNzVBVEU2T1FYWk9rYmVCb2VqYkZxeWlWM3ZYcHlDZlR2WTIxTWxLRlk2dmRqazh4V1RreGNjd0ZiU3NYN1h0d0s3RlFXZElsM3hpV2IwekFFLTNlN0pZWW91WXg3VUpIOVlTSFE?oc=5",
       "source": "Los Angeles Times",
       "published": "2026-08-25T23:40:32+09:00",
@@ -53,11 +758,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple readies new Mac mini as it gears up for foldable iPhone and a wave of gadgets - Los Angeles Times"
     },
     {
       "id": "f07bc3b0bedc4d938b2646cdade4dee1",
-      "title": "How To Turn Off Find My iPhone (And When You Definitely Should) - Engadget",
+      "title": "IPhoneの検索をオフにする方法（そして絶対に必要なとき） - Engadget",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOajZIMHZuRHBXRVZRWFVjakVmenhLbTBOUHU3cklkMFNoTnV6dlU1aHdTX3VnMEd5MWR5enlobFBXbGM3a25YS2R5VF92WEpfRk96UFZnNWhndnM4WEJqTG1zVzgyUHNmZFJqa2pkaWh5S0NBZ2ZwR0N1aEM3WE5La293?oc=5",
       "source": "Engadget",
       "published": "2026-08-26T03:30:00+09:00",
@@ -66,11 +772,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "How To Turn Off Find My iPhone (And When You Definitely Should) - Engadget"
     },
     {
       "id": "dbc275a13e85aec1709c9770c7c8fed7",
-      "title": "Here’s When Apple Will Reveal Its iPhone 18 Pro And Foldable Phone Date - Forbes",
+      "title": "AppleがiPhone 18 Proと折りたたみ式携帯電話の日付を明らかにするのはここです-フォーブス",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOUDFzQ01yOGZmS0JwYlBOMVJaUi01ZV9acGFwaFM4OFg3dHpudTZ1eHJtREpxcWpkaUs5N3RxRXdQaG40UmVUYzcyQW8tVmtRTlFhMlJWMC1mVzdINEJKeEZfWGk1cnQ4Mjl0MWUwSG10cG9WdDlvdzJtTUlYMkFVOWpXdndxNjNUYzBLSzdvb3E1d2RVb3FYWEx4ejVGTWJWZnM5dlZqdXJNdE1NaTJHcmg1OVBRSTgxdEhZNnJJT04?oc=5",
       "source": "Forbes",
       "published": "2026-08-26T03:00:38+09:00",
@@ -79,11 +786,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Here’s When Apple Will Reveal Its iPhone 18 Pro And Foldable Phone Date - Forbes"
     },
     {
       "id": "9a0834dad81d1c05b1be9dccba83029e",
-      "title": "This new Android & iPhone tracker hides in your bike or golf clubs with 3-year battery life [Gallery] - 9to5Google",
+      "title": "この新しいAndroid ＆ iPhoneトラッカーは、3年間のバッテリー寿命で自転車やゴルフクラブに隠れます[ギャラリー] - 9 to 5 Google",
       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOUUZXUlZwRnQ4dDllRTRCRGNVaGpYOTE0UDlBOVZINGI3ak05ZjU2dGhLLTR5dmIzMGpfNkVjYWRzcHZNYU8wT3NTX205OXF0NTFTdjljSVpBVEx1eldkTlRTYXIwODVxUnU0Vmp3eVZIYkFHWmNQb2hEcDhtUl9nM0NBbw?oc=5",
       "source": "9to5Google",
       "published": "2026-08-26T03:45:00+09:00",
@@ -92,11 +800,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "This new Android & iPhone tracker hides in your bike or golf clubs with 3-year battery life [Gallery] - 9to5Google"
     },
     {
       "id": "eda94908c45f02ea62459c8449180d4d",
-      "title": "Apple introduces M6 and M5 Ultra for a big leap in performance and AI compute - Apple",
+      "title": "Apple、パフォーマンスとAIコンピューティングを飛躍的に向上させるためにM 6とM 5 Ultraを発表- Apple",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNaFNZWnlDMmx2VlBtaFlBWTAyS1g1cWk2SF8wM2phRU95eWpJT2hoM1RtMGVDOUJmNmI0N1RNQzBnblhQVjdFcHl4RVZNVzg1YVZEbTMycVpxdkpTcmNGODIzcmxxRzRnOEJ5Qkg0OG1QVDZaYy1sdUoxLTJJbWUzbEZFcmhzMVlQUXB4OEJBWGhrY2d5aWhXYzNaOElRdlZzdktUdGc1ZTJvcGRUWVc0X2RJTk5GUi1x?oc=5",
       "source": "Apple",
       "published": "2026-08-26T00:18:43+09:00",
@@ -105,11 +814,12 @@
       "category_label": "🍎 Apple",
       "keyword": "MacBook Pro M",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple introduces M6 and M5 Ultra for a big leap in performance and AI compute - Apple"
     },
     {
       "id": "07161e4b7a46fda1961a75c42d55cd80",
-      "title": "Ableton Note 2.1 for iOS update is subtle, but it can change how you work - CDM Create Digital Music",
+      "title": "IOSアップデート用Ableton Note 2.1は微妙ですが、あなたの働き方を変える可能性があります- CDMデジタルミュージックを作成する",
       "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5Tck1Xa0RXLTRLa0RVcHJraGdvUW5MNnB5bHM5b2VYWExZWm5GOUZWbld3b2hpTldnejdjaVg5b1dSZVVtdHI5cE1n?oc=5",
       "source": "CDM Create Digital Music",
       "published": "2026-08-25T19:02:39+09:00",
@@ -118,11 +828,12 @@
       "category_label": "🍎 Apple",
       "keyword": "iOS update",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Ableton Note 2.1 for iOS update is subtle, but it can change how you work - CDM Create Digital Music"
     },
     {
       "id": "6530821f1a5e1a553c502bb89f94e5a4",
-      "title": "iOS 27 release date: Here’s when the new iPhone update will launch - 9to5Mac",
+      "title": "iOS 27リリース日：新しいiPhoneアップデートがリリースされる時期- 9 to 5 Mac",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOT3JDOTRjUlZTZWJrMUNpYWpEY3ZvaUcxZ1B2SXV6QUxRUlNzQUpKcEQyd3otSDZkNi1pQmUtVWhsbDBEWWd1NTEycjA0VWd3NTNyWnYwTkV4X0pQTmFEbk41QkNZd1BFYnU0TExvX01YUkd3UUpTendkSUI4OUxJSDNxdFpfd2s3SUVrdDUtTWRWR2JaTWc?oc=5",
       "source": "9to5Mac",
       "published": "2026-08-26T05:45:00+09:00",
@@ -131,11 +842,12 @@
       "category_label": "🍎 Apple",
       "keyword": "iOS update",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "iOS 27 release date: Here’s when the new iPhone update will launch - 9to5Mac"
     },
     {
       "id": "63a52a762472f8b727823217aae6e9f0",
-      "title": "Apple Releases iOS 26.6.1, macOS 26.6.2, and More - MacRumors",
+      "title": "Apple、iOS 26.6.1、macOS 26.6.2などをリリース- MacRumors",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBVVVVoaW13VDdmQzlPRlQtcUVuWEFteUlKNlJiT21fUHpZcGt6N2t4cjdzTnJlTGdpR3lLU0pHekVBNU05UzVjLVIybWRjYTgybFVsLWZxb1g5QjVySURUaW1TM0cwMU42cG5Jd1l2UXl4c3pGM3RBbW1TM1A?oc=5",
       "source": "MacRumors",
       "published": "2026-08-18T02:52:15+09:00",
@@ -144,11 +856,12 @@
       "category_label": "🍎 Apple",
       "keyword": "iOS update",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Releases iOS 26.6.1, macOS 26.6.2, and More - MacRumors"
     },
     {
       "id": "c753ff33786579bd7536d275e666fe96",
-      "title": "Here’s everything new for Apple Wallet in iOS 27 - 9to5Mac",
+      "title": "IOS 27のAppleウォレットの新機能- 9 to 5 Mac",
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPSXlVSHdDblJiRFlqVFBPN3NnWF81YWFZVWN4TTVqOWZmT0tSN2VDX3QxLUtwTkZjNzdMck5VT0UzYmxkaXA5ekJrSDExSW9zQ2JGZkgwc2dHbDBnVmtOVTNiMGJLbEU3SGl5dXM4ZHNlSk1vNkFISkY5Mm53SnlLN1RQSmVrUQ?oc=5",
       "source": "9to5Mac",
       "published": "2026-07-28T16:00:00+09:00",
@@ -157,11 +870,12 @@
       "category_label": "🍎 Apple",
       "keyword": "iOS update",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Here’s everything new for Apple Wallet in iOS 27 - 9to5Mac"
     },
     {
       "id": "12b024b0207afd7051a181fc1dee5f56",
-      "title": "AirPods Pro 3 vs Galaxy Buds4 Pro: Which Pair Should You Buy? - TechRepublic",
+      "title": "AirPods Pro 3とGalaxy Buds 4 Pro ：どちらのペアを購入する必要がありますか？ - TechRepublic",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOS0sxUkxkTmJzb3ctM3h1OWRwUXF2THg3VWRZdVB3SDJUQlZzYkRQUy1oNEFZaXhXMDZZbFo1TnE2LUNrem93Q3VUWW9BM1lnUEYwcmVESk1TNFlyZFU1VXJDYzVlSWVmN0txS21TWHBNNk00aWZhNTRSWVU4UnI1Q3Fn?oc=5",
       "source": "TechRepublic",
       "published": "2026-08-26T03:22:32+09:00",
@@ -170,11 +884,12 @@
       "category_label": "🍎 Apple",
       "keyword": "AirPods",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "AirPods Pro 3 vs Galaxy Buds4 Pro: Which Pair Should You Buy? - TechRepublic"
     },
     {
       "id": "0d3ae2d3f87e8f624772921727b71961",
-      "title": "Apple Watch Ultra 3 vs Galaxy Watch Ultra2 - TechRepublic",
+      "title": "Apple Watch Ultra 3 vs Galaxy Watch Ultra 2 - TechRepublic",
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPbFFsOWVxNHJDRGZPMG1EbGZtUVZ5a1Q3TTExZGNmRWQtOFdoNTBib1pJWlpiT0pldXpzY2pMUmRJRDMtTjROdThZLTdfb1loSUNaY0ZLV21KME94WnFtNzhVbFQ5c2YxYWJuWUk5Rm9PNkhxQWdON3BlVFNacVByVm9fR29CZUI2ZURJMzhR?oc=5",
       "source": "TechRepublic",
       "published": "2026-08-26T02:18:30+09:00",
@@ -183,11 +898,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Watch",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Watch Ultra 3 vs Galaxy Watch Ultra2 - TechRepublic"
     },
     {
       "id": "ed0628c1bc580c589ddce6e87b663249",
-      "title": "We’ve Tested Every Apple Watch–Our Favorite Is $100 Off Ahead of Labor Day - Good Housekeeping",
+      "title": "私たちはすべてのApple Watchをテストしました-私たちのお気に入りは、労働者の日の前に$ 100オフです-良いハウスキーピング",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQblhjT2E3akwxNnlvZXFaMEJTN1FEb0hKN2UyRTl5Umh2NmtUMk90dzROUFlnQTlJQjd0OU9BTDhqTmRBcEVJN0lFOXdSLWxzX3dKbGNJUmlaZHU5and3VHlPUGE1RGZqT1E5RjBhdEt0OTRKU3o2UGFBeXlfSjBXdFJRT0VmYllTblEtSmtaREQ?oc=5",
       "source": "Good Housekeeping",
       "published": "2026-08-26T03:58:00+09:00",
@@ -196,11 +912,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Watch",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "We’ve Tested Every Apple Watch–Our Favorite Is $100 Off Ahead of Labor Day - Good Housekeeping"
     },
     {
       "id": "4fe9ebcb3ad8dcc6d5956e8aadce5824",
-      "title": "Pico’s Vision Pro Competitor Delayed Amid Cancelled September Reveal - Road to VR",
+      "title": "PicoのVision Pro競合他社は、9月の発表をキャンセルして遅れました- VRへの道",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBRTXJldk8wZmdGZDVFbXdreUtyMTlTVlJVOGlIUjZFNlExM25JdnlseWdMR1VJcXFrMHNSWEhHekFjU1cybWtnX3FzSzNlbGlqZnQ1ZEFackwyby1FRTFtelFxWmxUQkVJOFJaM0lLTDgzemtmTi0zSEpOQVk?oc=5",
       "source": "Road to VR",
       "published": "2026-08-25T16:11:08+09:00",
@@ -209,11 +926,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Vision Pro",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Pico’s Vision Pro Competitor Delayed Amid Cancelled September Reveal - Road to VR"
     },
     {
       "id": "3369335c22e8a5d1a26ae6e7728fb5db",
-      "title": "Apple Cuts Over 200 Jobs in Siri, Vision Pro, AI Teams Amid Restructuring - TechGig",
+      "title": "Apple、リストラ中にSiri、Vision Pro、AIチームで200人以上の雇用を削減- TechGig",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQN2xXQ0c2b0pJT0lsc0ZMcVJQRFhfTlZzVldER21rT3k0SVhiSXFId1dKTjNVNkl0VEU0NlhUdjRtTVdYZlAtdnowZ3RTN3I5eXV4SDZ6UHBXLXBoOHNWTE14UF9wUlRFOTk0RWxJa29haXVCLVlqdnZzS29ZZUhCZDR2M0VzazVzb3JIMTZEcDVmajJlbzRzRlpmWU1mSnpMckRrcmtoc3hfRVYwTW4xRGtRMDVPbjd2UzJV0gHAAUFVX3lxTFBjRTg0YmlEV0VBMUN4MG5MZ3M1b3FtVnBLR3dyU0hJci1KVkh4N3ZFeTg0MHRJLS1fZHNUWFFHTmdHN3BoVHVBUkJCWnBCMWo1UUY2VlQ0RkpBd2paSWdEOF84RTlFNHZodFN4dTBTV2JRajhxSnNQTUF3T09fdXRRdGlWa2hFOUdlSUxwaDd1Y1pleVBIU1hkb0p3RVBWS1dVUXdralJDQkRUZDFwNk9KNEZkQjdNRnhuZjE5bXAtYw?oc=5",
       "source": "TechGig",
       "published": "2026-08-24T09:09:44+09:00",
@@ -222,7 +940,8 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Vision Pro",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Cuts Over 200 Jobs in Siri, Vision Pro, AI Teams Amid Restructuring - TechGig"
     },
     {
       "id": "116ca2ba903c727859a0c2e0b8301914",
@@ -421,7 +1140,7 @@
     },
     {
       "id": "0fd0d92a56f9a1e02178cce8cac154ed",
-      "title": "Sony Music Files Another Lawsuit Against Udio, Alleges AI Music Generator Copied 30,000 Songs to Train Models - Variety Australia",
+      "title": "ソニーミュージックがUdioに対して別の訴訟を起こし、AIミュージックジェネレーターがモデルを訓練するために30,000曲をコピーしたと主張-バラエティオーストラリア",
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNaF9ubVprRW05a1lLTUlTaUE1a3phcHZLaVFTWmk5T2Q1VkZPN1BXb3ZCRUNIQlE2Y052dFk5QUpXUi1UaTkxRldpMm5IZ0d0LXJ5YktPRFJiYjNzQ0NfV3pKbmwtdjNuYTFodW9SaUR0T2pwYzBHSzVDMDgxZUJkT0s5WFJfRXZaV0pSbDZkU2JVUzFPVGs1bTVn?oc=5",
       "source": "Variety Australia",
       "published": "2026-07-22T16:00:00+09:00",
@@ -430,11 +1149,12 @@
       "category_label": "🎵 音楽AI",
       "keyword": "Udio music generation",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Sony Music Files Another Lawsuit Against Udio, Alleges AI Music Generator Copied 30,000 Songs to Train Models - Variety Australia"
     },
     {
       "id": "886943ee928b43efd613db0b318b3366",
-      "title": "Google Brings AI Music Generation to Gemini—We Tried It, and It's Too Little Too Late - Decrypt",
+      "title": "GoogleがAIミュージックジェネレーションをGemini - We Tried It, and It's Too Little Too Late - Decryptに導入",
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1qTGtMODc5R1dpMU5rcndUWk1CZklPREQtc0l6Z2pBM0Vwb3g1X0Jqa2xCU2dZUlNuLTA2bE12YklFQlFicHZON2J1SU8zSk80SktzeE5wOWhTa3FpemQyb283V01BNnZKcmNXUElVc0E0WWdNTjRsc3ItM25yZ9IBhgFBVV95cUxNWW9CbXg5U29RcmhIQUhhRFAzOERWZzJNdEwzQ2dwTFlUYWpyczVzM25LNWRTS2tQcE1qMzhwTGJGUEcyLTF5c0h0U1BnUXJnV0hLd1dERXJxVWpCeVV3bzlqbFdSYkhWMEw3cFhyRDVzd0x1ZEotWFlpVTBKUnYwVU1fOGt1UQ?oc=5",
       "source": "Decrypt",
       "published": "2026-02-19T17:00:00+09:00",
@@ -443,11 +1163,12 @@
       "category_label": "🎵 音楽AI",
       "keyword": "Udio music generation",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Google Brings AI Music Generation to Gemini—We Tried It, and It's Too Little Too Late - Decrypt"
     },
     {
       "id": "e65c1ae83bf5abe3ef2c8b5ebf7d3da1",
-      "title": "ElevenLabs releases a new AI-powered music-generation app - TechCrunch",
+      "title": "ElevenLabsが新しいAI搭載の音楽生成アプリTechCrunchをリリース",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWHBYdTVSdU9Ea1NFT2pMLWxEYXVuMFY3M2dVd3NuVzB2UFpjT1FvNU1yZDdzRkZHbU91akJBc3VKUnlyMDEtdHNHSVpqMFpqVXQ2OE5XdVU4VjNqUjYtNnJuNzBpaGJodnpVNFphUWthTkhFQzlQS3dlRTFCNHhRaS1fNjJ3R0lQMlhiN19sNU9OSExqNFZR?oc=5",
       "source": "TechCrunch",
       "published": "2026-04-02T16:00:00+09:00",
@@ -456,11 +1177,12 @@
       "category_label": "🎵 音楽AI",
       "keyword": "Udio music generation",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "ElevenLabs releases a new AI-powered music-generation app - TechCrunch"
     },
     {
       "id": "f9d21a2a15a8f9e32eedc87dee98234e",
-      "title": "From Napster to Sampling to AI: Copyright Law’s Role as the Sheriff to Emerging Technology - JD Supra",
+      "title": "Napsterからサンプリング、AIへ：著作権法の保安官としての役割から新興技術へ- JD Supra",
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9Ndnk4OHQ1Z0NDWjNSVlRUUTdvUUxrTWxZanJPUHJ3RG1KZUxEaEI5YjR3ZERudkZkMXM3LUp3SlpfdG82bUpyQWJWODVrVmNDRlNuVlVueVFKSjUtUnVDZDZkR2oyRFJBWXFuMXM4MWRjX21KbDhhSm5wak41QQ?oc=5",
       "source": "JD Supra",
       "published": "2026-08-26T02:03:02+09:00",
@@ -469,11 +1191,12 @@
       "category_label": "🎵 音楽AI",
       "keyword": "AI music copyright",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "From Napster to Sampling to AI: Copyright Law’s Role as the Sheriff to Emerging Technology - JD Supra"
     },
     {
       "id": "0f77c51f95f6db48db909331e6db8769",
-      "title": "German court rules AI music firm Suno broke copyright rules - Reuters",
+      "title": "ドイツの裁判所、AI音楽会社Sunoが著作権規則を破ったと判決-ロイター",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYjBLM01uX0dLclpkY041M29fZHdIbm52RmhrcUxBdEhxZ1dzeVlHY25tRVJYcGRIejJ5ZjZZOU9RYnhsaFdGX0dWdG9aRGxpRDE5QzItNFNqWm9RVDRheEYxaFVuRm54aXh3cmRNLTlLSEV1ZVZ5azgzMDNtUGR4dVNjQUp2b0R1eldwSTVqeFJXMmJZQWl2MkxMNzFGYkxKM3ZR?oc=5",
       "source": "Reuters",
       "published": "2026-07-31T16:00:00+09:00",
@@ -482,7 +1205,8 @@
       "category_label": "🎵 音楽AI",
       "keyword": "AI music copyright",
       "first_seen": "2026-08-26T07:34:00.600751+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "German court rules AI music firm Suno broke copyright rules - Reuters"
     },
     {
       "id": "c37a58401c45ea6a88ff58b714e60fe0",
@@ -590,7 +1314,7 @@
     },
     {
       "id": "e20cc0e32792f0e6a3443edf8f47337d",
-      "title": "Apple's Foldable Phone Is Coming. Everything We Know About the iPhone Ultra - PCMag UK",
+      "title": "Appleの折りたたみ式携帯電話が登場します。iPhone Ultraについて私たちが知っているすべて- PCMag UK",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNlVDam9mdmlRQW84d09jVGt0eDg3NHFpZ3FjMVhsSmNUaGdnZEJ2dF9SUmV0NEF1RzYzNTFYLUlPNTN1TUllME1UaldEeVVMZ05HY0V5UnlqQThiNmZZOUJCTEd2aXlfdU9lbmV4QU9uMVZhTVE1c0MxRWJXanFIUXVSdWpRS3ZSaHpzUlgta0JXWXMwRHQycWJyNHlOU3RzRGtheUlDeHdrSW5famdhaDhOWUJNZw?oc=5",
       "source": "PCMag UK",
       "published": "2026-08-25T22:00:06+09:00",
@@ -599,11 +1323,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T22:51:54.981492+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple's Foldable Phone Is Coming. Everything We Know About the iPhone Ultra - PCMag UK"
     },
     {
       "id": "713fddc9950e91686c8ba8eceea953cc",
-      "title": "The latest iPhone Ultra rumors and leaks: What we know - Mashable",
+      "title": "最新のiPhone Ultraの噂とリーク：私たちが知っていること- Mashable",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNbExWWUowcTRnQ2FGY1Z0Qmg2NkprWmdST1VYZGNtYjNFaTlaNlFPTklaRl9SSncwTFczeFlWMUtNYndSSDl6dlFJVVJOVzF0cmJvY1NSUXBTWVMwNTRheDRaa3Y1b1M0TlRVZWFjbko5cnd3TTRkTncwRnZhdTYwMkMxLTZ0RnlO?oc=5",
       "source": "Mashable",
       "published": "2026-08-25T22:42:33+09:00",
@@ -612,11 +1337,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T22:51:54.981492+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "The latest iPhone Ultra rumors and leaks: What we know - Mashable"
     },
     {
       "id": "52dee9985834c6cbdaaeed77f11787e4",
-      "title": "Apple Reportedly Planning iPhone 18 Price Hike - Newser",
+      "title": "Apple、iPhone 18の値上げを計画中- Newser",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOQmJXTnU4aHdDMEdDOTROVDdRS3JPRnNtc0I1N1BSRHNTREhIV2V2UF9TMW13YXBtdG5pUHdKSnBHdXhDcFlGS1dHRFlidmxFZ0EzWm1kMFdCMjhVQjRhbEgtTS1ZTk5NUFpVVEhUcmswd0pKTFktd05JNnU2R2pvRm9QbHY1RWtMQ01sRkpuN2E?oc=5",
       "source": "Newser",
       "published": "2026-08-25T15:30:00+09:00",
@@ -625,11 +1351,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T22:51:54.981492+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Reportedly Planning iPhone 18 Price Hike - Newser"
     },
     {
       "id": "1583b9dc2e17634e9b1e35f9266a8d0f",
-      "title": "Affordable iPhone accessories for CarPlay worth trying - 9to5Mac",
+      "title": "試してみる価値のあるCarPlay用の手頃な価格のiPhoneアクセサリー- 9 to 5 Mac",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOMkFKUkpRblFYS2FickoyaExJX2FqWWlGX3dUVWdpbDVCVWoxSUNIeFljQXVRQUxPcEdOZEpoMFlHWmFfTl9aQk44Y1AwSFgtR2lfamJKbnF0WU9QelFYSFRSeXc2cWM0Zl9aUDd6cDdPczZPVGhXOG0zVmZOaWIyQ1ZMeG90d2ZmLXhXQ1RUbw?oc=5",
       "source": "9to5Mac",
       "published": "2026-08-25T00:18:00+09:00",
@@ -638,11 +1365,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T22:51:54.981492+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Affordable iPhone accessories for CarPlay worth trying - 9to5Mac"
     },
     {
       "id": "6dda4a17df76f33755145b9ab4dd39b8",
-      "title": "Apple Gears Up to Launch Its First New Mac Mini in Two Years - Bloomberg",
+      "title": "アップル、2年ぶりの新型Mac Miniを発売へ-ブルームバーグ",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUGxzaHpVRnhoZkJOTTBLYXZXNEhJdUZaWmVTYm1CWnZ6MUlTbFR5amtBNnVNNzc5bVNjTVgyaUtLaW9LbzMwQlNtUWNTeWZpNmowMXE0YzV2RkFONUFXUEFGZ0ZwS1ROSkhtd09MYnJScmVJUWItaGlNbW5XLXJfUGpwRGZQTGhBWjZwXzVGQUc3bk5xTnk5SzdldzdCQ2FoNzJtanVYSkM2aTN3OFZWQS0yTm1jRTJQOEltVWVFSTE?oc=5",
       "source": "Bloomberg",
       "published": "2026-08-25T10:57:02+09:00",
@@ -651,11 +1379,12 @@
       "category_label": "🍎 Apple",
       "keyword": "AirPods",
       "first_seen": "2026-08-25T22:51:54.981492+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Gears Up to Launch Its First New Mac Mini in Two Years - Bloomberg"
     },
     {
       "id": "288f329cfaa7b7d6f29f343a2705a574",
-      "title": "How to Get AirPods 4 for Under $100 Without Paying Full Price at the Apple Store - Kotaku",
+      "title": "Apple Storeで100 $未満のAirPods 4をフル価格で購入する方法- Kotaku",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOa0tmNjF0U3o1bEZPWlZYUnZOME5GS2ExSTZpcjBPZzJOcVdkcnVUTnB2TTc1TF9hc3VCSnl2QWg3OEc1OVIwc0xBR1RwVmVOdkVmbmtWQWdGenhOV2pBSnNnMnVyek5OdW9oSE5GWmkySUtISldCUE1LX2ZKc0hWWkpTUkVNQ3ZNSWx2R3AyY3hqbkNWemt3Z3VLODY3NGp0Y2JXOTh4ZE82SDJXdmc?oc=5",
       "source": "Kotaku",
       "published": "2026-08-25T19:45:13+09:00",
@@ -664,11 +1393,12 @@
       "category_label": "🍎 Apple",
       "keyword": "AirPods",
       "first_seen": "2026-08-25T22:51:54.981492+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "How to Get AirPods 4 for Under $100 Without Paying Full Price at the Apple Store - Kotaku"
     },
     {
       "id": "41afbcb3ee5003bff30a4c2bb0cc088e",
-      "title": "Apple Watch Series 12 to Get Fitness Tracking Upgrades - MacRumors",
+      "title": "フィットネストラッキングアップグレードを取得するApple Watch Series 12 - MacRumors",
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNNEo2a1o3QTRtUkptVGdfYjE4Vkd3RDA2ZnZKc0l1dWpiT0Z4bVRfQm5XUzBBLTEzZTZGX3N0amZzQUF5ZEhHdGc2V2ZoMnpyWG9ISFo4dnhidXRwRlRVVkVHRzBRb2FjTEV1ZzRzTUJUQ1MyWHZfTm1sd2F3MHN4bkoxQ0dhSjlhMEkw?oc=5",
       "source": "MacRumors",
       "published": "2026-08-25T20:55:52+09:00",
@@ -677,11 +1407,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Watch",
       "first_seen": "2026-08-25T22:51:54.981492+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Watch Series 12 to Get Fitness Tracking Upgrades - MacRumors"
     },
     {
       "id": "739177f279e478ac99be5cad72057dd9",
-      "title": "Apple outlines 50 ways to make devices easier to use as we age - 9to5Mac",
+      "title": "Appleは、年齢とともにデバイスを使いやすくする50の方法の概要を説明しています- 9 to 5 Mac",
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPNW15LWplaDV4QVhiTERwNDA2NzlhN3dveFJaTmJUeHVrWTJtaFZSQzdhM3VBNTFTaHpJbU5rSzltTGg4aE9oSnRlRjR4N0ZQUW1wNzc2dU4zNmRKR2RjTUdPb1pobEpyd3RueXhMTEVkejFXRm5vcEpIdmNnaUlGNjhFMTBmTTd5UjRGdURDZlZ2QS1XelJZaV9R?oc=5",
       "source": "9to5Mac",
       "published": "2026-08-25T22:30:00+09:00",
@@ -690,7 +1421,8 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Watch",
       "first_seen": "2026-08-25T22:51:54.981492+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple outlines 50 ways to make devices easier to use as we age - 9to5Mac"
     },
     {
       "id": "16a6fcf280726ede5a92a1f8c11605e7",
@@ -1190,7 +1922,7 @@
     },
     {
       "id": "190701ac561aeb836e4c07e04abf01dc",
-      "title": "Apple Reportedly Will Announce iPhone 18 Pro Event Date This Week - MacRumors",
+      "title": "Appleが今週iPhone 18 Proのイベント日を発表すると報じられている- MacRumors",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNajIxb1F3Z1FhbFRoOU5PUnhzMGlYeTdTekdUM2s4cTd3NU9JTlZoVk01WFNqZmQxTUtzXzZoNjdUZmFPZ2J0Q3dyV0RDcjFCOXAxWnAwbUhVNkZKRV9IUVZ3aTF0U2otVGJxNWhlcHpzZXhlZ3VLX3k5Q0NnUHd6LUt3?oc=5",
       "source": "MacRumors",
       "published": "2026-08-25T11:15:00+09:00",
@@ -1199,11 +1931,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Reportedly Will Announce iPhone 18 Pro Event Date This Week - MacRumors"
     },
     {
       "id": "c933e0d9d83df3e253a6b2618557e272",
-      "title": "Surprise, Surprise: Apple May Launch New Mac mini Before iPhone 18 Pro - PCMag",
+      "title": "驚き、驚き： AppleがiPhone 18 Proの前に新しいMac miniを発売するかもしれない- PCMag",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxORnhpT2VkdU1IS0hZZG95bU1QemhlNzlVLUlRLUdaUEZvRGctVS1FeWVlTU85VzBVMDBRLXYyNkRCclZ4bVFGdnJBOTVKMjNRZ3QyVWhBRG9Nd1Fzd2E4RXJnTXpld2htRW1XcWc1RW1IaThLR0FiUnllMjhWc3d4LTM5bnBMcWVuNXZDek5neDUwR2FuMjQxQzNKQQ?oc=5",
       "source": "PCMag",
       "published": "2026-08-25T18:07:29+09:00",
@@ -1212,7 +1945,8 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Surprise, Surprise: Apple May Launch New Mac mini Before iPhone 18 Pro - PCMag"
     },
     {
       "id": "0ded88e180e75da2fe838e8b16a9ad04",
@@ -1230,7 +1964,7 @@
     },
     {
       "id": "8e195b1c5cd3ac5ff6a8e4443fbbef78",
-      "title": "Apple Is Quietly Making an Essential iPhone App Even Better - Gear Patrol",
+      "title": "Appleは静かに不可欠なiPhoneアプリをさらに良くしています-ギアパトロール",
       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBTNVRJYm02RnZ4YkQ2Ty10eTFSWTdwWHhpQmFfTGUzcXRvalczMnZPMUhCLVkzd3h3bXY4RDFHLV8zZFJ0cHA0SWNzaVFpcUhEQ1RDZUszdi1JeFhFRm0tU2lMbUQwTW9tRm96dm1HMlVBLXl4U0E?oc=5",
       "source": "Gear Patrol",
       "published": "2026-08-25T06:04:43+09:00",
@@ -1239,11 +1973,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Is Quietly Making an Essential iPhone App Even Better - Gear Patrol"
     },
     {
       "id": "50dc84af1f6af4f07656b8361bc3a644",
-      "title": "Apple Reportedly Will Raise iPhone Prices, but Just How Much? - CNET",
+      "title": "AppleはiPhoneの価格を引き上げると伝えられていますが、いくらですか？ - CNET",
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQLTdDTUFUNXR3ZVpTUXo2RW1ydUlNTWI4TkREYno2SWpGUU1QdkNCbjdNLWZWM25qelU3aFhRTGYzSXVEV0gxMGNjVnZNVDNPc0VkQ2dxZm5UaDNXODFNbHFnaGphT2dDNWRBM2VnWUlRRVNyUWpEYVdwNXJqLTZqRFVVTkcwZ1VYYzRPUjZLNU9zUnFLM1hrdQ?oc=5",
       "source": "CNET",
       "published": "2026-08-25T06:17:20+09:00",
@@ -1252,11 +1987,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Reportedly Will Raise iPhone Prices, but Just How Much? - CNET"
     },
     {
       "id": "b035d177fb2f9afc80a335a2b64b84c0",
-      "title": "I’m a MacBook Pro loyalist, but how much work can I actually do on a cheap MacBook Neo? The answer shocked me (and saved me a lot of money) - Tom's Guide",
+      "title": "私はMacBook Proの愛好家ですが、安価なMacBook Neoで実際にどれくらいの仕事をすることができますか？その答えは私を驚かせました（そして私は多くのお金を節約しました） - Tom's Guide",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQUFdqSW5ZeHk3TTRnQlJlWGRRcndBNDRZTFVIOHpITTNCWEp1b2lZVndyWERWT0xPVjVFZ0lUVFBuNHkwajZCc0JabEtETmxETUdzVzhvRFV4NHFCNHlYOHBjNzc2MVBOdWhzSUs1WDVXTHhNS0xxeGQ3amNNQnF5eDNxZ29wZXlYcWJOd2JveXJUVFBaU3NnU1RGeWc4VnM?oc=5",
       "source": "Tom's Guide",
       "published": "2026-05-18T16:00:00+09:00",
@@ -1265,11 +2001,12 @@
       "category_label": "🍎 Apple",
       "keyword": "MacBook Pro M",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "I’m a MacBook Pro loyalist, but how much work can I actually do on a cheap MacBook Neo? The answer shocked me (and saved me a lot of money) - Tom's Guide"
     },
     {
       "id": "00312d24abd6a833c3d04904ca53b204",
-      "title": "What Does The Number In Apple's M-Series MacBooks Mean? - bgr.com",
+      "title": "AppleのMシリーズMacBookの数字はどういう意味ですか？ - bgr.com",
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9Ga1ItRHh2VnNnZWlIRkYtLWNyM0EwaDZnQWlvN2taOEp1YndxbTR2S0dEZlVOYVg5RzBmUkxXOEplLVlxbVAxRzZjY2dQOVRZOE5RU190eXJ4UnZVZE5HVURoNWpUQmxSV2l1Uw?oc=5",
       "source": "bgr.com",
       "published": "2026-08-09T16:00:00+09:00",
@@ -1278,11 +2015,12 @@
       "category_label": "🍎 Apple",
       "keyword": "MacBook Pro M",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "What Does The Number In Apple's M-Series MacBooks Mean? - bgr.com"
     },
     {
       "id": "6684e9da41a74c8e5d556d811dab28b7",
-      "title": "MacBook Neo review, two months later: Almost a MacBook Pro beater - AppleInsider",
+      "title": "2か月後のMacBook Neoレビュー：ほぼMacBook Proのビーター- AppleInsider",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPVmpNNVdHZk5WQ3k1aWVBcGw1dVE4NVFwTnRXcEhzTGtCbDJINHZkME44T0hrU1Z2NzZ3VVBUR1VIQ01iUU5fNTY3RnJDQlBUalk2cDJYZ3FsU2FMOGxLTXFPZXBkNTdqWG1BM1BXSHB3T3lKbDhQQ2ZELW9qVXBfNUFndFNqWGU5U1N5cWN0UDc0LXJxbVlZX3NkN0hheDZjNjhGWlcwTmItQQ?oc=5",
       "source": "AppleInsider",
       "published": "2026-05-14T16:00:00+09:00",
@@ -1291,11 +2029,12 @@
       "category_label": "🍎 Apple",
       "keyword": "MacBook Pro M",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "MacBook Neo review, two months later: Almost a MacBook Pro beater - AppleInsider"
     },
     {
       "id": "65fb9eee88051394830f9addc34cb07c",
-      "title": "iOS 26.6.1: Apple Gave iPhone Users 29 Reasons To Update Now - Forbes",
+      "title": "iOS 26.6.1 ： AppleがiPhoneユーザーに今すぐアップデートすべき29の理由を提供- Forbes",
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQSnQ5REdObV9PWnRQWHhYS0Nua3BKZkoyVTUwQzRaSnZPa29XMVpxOTFCdzVaZWJqMDFZc2dEc1IwallrNG1wRTV1MUZuOXRKWnp5bGozYVlxcXlaNVB0TGgyYl92bExkanBpbWFLWU5uVS16S1EwaUhZZk44NFFEVzlKY2VSUW5pN0NJWlhOdU9pLTBvSzJUdmt5QmlfaVIxMWRNOFl2UlBmQzVzMjlmVU16bk1hdGZrWUJDN3lpc2hESG1oZ3ZjVURLZw?oc=5",
       "source": "Forbes",
       "published": "2026-08-20T22:42:00+09:00",
@@ -1304,11 +2043,12 @@
       "category_label": "🍎 Apple",
       "keyword": "iOS update",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "iOS 26.6.1: Apple Gave iPhone Users 29 Reasons To Update Now - Forbes"
     },
     {
       "id": "46ebaf4c5a97669cd88e06204bbf865b",
-      "title": "Apple Launches iOS 27 Public Beta. Every New iPhone Feature You Can Try, Plus How to Install It - PCMag",
+      "title": "Apple、iOS 27パブリックベータ版をリリースあなたが試すことができるすべての新しいiPhone機能とインストール方法- PCMag",
       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQSW16Q1ZBSXJoSThvLTdYeV9jU2hYZHJKSExObnUwSGZXcnFBVXlucHVfSEZkdl9FNGhzRWZFX2g5TDdnUGh2QlhoMnYyZkJuaUV1dWdGcWxZazBxbi15OTBJcDBIc0NPZV95M0tjVWE4T1VubXlxeWdUTjhsREgxTUFKc0tYM2pvdkpUNUtLMG9HRHcteDJfMXNkaGZQaUth?oc=5",
       "source": "PCMag",
       "published": "2026-07-14T16:00:00+09:00",
@@ -1317,11 +2057,12 @@
       "category_label": "🍎 Apple",
       "keyword": "iOS update",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Launches iOS 27 Public Beta. Every New iPhone Feature You Can Try, Plus How to Install It - PCMag"
     },
     {
       "id": "18c1b27e4c7912984d12b36e25109182",
-      "title": "5 AirPods Features You Need To Manually Enable - bgr.com",
+      "title": "手動で有効にする必要がある5つのAirPods機能- bgr.com",
       "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1td2tsSkxMYmxGU2l3Si01d0FfX2p0ZTlQY0VUaW14bzdCM3RUU2NpUG8zeTBpZkNIZVgwRVJLdEFjejQtOEpVUFJoYlRNMkZOeTRNdGF1VDMtUm9nYjc2STNWWG5WcWJfdWo4U1VJcTcwQQ?oc=5",
       "source": "bgr.com",
       "published": "2026-08-25T00:17:00+09:00",
@@ -1330,11 +2071,12 @@
       "category_label": "🍎 Apple",
       "keyword": "AirPods",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "5 AirPods Features You Need To Manually Enable - bgr.com"
     },
     {
       "id": "33c60afdb40444ef0c9bec8ef3130707",
-      "title": "New Mac mini days away, OLED iPad mini in October, AirPods 5 in 2026 - AppleInsider",
+      "title": "新しいMac mini、10月のOLED iPad mini、2026年のAirPods 5 - AppleInsider",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNZEMtUndiYm83Y0VmdmpZVmk4OF9xMDF4T2dmNkVXZEI2cW1XdXFGTlhlMFlOcHRUWXNMWXljN2xMVzRxSWZ2Y3dXbUNSUHJOQk1HQ3RyUTVHUGdlVVBMb0V5N1pyLTlvZk1XWFpvY25WanNrWF9yWUZEOXJPOThKMHJ4U1ZTblNiSzFnN0JadVpUM2pyVlBkbTdDRWtDaXJzWTItaUxmcGtETmVqQkE?oc=5",
       "source": "AppleInsider",
       "published": "2026-08-25T11:40:56+09:00",
@@ -1343,11 +2085,12 @@
       "category_label": "🍎 Apple",
       "keyword": "AirPods",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "New Mac mini days away, OLED iPad mini in October, AirPods 5 in 2026 - AppleInsider"
     },
     {
       "id": "555080f7af7498cd7fd9cde99e318dc7",
-      "title": "Apple has a Mac mini ready, and it may be Tim Cook’s last product - The Next Web",
+      "title": "AppleはMac miniを準備しており、ティム・クックの最後の製品になるかもしれない- The Next Web",
       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1SZmNZRjdZWmQ0dHVfUjdIOWFmeHdhYWlGeDE3WEdFQmdQX3F2MXFaUjdSaTRMTzdyWjRGOHczLUpMTDQ3Tmt3ZzV4TVN2REFOMGdHcDRnak5WdTBIN0NnSHZHeWtSLWFYRGlkc2tfUU16SDl2c2c?oc=5",
       "source": "The Next Web",
       "published": "2026-08-25T17:55:00+09:00",
@@ -1356,7 +2099,8 @@
       "category_label": "🍎 Apple",
       "keyword": "AirPods",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple has a Mac mini ready, and it may be Tim Cook’s last product - The Next Web"
     },
     {
       "id": "a185ceaf2e3f8360f4a5d12be58f83bb",
@@ -1369,11 +2113,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Vision Pro",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Samsung Galaxy XR vs Quest 3 vs Vision Pro 2026 - tech-insider.org"
     },
     {
       "id": "2e40bc68136a636f20d4bae7cdfed663",
-      "title": "Apple is reportedly cutting hundreds of jobs from Siri, Vision Pro teams - TechCrunch",
+      "title": "Apple、Siri、Vision Proチームから数百人の雇用を削減- TechCrunch",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNRmpBTnhIWndZTF9NQXc4Tk5FME1qaGRlZmZMTUhDMHN2LVpZT2lXbDdIcml3aTFpeUZRRW05MEl3VWV4eW5INEhQYnhqLVM3NzJ4R3I2bjhsSjhTV2NsRTM2SE5zTFBvbWlaMWZGdkxuck9Zc3RyaVlMMHNXU2V1R0psSlRQSW5QcF82cC0tdGNiZ2xILVlBSUNOM0lIQ01wRC1tanJDRzl1Zw?oc=5",
       "source": "TechCrunch",
       "published": "2026-08-22T05:58:07+09:00",
@@ -1382,7 +2127,8 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Vision Pro",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple is reportedly cutting hundreds of jobs from Siri, Vision Pro teams - TechCrunch"
     },
     {
       "id": "a7b05b0a42ba842fe63358089ba4d9d4",
@@ -1555,7 +2301,7 @@
     },
     {
       "id": "d890ca976e4d21f2ebedfa006e5e2c55",
-      "title": "Amidst AI-Music War, Suno Finds Another Industry Partner in BMG - Rolling Stone",
+      "title": "AIと音楽の戦争の中で、SunoはBMGの別の業界パートナーを見つけました-ローリングストーン",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOWUtnM0lHR1IxY0FoZTM3aE9KQ1QzblpXSFV5YjMySnNIenB0RFJYdG5TQWRjTllNck41MmlhMmhDbHQ0TXJORHBROWZsaWNwWUhSV3BnVjJaY2tnX2dsZU9LZTJtLU0zVWsyWjE4Zmlva01oR0tfbkk3SXk3Z2NhSVZTcGo5dS1WZGtrYWFCdEgtWHFoa1FIdFVZRHk2RnJMZmc?oc=5",
       "source": "Rolling Stone",
       "published": "2026-08-12T16:00:00+09:00",
@@ -1564,11 +2310,12 @@
       "category_label": "🎵 音楽AI",
       "keyword": "Suno AI music",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Amidst AI-Music War, Suno Finds Another Industry Partner in BMG - Rolling Stone"
     },
     {
       "id": "cad74e1bc07a13f236df181083cc95e3",
-      "title": "KOMCA to Rebuild AI Music Standards with the National Assembly and Government - 매일경제",
+      "title": "KOMCA、国民議会と政府と共にAIミュージックスタンダードを再構築 매일경제",
       "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBrbkVhVGk5dkRvNGtWTXAwSE9MWV9PdFVoTk1hTkhTNjE5TVFldlNTYWNJeEtoUnc2SERJRXV5ek0zR1ZOOFFqUEU2WUJka2Q3?oc=5",
       "source": "매일경제",
       "published": "2026-08-25T17:11:26+09:00",
@@ -1577,11 +2324,12 @@
       "category_label": "🎵 音楽AI",
       "keyword": "AI music copyright",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "KOMCA to Rebuild AI Music Standards with the National Assembly and Government - 매일경제"
     },
     {
       "id": "a61cc35cd4af1b0fc9324766752b1913",
-      "title": "Australia's music industry bans AI-generated tracks from official charts - The Independent",
+      "title": "オーストラリアの音楽業界は、AIが生成したトラックを公式チャートから禁止しています- The Independent",
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQOGFZdlhrOV9mT1kxYjFNZEYxUjhvYkpPcVlEcVJRWktsOGVOcy1GT0U0TGFVUVUxUnhUbkRudktjalJ2WVZ1SFJnZW9XSm8zOTlnbElqaGZCdmw4LXZpSGtESFZQcFZWUmk0QlhwNzg1d0p4bWNpMTRuX2JfMGIxakdIRUY3QkFadEs0?oc=5",
       "source": "The Independent",
       "published": "2026-08-25T15:42:00+09:00",
@@ -1590,11 +2338,12 @@
       "category_label": "🎵 音楽AI",
       "keyword": "AI music copyright",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Australia's music industry bans AI-generated tracks from official charts - The Independent"
     },
     {
       "id": "7679b475aa44387c84eec1b8ea3cab43",
-      "title": "The grueling fight over who profits from AI music : Planet Money - NPR",
+      "title": "AI音楽から誰が利益を得るかをめぐる厳しい戦い： Planet Money - NPR",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUF92a2FOaGNJcVVFam9fYjUyQjR4dHFreGhZc3VnZkdLTTh5N2k2UHk4a0o0WTV5dEhpTG1PVEU3UjBSc0R5aUdyb2FwMnlPVnlveGdsb1c4eFRQQU1JZGVCM3BFZUhfaEZURUF1M2ZhYlVNcjJCS2hsQ1JYMEVyM1M0RTdTUkZBd2VoZGw5VmlWWnNoNkZ2X3VwallFRk9MVVMxNXVVQnZOcFlhbHRr?oc=5",
       "source": "NPR",
       "published": "2026-08-18T19:30:00+09:00",
@@ -1603,11 +2352,12 @@
       "category_label": "🎵 音楽AI",
       "keyword": "AI music copyright",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "The grueling fight over who profits from AI music : Planet Money - NPR"
     },
     {
       "id": "6cd5ae9724e5876d9d5c55ea83d46b59",
-      "title": "Record scratch—Google’s Lyria 3 AI music model is coming to Gemini today - Ars Technica",
+      "title": "レコードスクラッチ- GoogleのLyria 3 AIミュージックモデルが本日Geminiに登場- Ars Technica",
       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSGdsNGEweDJpS2hqXzFhbmZVZ2dINjJTZnhpRnRfLVVxMmNBTzZ5eFlSSG1QdHFOR3E5enpoVWtnNG1kRURpcmlsdEd0Vk0xalY3RWlsRWVINC14bkpTaHpmMTFUbWVTLXBJOGwxQktNd3F0NWJZMTFNYm9vTWY0enFCNS1rQ0dHQjFzaVFsNUxVRmUwTVJGdDlaWmg0OEJF?oc=5",
       "source": "Ars Technica",
       "published": "2026-02-18T17:00:00+09:00",
@@ -1616,7 +2366,8 @@
       "category_label": "🎵 音楽AI",
       "keyword": "音楽生成AI",
       "first_seen": "2026-08-25T18:26:17.897827+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Record scratch—Google’s Lyria 3 AI music model is coming to Gemini today - Ars Technica"
     },
     {
       "id": "25f5a2bfda54d1ff685a529fd53bb814",
@@ -1724,7 +2475,7 @@
     },
     {
       "id": "ab0879df681b946e47e6118e7d781236",
-      "title": "Apple is reportedly preparing iPhone price hikes (because of course they are) - Mashable",
+      "title": "AppleはiPhoneの値上げを準備していると伝えられています（もちろん準備しています） - Mashable",
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5TY1FUd2FJaEtkSzUzVU4zbWlhVU9lRTZKSTdtMnprTmRaT0psbl9oY1VVMkl0R2ZqSWszXy1OVlRpTTB3b1NiY0RpVERUS2pXOEtFenR0bi1FVkE0NUNDZ3ZHcVZrV2tFUHV4azBB?oc=5",
       "source": "Mashable",
       "published": "2026-08-25T07:07:11+09:00",
@@ -1733,11 +2484,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T12:46:37.048964+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple is reportedly preparing iPhone price hikes (because of course they are) - Mashable"
     },
     {
       "id": "753ad36ef67289d21eeba72fcc3680c3",
-      "title": "Apple Releases New iOS 27, iPadOS 27, macOS 27, and tvOS 27 Public Betas - MacRumors",
+      "title": "Apple、新しいiOS 27、iPadOS 27、macOS 27、およびtvOS 27パブリックベータ版をリリース- MacRumors",
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1vdG9hcWFlLS1zSGt4eTZDYnh2NU5pUjFKRWdVOEVrajRKMnV1LXBkTUppejVXMTRPaXFQV0wwTi1IUHcwZktUZjkxcFVveWhaSlgwYWRVU1pnbVg2NTlyZGtUbV9tXzExYVpBeUJncUxFMF8zTzF6WkVWV19DQQ?oc=5",
       "source": "MacRumors",
       "published": "2026-08-25T07:50:49+09:00",
@@ -1746,11 +2498,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T12:46:37.048964+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Releases New iOS 27, iPadOS 27, macOS 27, and tvOS 27 Public Betas - MacRumors"
     },
     {
       "id": "9e55346df65fa89ace11088bf2522c45",
-      "title": "iPhone 20 will look like a rounder and thinner iPhone Air - AppleInsider",
+      "title": "iPhone 20は、より丸くて薄いiPhone Airのように見えます- AppleInsider",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQnZKYlFtTmRFTFpTYjBZMnFQaUJCd1BDQnk2d0luTTRmZUtvdVBSSi1CTThyWm1UUGFMZUYtV0lTQXZOU0tfOGdoMVR1NTMyb0hUSmF6bjVNc2dhQWFfSG1McjhXMDhLWGdFTzIxZGlvQVBMQThoVlE4VWVVVlp3azBIaFlQdWhRVGV5SkVZQ29CNlphWU9PMDhaTWVfakZrc1E?oc=5",
       "source": "AppleInsider",
       "published": "2026-08-24T22:37:00+09:00",
@@ -1759,11 +2512,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T12:46:37.048964+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "iPhone 20 will look like a rounder and thinner iPhone Air - AppleInsider"
     },
     {
       "id": "2f982a12c33d0b6469f3aa00bfe6b34a",
-      "title": "Here Are All the Ways to Customize Your iPhone’s Lock Screen - CNET",
+      "title": "IPhoneのロック画面をカスタマイズするすべての方法- CNET",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOR01Ld2MwTnZfOUlhdTFxdlBhZWtKbm1tTnV2ekpMR3RUTWxqeXUxQU0xa0VGU1htdWFzc1dZR2FveVhlNDE5bWdUZm1ISkgzdHVDTmZaVTZQMGMtd2wwdDBIVjlDcXl1UzF1LU9qcGlIdDNGMTljRzNYSnM3dGFXb0xaTzJPRGJEMGxNTm92b3VIQk92MjF5WlNDVE5iQ2VfUER6Tm4ycXpxRnlPUjNtQlNNMUtudms?oc=5",
       "source": "CNET",
       "published": "2026-08-24T19:00:00+09:00",
@@ -1772,11 +2526,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T12:46:37.048964+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Here Are All the Ways to Customize Your iPhone’s Lock Screen - CNET"
     },
     {
       "id": "80ad63160c1083005d64b669762cf9a2",
-      "title": "Apple Gears Up to Launch Its First New Mac Mini in Two Years - Bloomberg.com",
+      "title": "アップル、2年ぶりの新型Mac Miniを発売へ- Bloomberg.com",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUGxzaHpVRnhoZkJOTTBLYXZXNEhJdUZaWmVTYm1CWnZ6MUlTbFR5amtBNnVNNzc5bVNjTVgyaUtLaW9LbzMwQlNtUWNTeWZpNmowMXE0YzV2RkFONUFXUEFGZ0ZwS1ROSkhtd09MYnJScmVJUWItaGlNbW5XLXJfUGpwRGZQTGhBWjZwXzVGQUc3bk5xTnk5SzdldzdCQ2FoNzJtanVYSkM2aTN3OFZWQS0yTm1jRTJQOEltVWVFSTE?oc=5",
       "source": "Bloomberg.com",
       "published": "2026-08-25T10:49:38+09:00",
@@ -1785,11 +2540,12 @@
       "category_label": "🍎 Apple",
       "keyword": "AirPods",
       "first_seen": "2026-08-25T12:46:37.048964+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Gears Up to Launch Its First New Mac Mini in Two Years - Bloomberg.com"
     },
     {
       "id": "aff7242e1f15f390e2a3ede256b8c1cf",
-      "title": "AirPods 5 to Launch as Early as Next Month - MacRumors",
+      "title": "AirPods 5は来月発売予定- MacRumors",
       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPME1qcXVXcDNYZVBiLThUYmk3ZC1DMjVtazlremRoZElhZFFMV05xTkFZeDlsaXd2clZDVXFZaFh6c3l6d0Z4WjhjUUdUT3cxOS1RY0Q2M0ZsTUVOM3RaRzRCc2NSRjBKM050dnYyMDBCaTB3aDBJZGQ1bFlrODdMVG5mLURiN1E?oc=5",
       "source": "MacRumors",
       "published": "2026-08-25T12:00:32+09:00",
@@ -1798,11 +2554,12 @@
       "category_label": "🍎 Apple",
       "keyword": "AirPods",
       "first_seen": "2026-08-25T12:46:37.048964+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "AirPods 5 to Launch as Early as Next Month - MacRumors"
     },
     {
       "id": "372e5877e2756fb692b36265fb9a371a",
-      "title": "New Layoffs Just Hit Apple’s Vision Pro Staff. What That Means for AAPL Stock. - Yahoo Finance",
+      "title": "新しいレイオフは、AppleのVision Proスタッフにちょうどヒットしました。AAPL株式にとっての意味- Yahooファイナンス",
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQT0p1aU1vaDFRWnoybG9kY0FBM2E0ajVsZEUzUkg2YkxzQUVtejhtemY5d2swLUhjWDNRTXpLU0czaXExazIyZjJjOHFtczZGb2ZNUUtkM01NcWM2OF8tUUx2eDB5QW5vM0dYNEhEM0JuZGoyVWFJazlFeTYwMGt4UUVEd05ia3BEbjFOb09GSHM1akZoQXhicEhR?oc=5",
       "source": "Yahoo Finance",
       "published": "2026-08-25T03:55:05+09:00",
@@ -1811,11 +2568,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Vision Pro",
       "first_seen": "2026-08-25T12:46:37.048964+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "New Layoffs Just Hit Apple’s Vision Pro Staff. What That Means for AAPL Stock. - Yahoo Finance"
     },
     {
       "id": "71e1c98b571ef0de165ae2866f5f2ce6",
-      "title": "Apple is laying off staffers working on the Vision Pro and Siri - The Verge",
+      "title": "Appleは、Vision ProとSiriに取り組むスタッフを解雇します- The Verge",
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9PdnRqUkp6Q2lad3ZUWWJlRmNJSnN5ZkQxYURPamh2YzQzTDZPNjcxYl94c3VKaEFxMVBjNGl5QlRfUHlxWHFNUTBxYWoybmxNSmhZQng1VURRNWVxS0p0SFZCeTY3dGh4RDQ5Nkc0bm5Bak1Q?oc=5",
       "source": "The Verge",
       "published": "2026-08-22T04:44:55+09:00",
@@ -1824,7 +2582,8 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Vision Pro",
       "first_seen": "2026-08-25T12:46:37.048964+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple is laying off staffers working on the Vision Pro and Siri - The Verge"
     },
     {
       "id": "0c5f481101b90e43f597a50edf6a4211",
@@ -2127,7 +2886,7 @@
     },
     {
       "id": "30851a530a3c572313f148d948e43343",
-      "title": "Music publisher sues Anthropic, Suno over AI training - Reuters",
+      "title": "音楽出版社がAIトレーニングについてAnthropic、Sunoを訴える-ロイター",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNUzBuU0RkY3lGY0pYZmM3c05LVVNLSUFqV1FfN0hqU053a21tRTYzanpfN0IwOThYTWNUV0ZuWXM1Q2pXRnlLYXhkVnVLMGxTbDlpZS00X1RzV2o0ekkzbHVpc0FLeFgzV0U4SGl1bm0xSk01cVJ4ZVdGOG93OFQyRTJvT3l4Zk16RXlzZk1KTHJHaDNKSVl4Z0VuRER5eC1BUHFWclZXNjF4bWhr?oc=5",
       "source": "Reuters",
       "published": "2026-08-18T06:52:23+09:00",
@@ -2136,7 +2895,8 @@
       "category_label": "🎵 音楽AI",
       "keyword": "Suno AI music",
       "first_seen": "2026-08-25T12:46:37.048964+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Music publisher sues Anthropic, Suno over AI training - Reuters"
     },
     {
       "id": "dd98088e5368f5ed60fb5a07e9d5edb9",
@@ -2270,7 +3030,7 @@
     },
     {
       "id": "4fb4d12ab6e2dc6087c85fab121170e8",
-      "title": "iOS 27 beta 7 now available as Apple tests major Siri AI upgrade - 9to5Mac",
+      "title": "appleがSiri AIの主要なアップグレードをテストするため、iOS 27ベータ7が利用可能になりました- 9 to 5 Mac",
       "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9WelhBQTBVVkNFWUlXZkJrM1oyY18wcFN4eDZqb084aEpNaEQxdlhnUVVTY2Rod1NsRmd0NlU5M0NwMVBwMnlmS052WWdxbHltN1lZNnk4ZEw?oc=5",
       "source": "9to5Mac",
       "published": "2026-08-25T02:28:00+09:00",
@@ -2279,11 +3039,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "iOS 27 beta 7 now available as Apple tests major Siri AI upgrade - 9to5Mac"
     },
     {
       "id": "162e5d9c9f59e8bc1c53acc87a5d080c",
-      "title": "iPhone 18 Pro’s new price might be better than expected - 9to5Mac",
+      "title": "iPhone 18 Proの新しい価格は予想よりも良いかもしれない- 9 to 5 Mac",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNUHZ0bFJYMTBNSU1yWHF3S3NVaVhrMl9mTklJMnNrdEVkWmprVHBlMEw2MmNIYU1uOV9icTk4ekxRakN6Y3Zab0FSVDhsWG56YWgwMWVwRWFJMU4xYmpjVjBPVFNmOVZVY3A5VkR2Z0ViRi1pWlVFQm9KemtYaDZacjQyVk9OZTJya25OTE1HRQ?oc=5",
       "source": "9to5Mac",
       "published": "2026-08-25T03:22:00+09:00",
@@ -2292,11 +3053,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "iPhone 18 Pro’s new price might be better than expected - 9to5Mac"
     },
     {
       "id": "d7ad41ba07d98dac04736fac82ccbf2a",
-      "title": "Apple iOS 27 could leave iPhone 11 users behind - Mashable",
+      "title": "Apple iOS 27はiPhone 11ユーザーを置き去りにする可能性がある- Mashable",
       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9kaWF3WnRndTZwYmROa29kNmJkVUMybFR4RDExVHExbHJEc1F2cV9CbXAyd3lnNXR4V1VlMVVLX1hnYmNxbXRPX0FRU19ZWDJCR09NSXc5MW1yN3lNVjlSc2FRelppay1qVGhoOUx1YnM?oc=5",
       "source": "Mashable",
       "published": "2026-08-25T02:52:06+09:00",
@@ -2305,11 +3067,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple iOS 27 could leave iPhone 11 users behind - Mashable"
     },
     {
       "id": "933f504832cab6eb0ce5e0a92be3b3ef",
-      "title": "Early Reviews Are in For Apple’s Foldable iPhone Ultra. Here’s What Testers Are Saying - VICE",
+      "title": "Appleの折りたたみ式iPhone Ultraの初期レビューがあります。テスターの声- VICE",
       "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1OT2ozTWRCRjJDM2RkczNLUDF2QnV1T3M2TjJpTkZBVkRIQXpoX1BTQUNKVWZqa1h1anNXcHRjd1lpczhVdXFKLTNhVkVTX1lablg1TkV6NmRaaERSc1NEenFpWlhxajNWWTNTSkcxdFlIUmc?oc=5",
       "source": "VICE",
       "published": "2026-08-25T04:58:12+09:00",
@@ -2318,11 +3081,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Early Reviews Are in For Apple’s Foldable iPhone Ultra. Here’s What Testers Are Saying - VICE"
     },
     {
       "id": "d8358ea3f2b3f734f405ec6f46697d06",
-      "title": "Just How Good Are Moment’s T-Series II Lenses for iPhone? - PetaPixel",
+      "title": "IPhone用Moment TシリーズIIレンズはどれくらい良いですか？ - PetaPixel",
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNUE5Vajc1d2tDZDV0dV9ZdzdSQ19XZlFFLUJCdjJjaHZaMWpYZ3hXb0F6dVV6cU1ER1BvMldlX1o3VmQ0cDI3eWI4N0NxUmRIaVI0alk2RVdBS3RuZkRzRS04NVlqZnJTLXVhV0gzemd0UVp3NXNPUXEzRXdqc0Z6Z21fT251TjhBLTZsV1VNV24wM28?oc=5",
       "source": "PetaPixel",
       "published": "2026-08-24T23:01:38+09:00",
@@ -2331,11 +3095,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Just How Good Are Moment’s T-Series II Lenses for iPhone? - PetaPixel"
     },
     {
       "id": "02d963b5ffcfa9ed629c2ad5489ba0fd",
-      "title": "The M6 MacBook Pro is coming. Is it worth waiting for? - Macworld",
+      "title": "M 6 MacBook Proが登場します。待つ価値はありますか？ - Macworld",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOZVladlkyNWpNTkxCVF9VeHpSaDdiQVJwb1NsUTVlNVFfcVpGUXBJaVNKN2hLTG9Samg5S3RCdHpwcFFTbnl2OW11SmpNZjQ4RnBJRUlmRDR4c3I3ZGxPNi1ma29RbEFnV196SnZsV3M5RGlxYWVONUltVXdYd3VUMnRLMWpXSnNoWFV4cV9xX3JIdWdsbnh4X016ajV3dm8?oc=5",
       "source": "Macworld",
       "published": "2026-08-07T16:00:00+09:00",
@@ -2344,11 +3109,12 @@
       "category_label": "🍎 Apple",
       "keyword": "MacBook Pro M",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "The M6 MacBook Pro is coming. Is it worth waiting for? - Macworld"
     },
     {
       "id": "a199685ca7d03d5b07c0fa17dd51e119",
-      "title": "Buying A MacBook In 2026? The Old Pro vs Air Rules No Longer Apply | by Mark Ellis | Mac O’Clock - Medium",
+      "title": "2026年にMacBookを購入しますか？ The Old Pro vs Air Rules No longer apply | by Mark Ellis | Mac O’Clock -ミディアム",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQ1VjVjlweEpXT3k1aXd1SkJ6X2FieXlWeEtheWJNc2oyX0MyY3hXYVZkMENjNzk4UWtScUplVmwwZlRkU1JuV3FJVmhtVy1yNXpEbVhYRHgxS21pclc1bEVKVmpPbl9WQVZ2T1NaQmJYbzZiaFlQcloweDQ5TGpvT0JsTDRMLUh4dW5CcW00MzFCcEF0UXZ1b3kwdzViTHk3SHVjb1IxVzRWNG8?oc=5",
       "source": "Medium",
       "published": "2026-02-26T17:00:00+09:00",
@@ -2357,11 +3123,12 @@
       "category_label": "🍎 Apple",
       "keyword": "MacBook Pro M",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Buying A MacBook In 2026? The Old Pro vs Air Rules No Longer Apply | by Mark Ellis | Mac O’Clock - Medium"
     },
     {
       "id": "f1d0a7d0207b433243a5d6434fbb5e5e",
-      "title": "iPhone 20 Pro’s all-glass design gets new update from leaker - 9to5Mac",
+      "title": "iPhone 20 Proのオールガラスデザインは、リーカーから新しいアップデートを受けます- 9 to 5 Mac",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNV01MOTB0cnFiNDM0VldmZTdZejZyWlBIWTg3QXlnTGJIUzNZWjBoMGdrNW1uUHl2cjd0S0tSOG5zTUFQZF81UnBGZDgyLTJqell6TmNVWDJ2ekJZam5mdFc3YzMtQjhWS1lxUExWMmYwOFhfd3lLTTRic25jTmRnckpHTFAyZG1LWVY0SlFVNkhuRVhpRVE?oc=5",
       "source": "9to5Mac",
       "published": "2026-08-24T22:48:00+09:00",
@@ -2370,11 +3137,12 @@
       "category_label": "🍎 Apple",
       "keyword": "iOS update",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "iPhone 20 Pro’s all-glass design gets new update from leaker - 9to5Mac"
     },
     {
       "id": "0aeebc16034ea8400765d442944e8264",
-      "title": "How Apple leaked product plans and even a video in a beta - AppleInsider",
+      "title": "Appleがどのように製品計画やベータ版のビデオをリークしたか- AppleInsider",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPMzBCcGl2M2l3SnljQVN5eDlSUHktVFdZNk1rRXFSYWJoTjZDaVlReW1qQjRmZEdNQkRzY2xTa2VMVkJvZW03SjQzYmNQUGRuVy1oUFM3U1lKaUVvZUdQdmNncFpWamJORm5xVnIxQ2VBUGdKYmlXbGlvVEJWeGdMd2s0RTc1OTN5c2RuWVNhNG80Ri15RmtxX1lybUtEeGxRSVE?oc=5",
       "source": "AppleInsider",
       "published": "2026-08-23T23:30:00+09:00",
@@ -2383,11 +3151,12 @@
       "category_label": "🍎 Apple",
       "keyword": "AirPods",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "How Apple leaked product plans and even a video in a beta - AppleInsider"
     },
     {
       "id": "5c57d855eb95ea2d291c25dd06cd2be3",
-      "title": "PSA: Every Single AirPods Model Is Already on Sale for Labor Day - Good Housekeeping",
+      "title": "PSA ：すべてのAirPodsモデルはすでに労働者の日に販売されています-良いハウスキーピング",
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPdGI4RWQ1aHBqY1cyNXNzSTQ2a192TUZLZVh1dERYRWh2M29nOTgxdDVLZmVXTFR3YktuTXVSQlFibzMxN0ZSTEc0T051N0Vqb3l0dFFVNnNSTFpIbTZvR0QyR281X010em5DdXoyRVdXaUJwVzdfMThHV0hvX0FSUENvLW1KeVhqWGc?oc=5",
       "source": "Good Housekeeping",
       "published": "2026-08-25T05:23:00+09:00",
@@ -2396,11 +3165,12 @@
       "category_label": "🍎 Apple",
       "keyword": "AirPods",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "PSA: Every Single AirPods Model Is Already on Sale for Labor Day - Good Housekeeping"
     },
     {
       "id": "31fe56c615e901b38a023c4511bb73f5",
-      "title": "Apple Watch Series 12: Everything to Expect Next Month - MacRumors",
+      "title": "Apple Watchシリーズ12 ：来月に期待することすべて- MacRumors",
       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxONjFfUFdUbGVDX2ZNSFRSRXlsVS1GNlpfUnpKcW9IbHp5N1pyQWRidFpIeFp5dXVBQUhUSnpBVkF6WEI2dWVUWmZSbmhFaUtGX01mbXpEY21QaVBqb1lVTlRxX1lhTTF4NzQwb3BqRXlXX1pabXFTVUQwaVdvWThQUlJMeGYxZEk?oc=5",
       "source": "MacRumors",
       "published": "2026-08-25T00:55:35+09:00",
@@ -2409,11 +3179,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Watch",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Watch Series 12: Everything to Expect Next Month - MacRumors"
     },
     {
       "id": "6bc97aabaff8ec7e96b0358b9f558bdc",
-      "title": "After years with an Apple Watch, a Pebble Time 2 'downgrade' was exactly what I needed - ZDNET",
+      "title": "Apple Watchで何年も過ごした後、Pebble Time 2の「ダウングレード」はまさに私が必要としていたものでした- ZDNET",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPakR3LUxwQ2hqamxPTmpLQm1iWWNBV3RSOEdWYzBMcTU5UjRaZEVzbHFOR2lSRlRFX1lkWng4Z0Qyd3R0UV9MZ3dyQ0dsak5HSGFQWEZkNUE3bmlwUl93bTh1TWNaamlkZ1o1T2RmdzBwNC1PWlF5OVRNUVNuLTFWNUhhc3U?oc=5",
       "source": "ZDNET",
       "published": "2026-08-24T23:51:00+09:00",
@@ -2422,11 +3193,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Watch",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "After years with an Apple Watch, a Pebble Time 2 'downgrade' was exactly what I needed - ZDNET"
     },
     {
       "id": "9af563c088d413021a836f1f2bb32be4",
-      "title": "Forget the Apple Watch, Amazon Gives CMF by Nothing Watch 3 Pro One Final Clearance Push at Its Lowest Price - Kotaku",
+      "title": "Apple Watchを忘れて、Amazonは最低価格でCMF by Nothing Watch 3 Pro Oneファイナルクリアランスプッシュを提供- Kotaku",
       "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNNHBKeHF0SElJWXpzUzMxX0RKSVlxZDBYNEJSNFY5QUlSUW53bWxDTUk3TUFLRkJHWVBJUjJuR0czMXVfaTBqSm9YQzI3SmcwdHF4c21vRjlHUEhOWWpsUUdVZ3JqU1hJdlJvYWdoZW1DamZrY2JmcXlCV19HNmdzRFRZRXF5cFV2ZEdPd0pqSENQVnAwSzVtMmwxLWlxbWlwQWdMSEtuWXl0Q08xb2xWU1lrcVNYMGp1blNhdHNNeVFqQjdPVm5wSVc2Q3NBUmpVeGd3?oc=5",
       "source": "Kotaku",
       "published": "2026-08-24T23:45:36+09:00",
@@ -2435,11 +3207,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Watch",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Forget the Apple Watch, Amazon Gives CMF by Nothing Watch 3 Pro One Final Clearance Push at Its Lowest Price - Kotaku"
     },
     {
       "id": "803875a15423c05a4a423822b970653c",
-      "title": "I walked 12,000 steps with the $799 Apple Watch Ultra 3 and the $199 Garmin Cirqa: Here’s which came out on top - Tom's Guide",
+      "title": "私は$ 799のApple Watch Ultra 3と$ 199のGarmin Cirqaで12,000歩歩きました。これが一番上に出てきました- Tom's Guide",
       "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPelYtVExBM0c5cXJTcDhacnVndDg4azNtbGJpY05wQjZQaU5iUXc1d3plRmtEakdYd0ZuOEVQb21HUTRXbk9mQlJKRU9hQnVjXy1OUHkwVHd1MU1EenF4eURwMDV2T01EMUEtYVY1STJxVjNlMDdkMWRDRURvdjZ5WmE1QkhpNmZYRDlSQWFOMEhSbmRWeV92Um1EMm9sMzhGdktlRE9RaTRObWIwZXRxQnZYNGRXLVVkeTRhQXhUbnZoZm12QlNCZ0IwNFZPaFB4SEY2WUpWaS15VG1TaUhWVzZSYnl1SDk4NGY5UkZXTjZ2MGRhZmw4MA?oc=5",
       "source": "Tom's Guide",
       "published": "2026-08-23T14:30:00+09:00",
@@ -2448,11 +3221,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Watch",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "I walked 12,000 steps with the $799 Apple Watch Ultra 3 and the $199 Garmin Cirqa: Here’s which came out on top - Tom's Guide"
     },
     {
       "id": "909f80db454afb34f6960cfd6dd49bce",
-      "title": "Apple Watch's shortened update support leads to class-action lawsuit - Notebookcheck",
+      "title": "Apple Watchのアップデートサポートが短縮され、集団訴訟につながる-ノートブックチェック",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVDNTaXZEZTZKUWpaRmVTdDBCMXhIWHFaVWxMSjAxSkFWME13aUdScTN6QktnQUhscVZHbHY1eU90OExsYy1MMGRLMWJ3RkpYYUlVR2gwMmJZakpUTFQ5TTFGMkI0N2dpUkVnMzBaY21ybjFza1ZSYVNUcGJObW1BVTVzQVV6aUpiXzJ0d3R2ZFh4ZTBTbnNqcV9Cd3o1RVkwY0FabzRxa01HZ1BKZWVOT190RQ?oc=5",
       "source": "Notebookcheck",
       "published": "2026-08-25T01:18:00+09:00",
@@ -2461,11 +3235,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Watch",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Watch's shortened update support leads to class-action lawsuit - Notebookcheck"
     },
     {
       "id": "96c4359a10ca67418f2027b1ba535c6d",
-      "title": "Apple cuts dozens of employees from Vision Pro team, report says - Mashable",
+      "title": "レポートによると、AppleはVision Proチームから数十人の従業員を削減- Mashable",
       "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9WZENlZDBfVE44T1Rhc1dObmt1NEVZZFQtRmtEdFh0MXNVWWl6djVpOUpVZGN5UmI2c1pCdl9JSFc5SmdWZVlaY0JxS0xTWFNDamo3UjdVSmFjQ3NEMnRIR1BXVDVhakNoTWR2NU9ESGVrZWs?oc=5",
       "source": "Mashable",
       "published": "2026-08-22T03:43:37+09:00",
@@ -2474,11 +3249,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Vision Pro",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple cuts dozens of employees from Vision Pro team, report says - Mashable"
     },
     {
       "id": "32ea7a319e558ff54e7b84c0ff3b2a99",
-      "title": "Apple Guts Vision Pro Gaming and Immersive Video Teams, Trims Siri Staff - MacRumors",
+      "title": "Apple Guts Vision Proゲームと没入型ビデオチーム、Siriスタッフを整える- MacRumors",
       "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84dXJYRGVWeUU5bGdBNDFqcFJMbm91Z0ZzWTJWR0FDbVJuVllzT04wcU1TYTFFbjVzOE4zV2RvRGMwcG5fQkd5bkw3SVl6RGNRV2hmQnVHQ0JyWkdSazRrNWdIZE5Ic0xhWE9kTDFkMzUyV2s?oc=5",
       "source": "MacRumors",
       "published": "2026-08-22T04:16:15+09:00",
@@ -2487,11 +3263,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Vision Pro",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Guts Vision Pro Gaming and Immersive Video Teams, Trims Siri Staff - MacRumors"
     },
     {
       "id": "fbf901cc5fd1f4ee781db0d3554b3655",
-      "title": "Layoffs in Apple's Vision Products Group prove slow progress in spatial computing - AppleInsider",
+      "title": "Appleのビジョン製品グループのレイオフは、空間コンピューティングの進歩が遅いことを証明- AppleInsider",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNZHF4UlUzQ3BrRXRfSkVZNE1EUjNkUk9uUHZBakN5eVhyMldWcm5QaWR1NlItckZjOWdxaWRMWHc3cjVUMk52Qi1YRE1vdVZoWWY4R2swNXhMckFtc0V5SmM3dGlRblpBUnZNUDVIOXZiV19rS1k2OXU3WEJ2MU5uWE5KZy1lRldjSkFPamtCV0hSUVd1aFFEcFhILUdyNkU5blNlWFpqd0NxSHJ6WkV6dUxoNnFBTFJINVVic3VRRW4?oc=5",
       "source": "AppleInsider",
       "published": "2026-08-21T04:48:00+09:00",
@@ -2500,7 +3277,8 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Vision Pro",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Layoffs in Apple's Vision Products Group prove slow progress in spatial computing - AppleInsider"
     },
     {
       "id": "6b9933d8dd78492b6deaa2899c1ed403",
@@ -2647,7 +3425,7 @@
     },
     {
       "id": "fff559e2bb413b24f169d116ed6a135a",
-      "title": "Bmg And Suno Announce Global Strategic Alliance Advancing Ai Music Opportunities And Revenue Streams - bmg.com",
+      "title": "BMGとSuno、AI音楽の機会と収益源を促進するグローバル戦略的提携を発表- bmg.com",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOWGlUSTRpR2I4MFl3UEhybW5RcHJ2cHlKYmJvZkFXTDJqNjB2Tk0tM2JPU0NXN01ZdExOc2ptdjIyMzBNZnh6Z2xWOVlja1ZNdHpOOFI4YnJJeFFrREp2OURmbEJ5cW96R0llazdvdGQwSnptTmJycWVKZWl3bDFkV0Q4QVU0YkpUY05TQTRmSHcxdzNDbWFNdWIyMEE0dUttVnllWGxPRk1kRUE1SUNvU2lvNlFLUFZNczF2c3FkRlF1QnM?oc=5",
       "source": "bmg.com",
       "published": "2026-08-12T16:00:00+09:00",
@@ -2656,11 +3434,12 @@
       "category_label": "🎵 音楽AI",
       "keyword": "Suno AI music",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Bmg And Suno Announce Global Strategic Alliance Advancing Ai Music Opportunities And Revenue Streams - bmg.com"
     },
     {
       "id": "bb62348a37e44a956a82573d0ae2ef9f",
-      "title": "Suno Shares Plan to Limit AI Song Downloads, Details ‘Principles’: ‘AI Should Enable Originality, Not Imitation’ - Billboard",
+      "title": "Suno Shares Plan to Limit AI Song Downloads, Details ‘Principles ':’ AI Should Enable Originality, Not Imitation ’-ビルボード",
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQM2E1a0VPRW5tR2dfZGJIaWVNeFl4bjZnRmM5OGxHaEJHeGVYU0xkanRtUk04ak5iLVdjcDRscGlIWHIxdlYzMXZHZkdIRmV6SUdUdjBkUWg2Q0EzWUFLdklXdVBSdmhNdjBBR1NGSkNUQzdjc0plWEFHXzV2RnpiWjFpYTN6VU1VLUE?oc=5",
       "source": "Billboard",
       "published": "2026-08-06T16:00:00+09:00",
@@ -2669,11 +3448,12 @@
       "category_label": "🎵 音楽AI",
       "keyword": "Suno AI music",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Suno Shares Plan to Limit AI Song Downloads, Details ‘Principles’: ‘AI Should Enable Originality, Not Imitation’ - Billboard"
     },
     {
       "id": "988a37913ac203c41c315df145ef9356",
-      "title": "Suno hopes to go legit with watermarks for AI-generated music - Ars Technica",
+      "title": "Sunoは、AI生成音楽の透かしで合法的になることを望んでいます- Ars Technica",
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNTzY5bU1wOThnUWZIWm5ZV3hfQ21ZeEpBcVZpNkc1azg4cXk2Ymd1bURNRlhUdFlhYl9uUUc4cFFpZ3ZnbjZ6cVFjS3d6dmlFTmdxV3NxMENxZ093ajZSazhpOHFrcE1wSHRLYjctWTNMWmZNcHlnT2EyY3VOelBBbnFIRjRGRllObWRFdGUzWHhVN1d4T0dRNVlENnBxQQ?oc=5",
       "source": "Ars Technica",
       "published": "2026-08-06T16:00:00+09:00",
@@ -2682,11 +3462,12 @@
       "category_label": "🎵 音楽AI",
       "keyword": "Suno AI music",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Suno hopes to go legit with watermarks for AI-generated music - Ars Technica"
     },
     {
       "id": "eb56507061dc9751c933143732cfedf2",
-      "title": "Court declines to dismiss independent artists’ copyright class action against Udio – but moves the case from Illinois to New York - Music Business Worldwide",
+      "title": "裁判所は、Udioに対する独立したアーティストの著作権の集団訴訟を却下することを拒否しますが、訴訟はイリノイ州からニューヨークに移動します- Music Business Worldwide",
       "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNanhSWGp3M3RFRHZ5UUdlN2RmZzdUcEJpaThvRXFpVHd3MmVjeWd1UnZvc2lpMU01ZUdsTHI3UEFPQTdJaW5XSmhscl9ZemZFR1NDX2RCVWg5SkdURGstMGFkV3U4TmdOVGpleGMxT3lTTmI4UlMzOHVLcHVJQ0ExeHBReVZaTXFaakZ0Wi14d3lIT2M3TjdzR2RQQVp5c29TTWN6VHJZQXBiaGdhOGVMN01MNGUweTBfR214ZHNwOVZBT0pPV1ZJTlBIUzJCMkc3VWJVZm11UXRic1FnV0M2R2NiQ2dxaHl6UVFUTVgxSVJIQVBGWDVkZ2tB?oc=5",
       "source": "Music Business Worldwide",
       "published": "2026-08-05T16:00:00+09:00",
@@ -2695,11 +3476,12 @@
       "category_label": "🎵 音楽AI",
       "keyword": "Udio music generation",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Court declines to dismiss independent artists’ copyright class action against Udio – but moves the case from Illinois to New York - Music Business Worldwide"
     },
     {
       "id": "9454c86b31240e242d2ffe7cca7f2682",
-      "title": "Sony Music Entertainment files new lawsuit against AI startup Udio - Los Angeles Times",
+      "title": "ソニー・ミュージックエンタテインメント、AIスタートアップのウディオを相手取って新たな訴訟を起こす-ロサンゼルス・タイムズ",
       "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQa01YMUNvZ3YwTVNvUEFHRU9FMkhBMGxGa2RYSmlBbXJBREd3VF9XekN3dWV2VlNmNFljRE42WmlOTzV0UzN6RDZpc3B1OXFaZG43N0tVa3F0endyZ0g4UlNhSUhWVEFMY2xmTTR6NllaUUNLNm1MQzBnRl9TNlhOR3FXMnJuX2E2TG54UHlER2dBMWFYZ2ZNbUE4U2JYenJhTVFoeFZpb0lia2ZpT19SbG02Z2pjTUdpZ2gxVnNzRzhSTGFZWTdHQzRnQkJ6QTd1?oc=5",
       "source": "Los Angeles Times",
       "published": "2026-07-21T16:00:00+09:00",
@@ -2708,11 +3490,12 @@
       "category_label": "🎵 音楽AI",
       "keyword": "Udio music generation",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Sony Music Entertainment files new lawsuit against AI startup Udio - Los Angeles Times"
     },
     {
       "id": "b237d20064a26ed6d583bc80d3986c83",
-      "title": "Twitch Streamer Sues Amazon Over AI Training, Claims Creator Content Used Without Consent - Law Commentary",
+      "title": "Twitch StreamerがAIトレーニングをめぐってAmazonを訴え、クリエイターコンテンツが同意なしに使用されたと主張-法律解説",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQRDk1SS0xQkxLdW90aklUQ01jcEI2X04zQzFVSDFucldpY096S3Rlb090cVFVTXJSZGUwcndURGpnNXBVTWZqNXZVNjYtbmJTRHNXX0FNVkFiVldvVTVGbjlIQUxONmJ2cl90ZmROWmVuempvWFNFZFN5NmN4NGppYjhHX1N3eEg1Zjcwa1c1NnVrUWluaUFvekloaFA4QjdaQ3NEbzBoVHpjRlZDSkI4dVNBT2RiR21BZTR4TmFudlRTWDNxcUE?oc=5",
       "source": "Law Commentary",
       "published": "2026-08-25T05:57:25+09:00",
@@ -2721,11 +3504,12 @@
       "category_label": "🎵 音楽AI",
       "keyword": "AI music copyright",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Twitch Streamer Sues Amazon Over AI Training, Claims Creator Content Used Without Consent - Law Commentary"
     },
     {
       "id": "0b36ccf36cb9090d4c47bcf7332cac0e",
-      "title": "Tencent Music Summit Maps Chinese Music’s Future Across AI, Copyright And Global Growth - That Eric Alper",
+      "title": "Tencent Music Summit Maps Chinese Music's Future Across AI, Copyright and Global Growth - That Eric Alper",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNOXZUSTM2dWhudkxVR3VYeVhDUWNxWU1FRUliRGJvd1Z0SzRqWW1melFQbmVuVlItRVducVZGUVRpWTV4RG43VmY1MVVhZFdDdnZLdVBJM0VQRnA0VDhXUklmOE1hVC0wcEswLVQzeGlYSEd5ZDlNQXJIUWhOdUZycXBDQUJ5aTBLeVI2YVVEeWNYWVRoLWlvX3ExUmlIaVBPaF9hODREWUloQXZ5OVJUOVcyZ2VEVWhwT2xvNzFXckMxZEc3UGc?oc=5",
       "source": "That Eric Alper",
       "published": "2026-08-25T05:06:14+09:00",
@@ -2734,7 +3518,8 @@
       "category_label": "🎵 音楽AI",
       "keyword": "AI music copyright",
       "first_seen": "2026-08-25T07:33:18.557980+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Tencent Music Summit Maps Chinese Music’s Future Across AI, Copyright And Global Growth - That Eric Alper"
     },
     {
       "id": "063ae88186b31cd1e3ad22009fed9752",
@@ -2855,7 +3640,7 @@
     },
     {
       "id": "3567e9f986fd91d2ae46c1c6a4410070",
-      "title": "Apple Preparing to Increase iPhone Prices - MacRumors",
+      "title": "Apple、iPhoneの価格引き上げを準備- MacRumors",
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQelJZTUZ4LWd3SWJZOEZ2S2VfWjRnRFVVRFdJSDlISVRTd2RPeEdlTjhHNm9Zc1VMVGg0ZnZjWk8xQktsVXM1anhRTjVSV3plWXduZkp5b1ppOWFxNE45LUlMLXNlbjRUcU9wNVRrV244ajV0TS1ZLUwwTXBIOE84bnBkOFp3QQ?oc=5",
       "source": "MacRumors",
       "published": "2026-08-24T20:17:20+09:00",
@@ -2864,11 +3649,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-24T22:53:01.354315+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple Preparing to Increase iPhone Prices - MacRumors"
     },
     {
       "id": "15a121c08a2f7bf8219aa1809ec92e36",
-      "title": "iPhone Ultra Wins Over Testers, But Its Camera Draws Fire At $2,000 - Yellow.com",
+      "title": "iPhone Ultraはテスターに勝利しましたが、そのカメラは$ 2,000で発砲します- Yellow.com",
       "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBlMWw3bkV0V0JfOV8zTHI0WkU3bkl2MFBrakYyR2Q1NEJ2aGxoV2M2bzRUaEduT1NKU3VwRThQaVY0QlNlSWxXNW9zSFlxbGd1dnlORXB6Yk10eDVTeDI3Nm1UU1NKVXc?oc=5",
       "source": "Yellow.com",
       "published": "2026-08-24T20:19:42+09:00",
@@ -2877,7 +3663,8 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple iPhone",
       "first_seen": "2026-08-24T22:53:01.354315+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "iPhone Ultra Wins Over Testers, But Its Camera Draws Fire At $2,000 - Yellow.com"
     },
     {
       "id": "2df1f0fe5523ec6f162116c449f71170",
@@ -2895,7 +3682,7 @@
     },
     {
       "id": "d414acf5068c3ee896e2ffea14749359",
-      "title": "Georgia Man Steals Running Car and Doesn't Realize Victim’s AirPods Are Tracking His Every Move - Yahoo",
+      "title": "ジョージア州の男性が走行中の車を盗み、犠牲者のAirPodsが彼のすべての動きを追跡していることに気づかない- Yahoo",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNXzRQQWJMeVhWcGFUcktoMDdNcmdidnBTa29rS01nVXkzVEtoOFRMem90QXcyNlNnUWRJTkJGVkZlQ1FaZHczckdwNFhJY0NSbFZza1NseFFSNWdkMW9ZQ2owUXY4Wks4OF9wa1RodDN6SGJ2cGlGRmx0LW01Mm5nY2lKZG5BQ1I1?oc=5",
       "source": "Yahoo",
       "published": "2026-08-23T20:31:43+09:00",
@@ -2904,7 +3691,8 @@
       "category_label": "🍎 Apple",
       "keyword": "AirPods",
       "first_seen": "2026-08-24T22:53:01.354315+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Georgia Man Steals Running Car and Doesn't Realize Victim’s AirPods Are Tracking His Every Move - Yahoo"
     },
     {
       "id": "0140faed2427bb7c4969410d7f6ccbfe",
@@ -2922,7 +3710,7 @@
     },
     {
       "id": "494df27cc0cf041ef4a41d938d56ca12",
-      "title": "JBL Bar 800 Soundbar Drops to a Record Low, Get a Full Dolby Atmos Surround System for Nearly AirPods Max Money - Gizmodo",
+      "title": "JBL Bar 800サウンドバーが記録的な低さに落ち、ほぼAirPods Max MoneyのフルドルビーAtmosサラウンドシステムを入手- Gizmodo",
       "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNa1ZlZVhoZTNtei1RMTN2eklaSVdwZkIwV19RbTlpWlhGbmk3RlMzZi1aOWdFQ0ZPRzJTb0NJNmZMRVFySElTZ1cyOTlwMTgwVlYwcTNzV19HZU11bzBIV2c1dkxJTW9JaW1zWWVPdVpUazdiU1FyNU4wUHpyT0JiU2VjM19iaXlUMTZydGJmZkJqcXdCZzdUdXhXX20wR0NWZnhoWXcwZHpFcjQtWGtFMUpteklNMmFrRkp1aXJudk5NVXBrQ29ZTzg2TGxZNFA2czM2NWllR0k?oc=5",
       "source": "Gizmodo",
       "published": "2026-08-24T19:40:38+09:00",
@@ -2931,11 +3719,12 @@
       "category_label": "🍎 Apple",
       "keyword": "AirPods",
       "first_seen": "2026-08-24T22:53:01.354315+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "JBL Bar 800 Soundbar Drops to a Record Low, Get a Full Dolby Atmos Surround System for Nearly AirPods Max Money - Gizmodo"
     },
     {
       "id": "12ef49162dae89253b2a11d2e183726a",
-      "title": "Garmin's next big Apple Watch Ultra rival leaks in 18 different models ahead of this week's launch - PhoneArena",
+      "title": "Garminの次の大きなApple Watch Ultraライバルは、今週の発売前に18の異なるモデルでリークします- PhoneArena",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQeE41OFBfaVdxbFpVNG9UeFV5Z1FyTy1vWC1Gcm5jdzdYVEh6TW5HcThlUlllM0QyWG9JbGdkaG9kcnQ2NExBbU9jcWRjbjlMQ1JXQVBYdUlHd3dZUEhJR09FdlZtLVEwZ2paZVplN2t6bW91QVZHU0V3TVhZTUhDLWhYQThYU2RrZUN1RV9oWjN4Vk9IbW9DUEFyWkxNYTR2anJMdFlwV1Q1U1pwQ3RQZFlmcWFWZTh0aTQ4?oc=5",
       "source": "PhoneArena",
       "published": "2026-08-24T19:03:48+09:00",
@@ -2944,11 +3733,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Watch",
       "first_seen": "2026-08-24T22:53:01.354315+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Garmin's next big Apple Watch Ultra rival leaks in 18 different models ahead of this week's launch - PhoneArena"
     },
     {
       "id": "28755d405fd209a794ed13e62235a099",
-      "title": "The Apple Vision Pro could have been called the ‘Reality Pro’ - Apple World Today",
+      "title": "Apple Vision Proは「Reality Pro」と呼ばれていたかもしれません- Apple World Today",
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTDVqVEdURGQ0eGZJcTh6SGVMSy02WlFoWGZWS0N3LWpLeXd6cXRpQkt6Y1pMQU8xaFhKOEswbWhZZ05ZNjNiV3dlOTlUT2J5ZDVjSWdqZURId015X3Q2ZTh0LWJfWlItZWdWdllvQmFJbVZRMGpnekZzYTVsTVkwelZMQVY4TUhSaE1WQlY0Z1B6amNUSmI1YQ?oc=5",
       "source": "Apple World Today",
       "published": "2026-08-24T15:06:00+09:00",
@@ -2957,11 +3747,12 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Vision Pro",
       "first_seen": "2026-08-24T22:53:01.354315+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "The Apple Vision Pro could have been called the ‘Reality Pro’ - Apple World Today"
     },
     {
       "id": "28259be35ad51b0fd334c0ec5cb3a24e",
-      "title": "Apple is making staff who worked on Siri and Vision Pro redundant - Mezha",
+      "title": "Appleは、SiriとVision Proに取り組んでいたスタッフを冗長化しています- Mezha",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTWxpeVBpWTducXhWc194cEoweVR6VmhEQU1UWWNyUElvZkF1YS1Fd25jdThURnF5Zm1EdGh3Rk1ZVUY1aUpYcFp6dFRObEdXNVROS2ZPMjRBV3VWNEx3TzRNaWpVU1E5RGFMS0U3WEVGLVV5bHNPVkpKZ2VTWVFUZXozd0FQYmxV0gGOAUFVX3lxTE9FSHVQZWNYcVVFRElONndTSGcwdlVRYV92MDNsXzlNaVFMX2ZnSUF3X2Y2al9obFZWRllERlRtb3BYX3hOb2dtWmNnWUJOT3BSVzdBcl9qY2tfMVc2QW41UkhGbG11UWg0c3VrdzdKSjRhUEE0czQwQ1JaOHZrWkQ0X3pMNDRPbnFSalJNU1E?oc=5",
       "source": "Mezha",
       "published": "2026-08-24T16:17:00+09:00",
@@ -2970,7 +3761,8 @@
       "category_label": "🍎 Apple",
       "keyword": "Apple Vision Pro",
       "first_seen": "2026-08-24T22:53:01.354315+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Apple is making staff who worked on Siri and Vision Pro redundant - Mezha"
     },
     {
       "id": "6788c613ee607b7a6b314441c4456a7f",
@@ -3169,7 +3961,7 @@
     },
     {
       "id": "d380e45ce029dd7fb58fc13c28ebf785",
-      "title": "AI Music Company Suno Loses Copyright Case in Germany - Decrypt",
+      "title": "AI音楽会社Sunoがドイツでの著作権訴訟で敗訴-復号化",
       "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1RaEdWQnNqM195dmRlQmRjbHd1QW9BZDd1aVpOOTJrc1J0LXRyZDY2dlNqa2hvaXpNR19UUnZycDRQbnlMRlhZYlpkY0M4WkNPZGtjOUJWN093RC1hRjZhdWhFZk9iVmVOdGgtRE5jNNIBd0FVX3lxTFBVcTZXZHE0ZVRxWUttZl9CVlM3aU1jbVVabHBSLWJjX3k3cmxnZVBhVDZoOGVZdlVXejloTjVNWEE0Ump3S0JrRFFJdU1TOTQwTDNXUG5LV1dEOGpxcWJRWUNzQnNNTGJTS0JPMFJWUjAzQm5NSE44?oc=5",
       "source": "Decrypt",
       "published": "2026-07-31T16:00:00+09:00",
@@ -3178,11 +3970,12 @@
       "category_label": "🎵 音楽AI",
       "keyword": "AI music copyright",
       "first_seen": "2026-08-24T22:53:01.354315+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "AI Music Company Suno Loses Copyright Case in Germany - Decrypt"
     },
     {
       "id": "d5daf0e0934d416f28f8c350ee640b95",
-      "title": "Turn ideas into music with MusicLM - blog.google",
+      "title": "MusicLMでアイデアを音楽に変える- blog.google",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPbVJEOHV4aGZfamk2dzRsLXhZVnIyTUNiVno5MVNCcGg4eDktcVg5MFhFXzBpbzFQVzdSb28wYmlFNzZvck9rV0dZT3BCTzMzdVBnT0RKdW85VE5lM0pndDI4VjBlUmFjTVY1aGN0R2Q2SGVNZm91SXh6X2d6ekdTZ1RRNXk?oc=5",
       "source": "blog.google",
       "published": "2023-05-10T16:00:00+09:00",
@@ -3191,7 +3984,8 @@
       "category_label": "🎵 音楽AI",
       "keyword": "音楽生成AI",
       "first_seen": "2026-08-24T22:53:01.354315+09:00",
-      "lang": "en"
+      "lang": "en",
+      "title_en": "Turn ideas into music with MusicLM - blog.google"
     },
     {
       "id": "d02262b6961e917c5caa1fc71c42550e",
@@ -7201,718 +7995,6 @@
       "keyword": "ネットで話題",
       "first_seen": "2026-08-22T22:32:43.108189+09:00",
       "lang": "ja"
-    },
-    {
-      "id": "ce99b1158a892bdbdc54b7c8110468a2",
-      "title": "【2026年夏トレンド】SNSで話題の「クッキーメイク」とは？ ほっこり可愛いお手本ルック＆HOW TOを解説 - ELLEgirl",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQSHNzRm1hcUdVcTZaclBkbWh2SGo0VEVwRGI5bkhEeXVSNG5yVllUWHB0UWtlZkJSZHktcHRNRDh1eHRZcEV3azQtTkpOTTBvM0dob2JoNENRazNId1Z4aWFEZTRVT0pnTWdaQWp1Ym1QN0JEbXNMbEhHMUt6ZDJIQ1BnVVVjUQ?oc=5",
-      "source": "ELLEgirl",
-      "published": "2026-07-24T16:00:00+09:00",
-      "summary": "",
-      "category": "sns_trends",
-      "category_label": "🔥 SNS炎上・バズ",
-      "keyword": "SNS トレンド 話題",
-      "first_seen": "2026-08-22T22:32:43.108189+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "48b7cb2d32f81a7b50538a0790e94eee",
-      "title": "iPhone のバッテリー寿命を延ばす 10 の方法 - MacRumors",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1ueDRaTkJfUnlOYWJDbElxZzh3dm5VMElid2NQcTBwN0hGTHVSc2lfRzRoWUJReGN1UkxMSEkzSlZidzZsMDlyQjNGR1VOOEJvN2dYbktMbFNwTklEMm0xeFJSX0RSVUExZHhqYg?oc=5",
-      "source": "MacRumors",
-      "published": "2026-08-22T07:53:00+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple iPhone",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "en",
-      "title_en": "10 Ways to Improve Your iPhone's Battery Life - MacRumors"
-    },
-    {
-      "id": "0a2caf09ed900cad92ab7b833fbc12be",
-      "title": "Apple iPhone 18 Proの最新デザイン：4つの新色と最新のケーススタイル - Yahoo!ニュース",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBPNlJ4OFVobUdjRml4d3NFdlEyUEV6a1JtU1F3TG5UNk0tZnhERXB3cmdIb1JOanlYQWNuRWdBRlZaU0pLYWZBX0pCWElaQmxJbkNnX0dfRUNiZE5NbGFmUVlKY0FieEJQVHRNck5pYnlOd1FoZWc?oc=5",
-      "source": "Yahoo News Canada",
-      "published": "2026-08-22T17:40:50+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple iPhone",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "en",
-      "title_en": "Apple iPhone 18 Pro Design Latest: 4 New Colors And Updated Case Style - Yahoo News Canada"
-    },
-    {
-      "id": "e314600683c065f698df8c28bc4b6b3a",
-      "title": "T-Mobile は今週末 Apple iPhone 17 を無料で配布します — 資格を得る方法 - Mashable",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5SczhFRm14X180QzA5RW9Eb0JELTVFSjA2T2NfWWRXVDFKME5XQlhiMzZVYW1VOGgzZnZLOUR4RnFSX0plRmFMa2I2RDc5SUVvckZSY3NLVXJaRG12TG9FZ0FtQW1JZw?oc=5",
-      "source": "Mashable",
-      "published": "2026-08-22T16:28:13+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple iPhone",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "en",
-      "title_en": "T-Mobile is giving away the Apple iPhone 17 for free this weekend — how to qualify - Mashable"
-    },
-    {
-      "id": "584573e7d183ed6a2a105f2c70e08e48",
-      "title": "iPhoneを巡るインド一家全滅：消費者ハイテク負債の危険な誘惑 - NDTV",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOSUVlYWZibGJ2OW1WaTJHZEpvOURmcktDdUp0UDBMdVUyTGRXU3p4Z1FvQnNnd0hzeW5ydUhJbWpJbnlFazNFYXBQYXMyOEV0bEdOU0dtUm5LS0VQemRTZ2ZtNGFXT2Mta1BORFFDYVBFcFg1czdVXzhQUU9GdFkwMTlsUUJSOHZvTWRYNFB1OWJ3M0VhSFl6Z3FGN0RJWWhIdXlMZG85cFFXVUUwYWpFVk5FMkRLZw?oc=5",
-      "source": "NDTV",
-      "published": "2026-08-22T16:56:43+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple iPhone",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "en",
-      "title_en": "Indian Family Wipeout Over iPhone: The Dangerous Lure Of Consumer Tech Debt - NDTV"
-    },
-    {
-      "id": "e2f7420ee8fb5b4dc06a928be685a95a",
-      "title": "18歳の息子、親にiPhoneを買ってもらうことを拒否され崖から飛び降りる。父と母が努力して死ぬ - エコノミック・タイムズ",
-      "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxQRGVtX2s4VnZXelhPZXI4REhfUnVjWDJxekdEUjRGVmxjb2ZYVVBMYUludlRfTEZrMm5FbjlPT0hOUDdHR2dPQzB3LU9pYmQ3XzQ1SjJmNFVheXhGcHh2cU40eWx2RjdJQ0JFcDJzVURVS3A0c1ZkZmlqNFF1TkFaSXc4RElhSzdvVklXYkNYNUhyQW1VcUNtaHdwWi15VU9sRmU3Ym91VTZUQ3c5UVZZSkxYMXdCVlUwWTRFNkZhQzJoOTFxZ1BfYmxyM0hxWXBJRUF5YjZLbHU3QWk0VU8xanZZN3E3NlBrOUJpTFBzOUNacVd6S0NSOEhwN1BvT1BsaWhTZGtwNlpSRXpYdVdMV3VoeGpJZU3SAZwCQVVfeXFMUGdsUnVCUmxaNmJfdm85d3lIaFhmY1NlOTZDUG1TYmU4VTVVZW1NMlNhbm1EVjRITVg2eWJ4UVRWbVRyMkxub2tFemNUT0JQazdobHVwM1ZjSWZLZnh5Z0Y3T3ZmVkpuZUZWYldsaXZuQktPNjFVUm1zRkI3akNHTXozRERtSU5vaTN2QXpEcDNGRWNVN2hBYkFaQmNWdUZDT19fNUw1U1MxNGVybkJ6NWx3ZFAtdnlCVDQyeTN3aUNkZ01pWnZvcWNqOFZEMGw3ai0xSUFES1cwWFVVQkM4QjdWX0ZsNnZKT0R1bjU5WkNfMlVxLVZGRi1xY242S0gyVDM2N3ZOcDdwRVpjZGRZYXNGY0ZOMUtKMjdJeks?oc=5",
-      "source": "The Economic Times",
-      "published": "2026-08-22T18:02:42+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple iPhone",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "en",
-      "title_en": "18-year-old son jumps off a cliff after parents refused to buy him an iPhone; father and mother die trying - The Economic Times"
-    },
-    {
-      "id": "f878e22fd8dbb9c7ec8b303c80d98ee1",
-      "title": "iOS 27 はまったく新しいアプリを iPhone のホーム画面に追加します - 9to5Mac",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQaERMYkFlRUVHRndMeTZqM01UQ29rWkM0dlQ5cnBfNzhqSjhxZXdFU3V1Q3FfNDRTdzExcElZbWZiTThDRGZDdy1qcUlJNWM1UHU5alVacnVnLXF2dDJsMGtNV3RmQ1kyakZrQ2pOUUJPWU9BNFR2RG9oNi0ydVJnZUtrWnZlT0ppNVl6SWJfQQ?oc=5",
-      "source": "9to5Mac",
-      "published": "2026-07-16T16:00:00+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "iOS update",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "en",
-      "title_en": "iOS 27 adds an all-new app to your iPhone’s Home Screen - 9to5Mac"
-    },
-    {
-      "id": "8dfdc4ba20701c9499ad6d0cbce5eed4",
-      "title": "私はヘッドフォンを常にテストしており、24% オフの AirPods は常にバッグの中に入れています - New York Post",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOVV8zc1hSY1ZnTUtqYTdIQmstY1hyblJOdXl4TFZyUnJmR05nM2xlVWhMb0U3QU4zNm5weTItSVVwcXBGeVc4TGgyX1EtZzdjeXdTUGhfNUhXc2VEV2M3NUFUblBvV2RtUE5xT29MNHFWMmY1OW1UcUg1N2tQTjFhd09Vb0dGT1k?oc=5",
-      "source": "New York Post",
-      "published": "2026-08-20T00:54:00+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "AirPods",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "en",
-      "title_en": "I test headphones constantly, and these 24% off AirPods are always in my bag - New York Post"
-    },
-    {
-      "id": "9ed214f9c825246b0f2089e428fb56fd",
-      "title": "iOS 27 で AirPods がさらに強力になる - その方法 - bgr.com",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1YLWg3RUpuN3M2ZkRPcmlSNU1Gd0dDTk5HQVhiN2d0a2EtRktrREFkTFN4eFA4MHJlUTF1ME1KM21YWk9rVEgweDNKeG0wenJUR2dPaXVTZTctUUJqWE9HQml1aFN3OWZVTERrMjdKa1dKUVVrWHFhZ3RCalpNRlU?oc=5",
-      "source": "bgr.com",
-      "published": "2026-08-19T11:47:00+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "AirPods",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "en",
-      "title_en": "Your AirPods Will Be More Powerful With iOS 27 - Here's How - bgr.com"
-    },
-    {
-      "id": "f04fd2079ef83fea325fb5c2944df7d5",
-      "title": "Apple Vision Proは「Reality Pro」と呼ばれるところだった - MacRumors",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNbjVKV1BSZ0o0eFdCR1pKeG9VWW9KenI3OS1fb2x0RkNSdlRQSjY5d29IaUdvLU83dnl4Snp2bnFDTXVXYWJMcmN2UFl4dFhPSldkVmFudVUxaDNNTlZfZVdDOE9MNjV2S3FfVk5MdUpCT1BPSVdwZ1c1TXZ5bTNvVHdjMDQ?oc=5",
-      "source": "MacRumors",
-      "published": "2026-08-22T16:30:41+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple Vision Pro",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "en",
-      "title_en": "Apple Vision Pro Was Almost Called 'Reality Pro' - MacRumors"
-    },
-    {
-      "id": "38945c19fa8adbc2837ac7ef1a4ea8c5",
-      "title": "Apple、Vision Pro チームと Siri チーム全体で 200 人以上を解雇 - 9to5Mac",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQckhZWU5jd1VpaFZOWWRoNmdmR3BoZ0YzVWVUQ2VEaDdzRThlSUU0aGlITExqSHdBaFlmN3dNeVNNLUtzWWJkOFVjTl9NOUJGUjkwbGQwR3pjYmhFYm1UYm4yNjh6TFdGcEFwM2NSN1VQMV9UNk9YQ0J4X296YjB6WlNkNWlvbEIyV2pNWENOa0p6MXJL?oc=5",
-      "source": "9to5Mac",
-      "published": "2026-08-22T04:17:00+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple Vision Pro",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "en",
-      "title_en": "Apple lays off 200+ people across Vision Pro and Siri teams - 9to5Mac"
-    },
-    {
-      "id": "b0940e9a7e49e8f4ac3245139d6b2b2c",
-      "title": "日本酒ざんまい、10回目の春 札幌・狸二条広場で催し 50銘柄から5杯、1000円で飲み比べ - 北海道新聞デジタル",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5JMnlQVENCMGhibDVzX0hxa051SFA3Vi1RLWU4UHlqa1VNY29HNjZzSm9HZ09pRHdrTDlDRnlOYTF4U0tBWWNPSFhBZ2E5T3JjUWVlUWs3dVZrUQ?oc=5",
-      "source": "北海道新聞デジタル",
-      "published": "2026-04-26T16:00:00+09:00",
-      "summary": "",
-      "category": "sake",
-      "category_label": "🍶 日本酒",
-      "keyword": "日本酒 札幌",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "598debf0b10efc69d3eb501a51f4a011",
-      "title": "10代アーティスト限定の夏フェス『マイナビ 閃光ライオット2026 produced by SCHOOL OF LOCK!』グランプリは北海道発・オルタナティブバンド「札幌某所」！ - PR TIMES",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9aZ2NIT29ObHpZa2hQQjdmRTVka3EwQnNUM3dUN2hfUGRDZ2ZPRkROSWVVMFRORThyZ3Z0S2V4VlhhcnpDQk43QWhQbUpXZ1Q4dXZnbVMwQThxVzZ3YlJWVzZqcEM2SlBoUmc?oc=5",
-      "source": "PR TIMES",
-      "published": "2026-08-07T16:00:00+09:00",
-      "summary": "",
-      "category": "sake",
-      "category_label": "🍶 日本酒",
-      "keyword": "十四代 札幌",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "3a41356ab8408dfce95c1b4752c55741",
-      "title": "Live Nation Japan Premium Club - fan.pia.jp",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1faVZhdXFWcnNIektpUzNBZUxmQl9lN0N6dWZHSTQtcklqTm5MTkRKT2hLM1N0U2ZYdDNmek9aVFhoYmtQdUM2M21CQzRxZlg5RV9lbnYyckNheW9NSTRiZGJ3?oc=5",
-      "source": "fan.pia.jp",
-      "published": "2026-06-24T16:00:00+09:00",
-      "summary": "",
-      "category": "sake",
-      "category_label": "🍶 日本酒",
-      "keyword": "十四代 札幌",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "21c741684b40a80cfb3eed9e23533288",
-      "title": "好き＆飲んでみたい「秋田県の地酒」ランキング！ 2位「新政（あらまさ）」を抑えた1位は？ 【2025年調査】 - All About ニュース",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9VT004Wng1NGVFeTJMRnUzNkpZMEFXck9iRnJIV0FPcF9XZnZONGkxMGVURDNLYWQtVTBGYkdXNmJ2M0MxbXA4OXN4cWNHakFHdzNsd3hoOXJkdw?oc=5",
-      "source": "All About ニュース",
-      "published": "2025-12-06T17:00:00+09:00",
-      "summary": "",
-      "category": "sake",
-      "category_label": "🍶 日本酒",
-      "keyword": "新政 北海道",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "fbcf1cffeee040f6510aa152034ee31b",
-      "title": "日本酒もDX NECグループの技術で伝統を継承へ「このサービスのおかげで受賞できた」: NEC Stories - NEC",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE95aF9GNHpUcmx5d0dRVHQ1bXR4UjhNeGRFMXdhcFp6VzVPZVU3ZVhzeDhybkRsZXhrakQwSGRnRGJMXzJkaTZKWS0tWmRpSXdaQ21jYlpsVDVXajdE?oc=5",
-      "source": "NEC",
-      "published": "2023-10-01T16:00:00+09:00",
-      "summary": "",
-      "category": "sake",
-      "category_label": "🍶 日本酒",
-      "keyword": "新政 北海道",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "f39784923a3db272a5876ac09dfb636a",
-      "title": "【新登場】12月にオープンした話題の三福而今（さんぷくにこん）のチーズテリーヌ最中に新商品が登場！ - PR TIMES",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1RZTA2ZjFSamxWcjNXRVBnYVFVTGtOS2NNa3NhRkZHZVhWQnFsQ0Jtck0ycERNUkdSeU9DNTliaEdGZDhVdS1WQnFaMHNuRUYwWWd0ejVMdjlrYjhxdHNyZ0VrOFNNUGZ5T2c?oc=5",
-      "source": "PR TIMES",
-      "published": "2022-02-14T17:00:00+09:00",
-      "summary": "",
-      "category": "sake",
-      "category_label": "🍶 日本酒",
-      "keyword": "而今 北海道",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "a18fa4034f26c4ce05bf76872c7378f0",
-      "title": "28日に「獺祭」と会食を愉しむ会 宇都宮東武ホテルグランデ - 下野新聞社",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9tUTJJR0hPZnQwUkN6aG1pWWFObUFQekc1X2hicC1wOEYxNm9xcUZrV0JjZ1oyUy1qdUQtMTZPc1k2S0tfd01hbmc4TjJlNEhBZl9zT0ZydGc5c1E?oc=5",
-      "source": "下野新聞社",
-      "published": "2026-02-08T17:00:00+09:00",
-      "summary": "",
-      "category": "sake",
-      "category_label": "🍶 日本酒",
-      "keyword": "獺祭 札幌",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "61a148b65e216f3c37e3a95b9dd7f597",
-      "title": "鍋島に生ドーナツ店「クリーム・ディー」 「乃が美はなれ佐賀店」内に出店 - 佐賀経済新聞",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFAzbTdOTmxVT3BMd1dka3ZxbF96NGVsS04tQXczWFVTSmNHaTFSb1NWSU5sSXZjbVZCUk1zTXdOcjNzem9sUXhRQnQzZmM4QnM?oc=5",
-      "source": "佐賀経済新聞",
-      "published": "2026-03-26T16:00:00+09:00",
-      "summary": "",
-      "category": "sake",
-      "category_label": "🍶 日本酒",
-      "keyword": "鍋島 北海道",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "18c40386df7bcb0f66709420a032d31d",
-      "title": "JR札幌駅に新・エキナカ商業施設、2027年度末開業 - リアルエコノミー",
-      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9DM1k0cXBkQ1JlZWRZN0o1aVVycDdkSFdZazh5VmpLeUhraS1ybzZXV09QR1FZRk15UDlQVzNKcVpNcmROSjhneWNwYW8yRGRt?oc=5",
-      "source": "リアルエコノミー",
-      "published": "2026-05-23T16:00:00+09:00",
-      "summary": "",
-      "category": "sapporo",
-      "category_label": "🏗️ 札幌",
-      "keyword": "札幌 商業施設 オープン",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "1f77f2371abc3320f6001e30c3f0044c",
-      "title": "札幌に新ランドマーク「アーバンネット札幌リンクタワー」完成！潜入取材で見えた最新機能、アンヌ遥香さん「すごい良いセレクション」多彩な飲食店は9月1日以降順次オープン - TBS NEWS DIG",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBSSFdUODZma2xhaFh3NjJXb3VnT1hjZ2h0V1RWc2YxNkRRaGVCU1MtSDRBSlBNMnpMaVRxTHJ6Mm5sWXhhSTJLNXJEQV9sOUpxOGpnVEFyalF2VE9oWjVuRnE4SDh0TGM?oc=5",
-      "source": "TBS NEWS DIG",
-      "published": "2026-07-09T16:00:00+09:00",
-      "summary": "",
-      "category": "sapporo",
-      "category_label": "🏗️ 札幌",
-      "keyword": "札幌 商業施設 オープン",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "f50acd6d0cda6dc03f788d2da9b0fd8d",
-      "title": "［敗軍の将］北海道八雲町、資材高騰で隈氏監修の新庁舎が白紙に - 日経ビジネス電子版",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1qOTJaaFlUaVNhVFN0WWMyTUxNNE8yM3I4ZThLOFhLa0ZiZTNPQ2Mwbzh3SloxWU5MdXpZTW05YzNkVFFqU3Y2enA5dHN0bGNLdlFxTGhQbkhiZTJoUlhJLVZ3?oc=5",
-      "source": "日経ビジネス電子版",
-      "published": "2026-04-24T16:00:00+09:00",
-      "summary": "",
-      "category": "sapporo",
-      "category_label": "🏗️ 札幌",
-      "keyword": "北海道 建築計画",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "e8c87365ce066b24047eb4872bb7cab8",
-      "title": "新さっぽろ駅周辺地区における複合開発プロジェクトが日本都市計画学会 学会賞「計画設計賞」を受賞(ニュースレター) - PR TIMES",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5zVGxqN0VUVVhiVUlLMTFFUHZmS1R6bVRXVEdXTmdNSlp6Vjlsak5OT1poYWlrdWxlR3RJYXdjYjVTaXpDdUhWeGVmdmV0QUluS1VCRmtjLTJ1V3A1YVV6djdRQWh3TVluLXc?oc=5",
-      "source": "PR TIMES",
-      "published": "2026-06-09T16:00:00+09:00",
-      "summary": "",
-      "category": "sapporo",
-      "category_label": "🏗️ 札幌",
-      "keyword": "札幌 都市計画",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "c3b3c002985d4deab1f78ef80c4f5ce8",
-      "title": "札幌は人口減でも「市街地縮小しません」 市が20年間の都市計画案 琴似や真駒内など - 北海道新聞デジタル",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5uZ2JjanY4b3hxcDNDOXZqV0k1R2dXc3NibGZQSVE3a3g5QVBDbUVDNXBLOEtjMlJXbjFndTJXMHVyOG83V2R0R255Q0JVWG1wSUNnbEpGVEhiZw?oc=5",
-      "source": "北海道新聞デジタル",
-      "published": "2025-11-20T17:00:00+09:00",
-      "summary": "",
-      "category": "sapporo",
-      "category_label": "🏗️ 札幌",
-      "keyword": "札幌 都市計画",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "b0dca4b299657963bda833c3894a4124",
-      "title": "【北海道えりも町】百人浜オートキャンプ場で、「受付無人運営」を見据えた実証実験を開始 - PR TIMES",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5WMnU4NDUwdzlTd2p4Skw3dEc3czVGVHV4aURzS2lxSWNGeG1UVkVqVjZiSXpzY0p1c21XTjllbThwU0lpVHI5dGcyS3hlY0YyaUZhU3pOZHZCeFlWcDlhZ21NLUxFbmg3MVE?oc=5",
-      "source": "PR TIMES",
-      "published": "2026-05-26T16:00:00+09:00",
-      "summary": "",
-      "category": "camp",
-      "category_label": "🏕️ キャンプ",
-      "keyword": "北海道 キャンプ場 予約 開始",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "dfbaac74b303c6986d0385a62466b50a",
-      "title": "北海道キャンピングカー＆アウトドアショー2026 さっぽろドッグフェスティバルも同時開催！来場者特典としてミツカンの「無限さっぱりスパイスby味ぽん」を無料配布！ - PR TIMES",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9ZTzZpbThYdW9KRFp2akI1SXpFMXZ5bG1mRkV0bVc3N1ZXYmdJSnZoS29lWWZLeVZ4VEN6SGVCN3h2MFFwTzNPUl9BMFRPcXJsUVh4VEhDd2dYR3pERDdYWU11Q09nQXJEUkE?oc=5",
-      "source": "PR TIMES",
-      "published": "2026-07-27T16:00:00+09:00",
-      "summary": "",
-      "category": "camp",
-      "category_label": "🏕️ キャンプ",
-      "keyword": "北海道 アウトドア イベント",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "7fc475c688d247ee0c7c3c9a89f805a2",
-      "title": "懸念される財政政策…韓銀は利上げで金融引き締め、政府は800兆ウォン予算で資金供給（1）（中央日報日本語版） - Yahoo!ニュース",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE96V1pUdzFKTVpGUkV1ZnNXMFNRa1daWDJkaV9IZUYwdnBzcGRFS3M1bjlWeTA5RHdUNWowN1VjZ2VfQVo0b2htZTk4bTF5cWE0SGIxWWs4Uk5Fc28zTTdQLU1RNHJmd0NDNDE2T1dQakgzU1hEMjRRRlRVNkpjNWM?oc=5",
-      "source": "Yahoo!ニュース",
-      "published": "2026-08-22T13:33:46+09:00",
-      "summary": "",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "金利 政策",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "7445ccfc23874606223920ae0228c523",
-      "title": "日銀、政策金利1.0%程度で据え置き 6月の利上げの影響を見極め - 朝日新聞",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBNMVkwQWZUQzluMzJ5THFqSHlUUVdINi1MX01CNmdINWc1Qi1YeTJwMVRNMkthLUhLQlZMMnY3OVJ0aDVuaGRWQ0x6Mlp6dnpfYWFTdHVpMjUzMTliaTZTVzZWUGloUTA?oc=5",
-      "source": "朝日新聞",
-      "published": "2026-07-31T16:00:00+09:00",
-      "summary": "",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "金利 政策",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "8883f019bfd40563add959ce10d30e55",
-      "title": "政策金利って何？私たちの暮らしへの影響とは｜コラム｜野村の金融経済教育サイト「Fin Wing」 - nomura.co.jp",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBTOWhrYzA2bWVSX19hYTBMMDV2WDVOQmZ6b1FfSTlCQlZPaDJXUVgwRDQ3OUFuWEdlQkEtMUZjRmNpVHRmc3c5dEhubjFyZktETWZDTXppSnUxWHFlMW5wQ1FfQTRaOHFQVFlNcXpjdlQ2TmstNUNGSVlNTWlvbzg?oc=5",
-      "source": "nomura.co.jp",
-      "published": "2025-12-12T17:00:00+09:00",
-      "summary": "",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "金利 政策",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "bf1688173b696b2953d97b316c664661",
-      "title": "日経平均、6万6000円割れ＝1週間ぶり―東京株式（時事通信） - Yahoo!ニュース",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1nUVZJQzhBUXpiZFpOV0ZPZFA2QkY2aVRiYmdScERtN2p6NFdicnoxYkU5cmFsX1JVcWhpSTM2REFpV3ZYZ3lkdUpPWUxjYnNtb2FGb1AxX3Y3eWRlMGgtZnZYdXlSUVJlTFhvejg0SEtBOE9ZUG9CbXRmbDEwV0E?oc=5",
-      "source": "Yahoo!ニュース",
-      "published": "2026-08-19T09:30:27+09:00",
-      "summary": "",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "日経平均 週間",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "ffa3e6511fde4515d8a932fd6763e71b",
-      "title": "中小の事業承継、成長投資・賃上げなら贈与・相続税免除 経産省要望へ - 日本経済新聞",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBCOEhZZzJvS1NoMjhORzdXcVc2SFdTMFNKa01VMk9UWmZWVms1RWw4UmFXSmc4M1NZdTVDUnZBd3pqTjQ3Uy1pNG1Rc2RiX3JJdTRvblBlOE1YTHROM21DMUIyWlJTS2NsZUxLYw?oc=5",
-      "source": "日本経済新聞",
-      "published": "2026-08-22T18:00:00+09:00",
-      "summary": "",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "税制改正 投資",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "7b0b40d121011a38ea43c6b443feb2c4",
-      "title": "ソニー・ミュージック、AI音楽ジェネレーターがモデルを訓練するために3万曲をコピーしたと主張、Udioを相手に再度訴訟を起こす - Variety",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOYkxYakljVWh3dDFZZFhyYUNfYVB0Y2QtejZFREM3ZXU1SDdTcHNyTTBFY0ZueHhodk91UUk4WGlmb3ZFWlN3LTdJZ2lNYmxRMUhXUm1uVTFtUFBWNE1LZG5mNVIzd3FLc2J4TU9mMXdFeExMSy05NkJyRXVmc0Zic3UtRXFtYzdKaXo1Q21JWTFBa1hZczkwYkF3?oc=5",
-      "source": "Variety",
-      "published": "2026-07-21T16:00:00+09:00",
-      "summary": "",
-      "category": "music_ai",
-      "category_label": "🎵 音楽AI",
-      "keyword": "Udio music generation",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "en",
-      "title_en": "Sony Music Files Another Lawsuit Against Udio, Alleges AI Music Generator Copied 30,000 Songs to Train Models - Variety"
-    },
-    {
-      "id": "61abbf28ce856485108f33d722196a65",
-      "title": "ネット銀行の普通預金 金利おすすめランキング｜【2026年8月】好金利で預けられる銀行はどこか徹底比較！！ - 株探",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBVLTFOVlhvbFFueE45UzFraERkVlhxX3ZaSDJUS21mV0hLMk51OFRGS2pHa2g2YW84ZG9Jdi1MVDhnQ0JQeE1aOWNPN25zQ2FCN3ltX0d1dTk0Sms?oc=5",
-      "source": "株探",
-      "published": "2026-08-20T16:00:00+09:00",
-      "summary": "",
-      "category": "housing",
-      "category_label": "🏠 住宅・補助金",
-      "keyword": "住宅ローン 金利 2026",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "579f546f9721bec55a0bb7486cec6918",
-      "title": "「Twitterを理解していなかった」――UCC、キャンペーン“炎上”を説明 勉強会で経験共有へ（画像）（1/3枚目） - ITmedia",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE4xU1hNV1p6aWtEaGJWbGo2SXYtWUFkSWg5cnNKc1ZpajE0VUZ4aURubVNDY05rX3RIaFIxeHNsd2xIT2xwcExraU41TGdDeGFONlJrS2N2QzBYX0Z2UlFRUXRYYzktTVV2dTcxb3dZaWFFWUNJZDNzSGN4VQ?oc=5",
-      "source": "ITmedia",
-      "published": "2026-07-29T04:28:02+09:00",
-      "summary": "",
-      "category": "sns_trends",
-      "category_label": "🔥 SNS炎上・バズ",
-      "keyword": "Twitter 炎上",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "d7be66894477d3fa19fd769317612842",
-      "title": "「Twitterを理解していなかった」――UCC、キャンペーン“炎上”を説明 勉強会で経験共有へ（画像）（2/3枚目） - ITmedia",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE4xcXU1enh0LV9yOHBHUDBaVUtpV29XSXJTNFMwMWRxQ0doM0t2VkIxZ3U1YjQwVWlMVkpvY2lZQnpVVWxNeU5URWxIT3M1YjRrdjlSMVhBd1h3dlBSOVYtSjJEQ0RHTERNTzVWUnhVbUlVcll4TnJDVEozSQ?oc=5",
-      "source": "ITmedia",
-      "published": "2026-07-29T04:44:06+09:00",
-      "summary": "",
-      "category": "sns_trends",
-      "category_label": "🔥 SNS炎上・バズ",
-      "keyword": "Twitter 炎上",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "e22717c28b75db54e3e46f236a2f597a",
-      "title": "アイドル生配信で「ここ彼氏の家」バレて、ドッキリ釈明もファン唖然 - zakⅡ",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBxdjdxdXE1SmlDZjNQUENYT0RLTjZwQjNDTXpvUzdRNXNDaFo0VEJ1UTQ5bG5KQVFVbnlab1U4UWJwWW8xVHBJWWw2M1BDREpFd0JLbDd1SUlxZGJYQ1JRVzRUa0pYNjN5by1uRE1VR1ZvQjdnMVAxcNIBjAFBVV95cUxPSWZzLVF3WVRHWjZfNkVnYkxWLUhzYy1pWmVrU0pid1QtUE51aFlZY1plS1AzX1A4QWo4WFlfWmJpUDJCWC02RlQ1dmpNTnBwZHJVZEtPUUtSZWExQUlCZEpkOTdfUEdiRGxSQlRhZ0gwWk8zeEJrZktpcXBib0hzVDl6aWo2QkxjcFlWNw?oc=5",
-      "source": "zakⅡ",
-      "published": "2026-08-21T09:39:54+09:00",
-      "summary": "",
-      "category": "sns_trends",
-      "category_label": "🔥 SNS炎上・バズ",
-      "keyword": "X 炎上",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "83723b7fa5ec38626442eec83b76925d",
-      "title": "「SNSで“謎デザート”と話題」成城石井“1週間で5000個売れた”スイーツの正体。異例の“一発合格”から3年越しでバズったワケ - 女子SPA!",
-      "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE1pamVwQ1p5UDJUQ3JMQUZKcnhhRGJoRkFjT05NZmpCaE5OamdRaUZOT2R4OWZqd0RrQzZ5ZnNPU3RTbmVa?oc=5",
-      "source": "女子SPA!",
-      "published": "2026-08-14T16:00:00+09:00",
-      "summary": "",
-      "category": "sns_trends",
-      "category_label": "🔥 SNS炎上・バズ",
-      "keyword": "SNS バズ 話題",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "9e22cd8cd9ceeb47c5255220ef57d00d",
-      "title": "セブンの「骨付きチキンビリヤニ」が想像以上に本格的なの！SNSでもバズっている、話題の新商品を食べてみました！《実食レビュー》 - buzzfeed.com",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBZd2pkV3owMllmaGxKaWUyYy10OVA2OTBmbDgzOHFJeGMyOUZtQXRfcm1sZ0MwdW9HaTBDUVdIR1RrVjlqMFg5X1R1NDhFc3NLeGZkbVRHQmI3MkhYczZNQlZERzVNVHc1QVVUeGVnZHVYWUNYSmM3bmhfNA?oc=5",
-      "source": "buzzfeed.com",
-      "published": "2026-08-21T12:01:05+09:00",
-      "summary": "",
-      "category": "sns_trends",
-      "category_label": "🔥 SNS炎上・バズ",
-      "keyword": "SNS バズ 話題",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "baf569a333058a8a3f3f20de980ac47a",
-      "title": "メッシに謝罪！身長イジリ→大炎上→「世界でバズる価値観」と反論の19歳YouTuber、｢人として終わっていた｣ - Yahoo!ニュース",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE50NHluTVVCUUEyaUp2aDBacGxaYVFSQ1hMcm1uWXJBaDVFMzdDOHVMZno1Y2xYN090WVQzVEFld2h2ZWtfQ2QxZG9TME9US1FNWEV0X0FsdjF3aV9rbzlQWUM1N3FrSGRodTZFd1gxUGxiTXlnd1N5aVRveFlHcDg?oc=5",
-      "source": "Yahoo!ニュース",
-      "published": "2026-08-22T07:10:05+09:00",
-      "summary": "",
-      "category": "sns_trends",
-      "category_label": "🔥 SNS炎上・バズ",
-      "keyword": "炎上 謝罪",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "d8c12c93c4ee0dab425650ae45afe50c",
-      "title": "メッシに謝罪！身長イジリ→大炎上→「世界でバズる価値観」と反論の19歳YouTuber、｢人として終わっていた｣ - au Webポータル",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9mZm9laUozMmtsZWhCSkk0NlkxcndFbVlITllKWXFOek9sSDhBUXhmNVFnbjNROWpabm96V2FBTUlIWHJQeTJnUzQ0ZG9NTWNvc0tjODhCMkNEUXJCUGIwLUhzbEM3dGdzNFl4VmpuWXNMQkR2T2RxQg?oc=5",
-      "source": "au Webポータル",
-      "published": "2026-08-22T07:38:00+09:00",
-      "summary": "",
-      "category": "sns_trends",
-      "category_label": "🔥 SNS炎上・バズ",
-      "keyword": "炎上 謝罪",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "34fdcd2128208619d25d1f056b703c01",
-      "title": "謝罪会見、“しゃれた服装”で大炎上 プルデンシャル生命の失敗会見から学ぶ「会見の作法」、評価された謝罪会見は何が違うのか - AdverTimes.（アドタイ） by 宣伝会議",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9uRk50S196aTE2TGxMSS1IWmJKbXR5cnNuTTdvZ2lZcW5rMXVObGZKQnJ3c3lvem9aV2t5blJ1X2ZuMnJLRXdjQm5VamFhQmswRUdfbl83YkJneDB4QUs4?oc=5",
-      "source": "AdverTimes.（アドタイ） by 宣伝会議",
-      "published": "2026-08-13T16:00:00+09:00",
-      "summary": "",
-      "category": "sns_trends",
-      "category_label": "🔥 SNS炎上・バズ",
-      "keyword": "炎上 謝罪",
-      "first_seen": "2026-08-22T18:18:42.570415+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "c12cd99a0c86edd6a7ad689cac9d18ab",
-      "title": "Apple が iPhone 18 Pro を意図的に解体する理由は見当たりませんが、またやってみましょう - PhoneArena",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPc0ctaTJKM0l4dzhING5ZYTV5MTZrR18xemhfQXhOdDRyZm1ZMlFKZEFUbEJtUU1CbXFuNUw3WjJiMkRBUElsSUVtSWJtekxZVG1wMDFuVWVUMFBqOFFVTTlzMFVlT2lpelNZQW9uRGVodDBSUk9MMTdubVU5RHpRSVVTOXdjLXNxSWVTT255Rm1UMkRIbVZ0cENRS3AzdWVIeGFHRnNHQzhwSVNiSzM0RUFObjMwQVVubUl4U2pnZjc4MWJMTkNxOA?oc=5",
-      "source": "PhoneArena",
-      "published": "2026-08-21T23:58:51+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple iPhone",
-      "first_seen": "2026-08-22T12:39:42.609520+09:00",
-      "lang": "en",
-      "title_en": "I see no reason for Apple to deliberately butcher the iPhone 18 Pro, but here we go again - PhoneArena"
-    },
-    {
-      "id": "98bd50358a0dd081a2330cd7c7e87e20",
-      "title": "Apple、iOS 27、macOS 27、iPadOS 27、tvOS 27のパブリックベータ4をリリース [U: watchOS 27] - 9to5Mac",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOdWthR255eTROR0djUUxmRHJlVGpUSTZySEhEbXprMFd0dzIyOHBseF9XWmVMRUdWM1RQcG5XSTdEeUFMTVJuQm5COWx1T3d2S1N3MVJRMDNEbWZHSDhYSDE1VWdGTFY5WWpBZjUtNXEtTGhQUnhEU1dpcFBlalRUVnpGNjN3dm1laDFIemFtOC1pZTFtcVJvdkpyOWk0S28?oc=5",
-      "source": "9to5Mac",
-      "published": "2026-08-19T02:07:00+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "iOS update",
-      "first_seen": "2026-08-22T12:39:42.609520+09:00",
-      "lang": "en",
-      "title_en": "Apple releases public beta 4 for iOS 27, macOS 27, iPadOS 27, tvOS 27 [U: watchOS 27] - 9to5Mac"
-    },
-    {
-      "id": "0ebdf0b44fce4228620e40779885fd16",
-      "title": "Apple iOS 26.6.1 新しい iPhone ソフトウェア: アップグレードする必要がありますか? - フォーブス",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPeU9HRG5JWjVPd09iOEpodFJOLU5XeVMtSEIwR2w5TG5Vb3JhdDVCaUI3MGNITVE5cEpPZjZiU1picm5xVkdrd3g4ZjZBcUxvUDQwUm1xTWk1RmZYVEx6NFpWbVo2Umlqb2VDY2Y4TlFtYmgtTjlOSmI1UFd6UjhpV19MbGQtczYwLWNqQk5uY21mZlUzVld3QV9faG9RWDlHYldKaW5fMUIxdw?oc=5",
-      "source": "Forbes",
-      "published": "2026-08-19T06:53:31+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "iOS update",
-      "first_seen": "2026-08-22T12:39:42.609520+09:00",
-      "lang": "en",
-      "title_en": "Apple iOS 26.6.1 New iPhone Software: Should You Upgrade? - Forbes"
-    },
-    {
-      "id": "fc84e2a8218c4ba7041e55cf6d836d67",
-      "title": "カメラの AirPods コードで画像キャプチャ解像度、ステータス ライト、人物検出などが明らかに - MacRumors",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOYmwyRGJYZW41Q2xCSHhVZF9UNUp1amZubmk1QVVLNnVQc0UzbllqZ1hzeElPdDlBWG14WDBRN09hUWdhN3pFa3Z2eEdxb0JwckRSUS1nY014akhjOEgyWWZLZmhGMjlDNlJySjJ3RjkwTHBYMTUyLUlVZ2lJWHJDWmNhUEtjTVpRdUE?oc=5",
-      "source": "MacRumors",
-      "published": "2026-08-21T18:31:54+09:00",
-      "summary": "Camera AirPods Code Reveals Image Capture Resolution, Status Light, Person Detection, and More  MacRumorsHere’s everything we learned about AirPods with cameras this week  9to5MacApple’s Camera-Equipp",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "AirPods",
-      "first_seen": "2026-08-22T12:39:42.609520+09:00",
-      "lang": "en",
-      "title_en": "Camera AirPods Code Reveals Image Capture Resolution, Status Light, Person Detection, and More - MacRumors"
-    },
-    {
-      "id": "4dd71ad6b01c029cd3fc82f72303ec14",
-      "title": "カメラ付きApple AirPodsがリークされ、プライバシー懸念が引き起こされる - FOXニュース",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBaeHVCNlp4cE1BUGVWc3Fmb0FPaHkxdHZtUGRNMU8yNTJhajhsZFpKbFVNVm9VWElhcGtGSEpvSHRfWTk3VjQxa0pSZVZVZGhRWl9qcEtn?oc=5",
-      "source": "Fox News",
-      "published": "2026-08-22T05:46:09+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "AirPods",
-      "first_seen": "2026-08-22T12:39:42.609520+09:00",
-      "lang": "en",
-      "title_en": "Leaked Apple AirPods with cameras spark privacy concerns - Fox News"
-    },
-    {
-      "id": "8c2e335bc7800ee4d76d974e6a631bc5",
-      "title": "Nothing Headphone (1) が最安値に下落、AirPods Max は 2 倍以上 - ギズモード",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOd05sM25Cd1RDUFdod3hLWDN3dXdVeWNobW02WG5ianFGOXk1SXhBVkNJMEc0U19JdXRndFptdVV0UVBXYjZkS2VLenFnOFNJTF9ZdEJHeWlaRXhyeVV0bWpoUnNjbXhJU2tMX2pFZzRONWtqakk4a1hpV1hHbl8wUDgyUExxZG1BMzBXdE9CZFJvbE0yY3drdFRwcFBsc05UTmh0bDJKaFZMOVNEeF9ueVozRDhGUFpmS290dENsLVJ2Zw?oc=5",
-      "source": "Gizmodo",
-      "published": "2026-08-21T23:40:13+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "AirPods",
-      "first_seen": "2026-08-22T12:39:42.609520+09:00",
-      "lang": "en",
-      "title_en": "Nothing Headphone (1) Falls to Its Lowest Price, While AirPods Max Costs More Than Twice as Much - Gizmodo"
-    },
-    {
-      "id": "4acb0c47a117137189ae672f8cdd9e8c",
-      "title": "Apple Watchがランナーに深刻な心臓疾患を警告 - MacRumors",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQRS1HVXJXX0FNUmp6d0w0d1ppb3o1QWFlYVNjSENYRk9fUExxVXlvd09lcmtaRWlHYXVBODA4ZUdhbjZTT19iUVF5LTI5aUVDTGRtQ2dlVW4zeUJRRDlqczB3N1pCZ2Y1MHc1OXNQMlZReC1YVGd5dXJudGozcG5rcWxKcGljTy1q?oc=5",
-      "source": "MacRumors",
-      "published": "2026-08-21T00:58:09+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple Watch",
-      "first_seen": "2026-08-22T12:39:42.609520+09:00",
-      "lang": "en",
-      "title_en": "Apple Watch Alerted Runner to Serious Heart Problem - MacRumors"
-    },
-    {
-      "id": "87d82de83e9e28450a93343a3ec3db6e",
-      "title": "Apple、Vision ProとSiriソフトウェアチーム全体で200人以上の人員削減を発表 - Engadget",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNejJkU05PblI5QWJTZ0EyUjloLTRMaVlSS3N0bThJM1F1djFaamFVYXNkTUhDaUhRcjgtYVNwTDhaaFBxYWs4OWdfWEpSMjhUR2dFMEpjNzJJdzc1WHJFbVRUNDRBZHF3M1VqeTcwT1dBSGd6dW94MGhiNlBoSHRkM2wtR2xJMzdNOXl0ODFqV2RyX2liQTcxV2RFMkM5bnp5UF9ZTGtTU2U4VkY1T0FkWXE2Vkt1dw?oc=5",
-      "source": "Engadget",
-      "published": "2026-08-22T12:20:12+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple Vision Pro",
-      "first_seen": "2026-08-22T12:39:42.609520+09:00",
-      "lang": "en",
-      "title_en": "Apple Reportedly Cut More Than 200 Jobs Across Vision Pro And Siri Software Teams - Engadget"
-    },
-    {
-      "id": "bdebaaf0417d7a3857b9d0a9e59e6818",
-      "title": "Apple、Siri、Vision Pro イマーシブビデオ、ゲームチームの人員削減 - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOZk1lRlR3SjBuNmZ5Q3lpX2RGLXpVYUlKLVhScVVvRW1ZMTg4aUxJUXlGS3FIS0dXc180Z2QwSUJfWFpBVWdyMmU1V18ydldPbUMtb2FVVW01Zjk4RERMdXBhaWI0Y3lBNXd2RnREd3dHOU1JcGVLbGs1emFOSHBNNTI1cU9IU3hla1AxNVZxNUFJMTMyZHc?oc=5",
-      "source": "Yahoo Finance",
-      "published": "2026-08-22T03:45:32+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple Vision Pro",
-      "first_seen": "2026-08-22T12:39:42.609520+09:00",
-      "lang": "en",
-      "title_en": "Apple Cuts Jobs in Siri, Vision Pro Immersive Video and Gaming Teams - Yahoo Finance"
-    },
-    {
-      "id": "c8361dd426c30ebda318742afb3c3319",
-      "title": "2度失敗したにもかかわらず、AppleはまだVision Proを完成させていないかもしれない - ギズモード",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQZHJFQjRMWGsxYkh6enY3ZnNYZElhT1Y0V18xc2tQUFdnRFRiMXAtdkpYRmlITzZveHY3UUFPeXRtbjJfMTlveExxUktIZF9wdXJDNTJhbG1GM1RxQ3ZQMW1XbkU4YzRJUWxPWVhSYTM4TWRreUpUbHJiNnNweTVLbTRjRzBremlOeWJkU2lqSjFMRXhPSEJRWnFzTG5EbmJKM3c?oc=5",
-      "source": "Gizmodo",
-      "published": "2026-08-18T23:30:57+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple Vision Pro",
-      "first_seen": "2026-08-22T12:39:42.609520+09:00",
-      "lang": "en",
-      "title_en": "Despite Flopping Hard Twice, Apple May Not Be Done With Vision Pro Yet - Gizmodo"
-    },
-    {
-      "id": "34032e2e8c7f6160e1177694549e3289",
-      "title": "Apple、スマートグラスの推進に注力するためVision Proの役割を削減 - PYMNTS.com",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOVHFWVjl4b2pRd0swY0MzcXVlSFZPMlJmSGFFNWg4dHp0MU5jRzcwM2VDNkN5TUFHMEtyNUFXa2J6N1RUTFEyQjdid2ctRUlfSHNtQjJ1UEVBSjNFX2sxRHQzYk5fTU8tUEFJLWNTcVFVYlBLcXdiZER0YTBOWDRIZFNPWS04bjd6ZjdLbUdmV2ZJdXRiVzRnYQ?oc=5",
-      "source": "PYMNTS.com",
-      "published": "2026-08-22T09:16:13+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple Vision Pro",
-      "first_seen": "2026-08-22T12:39:42.609520+09:00",
-      "lang": "en",
-      "title_en": "Apple Cuts Vision Pro Roles to Focus on Smart Glasses Push - PYMNTS.com"
-    },
-    {
-      "id": "21e3585a93c02f61aaae5ed493b4c8f2",
-      "title": "スマートグラスが優先リストに上がる中、Apple、Vision Proの人員削減へ - Digital Trends",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQMXpGUG83RHdiNVFlU1BPRk11aGdLZ19xTnRETll2S0xqX1pIVmc5dnhkODJuaEdXZElFdWFBSVp6dEROaEtFSzZ2UzlvNnBuUnhHVU1kMGxpamdGNGpRcDV2WWNjSU56c3MwUUYycHRDRjJqRmlEYmtXZExOcnVtT0djTFJNanAySllGQ0xJaGMyaG5uRHQtYXVGXzlYWkJncFl0aWV5dkJhTUN3Sk55Z1J5Z2tiMGM?oc=5",
-      "source": "Digital Trends",
-      "published": "2026-08-22T05:29:52+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple Vision Pro",
-      "first_seen": "2026-08-22T12:39:42.609520+09:00",
-      "lang": "en",
-      "title_en": "Apple is cutting Vision Pro jobs as smart glasses move up the priority list - Digital Trends"
     }
   ]
 }
