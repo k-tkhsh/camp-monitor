@@ -51,6 +51,10 @@ HEADERS = {
     )
 }
 
+# なっぷAPIの一時的なエラーで監視が丸ごと空振りしないよう再試行する
+NAPCAMP_MAX_ATTEMPTS = 3
+NAPCAMP_RETRY_WAIT = 5  # 秒（試行ごとに 5秒 → 10秒 と広げる）
+
 QKAMURA_MENU_URL = "https://www.qkamura.or.jp/qkamura/489/menu.asp?id=shikotsu&ty=lim&gl=4"
 QKAMURA_YADO_ID = "03260001"
 
@@ -129,18 +133,38 @@ def save_status(status: dict) -> None:
 # なっぷ (nap-camp.com)
 # ---------------------------------------------------------------------------
 
+def fetch_napcamp_plans(campsite_id: int, checkin: date, checkout: date) -> list:
+    """なっぷAPIからプラン一覧を取得する。一時的な失敗は間隔を空けて再試行する"""
+    url = f"https://www.nap-camp.com/api/campsite/{campsite_id}/plans"
+    params = {"check_in": checkin.isoformat(), "check_out": checkout.isoformat()}
+    last_error = None
+    for attempt in range(1, NAPCAMP_MAX_ATTEMPTS + 1):
+        try:
+            resp = requests.get(url, params=params, headers=HEADERS, timeout=20)
+            resp.raise_for_status()
+            data = resp.json()
+            return data.get("list", []) if isinstance(data, dict) else []
+        except Exception as e:
+            last_error = e
+            if attempt < NAPCAMP_MAX_ATTEMPTS:
+                wait = NAPCAMP_RETRY_WAIT * attempt  # 5秒 → 10秒 と間隔を広げる
+                print(
+                    f"[WARN] なっぷAPI取得失敗 {checkin}〜{checkout} "
+                    f"({attempt}/{NAPCAMP_MAX_ATTEMPTS}): {e} → {wait}秒後に再試行"
+                )
+                time.sleep(wait)
+    raise RuntimeError(
+        f"なっぷAPI取得に{NAPCAMP_MAX_ATTEMPTS}回失敗 ({checkin}〜{checkout}): {last_error}"
+    )
+
+
 def check_napcamp(campsite_id: int, start: date, end: date, nights_list: list) -> dict:
     """{ "YYYY-MM-DD|nights": "空きサイトの説明" } を返す"""
     stays = {}
     for nights in nights_list:
         for checkin in iter_checkins(start, end, nights):
             checkout = checkin + timedelta(days=nights)
-            url = f"https://www.nap-camp.com/api/campsite/{campsite_id}/plans"
-            params = {"check_in": checkin.isoformat(), "check_out": checkout.isoformat()}
-            resp = requests.get(url, params=params, headers=HEADERS, timeout=20)
-            resp.raise_for_status()
-            data = resp.json()
-            plans = data.get("list", []) if isinstance(data, dict) else []
+            plans = fetch_napcamp_plans(campsite_id, checkin, checkout)
             # テント泊できる区画/フリーサイトのみ（バンガロー・コテージ等は除外）
             matched = [
                 p for p in plans
