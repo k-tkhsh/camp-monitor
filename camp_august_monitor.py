@@ -1,7 +1,6 @@
 """
 キャンプ場 空き監視スクリプト
-監視日程（WATCHES で定義）:
-  - 2026/9/19〜9/22・1泊: いずみ温泉キャンプ場
+監視日程（WATCHES で定義）: 現在なし（監視休止中）
 ※監視対象を変更したら MONITORING.txt とワークフローの schedule も更新すること
 ※このファイルを更新すると push トリガーで監視が1回即実行される（動作確認に使える）
 対象:
@@ -27,15 +26,7 @@ from pathlib import Path
 import requests
 
 # 監視日程: start チェックイン〜end チェックアウトの範囲内で nights 泊の連続した空きを探す
-WATCHES = [
-    {
-        "name": "9月連休",
-        "camps": ["izumi"],
-        "start": date(2026, 9, 19),  # 9/19・9/20・9/21 チェックインの1泊
-        "end": date(2026, 9, 22),
-        "nights": [1],
-    },
-]
+WATCHES = []  # 監視休止中。書式は git 履歴か MONITORING.txt を参照
 
 STATUS_FILE = Path("camp_august_status.json")
 JST = timezone(timedelta(hours=9))
