@@ -103,11 +103,14 @@ categories:
     lang: "ja"
     # Google ニュースではなく Yahoo!リアルタイム検索（X の投稿をリアルタイムに集計）から取得
     source: "yahoo_realtime"
+    # 急上昇ワードは毎回入れ替わり件数が多いので、保持する件数を抑える
+    # （全体の上限 max_total_articles をこのカテゴリだけで埋めないため）
+    max_articles: 150
     realtime:
-      trend_words: 12          # 急上昇ワードの取得件数（上位から）
+      trend_words: 8           # 急上昇ワードの取得件数（上位から）
       trend_min_tweets: 100    # ツイート数がこれ未満の急上昇ワードは除外
       enjo_negative_pct: 50    # 否定的な投稿がこの割合(%)以上の急上昇ワードは「炎上」扱い
-      matome: 8                # Yahoo が投稿を要約した「話題まとめ」の取得件数
+      matome: 5                # Yahoo が投稿を要約した「話題まとめ」の取得件数
       searches:                # 検索語を含む、直近24時間でいいね数の多い投稿を拾う
         - keyword: "炎上"
           min_likes: 1000      # このいいね数以上の投稿だけ

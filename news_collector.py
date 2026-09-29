@@ -67,25 +67,44 @@ def normalize_title(title: str) -> str:
     """URL エンコードされたまま配信された見出し（a+b+c%E2%80%99t 形式）を元に戻す
 
     途中で改行できない長い文字列になり、画面幅を押し広げる原因になるため。
+    エンコード済みの見出しは ASCII だけで書かれているので、日本語を含む
+    見出し（「ドコモ+ahamo+povo」や「50%OFF」など）は対象にしない。
     """
+    if not title.isascii():
+        return title
     encoded = len(re.findall(r"%[0-9A-Fa-f]{2}", title)) >= 2
     plus_joined = " " not in title and title.count("+") >= 3
-    if encoded or plus_joined:
-        try:
-            return unquote_plus(title)
-        except Exception:
-            return title
-    return title
+    return unquote_plus(title) if encoded or plus_joined else title
 
 
 def repair_title(article: dict) -> dict:
-    """過去に取り込んだ URL エンコード済みの見出しを直し、再翻訳の対象に戻す"""
-    fixed = normalize_title(article["title"])
-    if fixed == article["title"]:
+    """過去に取り込んだ URL エンコード済みの見出しを直し、再翻訳の対象に戻す
+
+    英語記事は翻訳済みだと原文が title_en 側にあるので、そちらも調べる。
+    id も直した見出しで作り直し、次回の取得分と同じ記事として扱えるようにする。
+    """
+    original = article.get("title_en") or article["title"]
+    fixed = normalize_title(original)
+    if fixed == original:
         return article
-    repaired = {**article, "title": fixed}
+    repaired = {**article, "title": fixed, "id": make_id(fixed, article["source"])}
     repaired.pop("title_en", None)
     return repaired
+
+
+def dedupe(articles: list[dict]) -> list[dict]:
+    """同じ記事（原文の見出し＋情報源が同じ）は最初に見つかった1件だけ残す
+
+    id ではなく原文から判定する。id の作り方が過去と違う記事も重複とみなすため。
+    """
+    seen: set[str] = set()
+    result = []
+    for a in articles:
+        key = make_id(a.get("title_en") or a["title"], a["source"])
+        if key not in seen:
+            seen.add(key)
+            result.append(a)
+    return result
 
 
 def parse_rfc822(date_str: str) -> str:
@@ -191,10 +210,15 @@ def _abs_yahoo_url(url: str) -> str:
     return url if url.startswith("http") else f"{YAHOO_RT_BASE}{url}"
 
 
-def _epoch_to_jst(epoch: int | float | None) -> str:
-    if not epoch:
+def _epoch_to_jst(epoch) -> str:
+    """UNIX 時刻（秒・ミリ秒・文字列）を JST ISO 文字列に。読めなければ現在時刻"""
+    try:
+        value = float(epoch)
+        if value > 1e11:  # ミリ秒で来た場合
+            value /= 1000
+        return datetime.fromtimestamp(value, JST).isoformat()
+    except (TypeError, ValueError, OverflowError, OSError):
         return datetime.now(JST).isoformat()
-    return datetime.fromtimestamp(epoch, JST).isoformat()
 
 
 def _clean_tweet_text(text: str, limit: int = 110) -> str:
@@ -206,57 +230,106 @@ def _clean_tweet_text(text: str, limit: int = 110) -> str:
     return text if len(text) <= limit else text[:limit].rstrip() + "…"
 
 
+def _num(value) -> int:
+    """件数などの数値を int に。欠けていたり形式が違ったりすれば 0"""
+    try:
+        return int(value or 0)
+    except (TypeError, ValueError):
+        return 0
+
+
+def _trend_to_article(item: dict, published: str, enjo_pct: int) -> dict:
+    negative = _num(item.get("negative"))
+    parts = [item["genre"]] if item.get("genre") else []
+    parts.append(f"ツイート {_num(item.get('tweetCount')):,}件")
+    if negative:
+        parts.append(f"否定的な投稿 {negative}%")
+    summary = "・".join(parts)
+    related = "、".join(str(w) for w in (item.get("childBuzz") or [])[:5])
+    if related:
+        summary += f" ／ 関連: {related}"
+    return {
+        "title": str(item["query"]),
+        "url": _abs_yahoo_url(item["url"]),
+        "source": "Yahoo!リアルタイム検索 急上昇ワード",
+        "published": published,
+        "summary": summary,
+        "keyword": "炎上" if negative >= enjo_pct else "急上昇ワード",
+    }
+
+
+def _matome_to_article(m: dict) -> dict:
+    return {
+        "title": str(m["title"]),
+        "url": _abs_yahoo_url(m["url"]),
+        "source": "Yahoo!リアルタイム検索 話題まとめ",
+        "published": _epoch_to_jst(m.get("createdAt")),
+        "summary": str(m.get("summary") or "")[:200],
+        "keyword": "話題まとめ",
+    }
+
+
+def _post_to_article(e: dict, keyword: str) -> dict:
+    return {
+        "title": _clean_tweet_text(e["displayText"]),
+        "url": e["url"],
+        "source": "Yahoo!リアルタイム検索 X投稿",
+        "published": _epoch_to_jst(e.get("createdAt")),
+        "summary": (
+            f"いいね {_num(e.get('likesCount')):,}・リポスト {_num(e.get('rtCount')):,}"
+            f"・返信 {_num(e.get('replyCount')):,}"
+        ),
+        "keyword": keyword,
+    }
+
+
+def _convert_all(items, convert, *args) -> list[dict]:
+    """1件ずつ変換し、形式が想定と違う項目は飛ばす（1件の不備で全体を止めない）"""
+    result = []
+    for item in items:
+        try:
+            article = convert(item, *args)
+        except (KeyError, TypeError, ValueError, AttributeError) as e:
+            print(f"[WARN] Yahoo!リアルタイム検索: 読めない項目をスキップ ({type(e).__name__}: {e})")
+            continue
+        if article["title"] and str(article["url"]).startswith("http"):
+            result.append(article)
+    return result
+
+
 def fetch_yahoo_realtime(conf: dict) -> list[dict]:
     """Yahoo!リアルタイム検索から「バズ」「炎上」の話題を集める
 
     - 急上昇ワード: トップページの急上昇ワード。否定的な投稿が多いものは「炎上」扱い
     - 話題まとめ:   Yahoo が投稿を要約した、いま話題のトピック
     - 炎上の人気投稿: 指定した検索語を含む、直近24時間でいいね数の多い投稿
+
+    ページの形式が変わっても例外は外に出さず、取れた分だけ返す。
     """
     articles: list[dict] = []
 
     # ── 急上昇ワード（トップページ） ──
     top = fetch_realtime_page("/realtime")
     if top:
-        trend = top.get("buzzTrend", {})
-        published = _epoch_to_jst(trend.get("buzzTimestamp"))
+        trend = top.get("buzzTrend") or {}
         min_tweets = conf.get("trend_min_tweets", 100)
-        enjo_pct = conf.get("enjo_negative_pct", 50)
-
-        picked = 0
-        for item in trend.get("items", []):
-            if picked >= conf.get("trend_words", 12):
-                break
-            if item.get("tweetCount", 0) < min_tweets:
-                continue
-            negative = item.get("negative", 0)
-            parts = []
-            if item.get("genre"):
-                parts.append(item["genre"])
-            parts.append(f"ツイート {item.get('tweetCount', 0):,}件")
-            if negative:
-                parts.append(f"否定的な投稿 {negative}%")
-            summary = "・".join(parts)
-            related = "、".join(item.get("childBuzz", [])[:5])
-            if related:
-                summary += f" ／ 関連: {related}"
-            articles.append(
-                {
-                    "title": item["query"],
-                    "url": _abs_yahoo_url(item["url"]),
-                    "source": "Yahoo!リアルタイム検索 急上昇ワード",
-                    "published": published,
-                    "summary": summary,
-                    "keyword": "炎上" if negative >= enjo_pct else "急上昇ワード",
-                }
-            )
-            picked += 1
+        items = [
+            i for i in (trend.get("items") or [])
+            if isinstance(i, dict) and _num(i.get("tweetCount")) >= min_tweets
+        ][: conf.get("trend_words", 12)]
+        articles += _convert_all(
+            items,
+            _trend_to_article,
+            _epoch_to_jst(trend.get("buzzTimestamp")),
+            conf.get("enjo_negative_pct", 50),
+        )
 
     # ── 検索語ごとの人気投稿 + 話題まとめ ──
     matome_done = False
-    for search in conf.get("searches", []):
+    for n, search in enumerate(conf.get("searches", [])):
         keyword = search["keyword"]
-        time.sleep(1.5)  # 相手サーバーへの負荷を抑える
+        if n:
+            time.sleep(1.5)  # 相手サーバーへの負荷を抑える
         # md=h: 話題順（直近24時間でいいね数の多い順）
         page = fetch_realtime_page(
             "/realtime/search", {"p": keyword, "ei": "UTF-8", "md": "h"}
@@ -265,43 +338,20 @@ def fetch_yahoo_realtime(conf: dict) -> list[dict]:
             continue
 
         if not matome_done and conf.get("matome", 0):
-            for m in page.get("buzzMatomeList", {}).get("items", [])[: conf["matome"]]:
-                articles.append(
-                    {
-                        "title": m["title"],
-                        "url": _abs_yahoo_url(m["url"]),
-                        "source": "Yahoo!リアルタイム検索 話題まとめ",
-                        "published": _epoch_to_jst(m.get("createdAt")),
-                        "summary": (m.get("summary") or "")[:200],
-                        "keyword": "話題まとめ",
-                    }
-                )
+            items = (page.get("buzzMatomeList") or {}).get("items") or []
+            articles += _convert_all(items[: conf["matome"]], _matome_to_article)
             matome_done = True
 
         min_likes = search.get("min_likes", 1000)
         posts = [
             e
-            for e in page.get("timeline", {}).get("entry", [])
-            if e.get("likesCount", 0) >= min_likes and "\tSTART\t" in e.get("displayText", "")
+            for e in (page.get("timeline") or {}).get("entry") or []
+            if isinstance(e, dict)
+            and _num(e.get("likesCount")) >= min_likes
+            and "\tSTART\t" in str(e.get("displayText", ""))
         ]
-        posts.sort(key=lambda e: e["likesCount"], reverse=True)
-        for e in posts[: search.get("limit", 8)]:
-            title = _clean_tweet_text(e["displayText"])
-            if not title:
-                continue
-            articles.append(
-                {
-                    "title": title,
-                    "url": e["url"],
-                    "source": "Yahoo!リアルタイム検索 X投稿",
-                    "published": _epoch_to_jst(e.get("createdAt")),
-                    "summary": (
-                        f"いいね {e['likesCount']:,}・リポスト {e.get('rtCount', 0):,}"
-                        f"・返信 {e.get('replyCount', 0):,}"
-                    ),
-                    "keyword": keyword,
-                }
-            )
+        posts.sort(key=lambda e: _num(e.get("likesCount")), reverse=True)
+        articles += _convert_all(posts[: search.get("limit", 8)], _post_to_article, keyword)
 
     print(f"[INFO] Yahoo!リアルタイム検索: {len(articles)} 件取得")
     return articles
@@ -309,7 +359,11 @@ def fetch_yahoo_realtime(conf: dict) -> list[dict]:
 
 def collect(config: dict) -> tuple[list[dict], dict]:
     existing = load_existing()
-    seen_ids = {a["id"] for a in existing.get("articles", [])}
+    # 既存記事の見出しを先に直しておき、今回取得した同じ記事と id をそろえる
+    existing["articles"] = dedupe(
+        [repair_title(a) for a in existing.get("articles", [])]
+    )
+    seen_ids = {a["id"] for a in existing["articles"]}
 
     new_articles: list[dict] = []
     now_str = datetime.now(JST).isoformat()
@@ -501,11 +555,28 @@ def translate_en_titles(articles: list[dict]) -> list[dict]:
     return result
 
 
-def prune(articles: list[dict], retention_days: int, max_total: int) -> list[dict]:
+def prune(
+    articles: list[dict], retention_days: int, max_total: int, config: dict
+) -> list[dict]:
+    """保持期間を過ぎた記事を消し、件数の上限に収める
+
+    カテゴリに max_articles があればその件数までに抑える。件数の多いカテゴリが
+    全体の上限を埋めて、ほかのカテゴリが保持期間より早く消えるのを防ぐため。
+    """
     cutoff = (datetime.now(JST) - timedelta(days=retention_days)).isoformat()
     recent = [a for a in articles if a.get("first_seen", "") >= cutoff]
     recent.sort(key=lambda a: a.get("first_seen", ""), reverse=True)
-    return recent[:max_total]
+
+    categories: dict = config.get("categories", {})
+    kept: dict[str, int] = {}
+    result = []
+    for a in recent:
+        cap = categories.get(a["category"], {}).get("max_articles")
+        if cap is not None and kept.get(a["category"], 0) >= cap:
+            continue
+        kept[a["category"]] = kept.get(a["category"], 0) + 1
+        result.append(a)
+    return result[:max_total]
 
 
 def main() -> None:
@@ -524,8 +595,7 @@ def main() -> None:
     print(f"\n[INFO] 新着: {len(new_articles)} 件")
 
     all_articles = existing.get("articles", []) + new_articles
-    all_articles = [repair_title(a) for a in all_articles]
-    all_articles = prune(all_articles, retention_days, max_total)
+    all_articles = prune(all_articles, retention_days, max_total, config)
 
     # 新着に加え、過去の未翻訳分もまとめて翻訳する
     print("\n■ 英語タイトルを日本語翻訳中...")

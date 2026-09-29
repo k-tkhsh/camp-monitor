@@ -266,6 +266,17 @@
     return d.toLocaleDateString("ja-JP", { month: "short", day: "numeric" });
   }
 
+  // 記事データには X の投稿など第三者が書いた文章が入るので、必ずエスケープして表示する
+  function esc(value) {
+    return String(value ?? "").replace(/[&<>"']/g, c =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+
+  // http / https 以外（javascript: など）のリンクは無効にする
+  function safeUrl(url) {
+    return /^https?:\/\//i.test(url || "") ? esc(url) : "#";
+  }
+
   function isNew(article) {
     if (!article.first_seen) return false;
     return (new Date() - new Date(article.first_seen)) / 3600000 < NEW_HOURS;
@@ -285,7 +296,7 @@
       const btn = document.createElement("button");
       btn.className = "tab" + (key === activeCategory ? " active" : "");
       btn.dataset.cat = key;
-      btn.innerHTML = `${label}<span class="count">${counts[key] || 0}</span>`;
+      btn.innerHTML = `${esc(label)}<span class="count">${counts[key] || 0}</span>`;
       btn.addEventListener("click", () => {
         activeCategory = key;
         document.querySelectorAll(".tab").forEach(t =>
@@ -323,15 +334,15 @@
     }
 
     grid.innerHTML = filtered.map(a => `
-      <a class="card" href="${a.url}" target="_blank" rel="noopener">
+      <a class="card" href="${safeUrl(a.url)}" target="_blank" rel="noopener">
         <div class="card-top">
-          <span class="cat-badge">${a.category_label}</span>
+          <span class="cat-badge">${esc(a.category_label)}</span>
           ${isNew(a) ? '<span class="new-badge">NEW</span>' : ""}
         </div>
-        <div class="card-title">${a.title}</div>
-        ${a.summary ? `<div class="card-summary">${a.summary}</div>` : ""}
+        <div class="card-title">${esc(a.title)}</div>
+        ${a.summary ? `<div class="card-summary">${esc(a.summary)}</div>` : ""}
         <div class="card-footer">
-          <span class="card-source">${a.source}</span>
+          <span class="card-source">${esc(a.source)}</span>
           <span class="card-date">${formatDate(a.published)}</span>
         </div>
       </a>
@@ -358,7 +369,7 @@
       render();
     } catch (e) {
       document.getElementById("grid").innerHTML =
-        '<div class="empty">データの読み込みに失敗しました<br><small>' + e.message + '</small></div>';
+        '<div class="empty">データの読み込みに失敗しました<br><small>' + esc(e.message) + '</small></div>';
     }
   }
 
