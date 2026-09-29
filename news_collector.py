@@ -14,7 +14,7 @@ import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, unquote_plus
 
 import requests
 import yaml
@@ -63,6 +63,31 @@ def strip_tags(text: str) -> str:
     return html.unescape(text).strip()
 
 
+def normalize_title(title: str) -> str:
+    """URL エンコードされたまま配信された見出し（a+b+c%E2%80%99t 形式）を元に戻す
+
+    途中で改行できない長い文字列になり、画面幅を押し広げる原因になるため。
+    """
+    encoded = len(re.findall(r"%[0-9A-Fa-f]{2}", title)) >= 2
+    plus_joined = " " not in title and title.count("+") >= 3
+    if encoded or plus_joined:
+        try:
+            return unquote_plus(title)
+        except Exception:
+            return title
+    return title
+
+
+def repair_title(article: dict) -> dict:
+    """過去に取り込んだ URL エンコード済みの見出しを直し、再翻訳の対象に戻す"""
+    fixed = normalize_title(article["title"])
+    if fixed == article["title"]:
+        return article
+    repaired = {**article, "title": fixed}
+    repaired.pop("title_en", None)
+    return repaired
+
+
 def parse_rfc822(date_str: str) -> str:
     """RFC 822 日付文字列を JST ISO 文字列に変換"""
     try:
@@ -97,7 +122,7 @@ def fetch_google_news(query: str, lang: str = "ja", max_items: int = 10) -> list
         articles = []
 
         for item in list(channel.iter("item"))[:max_items]:
-            title = strip_tags(item.findtext("title") or "")
+            title = normalize_title(strip_tags(item.findtext("title") or ""))
             link = item.findtext("link") or ""
             pub_str = item.findtext("pubDate") or ""
             published = parse_rfc822(pub_str) if pub_str else datetime.now(JST).isoformat()
@@ -132,6 +157,156 @@ def fetch_google_news(query: str, lang: str = "ja", max_items: int = 10) -> list
         return []
 
 
+YAHOO_RT_BASE = "https://search.yahoo.co.jp"
+_NEXT_DATA_RE = re.compile(
+    r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', re.S
+)
+
+
+def fetch_realtime_page(path: str, params: dict | None = None) -> dict | None:
+    """Yahoo!リアルタイム検索のページを取得し、ページに埋め込まれた pageData を返す
+
+    取得や解析に失敗したら None を返す（レイアウト変更などで収集全体を止めないため）。
+    """
+    url = f"{YAHOO_RT_BASE}{path}"
+    try:
+        resp = requests.get(
+            url,
+            params=params,
+            headers={**HEADERS, "Accept-Language": "ja"},
+            timeout=20,
+        )
+        resp.raise_for_status()
+        match = _NEXT_DATA_RE.search(resp.text)
+        if not match:
+            print(f"[WARN] Yahoo!リアルタイム検索: データが見つかりません ({path})")
+            return None
+        return json.loads(match.group(1))["props"]["pageProps"]["pageData"]
+    except (requests.RequestException, ValueError, KeyError) as e:
+        print(f"[ERROR] Yahoo!リアルタイム検索の取得に失敗 ({path}): {e}")
+        return None
+
+
+def _abs_yahoo_url(url: str) -> str:
+    return url if url.startswith("http") else f"{YAHOO_RT_BASE}{url}"
+
+
+def _epoch_to_jst(epoch: int | float | None) -> str:
+    if not epoch:
+        return datetime.now(JST).isoformat()
+    return datetime.fromtimestamp(epoch, JST).isoformat()
+
+
+def _clean_tweet_text(text: str, limit: int = 110) -> str:
+    """検索語の強調マーカー・URL・返信先を取り除き、見出し向けに短くする"""
+    text = text.replace("\tSTART\t", "").replace("\tEND\t", "")
+    text = re.sub(r"https?://\S+", "", text)
+    text = re.sub(r"^(?:@\w+\s+)+", "", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text if len(text) <= limit else text[:limit].rstrip() + "…"
+
+
+def fetch_yahoo_realtime(conf: dict) -> list[dict]:
+    """Yahoo!リアルタイム検索から「バズ」「炎上」の話題を集める
+
+    - 急上昇ワード: トップページの急上昇ワード。否定的な投稿が多いものは「炎上」扱い
+    - 話題まとめ:   Yahoo が投稿を要約した、いま話題のトピック
+    - 炎上の人気投稿: 指定した検索語を含む、直近24時間でいいね数の多い投稿
+    """
+    articles: list[dict] = []
+
+    # ── 急上昇ワード（トップページ） ──
+    top = fetch_realtime_page("/realtime")
+    if top:
+        trend = top.get("buzzTrend", {})
+        published = _epoch_to_jst(trend.get("buzzTimestamp"))
+        min_tweets = conf.get("trend_min_tweets", 100)
+        enjo_pct = conf.get("enjo_negative_pct", 50)
+
+        picked = 0
+        for item in trend.get("items", []):
+            if picked >= conf.get("trend_words", 12):
+                break
+            if item.get("tweetCount", 0) < min_tweets:
+                continue
+            negative = item.get("negative", 0)
+            parts = []
+            if item.get("genre"):
+                parts.append(item["genre"])
+            parts.append(f"ツイート {item.get('tweetCount', 0):,}件")
+            if negative:
+                parts.append(f"否定的な投稿 {negative}%")
+            summary = "・".join(parts)
+            related = "、".join(item.get("childBuzz", [])[:5])
+            if related:
+                summary += f" ／ 関連: {related}"
+            articles.append(
+                {
+                    "title": item["query"],
+                    "url": _abs_yahoo_url(item["url"]),
+                    "source": "Yahoo!リアルタイム検索 急上昇ワード",
+                    "published": published,
+                    "summary": summary,
+                    "keyword": "炎上" if negative >= enjo_pct else "急上昇ワード",
+                }
+            )
+            picked += 1
+
+    # ── 検索語ごとの人気投稿 + 話題まとめ ──
+    matome_done = False
+    for search in conf.get("searches", []):
+        keyword = search["keyword"]
+        time.sleep(1.5)  # 相手サーバーへの負荷を抑える
+        # md=h: 話題順（直近24時間でいいね数の多い順）
+        page = fetch_realtime_page(
+            "/realtime/search", {"p": keyword, "ei": "UTF-8", "md": "h"}
+        )
+        if not page:
+            continue
+
+        if not matome_done and conf.get("matome", 0):
+            for m in page.get("buzzMatomeList", {}).get("items", [])[: conf["matome"]]:
+                articles.append(
+                    {
+                        "title": m["title"],
+                        "url": _abs_yahoo_url(m["url"]),
+                        "source": "Yahoo!リアルタイム検索 話題まとめ",
+                        "published": _epoch_to_jst(m.get("createdAt")),
+                        "summary": (m.get("summary") or "")[:200],
+                        "keyword": "話題まとめ",
+                    }
+                )
+            matome_done = True
+
+        min_likes = search.get("min_likes", 1000)
+        posts = [
+            e
+            for e in page.get("timeline", {}).get("entry", [])
+            if e.get("likesCount", 0) >= min_likes and "\tSTART\t" in e.get("displayText", "")
+        ]
+        posts.sort(key=lambda e: e["likesCount"], reverse=True)
+        for e in posts[: search.get("limit", 8)]:
+            title = _clean_tweet_text(e["displayText"])
+            if not title:
+                continue
+            articles.append(
+                {
+                    "title": title,
+                    "url": e["url"],
+                    "source": "Yahoo!リアルタイム検索 X投稿",
+                    "published": _epoch_to_jst(e.get("createdAt")),
+                    "summary": (
+                        f"いいね {e['likesCount']:,}・リポスト {e.get('rtCount', 0):,}"
+                        f"・返信 {e.get('replyCount', 0):,}"
+                    ),
+                    "keyword": keyword,
+                }
+            )
+
+    print(f"[INFO] Yahoo!リアルタイム検索: {len(articles)} 件取得")
+    return articles
+
+
 def collect(config: dict) -> tuple[list[dict], dict]:
     existing = load_existing()
     seen_ids = {a["id"] for a in existing.get("articles", [])}
@@ -146,33 +321,39 @@ def collect(config: dict) -> tuple[list[dict], dict]:
     for cat_id, cat_conf in categories.items():
         label: str = cat_conf.get("label", cat_id)
         lang: str = cat_conf.get("lang", "ja")
-        keywords: list[str] = cat_conf.get("keywords", [])
 
-        for keyword in keywords:
-            print(f"  [{label}] {keyword}")
-            raw_list = fetch_google_news(keyword, lang, max_per_kw)
+        # (キーワード, 取得結果) の組を集める。取得元はカテゴリごとに切り替える
+        batches: list[tuple[str, list[dict]]] = []
+        if cat_conf.get("source") == "yahoo_realtime":
+            print(f"  [{label}] Yahoo!リアルタイム検索")
+            batches.append(("", fetch_yahoo_realtime(cat_conf.get("realtime", {}))))
+        else:
+            for keyword in cat_conf.get("keywords", []):
+                print(f"  [{label}] {keyword}")
+                batches.append((keyword, fetch_google_news(keyword, lang, max_per_kw)))
+                time.sleep(1.0)  # Rate limit
 
+        for keyword, raw_list in batches:
             for raw in raw_list:
                 art_id = make_id(raw["title"], raw["source"])
-                if art_id not in seen_ids:
-                    new_articles.append(
-                        {
-                            "id": art_id,
-                            "title": raw["title"],
-                            "url": raw["url"],
-                            "source": raw["source"],
-                            "published": raw["published"],
-                            "summary": raw["summary"],
-                            "category": cat_id,
-                            "category_label": label,
-                            "keyword": keyword,
-                            "first_seen": now_str,
-                            "lang": lang,
-                        }
-                    )
-                    seen_ids.add(art_id)
-
-            time.sleep(1.0)  # Rate limit
+                if art_id in seen_ids:
+                    continue
+                new_articles.append(
+                    {
+                        "id": art_id,
+                        "title": raw["title"],
+                        "url": raw["url"],
+                        "source": raw["source"],
+                        "published": raw["published"],
+                        "summary": raw["summary"],
+                        "category": cat_id,
+                        "category_label": label,
+                        "keyword": raw.get("keyword") or keyword,
+                        "first_seen": now_str,
+                        "lang": lang,
+                    }
+                )
+                seen_ids.add(art_id)
 
     return new_articles, existing
 
@@ -343,6 +524,7 @@ def main() -> None:
     print(f"\n[INFO] 新着: {len(new_articles)} 件")
 
     all_articles = existing.get("articles", []) + new_articles
+    all_articles = [repair_title(a) for a in all_articles]
     all_articles = prune(all_articles, retention_days, max_total)
 
     # 新着に加え、過去の未翻訳分もまとめて翻訳する
