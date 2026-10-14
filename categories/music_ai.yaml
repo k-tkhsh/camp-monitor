@@ -1,0 +1,32 @@
+name: "音楽AI"
+emoji: "🎵"
+order: 60
+lang: "en"
+notify: true
+priority: "default"
+
+keywords:
+  - "Suno AI music"
+  - "Udio music generation"
+  - "AI music copyright"
+  - "音楽生成AI"
+
+exclude: []
+
+feeds:
+  - name: "Yahoo!ニュース IT"
+    url: "https://news.yahoo.co.jp/rss/categories/it.xml"
+    lang: "ja"
+    match:
+      - "音楽生成"
+      - "Suno"
+      - "Udio"
+      - "AI 作曲"
+      - "AI 音楽"
+  - name: "PR TIMES"
+    url: "https://prtimes.jp/index.rdf"
+    lang: "ja"
+    match:
+      - "音楽生成"
+      - "AI 作曲"
+      - "Suno"

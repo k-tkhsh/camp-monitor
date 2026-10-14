@@ -1,0 +1,25 @@
+name: "Apple"
+emoji: "🍎"
+order: 10
+lang: "en"
+notify: true
+priority: "high"
+
+keywords:
+  - "Apple iPhone"
+  - "MacBook Pro M"
+  - "iOS update"
+  - "AirPods"
+  - "Apple Watch"
+  - "Apple Vision Pro"
+
+exclude: []
+
+feeds:
+  - name: "Apple Newsroom"
+    url: "https://www.apple.com/jp/newsroom/rss-feed.rss"
+    lang: "ja"
+    limit: 10
+  - name: "9to5Mac"
+    url: "https://9to5mac.com/feed/"
+    limit: 8

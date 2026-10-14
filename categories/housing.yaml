@@ -1,0 +1,27 @@
+name: "住宅・補助金"
+emoji: "🏠"
+order: 70
+lang: "ja"
+notify: false
+priority: "low"
+
+keywords:
+  - "北海道 住宅補助金"
+  - "住宅ローン 金利"
+  - "省エネ住宅 補助金"
+
+exclude: []
+
+feeds:
+  - name: "Yahoo!ニュース 経済"
+    url: "https://news.yahoo.co.jp/rss/categories/business.xml"
+    match:
+      - "住宅ローン"
+      - "住宅 補助金"
+      - "省エネ住宅"
+  - name: "PR TIMES"
+    url: "https://prtimes.jp/index.rdf"
+    match:
+      - "住宅 補助金"
+      - "省エネ住宅"
+      - "住宅ローン 金利"

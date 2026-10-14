@@ -1,0 +1,26 @@
+name: "投資"
+emoji: "💹"
+order: 50
+lang: "ja"
+notify: false
+priority: "low"
+
+keywords:
+  - "インデックス投資 最新"
+  - "NISA 新着"
+  - "金利 政策"
+  - "日経平均 週間"
+  - "税制改正 投資"
+
+exclude: []
+
+feeds:
+  - name: "Yahoo!ニュース 経済"
+    url: "https://news.yahoo.co.jp/rss/categories/business.xml"
+    match:
+      - "NISA"
+      - "日経平均"
+      - "日銀"
+      - "利上げ"
+      - "利下げ"
+      - "投資信託"

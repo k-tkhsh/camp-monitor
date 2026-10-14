@@ -1,126 +1,18 @@
 # ============================================================
-# 個人情報収集システム キーワード設定
-# カテゴリ・キーワードをここで管理します
+# 個人情報収集システム 全体設定
+# カテゴリーごとの設定は categories/ フォルダ（1カテゴリー = 1ファイル）にあります
 # ============================================================
 
 # ntfy 通知設定
-# NTFY_TOPIC は GitHub Secret に設定してください（keywords.yamlには書かない）
+# NTFY_TOPIC は GitHub Secret に設定してください（ここには書かない）
 ntfy:
   server: "https://ntfy.sh"
-  # iPhone アプリで受け取るトピック名は GitHub Secret "NTFY_TOPIC" に設定
-
-# カテゴリ設定
-categories:
-
-  apple:
-    label: "🍎 Apple"
-    notify: true          # ntfy通知を送るか
-    priority: "high"      # ntfy優先度: min / low / default / high / urgent
-    lang: "en"            # en=英語ニュース / ja=日本語ニュース
-    keywords:
-      - "Apple iPhone"
-      - "MacBook Pro M"
-      - "iOS update"
-      - "AirPods"
-      - "Apple Watch"
-      - "Apple Vision Pro"
-
-  sake:
-    label: "🍶 日本酒"
-    notify: true
-    priority: "default"
-    lang: "ja"
-    keywords:
-      - "日本酒 札幌"
-      - "日本酒 北海道 新商品"
-      - "日本酒 北海道 イベント"
-      - "日本酒 北海道 限定"
-      - "十四代 札幌"
-      - "新政 北海道"
-      - "而今 北海道"
-      - "獺祭 札幌"
-      - "鍋島 北海道"
-
-  sapporo:
-    label: "🏗️ 札幌"
-    notify: false
-    priority: "default"
-    lang: "ja"
-    keywords:
-      - "札幌市 再開発"
-      - "札幌 商業施設 オープン"
-      - "北海道 建築計画"
-      - "札幌 都市計画"
-      - "大通 再開発"
-
-  camp:
-    label: "🏕️ キャンプ"
-    notify: true
-    priority: "default"
-    lang: "ja"
-    keywords:
-      - "北海道 キャンプ場 オープン 2026"
-      - "北海道 キャンプ場 予約 開始"
-      - "北海道 アウトドア イベント"
-
-  investment:
-    label: "💹 投資"
-    notify: false
-    priority: "low"
-    lang: "ja"
-    keywords:
-      - "インデックス投資 最新"
-      - "NISA 新着"
-      - "金利 政策"
-      - "日経平均 週間"
-      - "税制改正 投資"
-
-  music_ai:
-    label: "🎵 音楽AI"
-    notify: true
-    priority: "default"
-    lang: "en"
-    keywords:
-      - "Suno AI music"
-      - "Udio music generation"
-      - "AI music copyright"
-      - "音楽生成AI"
-
-  housing:
-    label: "🏠 住宅・補助金"
-    notify: false
-    priority: "low"
-    lang: "ja"
-    keywords:
-      - "北海道 住宅補助金"
-      - "住宅ローン 金利 2026"
-      - "省エネ住宅 補助金"
-
-  sns_trends:
-    label: "🔥 SNS炎上・バズ"
-    notify: true
-    priority: "default"
-    lang: "ja"
-    # Google ニュースではなく Yahoo!リアルタイム検索（X の投稿をリアルタイムに集計）から取得
-    source: "yahoo_realtime"
-    # 急上昇ワードは毎回入れ替わり件数が多いので、保持する件数を抑える
-    # （全体の上限 max_total_articles をこのカテゴリだけで埋めないため）
-    max_articles: 150
-    realtime:
-      trend_words: 8           # 急上昇ワードの取得件数（上位から）
-      trend_min_tweets: 100    # ツイート数がこれ未満の急上昇ワードは除外
-      enjo_negative_pct: 50    # 否定的な投稿がこの割合(%)以上の急上昇ワードは「炎上」扱い
-      matome: 5                # Yahoo が投稿を要約した「話題まとめ」の取得件数
-      searches:                # 検索語を含む、直近24時間でいいね数の多い投稿を拾う
-        - keyword: "炎上"
-          min_likes: 1000      # このいいね数以上の投稿だけ
-          limit: 8
-        - keyword: "謝罪"
-          min_likes: 1000
-          limit: 5
 
 # 収集設定
 settings:
-  max_articles_per_keyword: 8   # キーワード1件あたりの最大取得件数
-  max_total_articles: 600       # 保持する記事の最大件数
-  retention_days: 7             # 記事の保持日数
+  max_articles_per_keyword: 8   # Google ニュースの検索語1件あたりの最大取得件数
+  max_total_articles: 800       # 保持する記事の最大件数
+  retention_days: 7             # 記事の保持日数（これより古い記事は取り込まない）
+
+# 全カテゴリー共通の除外ワード（この語を含む記事は取り込まない）
+exclude: []

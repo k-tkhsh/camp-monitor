@@ -1,0 +1,261 @@
+{
+  "categories": [
+    {
+      "id": "apple",
+      "name": "Apple",
+      "emoji": "🍎",
+      "label": "🍎 Apple",
+      "lang": "en",
+      "notify": true,
+      "keywords": [
+        "Apple iPhone",
+        "MacBook Pro M",
+        "iOS update",
+        "AirPods",
+        "Apple Watch",
+        "Apple Vision Pro"
+      ],
+      "exclude": [],
+      "feeds": [
+        {
+          "name": "Apple Newsroom",
+          "url": "https://www.apple.com/jp/newsroom/rss-feed.rss",
+          "match": []
+        },
+        {
+          "name": "9to5Mac",
+          "url": "https://9to5mac.com/feed/",
+          "match": []
+        }
+      ],
+      "realtime": false
+    },
+    {
+      "id": "sake",
+      "name": "日本酒",
+      "emoji": "🍶",
+      "label": "🍶 日本酒",
+      "lang": "ja",
+      "notify": true,
+      "keywords": [
+        "日本酒 札幌",
+        "日本酒 北海道 新商品",
+        "日本酒 北海道 イベント",
+        "日本酒 北海道 限定",
+        "十四代 札幌",
+        "新政 北海道",
+        "而今 北海道",
+        "獺祭 札幌",
+        "鍋島 北海道"
+      ],
+      "exclude": [
+        "飲酒運転",
+        "酒気帯び",
+        "事故",
+        "はねられ",
+        "衝突",
+        "突っ込",
+        "逮捕",
+        "容疑"
+      ],
+      "feeds": [
+        {
+          "name": "PR TIMES",
+          "url": "https://prtimes.jp/index.rdf",
+          "match": [
+            "日本酒 北海道",
+            "日本酒 札幌",
+            "酒蔵 北海道"
+          ]
+        }
+      ],
+      "realtime": false
+    },
+    {
+      "id": "sapporo",
+      "name": "札幌",
+      "emoji": "🏗️",
+      "label": "🏗️ 札幌",
+      "lang": "ja",
+      "notify": false,
+      "keywords": [
+        "札幌市 再開発",
+        "札幌 商業施設 オープン",
+        "北海道 建築計画",
+        "札幌 都市計画",
+        "大通 再開発"
+      ],
+      "exclude": [
+        "事故",
+        "逮捕",
+        "容疑",
+        "死亡",
+        "火災",
+        "はねられ",
+        "衝突",
+        "突っ込"
+      ],
+      "feeds": [
+        {
+          "name": "PR TIMES",
+          "url": "https://prtimes.jp/index.rdf",
+          "match": [
+            "札幌 オープン",
+            "札幌 開業",
+            "札幌 出店",
+            "札幌 再開発"
+          ]
+        }
+      ],
+      "realtime": false
+    },
+    {
+      "id": "camp",
+      "name": "キャンプ",
+      "emoji": "🏕️",
+      "label": "🏕️ キャンプ",
+      "lang": "ja",
+      "notify": true,
+      "keywords": [
+        "北海道 キャンプ場 オープン",
+        "北海道 キャンプ場 予約 開始",
+        "北海道 アウトドア イベント"
+      ],
+      "exclude": [],
+      "feeds": [
+        {
+          "name": "PR TIMES",
+          "url": "https://prtimes.jp/index.rdf",
+          "match": [
+            "キャンプ 北海道",
+            "グランピング 北海道",
+            "アウトドア 北海道"
+          ]
+        }
+      ],
+      "realtime": false
+    },
+    {
+      "id": "investment",
+      "name": "投資",
+      "emoji": "💹",
+      "label": "💹 投資",
+      "lang": "ja",
+      "notify": false,
+      "keywords": [
+        "インデックス投資 最新",
+        "NISA 新着",
+        "金利 政策",
+        "日経平均 週間",
+        "税制改正 投資"
+      ],
+      "exclude": [],
+      "feeds": [
+        {
+          "name": "Yahoo!ニュース 経済",
+          "url": "https://news.yahoo.co.jp/rss/categories/business.xml",
+          "match": [
+            "NISA",
+            "日経平均",
+            "日銀",
+            "利上げ",
+            "利下げ",
+            "投資信託"
+          ]
+        }
+      ],
+      "realtime": false
+    },
+    {
+      "id": "music_ai",
+      "name": "音楽AI",
+      "emoji": "🎵",
+      "label": "🎵 音楽AI",
+      "lang": "en",
+      "notify": true,
+      "keywords": [
+        "Suno AI music",
+        "Udio music generation",
+        "AI music copyright",
+        "音楽生成AI"
+      ],
+      "exclude": [],
+      "feeds": [
+        {
+          "name": "Yahoo!ニュース IT",
+          "url": "https://news.yahoo.co.jp/rss/categories/it.xml",
+          "match": [
+            "音楽生成",
+            "Suno",
+            "Udio",
+            "AI 作曲",
+            "AI 音楽"
+          ]
+        },
+        {
+          "name": "PR TIMES",
+          "url": "https://prtimes.jp/index.rdf",
+          "match": [
+            "音楽生成",
+            "AI 作曲",
+            "Suno"
+          ]
+        }
+      ],
+      "realtime": false
+    },
+    {
+      "id": "housing",
+      "name": "住宅・補助金",
+      "emoji": "🏠",
+      "label": "🏠 住宅・補助金",
+      "lang": "ja",
+      "notify": false,
+      "keywords": [
+        "北海道 住宅補助金",
+        "住宅ローン 金利",
+        "省エネ住宅 補助金"
+      ],
+      "exclude": [],
+      "feeds": [
+        {
+          "name": "Yahoo!ニュース 経済",
+          "url": "https://news.yahoo.co.jp/rss/categories/business.xml",
+          "match": [
+            "住宅ローン",
+            "住宅 補助金",
+            "省エネ住宅"
+          ]
+        },
+        {
+          "name": "PR TIMES",
+          "url": "https://prtimes.jp/index.rdf",
+          "match": [
+            "住宅 補助金",
+            "省エネ住宅",
+            "住宅ローン 金利"
+          ]
+        }
+      ],
+      "realtime": false
+    },
+    {
+      "id": "sns_trends",
+      "name": "SNS炎上・バズ",
+      "emoji": "🔥",
+      "label": "🔥 SNS炎上・バズ",
+      "lang": "ja",
+      "notify": true,
+      "keywords": [],
+      "exclude": [],
+      "feeds": [
+        {
+          "name": "はてなブックマーク",
+          "url": "https://b.hatena.ne.jp/hotentry/all.rss",
+          "match": []
+        }
+      ],
+      "realtime": true
+    }
+  ]
+}

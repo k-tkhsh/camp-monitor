@@ -11,6 +11,11 @@ on:
 permissions:
   contents: write
 
+# 記事収集どうしは重ならないよう順番に実行する（待機中の古い実行は新しい実行で置き換わってよい）
+concurrency:
+  group: news-data
+  cancel-in-progress: false
+
 jobs:
   collect:
     runs-on: ubuntu-latest
@@ -36,16 +41,23 @@ jobs:
       - name: Install dependencies
         run: pip install -r news_requirements.txt
 
-      - name: Run news collector
+      # 記事を集めて保存する。カテゴリー変更などが先に push していたら、最新の main で集め直す
+      # （articles.json を自動マージすると JSON が壊れうるので、マージはしない）
+      - name: Collect articles and push
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
-        run: python news_collector.py
-
-      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/data/articles.json
-          git diff --staged --quiet && echo "変更なし" && exit 0
-          git commit -m "📰 記事更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
-          git push
+          for i in 1 2 3; do
+            python news_collector.py
+            git add docs/data
+            git diff --staged --quiet && echo "変更なし" && exit 0
+            git commit -m "📰 記事更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
+            git push && exit 0
+            echo "push が他の更新とぶつかったため、最新の状態から集め直します ($i)"
+            sleep 10
+            git fetch origin main
+            git reset --hard origin/main
+          done
+          exit 1

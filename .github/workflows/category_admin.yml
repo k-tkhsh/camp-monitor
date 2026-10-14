@@ -1,0 +1,87 @@
+name: カテゴリー管理
+
+# サイトの「カテゴリー管理」から作られた Issue を受け取り、categories/ に反映する。
+# リポジトリのオーナー本人が作った Issue だけを処理する（他人の Issue は無視）。
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+# concurrency は付けない（同じグループで待機中の実行は、後から来た実行に取り消されて
+# 依頼が消えてしまうため）。記事収集と push がぶつかったら、最新の状態からやり直す。
+
+jobs:
+  apply:
+    if: >-
+      github.event.issue.user.login == github.repository_owner &&
+      startsWith(github.event.issue.title, 'カテゴリー')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r news_requirements.txt
+
+      # Issue の本文は環境変数で渡す（シェルに直接埋め込むと任意のコマンドを実行されうるため）
+      # 依頼に不備があっても失敗扱い（赤い✕）にせず、理由を Issue に返信して閉じる
+      - name: Apply category request
+        id: apply
+        continue-on-error: true
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: python category_admin.py
+
+      # 記事を集めて保存する。他の実行が先に push していたら、最新の main に依頼を当て直してやり直す
+      - name: Collect articles and push
+        if: steps.apply.outcome == 'success'
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do
+            python news_collector.py
+            git add categories docs/data
+            git diff --staged --quiet || git commit -m "🗂️ カテゴリー変更 (#${ISSUE_NUMBER})"
+            git push && exit 0
+            echo "push が他の更新とぶつかったため、最新の状態からやり直します ($i)"
+            sleep 10
+            git fetch origin main
+            git reset --hard origin/main
+            python category_admin.py || exit 1
+          done
+          exit 1
+
+      - name: Reply and close the issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+          APPLY: ${{ steps.apply.outcome }}
+          JOB: ${{ job.status }}
+          PAGES_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+        run: |
+          if [ "$APPLY" = "success" ] && [ "$JOB" = "success" ]; then
+            printf '\n数分後にサイトに反映されます: %s\n' "$PAGES_URL" >> result.md
+            reason=completed
+          else
+            if [ "$APPLY" = "success" ] || [ ! -f result.md ]; then
+              echo "⚠️ 反映の途中でエラーが起きました。Actions のログを確認してください。" > result.md
+            fi
+            reason="not planned"
+          fi
+          gh issue comment "$NUMBER" --repo "$GITHUB_REPOSITORY" --body-file result.md
+          gh issue close "$NUMBER" --repo "$GITHUB_REPOSITORY" --reason "$reason"

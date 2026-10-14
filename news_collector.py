@@ -1,7 +1,10 @@
 """
 個人情報収集システム
-Google News RSS から各カテゴリの最新情報を収集し、
+カテゴリーごとに Google ニュース・RSS・Yahoo!リアルタイム検索から最新情報を集め、
 ntfy で通知 + GitHub Pages 用 JSON を更新する
+
+カテゴリーの設定は categories/<id>.yaml（1カテゴリー = 1ファイル）、
+全体の設定は keywords.yaml にある。
 """
 
 import email.utils
@@ -13,6 +16,7 @@ import re
 import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
+from functools import lru_cache
 from pathlib import Path
 from urllib.parse import quote, unquote_plus
 
@@ -21,7 +25,9 @@ import yaml
 
 JST = timezone(timedelta(hours=9))
 DATA_FILE = Path("docs/data/articles.json")
+CATEGORIES_JSON = Path("docs/data/categories.json")
 KEYWORDS_FILE = Path("keywords.yaml")
+CATEGORIES_DIR = Path("categories")
 
 HEADERS = {
     "User-Agent": (
@@ -32,9 +38,67 @@ HEADERS = {
 }
 
 
+BROKEN_CATEGORIES: set[str] = set()  # 設定ファイルを読めなかったカテゴリー（記事は消さずに残す）
+
+
+def load_categories(directory: Path = CATEGORIES_DIR) -> dict[str, dict]:
+    """categories/*.yaml を読み、並び順（order → ファイル名）に並べて返す
+
+    ファイル名（拡張子なし）がカテゴリー id になる。「_」で始まるファイルと
+    読めないファイルは飛ばす（1ファイルの書き間違いで収集全体を止めないため）。
+    """
+    loaded = []
+    for path in sorted(directory.glob("*.yaml")):
+        if path.name.startswith("_"):
+            continue
+        try:
+            conf = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+            if not isinstance(conf, dict) or not conf.get("name"):
+                raise ValueError("name がありません")
+        except Exception as e:
+            print(f"[WARN] カテゴリー設定を読めないためスキップ（記事は残します）: {path} ({e})")
+            BROKEN_CATEGORIES.add(path.stem)
+            continue
+        emoji = str(conf.get("emoji") or "").strip()
+        conf["label"] = f"{emoji} {conf['name']}".strip()
+        loaded.append((conf.get("order", 999), path.stem, conf))
+    loaded.sort(key=lambda t: (t[0], t[1]))
+    return {cat_id: conf for _, cat_id, conf in loaded}
+
+
 def load_config() -> dict:
     with open(KEYWORDS_FILE, encoding="utf-8") as f:
-        return yaml.safe_load(f)
+        config = yaml.safe_load(f) or {}
+    config["categories"] = load_categories()
+    return config
+
+
+def save_categories_json(config: dict) -> None:
+    """サイトのタブやカテゴリー管理画面で使うカテゴリー一覧を書き出す"""
+    categories = []
+    for cat_id, c in config["categories"].items():
+        categories.append(
+            {
+                "id": cat_id,
+                "name": c["name"],
+                "emoji": c.get("emoji", ""),
+                "label": c["label"],
+                "lang": c.get("lang", "ja"),
+                "notify": bool(c.get("notify", False)),
+                "keywords": c.get("keywords") or [],
+                "exclude": c.get("exclude") or [],
+                "feeds": [
+                    {"name": f.get("name", ""), "url": f.get("url", ""), "match": f.get("match") or []}
+                    for f in (c.get("feeds") or [])
+                ],
+                "realtime": bool(c.get("yahoo_realtime")),
+            }
+        )
+    CATEGORIES_JSON.parent.mkdir(parents=True, exist_ok=True)
+    CATEGORIES_JSON.write_text(
+        json.dumps({"categories": categories}, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
 
 
 def load_existing() -> dict:
@@ -116,17 +180,39 @@ def parse_rfc822(date_str: str) -> str:
         return datetime.now(JST).isoformat()
 
 
-def fetch_google_news(query: str, lang: str = "ja", max_items: int = 10) -> list[dict]:
+def parse_date(date_str: str) -> str:
+    """RSS / Atom の日付（RFC 822 か ISO 8601）を JST ISO 文字列に。読めなければ現在時刻"""
+    date_str = (date_str or "").strip()
+    if not date_str:
+        return datetime.now(JST).isoformat()
+    try:
+        dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=JST)
+        return dt.astimezone(JST).isoformat()
+    except ValueError:
+        return parse_rfc822(date_str)
+
+
+def strip_source_suffix(title: str, source: str) -> str:
+    """Google ニュースの見出し末尾に付く「 - 媒体名」を取り除く（媒体名は別に表示する）"""
+    if source:
+        for sep in (" - ", " – ", " | "):
+            suffix = f"{sep}{source}"
+            if title.endswith(suffix) and len(title) > len(suffix):
+                return title[: -len(suffix)].rstrip()
+    return title
+
+
+def fetch_google_news(
+    query: str, lang: str = "ja", max_items: int = 10, days: int = 7
+) -> list[dict]:
+    # when:Nd で直近 N 日の記事に絞る（指定しないと数か月前の記事も返ってくる）
+    q = quote(f"{query} when:{days}d")
     if lang == "en":
-        url = (
-            "https://news.google.com/rss/search"
-            f"?q={quote(query)}&hl=en-US&gl=US&ceid=US:en"
-        )
+        url = f"https://news.google.com/rss/search?q={q}&hl=en-US&gl=US&ceid=US:en"
     else:
-        url = (
-            "https://news.google.com/rss/search"
-            f"?q={quote(query)}&hl=ja&gl=JP&ceid=JP:ja"
-        )
+        url = f"https://news.google.com/rss/search?q={q}&hl=ja&gl=JP&ceid=JP:ja"
 
     try:
         resp = requests.get(url, headers=HEADERS, timeout=15)
@@ -149,6 +235,8 @@ def fetch_google_news(query: str, lang: str = "ja", max_items: int = 10) -> list
             # ソース名: <source> タグ優先、なければフィードタイトル
             src_el = item.find("source")
             source = (src_el.text or "").strip() if src_el is not None else feed_title
+            raw_title = title
+            title = strip_source_suffix(title, source)
 
             # description からサマリーを抽出（最初の <a> タグ内テキストを除外）
             desc = strip_tags(item.findtext("description") or "")
@@ -159,6 +247,8 @@ def fetch_google_news(query: str, lang: str = "ja", max_items: int = 10) -> list
                 articles.append(
                     {
                         "title": title,
+                        # 末尾の「 - 媒体名」付きの見出し。以前はこちらで id を作っていたので照合に使う
+                        "raw_title": raw_title,
                         "url": link,
                         "source": source,
                         "published": published,
@@ -174,6 +264,143 @@ def fetch_google_news(query: str, lang: str = "ja", max_items: int = 10) -> list
     except ET.ParseError as e:
         print(f"[ERROR] XML パースエラー '{query}': {e}")
         return []
+
+
+def _local(tag: str) -> str:
+    """名前空間を除いたタグ名（{http://...}title → title）"""
+    return tag.rsplit("}", 1)[-1]
+
+
+def _child_text(el: ET.Element, *names: str) -> str:
+    """子要素のうち、names に挙げた最初のタグのテキストを返す（名前空間は無視）"""
+    for name in names:
+        for child in el:
+            if _local(child.tag) == name:
+                return (child.text or "").strip()
+    return ""
+
+
+def _entry_link(el: ET.Element) -> str:
+    """RSS の <link>テキスト</link> と Atom の <link href="..."/> の両方に対応"""
+    for child in el:
+        if _local(child.tag) != "link":
+            continue
+        if child.get("href") and child.get("rel", "alternate") == "alternate":
+            return child.get("href", "").strip()
+        if (child.text or "").strip():
+            return child.text.strip()
+    return ""
+
+
+def parse_feed(content: bytes) -> list[dict]:
+    """RSS 2.0 / RSS 1.0 (RDF) / Atom を共通の形 {title, url, published, summary} にする"""
+    root = ET.fromstring(content)
+    items = []
+    for el in root.iter():
+        if _local(el.tag) not in ("item", "entry"):
+            continue
+        title = normalize_title(strip_tags(_child_text(el, "title")))
+        url = _entry_link(el)
+        if not title or not url.startswith("http"):
+            continue
+        items.append(
+            {
+                "title": title,
+                "url": url,
+                "published": parse_date(
+                    _child_text(el, "pubDate", "date", "published", "updated")
+                ),
+                "summary": strip_tags(
+                    _child_text(el, "description", "summary", "content")
+                )[:200],
+            }
+        )
+    return items
+
+
+_feed_cache: dict[str, list[dict]] = {}
+
+
+def fetch_feed_items(url: str) -> list[dict]:
+    """RSS を取得する。同じ URL は1回の実行で1度だけ取りに行く（複数カテゴリーで共有）"""
+    if url not in _feed_cache:
+        try:
+            resp = requests.get(url, headers=HEADERS, timeout=20)
+            resp.raise_for_status()
+            _feed_cache[url] = parse_feed(resp.content)
+        except (requests.RequestException, ET.ParseError) as e:
+            print(f"[ERROR] RSS の取得に失敗 ({url}): {e}")
+            _feed_cache[url] = []
+        time.sleep(1.0)  # Rate limit
+    return _feed_cache[url]
+
+
+def matches_any(text: str, patterns: list[str]) -> bool:
+    """patterns のどれかに当てはまるか。空白区切りの語は「すべてを含む」とみなす
+
+    例: ["日本酒 北海道", "酒蔵"] → (日本酒 かつ 北海道) または 酒蔵
+    """
+    text = text.lower()
+    for pattern in patterns:
+        words = str(pattern).lower().split()
+        if words and all(w in text for w in words):
+            return True
+    return False
+
+
+def fetch_feed(feed: dict) -> list[dict]:
+    """カテゴリー設定の feeds 1件分を取得し、match で絞り込んで新しい順に返す"""
+    items = fetch_feed_items(feed["url"])
+    match = feed.get("match") or []
+    if match:
+        items = [i for i in items if matches_any(f"{i['title']} {i['summary']}", match)]
+    items = sorted(items, key=lambda i: i["published"], reverse=True)
+    name = feed.get("name") or feed["url"]
+    return [
+        {**i, "source": name, "keyword": feed.get("keyword") or name, "lang": feed.get("lang")}
+        for i in items[: feed.get("limit", 10)]
+    ]
+
+
+# ── 同じ話題の記事をまとめる ──────────────────────────────────
+
+def story_key(title: str) -> str:
+    """話題の比較用に見出しを正規化する（記号・空白を除き、小文字にする）"""
+    title = re.sub(r"【[^】]*】|\[[^\]]*\]", "", title)
+    return re.sub(r"[\W_]+", "", title).lower()
+
+
+@lru_cache(maxsize=8192)
+def _bigrams(text: str) -> frozenset[str]:
+    return frozenset(text[i : i + 2] for i in range(len(text) - 1))
+
+
+def is_realtime(article: dict) -> bool:
+    """Yahoo!リアルタイム検索の項目か（急上昇ワード・X 投稿は記事とまとめない）"""
+    return str(article.get("source", "")).startswith("Yahoo!リアルタイム検索")
+
+
+def is_duplicate_of(head: dict, head_key: str, item: dict, item_key: str) -> bool:
+    """item が head と同じ話題の別媒体の記事か
+
+    同じ媒体の似た見出し（「日経平均 週間」のような定期記事や続報）は別の記事として残す。
+    """
+    if head.get("source") == item.get("source") and head_key != item_key:
+        return False
+    return same_story(head_key, item_key)
+
+
+def same_story(a: str, b: str, threshold: float = 0.6) -> bool:
+    """正規化した見出し同士が同じ話題か（文字の2-gram の重なりで判定）
+
+    短い見出し（急上昇ワードなど）は別の話題でも重なりやすいので対象にしない。
+    """
+    if len(a) < 12 or len(b) < 12:
+        return False
+    if a == b:
+        return True
+    ga, gb = _bigrams(a), _bigrams(b)
+    return len(ga & gb) / len(ga | gb) >= threshold
 
 
 YAHOO_RT_BASE = "https://search.yahoo.co.jp"
@@ -357,58 +584,180 @@ def fetch_yahoo_realtime(conf: dict) -> list[dict]:
     return articles
 
 
+MAX_RELATED = 10   # 1件の記事にまとめる他媒体の最大数
+STORY_WINDOW_DAYS = 3   # この日数以内の記事と同じ話題かを照合する
+
+
+MAX_MERGED_IDS = 50
+
+
+def remember_merged(article: dict, item_id: str) -> None:
+    """まとめた記事の id を覚えておく（照合期間を過ぎて同じ記事が届いても取り込まないため）"""
+    merged = article.setdefault("merged_ids", [])
+    if item_id and item_id not in merged and len(merged) < MAX_MERGED_IDS:
+        merged.append(item_id)
+
+
+def attach_related(article: dict, raw: dict) -> bool:
+    """同じ話題の別媒体を related に足す。既に同じ媒体があれば何もしない"""
+    related = article.setdefault("related", [])
+    sources = {article["source"], *(r["source"] for r in related)}
+    if raw["source"] in sources or len(related) >= MAX_RELATED:
+        return False
+    related.append({"source": raw["source"], "url": raw["url"]})
+    return True
+
+
+def exclude_words(config: dict, cat_id: str) -> list[str]:
+    """全体とカテゴリーの除外ワードを合わせた一覧"""
+    cat_conf = config.get("categories", {}).get(cat_id, {})
+    return (config.get("exclude") or []) + (cat_conf.get("exclude") or [])
+
+
+def is_excluded(article: dict, config: dict) -> bool:
+    words = exclude_words(config, article["category"])
+    text = f"{article.get('title_en', '')} {article['title']} {article.get('summary', '')}"
+    return bool(words) and matches_any(text, words)
+
+
+def consolidate(articles: list[dict]) -> list[dict]:
+    """保存済みの記事のうち、同じ話題の重複を最初に集めた1件にまとめる
+
+    取り込み時にもまとめているが、照合期間の外で入った記事や、この仕組みより前に
+    保存された記事にも重複が残るため、毎回まとめ直す（何度実行しても結果は同じ）。
+    """
+    span = timedelta(days=STORY_WINDOW_DAYS)
+    heads: dict[str, list[tuple[str, datetime, dict]]] = {}
+    merged_ids: set[str] = set()
+
+    for a in sorted(articles, key=lambda x: x.get("first_seen", "")):
+        if is_realtime(a):
+            continue
+        key = story_key(a.get("title_en") or a["title"])
+        try:
+            seen_at = datetime.fromisoformat(a["first_seen"])
+        except (KeyError, ValueError):
+            continue
+        group = heads.setdefault(a["category"], [])
+        head = next(
+            (h for k, t, h in group if seen_at - t <= span and is_duplicate_of(h, k, a, key)),
+            None,
+        )
+        if head is None:
+            group.append((key, seen_at, a))
+            continue
+        attach_related(head, a)
+        for r in a.get("related", []):
+            attach_related(head, r)
+        for item_id in [a["id"], *a.get("merged_ids", [])]:
+            remember_merged(head, item_id)
+        merged_ids.add(a["id"])
+
+    if merged_ids:
+        print(f"[INFO] 保存済みの重複 {len(merged_ids)} 件を同じ話題の記事にまとめました")
+    return [a for a in articles if a["id"] not in merged_ids]
+
+
+def gather(cat_conf: dict, label: str, settings: dict) -> list[tuple[str, list[dict]]]:
+    """カテゴリー1件分の情報源をすべて取得し、(キーワード, 取得結果) の組で返す"""
+    lang: str = cat_conf.get("lang", "ja")
+    max_per_kw: int = settings.get("max_articles_per_keyword", 8)
+    days: int = settings.get("retention_days", 7)
+
+    batches: list[tuple[str, list[dict]]] = []
+    if cat_conf.get("yahoo_realtime"):
+        print(f"  [{label}] Yahoo!リアルタイム検索")
+        batches.append(("", fetch_yahoo_realtime(cat_conf["yahoo_realtime"])))
+    for keyword in cat_conf.get("keywords") or []:
+        print(f"  [{label}] {keyword}")
+        batches.append((keyword, fetch_google_news(keyword, lang, max_per_kw, days)))
+        time.sleep(1.0)  # Rate limit
+    for feed in cat_conf.get("feeds") or []:
+        if not isinstance(feed, dict) or not str(feed.get("url", "")).startswith("http"):
+            continue
+        print(f"  [{label}] RSS: {feed.get('name') or feed['url']}")
+        batches.append(("", fetch_feed(feed)))
+    return batches
+
+
 def collect(config: dict) -> tuple[list[dict], dict]:
     existing = load_existing()
     # 既存記事の見出しを先に直しておき、今回取得した同じ記事と id をそろえる
-    existing["articles"] = dedupe(
-        [repair_title(a) for a in existing.get("articles", [])]
+    existing["articles"] = consolidate(
+        dedupe([repair_title(a) for a in existing.get("articles", [])])
     )
     seen_ids = {a["id"] for a in existing["articles"]}
+    for a in existing["articles"]:
+        seen_ids.update(a.get("merged_ids", []))
+
+    now = datetime.now(JST)
+    now_str = now.isoformat()
+    settings: dict = config.get("settings", {})
+    cutoff = (now - timedelta(days=settings.get("retention_days", 7))).isoformat()
+
+    # 同じ話題の照合先: カテゴリーごとに直近の記事の (正規化した見出し, 記事)
+    window = (now - timedelta(days=STORY_WINDOW_DAYS)).isoformat()
+    pool: dict[str, list[tuple[str, dict]]] = {}
+    for a in existing["articles"]:
+        if a.get("first_seen", "") >= window and not is_realtime(a):
+            key = story_key(a.get("title_en") or a["title"])
+            pool.setdefault(a["category"], []).append((key, a))
 
     new_articles: list[dict] = []
-    now_str = datetime.now(JST).isoformat()
+    counts = {"excluded": 0, "old": 0, "merged": 0}
 
-    categories: dict = config.get("categories", {})
-    settings: dict = config.get("settings", {})
-    max_per_kw: int = settings.get("max_articles_per_keyword", 8)
+    for cat_id, cat_conf in config.get("categories", {}).items():
+        label: str = cat_conf["label"]
+        exclude = exclude_words(config, cat_id)
 
-    for cat_id, cat_conf in categories.items():
-        label: str = cat_conf.get("label", cat_id)
-        lang: str = cat_conf.get("lang", "ja")
-
-        # (キーワード, 取得結果) の組を集める。取得元はカテゴリごとに切り替える
-        batches: list[tuple[str, list[dict]]] = []
-        if cat_conf.get("source") == "yahoo_realtime":
-            print(f"  [{label}] Yahoo!リアルタイム検索")
-            batches.append(("", fetch_yahoo_realtime(cat_conf.get("realtime", {}))))
-        else:
-            for keyword in cat_conf.get("keywords", []):
-                print(f"  [{label}] {keyword}")
-                batches.append((keyword, fetch_google_news(keyword, lang, max_per_kw)))
-                time.sleep(1.0)  # Rate limit
-
-        for keyword, raw_list in batches:
+        for keyword, raw_list in gather(cat_conf, label, settings):
             for raw in raw_list:
                 art_id = make_id(raw["title"], raw["source"])
-                if art_id in seen_ids:
+                legacy_id = make_id(raw.get("raw_title") or raw["title"], raw["source"])
+                if art_id in seen_ids or legacy_id in seen_ids:
                     continue
-                new_articles.append(
-                    {
-                        "id": art_id,
-                        "title": raw["title"],
-                        "url": raw["url"],
-                        "source": raw["source"],
-                        "published": raw["published"],
-                        "summary": raw["summary"],
-                        "category": cat_id,
-                        "category_label": label,
-                        "keyword": raw.get("keyword") or keyword,
-                        "first_seen": now_str,
-                        "lang": lang,
-                    }
-                )
+
+                if raw["published"] < cutoff:
+                    counts["old"] += 1
+                    continue
+                # 除外はこのカテゴリーだけの判断。同じ記事が別カテゴリーに入るのは妨げない
+                if exclude and matches_any(f"{raw['title']} {raw.get('summary', '')}", exclude):
+                    counts["excluded"] += 1
+                    continue
                 seen_ids.add(art_id)
 
+                key = story_key(raw["title"])
+                twin = None if is_realtime(raw) else next(
+                    (a for k, a in pool.get(cat_id, []) if is_duplicate_of(a, k, raw, key)),
+                    None,
+                )
+                if twin is not None:
+                    if attach_related(twin, raw):
+                        counts["merged"] += 1
+                    remember_merged(twin, art_id)
+                    continue
+
+                article = {
+                    "id": art_id,
+                    "title": raw["title"],
+                    "url": raw["url"],
+                    "source": raw["source"],
+                    "published": raw["published"],
+                    "summary": raw.get("summary", ""),
+                    "category": cat_id,
+                    "category_label": label,
+                    "keyword": raw.get("keyword") or keyword,
+                    "first_seen": now_str,
+                    "lang": raw.get("lang") or cat_conf.get("lang", "ja"),
+                }
+                new_articles.append(article)
+                if not is_realtime(article):
+                    pool.setdefault(cat_id, []).append((key, article))
+
+    print(
+        f"[INFO] 除外ワードで除外 {counts['excluded']} 件 / 古い記事 {counts['old']} 件 / "
+        f"同じ話題として他媒体にまとめた {counts['merged']} 件"
+    )
     return new_articles, existing
 
 
@@ -558,16 +907,21 @@ def translate_en_titles(articles: list[dict]) -> list[dict]:
 def prune(
     articles: list[dict], retention_days: int, max_total: int, config: dict
 ) -> list[dict]:
-    """保持期間を過ぎた記事を消し、件数の上限に収める
+    """保持期間を過ぎた記事と、無くなったカテゴリーの記事を消し、件数の上限に収める
 
     カテゴリに max_articles があればその件数までに抑える。件数の多いカテゴリが
     全体の上限を埋めて、ほかのカテゴリが保持期間より早く消えるのを防ぐため。
     """
+    categories: dict = config.get("categories", {})
     cutoff = (datetime.now(JST) - timedelta(days=retention_days)).isoformat()
-    recent = [a for a in articles if a.get("first_seen", "") >= cutoff]
+    # 削除されたカテゴリーの記事もここで消える（設定を読めなかっただけのカテゴリーは残す）
+    recent = [
+        a for a in articles
+        if a.get("first_seen", "") >= cutoff
+        and (a.get("category") in categories or a.get("category") in BROKEN_CATEGORIES)
+    ]
     recent.sort(key=lambda a: a.get("first_seen", ""), reverse=True)
 
-    categories: dict = config.get("categories", {})
     kept: dict[str, int] = {}
     result = []
     for a in recent:
@@ -588,7 +942,7 @@ def main() -> None:
     config = load_config()
     settings = config.get("settings", {})
     retention_days: int = settings.get("retention_days", 7)
-    max_total: int = settings.get("max_total_articles", 600)
+    max_total: int = settings.get("max_total_articles", 800)
 
     print("\n■ 記事収集中...")
     new_articles, existing = collect(config)
@@ -596,6 +950,15 @@ def main() -> None:
 
     all_articles = existing.get("articles", []) + new_articles
     all_articles = prune(all_articles, retention_days, max_total, config)
+    # 除外ワードは保存済みの記事にも当てる（後から除外ワードを足したときにすぐ消えるように）
+    kept = [a for a in all_articles if not is_excluded(a, config)]
+    if len(kept) < len(all_articles):
+        print(f"[INFO] 除外ワードに当たる保存済みの記事 {len(all_articles) - len(kept)} 件を削除")
+    all_articles = kept
+    # カテゴリー名を変えた場合に、既存記事の表示名も合わせる
+    for a in all_articles:
+        if a["category"] in config["categories"]:
+            a["category_label"] = config["categories"][a["category"]]["label"]
 
     # 新着に加え、過去の未翻訳分もまとめて翻訳する
     print("\n■ 英語タイトルを日本語翻訳中...")
@@ -608,12 +971,20 @@ def main() -> None:
         "articles": all_articles,
     }
     save_data(output)
+    save_categories_json(config)
     print(f"[INFO] 保存完了: 合計 {len(all_articles)} 件 → {DATA_FILE}")
 
-    if new_articles:
+    # 追加したばかりのカテゴリー（保存済みの記事がまだ無い）は、最初の取り込み分を通知しない
+    # （1週間分の記事がまとめて「新着」になり、通知が大量に届くのを防ぐため）
+    known_categories = {a["category"] for a in existing.get("articles", [])}
+    to_notify = [a for a in new_articles if a["category"] in known_categories]
+    if len(to_notify) < len(new_articles):
+        print(f"[INFO] 追加したばかりのカテゴリーの {len(new_articles) - len(to_notify)} 件は通知しません")
+
+    if to_notify:
         print("\n■ ntfy 通知...")
         # 翻訳後のタイトルで通知するため all_articles から新着分を引き直す
-        new_ids = {a["id"] for a in new_articles}
+        new_ids = {a["id"] for a in to_notify}
         notify_ntfy([a for a in all_articles if a["id"] in new_ids], config)
 
     print("\n" + "=" * 60)

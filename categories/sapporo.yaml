@@ -1,0 +1,33 @@
+name: "札幌"
+emoji: "🏗️"
+order: 30
+lang: "ja"
+notify: false
+priority: "default"
+
+keywords:
+  - "札幌市 再開発"
+  - "札幌 商業施設 オープン"
+  - "北海道 建築計画"
+  - "札幌 都市計画"
+  - "大通 再開発"
+
+# 「札幌」で検索すると事件・事故の記事が混ざるので除外する
+exclude:
+  - "事故"
+  - "逮捕"
+  - "容疑"
+  - "死亡"
+  - "火災"
+  - "はねられ"
+  - "衝突"
+  - "突っ込"
+
+feeds:
+  - name: "PR TIMES"
+    url: "https://prtimes.jp/index.rdf"
+    match:
+      - "札幌 オープン"
+      - "札幌 開業"
+      - "札幌 出店"
+      - "札幌 再開発"

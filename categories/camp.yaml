@@ -1,0 +1,21 @@
+name: "キャンプ"
+emoji: "🏕️"
+order: 40
+lang: "ja"
+notify: true
+priority: "default"
+
+keywords:
+  - "北海道 キャンプ場 オープン"
+  - "北海道 キャンプ場 予約 開始"
+  - "北海道 アウトドア イベント"
+
+exclude: []
+
+feeds:
+  - name: "PR TIMES"
+    url: "https://prtimes.jp/index.rdf"
+    match:
+      - "キャンプ 北海道"
+      - "グランピング 北海道"
+      - "アウトドア 北海道"

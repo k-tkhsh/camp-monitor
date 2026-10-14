@@ -2,383 +2,114 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f3f4f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)">
   <title>マイニュース</title>
-  <style>
-    :root {
-      --bg: #0f1117;
-      --surface: #1a1d27;
-      --surface2: #22263a;
-      --border: #2e3250;
-      --text: #e8eaf6;
-      --text-muted: #8b92b8;
-      --accent: #5c6bc0;
-      --accent-light: #7986cb;
-      --new-badge: #1b5e20;
-      --new-text: #a5d6a7;
-      --radius: 10px;
-      --shadow: 0 2px 12px rgba(0,0,0,0.4);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans",
-        "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", "Segoe UI", sans-serif;
-      font-size: 15px;
-      line-height: 1.5;
-      min-height: 100vh;
-      -webkit-text-size-adjust: 100%;
-      text-size-adjust: 100%;
-    }
-
-    /* ── Header ── */
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 16px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .header-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    header h1 { font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
-    .meta { font-size: 12px; color: var(--text-muted); text-align: right; }
-
-    /* ── Controls ── */
-    .controls {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 10px 16px;
-      position: sticky;
-      top: 57px;
-      z-index: 9;
-    }
-    .controls-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    #search {
-      width: 100%;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      color: var(--text);
-      font-size: 14px;
-      padding: 8px 14px;
-      outline: none;
-      transition: border-color 0.15s;
-    }
-    #search:focus { border-color: var(--accent-light); }
-    #search::placeholder { color: var(--text-muted); }
-
-    .tabs {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    .tab {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      color: var(--text-muted);
-      cursor: pointer;
-      font-size: 13px;
-      padding: 5px 13px;
-      transition: all 0.15s;
-      white-space: nowrap;
-    }
-    .tab:hover { border-color: var(--accent-light); color: var(--text); }
-    .tab.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-      font-weight: 600;
-    }
-    .tab .count {
-      opacity: 0.75;
-      font-size: 11px;
-      margin-left: 3px;
-    }
-
-    /* ── Article Grid ── */
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 16px;
-    }
-    #stats {
-      color: var(--text-muted);
-      font-size: 13px;
-      margin-bottom: 14px;
-    }
-    #grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
-      gap: 12px;
-    }
-    @media (max-width: 600px) {
-      #grid { grid-template-columns: minmax(0, 1fr); }
-    }
-
-    /* ── Article Card ── */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      min-width: 0;
-      overflow-wrap: anywhere;
-      padding: 14px;
-      color: var(--text);
-      text-decoration: none;
-      transition: border-color 0.15s, transform 0.1s;
-    }
-    .card:hover {
-      border-color: var(--accent-light);
-      transform: translateY(-2px);
-    }
-    .card-top {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-    }
-    .cat-badge {
-      background: var(--surface2);
-      border-radius: 6px;
-      font-size: 12px;
-      padding: 3px 7px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .new-badge {
-      background: var(--new-badge);
-      border-radius: 6px;
-      color: var(--new-text);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 7px;
-      flex-shrink: 0;
-    }
-    .card-title {
-      color: var(--text);
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1.45;
-    }
-    .card-summary {
-      color: var(--text-muted);
-      font-size: 12px;
-      line-height: 1.5;
-    }
-    .card-footer {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      min-width: 0;
-      margin-top: 2px;
-    }
-    .card-source {
-      min-width: 0;
-      color: var(--accent-light);
-      font-size: 12px;
-      font-weight: 500;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .card-date {
-      color: var(--text-muted);
-      font-size: 11px;
-      margin-left: auto;
-      white-space: nowrap;
-    }
-
-    /* ── Empty / Loading ── */
-    .empty {
-      color: var(--text-muted);
-      grid-column: 1/-1;
-      padding: 40px 0;
-      text-align: center;
-    }
-    .spinner {
-      animation: spin 0.8s linear infinite;
-      border: 3px solid var(--border);
-      border-top-color: var(--accent-light);
-      border-radius: 50%;
-      height: 36px;
-      margin: 40px auto;
-      width: 36px;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-  </style>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📰</text></svg>">
+  <link rel="stylesheet" href="assets/news.css?v=3">
 </head>
 <body>
 
-<header>
-  <div class="header-row">
-    <h1>📰 マイニュース</h1>
-    <div class="meta" id="meta">読み込み中...</div>
+<header class="topbar">
+  <div class="wrap">
+    <div class="topbar-row">
+      <a class="brand" href="#">
+        <h1>マイニュース</h1>
+        <span class="stamp" id="stamp">読み込み中…</span>
+      </a>
+      <button class="icon-btn" id="search-toggle" type="button" aria-pressed="false" aria-label="検索">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <a class="icon-btn" id="settings-link" href="#settings" aria-label="カテゴリー管理">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+      </a>
+    </div>
+    <div class="search-row" id="search-row" hidden>
+      <input type="search" id="search" placeholder="見出し・媒体名で検索" enterkeyhint="search" autocomplete="off">
+    </div>
+    <nav class="chips" id="chips" aria-label="カテゴリー"></nav>
   </div>
 </header>
 
-<div class="controls">
-  <div class="controls-inner">
-    <input type="search" id="search" placeholder="🔍 記事を検索...">
-    <div class="tabs" id="tabs"></div>
+<main class="wrap" id="view-news">
+  <section class="trends" id="trends" aria-label="いま急上昇のワード" hidden></section>
+  <div class="toolbar">
+    <span class="count" id="count"></span>
+    <button class="toggle" id="unread-toggle" type="button" aria-pressed="false">未読のみ</button>
+    <button class="text-btn" id="mark-all" type="button">すべて既読</button>
   </div>
-</div>
-
-<main>
-  <div id="stats"></div>
-  <div id="grid"><div class="spinner"></div></div>
+  <div id="feed"><div class="loading">読み込み中…</div></div>
 </main>
 
-<script>
-  const DATA_URL = "./data/articles.json";
-  const NEW_HOURS = 24;
+<main class="wrap" id="view-settings" hidden>
+  <section class="settings" aria-labelledby="settings-title">
+    <h2 id="settings-title">カテゴリー管理</h2>
+    <p class="lead">追加・編集・削除を押すと、GitHub の「Issue（依頼票）」画面が入力済みで開きます。そこで「Create」（送信）を押すと、数分後にこのサイトへ反映されます。GitHub へのログインが必要です。</p>
+    <div id="pending"></div>
+    <button class="btn primary block" id="add-category" type="button">＋ カテゴリーを追加</button>
+    <div id="category-list" class="settings" style="padding:0"></div>
+    <p class="foot"><a class="text-btn" href="#">← ニュースに戻る</a></p>
+  </section>
+</main>
 
-  let allArticles = [];
-  let activeCategory = "all";
-  let searchQuery = "";
+<dialog class="sheet" id="sheet">
+  <form id="category-form" method="dialog" novalidate>
+    <h2 id="sheet-title">カテゴリーを追加</h2>
+    <div class="inline">
+      <label class="field">
+        <span>絵文字</span>
+        <input name="emoji" maxlength="8" placeholder="📰">
+      </label>
+      <label class="field">
+        <span>名前</span>
+        <input name="name" maxlength="30" required placeholder="例: ラーメン">
+      </label>
+    </div>
+    <label class="field">
+      <span>検索キーワード</span>
+      <textarea name="keywords" placeholder="例:&#10;札幌 ラーメン 新店&#10;札幌 ラーメン オープン"></textarea>
+      <small>1行に1つ。Google ニュースでこの語を検索します。空白で区切ると「両方を含む」記事になります。</small>
+    </label>
+    <label class="field">
+      <span>除外ワード（任意）</span>
+      <textarea name="exclude" placeholder="例:&#10;閉店&#10;事故"></textarea>
+      <small>この語を含む記事は取り込みません。1行に1つ。</small>
+    </label>
+    <div class="field">
+      <span>記事の言語</span>
+      <div class="seg" role="radiogroup">
+        <label><input type="radio" name="lang" value="ja" checked><span>日本語</span></label>
+        <label><input type="radio" name="lang" value="en"><span>英語（日本語に翻訳）</span></label>
+      </div>
+    </div>
+    <label class="check"><input type="checkbox" name="notify"> 新着をスマホに通知する</label>
+    <details class="adv">
+      <summary>RSS を追加する（上級者向け・任意）</summary>
+      <div class="adv-body">
+        <label class="field">
+          <span>RSS の名前</span>
+          <input name="feed_name" placeholder="例: PR TIMES">
+        </label>
+        <label class="field">
+          <span>RSS の URL</span>
+          <input name="feed_url" type="url" inputmode="url" placeholder="https://…">
+        </label>
+        <label class="field">
+          <span>取り込む記事の条件（任意）</span>
+          <textarea name="feed_match" placeholder="例:&#10;ラーメン 札幌"></textarea>
+          <small>どれかの語を含む記事だけ取り込みます。1行に1つ。空なら全部。</small>
+        </label>
+      </div>
+    </details>
+    <p class="err" id="form-error" hidden></p>
+    <div class="sheet-actions">
+      <button class="btn" type="button" id="sheet-cancel">やめる</button>
+      <button class="btn primary" type="submit" id="sheet-submit">GitHub で送信へ</button>
+    </div>
+  </form>
+</dialog>
 
-  function formatDate(iso) {
-    if (!iso) return "";
-    const d = new Date(iso);
-    const now = new Date();
-    const diffH = (now - d) / 3600000;
-    if (diffH < 1) return "1時間以内";
-    if (diffH < 24) return `${Math.floor(diffH)}時間前`;
-    const diffD = Math.floor(diffH / 24);
-    if (diffD < 7) return `${diffD}日前`;
-    return d.toLocaleDateString("ja-JP", { month: "short", day: "numeric" });
-  }
-
-  // 記事データには X の投稿など第三者が書いた文章が入るので、必ずエスケープして表示する
-  function esc(value) {
-    return String(value ?? "").replace(/[&<>"']/g, c =>
-      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  }
-
-  // http / https 以外（javascript: など）のリンクは無効にする
-  function safeUrl(url) {
-    return /^https?:\/\//i.test(url || "") ? esc(url) : "#";
-  }
-
-  function isNew(article) {
-    if (!article.first_seen) return false;
-    return (new Date() - new Date(article.first_seen)) / 3600000 < NEW_HOURS;
-  }
-
-  function buildTabs(articles) {
-    const counts = { all: articles.length };
-    const labels = {};
-    for (const a of articles) {
-      counts[a.category] = (counts[a.category] || 0) + 1;
-      labels[a.category] = a.category_label;
-    }
-    const tabsEl = document.getElementById("tabs");
-    tabsEl.innerHTML = "";
-
-    const makeTab = (key, label) => {
-      const btn = document.createElement("button");
-      btn.className = "tab" + (key === activeCategory ? " active" : "");
-      btn.dataset.cat = key;
-      btn.innerHTML = `${esc(label)}<span class="count">${counts[key] || 0}</span>`;
-      btn.addEventListener("click", () => {
-        activeCategory = key;
-        document.querySelectorAll(".tab").forEach(t =>
-          t.classList.toggle("active", t.dataset.cat === key)
-        );
-        render();
-      });
-      tabsEl.appendChild(btn);
-    };
-
-    makeTab("all", "すべて");
-    for (const [cat, label] of Object.entries(labels)) {
-      if (counts[cat]) makeTab(cat, label);
-    }
-  }
-
-  function render() {
-    const q = searchQuery.toLowerCase();
-    const filtered = allArticles.filter(a => {
-      if (activeCategory !== "all" && a.category !== activeCategory) return false;
-      if (q) {
-        const hay = `${a.title} ${a.source} ${a.summary} ${a.category_label}`.toLowerCase();
-        if (!hay.includes(q)) return false;
-      }
-      return true;
-    });
-
-    const statsEl = document.getElementById("stats");
-    statsEl.textContent = `${filtered.length} 件表示`;
-
-    const grid = document.getElementById("grid");
-    if (!filtered.length) {
-      grid.innerHTML = '<div class="empty">記事が見つかりません</div>';
-      return;
-    }
-
-    grid.innerHTML = filtered.map(a => `
-      <a class="card" href="${safeUrl(a.url)}" target="_blank" rel="noopener">
-        <div class="card-top">
-          <span class="cat-badge">${esc(a.category_label)}</span>
-          ${isNew(a) ? '<span class="new-badge">NEW</span>' : ""}
-        </div>
-        <div class="card-title">${esc(a.title)}</div>
-        ${a.summary ? `<div class="card-summary">${esc(a.summary)}</div>` : ""}
-        <div class="card-footer">
-          <span class="card-source">${esc(a.source)}</span>
-          <span class="card-date">${formatDate(a.published)}</span>
-        </div>
-      </a>
-    `).join("");
-  }
-
-  async function load() {
-    try {
-      const res = await fetch(DATA_URL + "?t=" + Date.now());
-      const data = await res.json();
-      allArticles = data.articles || [];
-
-      const metaEl = document.getElementById("meta");
-      if (data.last_updated) {
-        const d = new Date(data.last_updated);
-        metaEl.innerHTML =
-          `更新: ${d.toLocaleString("ja-JP", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })}<br>` +
-          `今回 +${data.last_run_new_count || 0}件 / 計${data.total_articles || 0}件`;
-      } else {
-        metaEl.textContent = "まだデータがありません";
-      }
-
-      buildTabs(allArticles);
-      render();
-    } catch (e) {
-      document.getElementById("grid").innerHTML =
-        '<div class="empty">データの読み込みに失敗しました<br><small>' + esc(e.message) + '</small></div>';
-    }
-  }
-
-  document.getElementById("search").addEventListener("input", e => {
-    searchQuery = e.target.value;
-    render();
-  });
-
-  load();
-</script>
+<script src="assets/news.js?v=3"></script>
 </body>
 </html>
