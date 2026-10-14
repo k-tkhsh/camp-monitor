@@ -1,0 +1,60 @@
+name: 新着の即時チェック
+
+# fast: true のカテゴリー（酒屋の入荷情報など）だけを30分ごとに確認し、
+# 新着があれば保存してスマホに通知する。新着が無ければ何もしない。
+# ※ GitHub の定期実行は混雑時に数分〜十数分遅れることがある
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# 通常の記事収集と同じグループで順番に実行する（待機中の古い実行は新しい実行で置き換わってよい）
+concurrency:
+  group: news-data
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-news-${{ hashFiles('news_requirements.txt') }}
+          restore-keys: pip-news-
+
+      - name: Install dependencies
+        run: pip install -r news_requirements.txt
+
+      # push がほかの更新とぶつかったら、最新の main で確認し直す（JSON はマージしない）
+      - name: Check and push
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do
+            python news_collector.py --fast
+            git add docs/data
+            git diff --staged --quiet && echo "新着なし" && exit 0
+            git commit -m "🍶 新着 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
+            git push && exit 0
+            echo "push が他の更新とぶつかったため、最新の状態で確認し直します ($i)"
+            sleep 10
+            git fetch origin main
+            git reset --hard origin/main
+          done
+          exit 1

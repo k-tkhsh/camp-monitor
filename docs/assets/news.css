@@ -91,12 +91,21 @@ body {
 }
 
 button, input, textarea, select { font: inherit; color: inherit; }
+/* iPhone の Safari は 16px 未満の入力欄をタップすると画面を拡大し、そのまま戻らない。
+   画面がずれて見える原因になるので、入力欄は 16px にする */
+input, textarea, select { font-size: 16px; }
 button { background: none; border: 0; cursor: pointer; }
 a { color: inherit; text-decoration: none; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
 [hidden] { display: none !important; }
 
-.wrap { max-width: 720px; margin: 0 auto; }
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  /* 横向きの iPhone で、画面端の切り欠き部分に表示が食い込まないようにする */
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
 
 /* ── ヘッダー ── */
 .topbar {
@@ -266,7 +275,8 @@ a { color: inherit; text-decoration: none; }
 }
 .list { background: var(--surface); border-block: 1px solid var(--line); }
 @media (min-width: 720px) {
-  .list { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 0 8px; }
+  /* 枠の左端を、日付見出しや件数表示の文字の左端（16px）にそろえる */
+  .list { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 0 16px; }
 }
 
 .row { position: relative; border-top: 1px solid var(--line); }

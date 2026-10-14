@@ -292,6 +292,7 @@
       const lines = [
         c.keywords.length ? `<div class="kv"><b>キーワード</b>${tags(c.keywords)}</div>` : "",
         c.exclude.length ? `<div class="kv"><b>除外</b>${tags(c.exclude)}</div>` : "",
+        c.x_accounts?.length ? `<div class="kv"><b>X</b>${tags(c.x_accounts.map((a) => a.name || `@${a.id}`))}</div>` : "",
         c.feeds.length ? `<div class="kv"><b>RSS</b>${tags(c.feeds.map((f) => f.name || f.url))}</div>` : "",
         c.realtime ? '<div class="kv"><b>情報源</b><span class="tag">Yahoo!リアルタイム検索</span></div>' : "",
         `<div class="kv"><b>言語</b>${c.lang === "en" ? "英語（翻訳）" : "日本語"}<b style="margin-left:10px">通知</b>${c.notify ? "あり" : "なし"}</div>`,
@@ -346,7 +347,7 @@
     const feed = feedUrl
       ? [{ name: f.feed_name.value.trim() || feedUrl, url: feedUrl, match: lines(f.feed_match.value) }]
       : [];
-    const hasSource = keywords.length || feed.length || (editing && (editing.feeds.length || editing.realtime));
+    const hasSource = keywords.length || feed.length || (editing && (editing.feeds.length || editing.realtime || editing.x_accounts?.length));
     if (!hasSource) return error("検索キーワードか RSS を1つ以上入力してください。");
     const dup = state.categories.find((c) => c.name === name && c.id !== editing?.id);
     if (dup) return error(`「${name}」は既にあります。`);

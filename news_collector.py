@@ -13,6 +13,7 @@ import html
 import json
 import os
 import re
+import sys
 import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
@@ -92,6 +93,10 @@ def save_categories_json(config: dict) -> None:
                     for f in (c.get("feeds") or [])
                 ],
                 "realtime": bool(c.get("yahoo_realtime")),
+                "x_accounts": [
+                    {"id": a.get("id", ""), "name": a.get("name", "")}
+                    for a in (c.get("x_accounts") or []) if isinstance(a, dict)
+                ],
             }
         )
     CATEGORIES_JSON.parent.mkdir(parents=True, exist_ok=True)
@@ -524,6 +529,40 @@ def _convert_all(items, convert, *args) -> list[dict]:
     return result
 
 
+def fetch_x_accounts(accounts: list, match: list[str]) -> list[dict]:
+    """指定した X アカウントの最近の投稿を Yahoo!リアルタイム検索（ID:アカウント）経由で取得する
+
+    酒屋の入荷情報のように「特定のお店の発信」を追うためのもの。match があれば、
+    その語を含む投稿だけを取り込む（営業案内などを除くため）。
+    """
+    articles: list[dict] = []
+    for n, acct in enumerate(accounts or []):
+        if not isinstance(acct, dict) or not re.fullmatch(r"[A-Za-z0-9_]{1,15}", str(acct.get("id", ""))):
+            print(f"[WARN] X アカウントの指定が正しくないためスキップ: {acct}")
+            continue
+        acct_id = acct["id"]
+        name = acct.get("name") or f"@{acct_id}"
+        if n:
+            time.sleep(1.5)  # 相手サーバーへの負荷を抑える
+        page = fetch_realtime_page("/realtime/search", {"p": f"ID:{acct_id}", "ei": "UTF-8"})
+        if not page:
+            continue
+        posts = [
+            e for e in (page.get("timeline") or {}).get("entry") or []
+            if isinstance(e, dict)
+            and str(e.get("screenName", "")).lower() == acct_id.lower()
+            and (not match or matches_any(str(e.get("displayText", "")), match))
+        ]
+        for article in _convert_all(posts, _post_to_article, name):
+            article["source"] = f"{name}（X）"
+            article["summary"] = ""
+            # お店の投稿はハッシュタグが多く見出しが読みにくいので取り除く
+            article["title"] = re.sub(r"\s*[#＃]\S+", "", article["title"]).strip()
+            articles.append(article)
+    print(f"[INFO] X のお店の投稿: {len(articles)} 件取得")
+    return articles
+
+
 def fetch_yahoo_realtime(conf: dict) -> list[dict]:
     """Yahoo!リアルタイム検索から「バズ」「炎上」の話題を集める
 
@@ -536,14 +575,14 @@ def fetch_yahoo_realtime(conf: dict) -> list[dict]:
     articles: list[dict] = []
 
     # ── 急上昇ワード（トップページ） ──
-    top = fetch_realtime_page("/realtime")
+    top = fetch_realtime_page("/realtime") if conf.get("trend_words") else None
     if top:
         trend = top.get("buzzTrend") or {}
         min_tweets = conf.get("trend_min_tweets", 100)
         items = [
             i for i in (trend.get("items") or [])
             if isinstance(i, dict) and _num(i.get("tweetCount")) >= min_tweets
-        ][: conf.get("trend_words", 12)]
+        ][: conf["trend_words"]]
         articles += _convert_all(
             items,
             _trend_to_article,
@@ -672,6 +711,9 @@ def gather(cat_conf: dict, label: str, settings: dict) -> list[tuple[str, list[d
         print(f"  [{label}] {keyword}")
         batches.append((keyword, fetch_google_news(keyword, lang, max_per_kw, days)))
         time.sleep(1.0)  # Rate limit
+    if cat_conf.get("x_accounts"):
+        print(f"  [{label}] X: " + "、".join(str(a.get("name") or a.get("id")) for a in cat_conf["x_accounts"] if isinstance(a, dict)))
+        batches.append(("", fetch_x_accounts(cat_conf["x_accounts"], cat_conf.get("x_match") or [])))
     for feed in cat_conf.get("feeds") or []:
         if not isinstance(feed, dict) or not str(feed.get("url", "")).startswith("http"):
             continue
@@ -934,9 +976,12 @@ def prune(
 
 
 def main() -> None:
+    # --fast: fast: true のカテゴリー（酒屋の入荷情報など）だけを集める。
+    # 30分ごとの確認用で、新着が無ければ何も保存しない（無駄なコミットを作らない）
+    fast = "--fast" in sys.argv[1:]
     now_str = datetime.now(JST).strftime("%Y-%m-%d %H:%M JST")
     print("=" * 60)
-    print(f"個人情報収集システム 開始  {now_str}")
+    print(f"個人情報収集システム 開始  {now_str}" + ("（すぐ知りたいカテゴリーのみ）" if fast else ""))
     print("=" * 60)
 
     config = load_config()
@@ -944,9 +989,19 @@ def main() -> None:
     retention_days: int = settings.get("retention_days", 7)
     max_total: int = settings.get("max_total_articles", 800)
 
+    target = config
+    if fast:
+        target = {**config, "categories": {k: c for k, c in config["categories"].items() if c.get("fast")}}
+        if not target["categories"]:
+            print("[INFO] fast: true のカテゴリーがありません。終了します。")
+            return
+
     print("\n■ 記事収集中...")
-    new_articles, existing = collect(config)
+    new_articles, existing = collect(target)
     print(f"\n[INFO] 新着: {len(new_articles)} 件")
+    if fast and not new_articles:
+        print("[INFO] 新着なし。保存せずに終了します。")
+        return
 
     all_articles = existing.get("articles", []) + new_articles
     all_articles = prune(all_articles, retention_days, max_total, config)

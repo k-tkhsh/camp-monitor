@@ -3,34 +3,48 @@ emoji: 🍶
 order: 20
 lang: ja
 notify: true
-priority: "default"
+priority: "high"
+# 札幌市内で評判の良い酒屋の「入荷・新着・予約」情報を、お店の発信元から直接集める。
+# ニュースサイトは使わない（一般のニュースや事件の記事が混ざるため）。
+# fast: true のカテゴリーは、通常の収集（1日4回）に加えて30分ごとに確認する。
+fast: true
 
-keywords:
-- 日本酒 札幌
-- 日本酒 北海道 新商品
-- 日本酒　札幌　新着
-- 日本酒 北海道 限定
-- 十四代 札幌
-- 新政 北海道
-- 而今 北海道
-- 獺祭 札幌
-- 鍋島 北海道
+keywords: []
 
-# 「札幌」「北海道」で検索すると事件・事故の記事が混ざるので除外する
-exclude:
-- 飲酒運転
-- 酒気帯び
-- 事故
-- はねられ
-- 衝突
-- 突っ込
-- 逮捕
-- 容疑
+exclude: []
 
+# お店の X（旧Twitter）。Yahoo!リアルタイム検索の「ID:アカウント」で投稿を取得する
+x_accounts:
+  - id: "sakenomarumi"
+    name: "酒のマルミ"        # 東区。全国の銘酒1,500種類以上。入荷投稿が多い
+  - id: "nemotoshoten"
+    name: "北海道根本商店"    # 南区真駒内。日本酒とウイスキー
+# この語を含む投稿だけを取り込む（営業案内や日常の投稿は除く）
+x_match:
+  - "入荷"
+  - "新着"
+  - "入りました"
+  - "到着"
+  - "予約"
+  - "抽選"
+  - "発売"
+  - "販売開始"
+  - "解禁"
+  - "限定"
+
+# お店のホームページ・オンラインショップの新着情報（RSS）
 feeds:
-  - name: "PR TIMES"
-    url: "https://prtimes.jp/index.rdf"
-    match:
-      - "日本酒 北海道"
-      - "日本酒 札幌"
-      - "酒蔵 北海道"
+  - name: "地酒仙丸"
+    url: "https://senmaru.shop-pro.jp/?mode=rss"      # 南区石山。オンラインショップの新着商品
+    keyword: "新着商品"
+    limit: 15
+  - name: "酒本商店"
+    url: "https://sakemoto.org/?mode=rss"             # 中央区。純米酒に強い。オンラインショップの新着商品
+    keyword: "新着商品"
+    limit: 15
+  - name: "早坂商店"
+    url: "https://sakenohayasaka.com/feed/"           # 東区。予約受付などのお知らせ
+    keyword: "お知らせ"
+    limit: 5
+
+# Instagram 中心のお店（酒舗七蔵・桜本商店など）は、ログインが必要で自動取得できないため入れていない

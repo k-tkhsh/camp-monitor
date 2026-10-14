@@ -28,7 +28,8 @@
           "match": []
         }
       ],
-      "realtime": false
+      "realtime": false,
+      "x_accounts": []
     },
     {
       "id": "sake",
@@ -37,39 +38,36 @@
       "label": "🍶 日本酒",
       "lang": "ja",
       "notify": true,
-      "keywords": [
-        "日本酒 札幌",
-        "日本酒 北海道 新商品",
-        "日本酒　札幌　新着",
-        "日本酒 北海道 限定",
-        "十四代 札幌",
-        "新政 北海道",
-        "而今 北海道",
-        "獺祭 札幌",
-        "鍋島 北海道"
-      ],
-      "exclude": [
-        "飲酒運転",
-        "酒気帯び",
-        "事故",
-        "はねられ",
-        "衝突",
-        "突っ込",
-        "逮捕",
-        "容疑"
-      ],
+      "keywords": [],
+      "exclude": [],
       "feeds": [
         {
-          "name": "PR TIMES",
-          "url": "https://prtimes.jp/index.rdf",
-          "match": [
-            "日本酒 北海道",
-            "日本酒 札幌",
-            "酒蔵 北海道"
-          ]
+          "name": "地酒仙丸",
+          "url": "https://senmaru.shop-pro.jp/?mode=rss",
+          "match": []
+        },
+        {
+          "name": "酒本商店",
+          "url": "https://sakemoto.org/?mode=rss",
+          "match": []
+        },
+        {
+          "name": "早坂商店",
+          "url": "https://sakenohayasaka.com/feed/",
+          "match": []
         }
       ],
-      "realtime": false
+      "realtime": false,
+      "x_accounts": [
+        {
+          "id": "sakenomarumi",
+          "name": "酒のマルミ"
+        },
+        {
+          "id": "nemotoshoten",
+          "name": "北海道根本商店"
+        }
+      ]
     },
     {
       "id": "sapporo",
@@ -107,7 +105,8 @@
           ]
         }
       ],
-      "realtime": false
+      "realtime": false,
+      "x_accounts": []
     },
     {
       "id": "camp",
@@ -133,7 +132,8 @@
           ]
         }
       ],
-      "realtime": false
+      "realtime": false,
+      "x_accounts": []
     },
     {
       "id": "investment",
@@ -164,7 +164,8 @@
           ]
         }
       ],
-      "realtime": false
+      "realtime": false,
+      "x_accounts": []
     },
     {
       "id": "music_ai",
@@ -202,7 +203,8 @@
           ]
         }
       ],
-      "realtime": false
+      "realtime": false,
+      "x_accounts": []
     },
     {
       "id": "housing",
@@ -237,7 +239,8 @@
           ]
         }
       ],
-      "realtime": false
+      "realtime": false,
+      "x_accounts": []
     },
     {
       "id": "sns_trends",
@@ -255,7 +258,8 @@
           "match": []
         }
       ],
-      "realtime": true
+      "realtime": true,
+      "x_accounts": []
     },
     {
       "id": "c26",
@@ -270,7 +274,8 @@
       ],
       "exclude": [],
       "feeds": [],
-      "realtime": false
+      "realtime": false,
+      "x_accounts": []
     }
   ]
 }
