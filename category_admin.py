@@ -216,7 +216,7 @@ def update(data: dict) -> str:
         for f in feeds:
             unique.setdefault(f.get("url"), f)
         conf["feeds"] = list(unique.values())
-    if not any(conf.get(k) for k in ("keywords", "feeds", "yahoo_realtime", "x_accounts")):
+    if not any(conf.get(k) for k in ("keywords", "feeds", "yahoo_realtime", "x_accounts", "shop_pages")):
         raise RequestError("検索キーワードか RSS を1つ以上残してください。")
     changed = {k: conf[k] for k in fields}
     if data.get("add_feeds"):

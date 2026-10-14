@@ -25,4 +25,9 @@ feeds:                    # 追加の情報源（RSS）
     limit: 10             # 1回に取り込む最大件数（省略時 10）
 ```
 
-`yahoo_realtime:` を書くと Yahoo!リアルタイム検索から取得します（`sns_trends.yaml` を参照）。
+そのほかの情報源:
+
+- `x_accounts:` お店などの X の投稿を取得（`x_match:` の語を含む投稿だけ）。`sake.yaml` を参照
+- `shop_pages:` ネットショップ（MakeShop）のページに新しく並んだ商品・お知らせを取得。`sake.yaml` を参照
+- `yahoo_realtime:` Yahoo!リアルタイム検索の急上昇ワードなど。`sns_trends.yaml` を参照
+- `fast: true` を書くと、通常の1日4回に加えて30分ごとに確認します

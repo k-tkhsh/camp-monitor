@@ -48,7 +48,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           for i in 1 2 3; do
             python news_collector.py --fast
-            git add docs/data
+            git add docs/data state
             git diff --staged --quiet && echo "新着なし" && exit 0
             git commit -m "🍶 新着 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
             git push && exit 0

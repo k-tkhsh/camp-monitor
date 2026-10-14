@@ -54,7 +54,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           for i in 1 2 3; do
             python news_collector.py
-            git add categories docs/data
+            git add categories docs/data state
             git diff --staged --quiet || git commit -m "🗂️ カテゴリー変更 (#${ISSUE_NUMBER})"
             git push && exit 0
             echo "push が他の更新とぶつかったため、最新の状態からやり直します ($i)"

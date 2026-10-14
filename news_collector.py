@@ -93,6 +93,10 @@ def save_categories_json(config: dict) -> None:
                     for f in (c.get("feeds") or [])
                 ],
                 "realtime": bool(c.get("yahoo_realtime")),
+                "shop_pages": [
+                    {"name": p.get("name", ""), "url": p.get("url", "")}
+                    for p in (c.get("shop_pages") or []) if isinstance(p, dict)
+                ],
                 "x_accounts": [
                     {"id": a.get("id", ""), "name": a.get("name", "")}
                     for a in (c.get("x_accounts") or []) if isinstance(a, dict)
@@ -365,6 +369,118 @@ def fetch_feed(feed: dict) -> list[dict]:
         {**i, "source": name, "keyword": feed.get("keyword") or name, "lang": feed.get("lang")}
         for i in items[: feed.get("limit", 10)]
     ]
+
+
+# ── お店のネットショップ（MakeShop）の新着検知 ──────────────────
+
+SHOP_STATE_FILE = Path("state/shop_pages.json")
+SHOP_MEMORY_LIMIT = 3000      # ページごとに覚えておく商品・お知らせの数
+SHOP_BASELINE_ITEMS = 5       # 初めて見るページでは、登録の新しい商品をこの数だけ載せる
+
+
+def load_shop_state() -> dict:
+    try:
+        return json.loads(SHOP_STATE_FILE.read_text(encoding="utf-8"))
+    except (FileNotFoundError, ValueError):
+        return {}
+
+
+def save_shop_state(state: dict) -> None:
+    SHOP_STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    SHOP_STATE_FILE.write_text(json.dumps(state, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
+def _decode_html(content: bytes) -> str:
+    """meta の charset（MakeShop は EUC-JP が多い）に従って HTML を文字列にする"""
+    m = re.search(rb'charset=["\']?([\w-]+)', content[:4000])
+    charset = m.group(1).decode("ascii", "ignore") if m else "utf-8"
+    try:
+        return content.decode(charset, errors="replace")
+    except LookupError:
+        return content.decode("utf-8", errors="replace")
+
+
+def parse_makeshop_page(text: str, base_url: str) -> tuple[list[dict], list[dict]]:
+    """MakeShop のページから (商品, お知らせ) を取り出す
+
+    商品: /shopdetail/<番号>/ へのリンク（番号は登録が新しいほど大きい）
+    お知らせ: /new/YYYY-MM-DD-*.html へのリンク（日付つき）
+    """
+    root = re.match(r"https?://[^/]+", base_url).group(0)
+    absolute = lambda href: href if href.startswith("http") else root + "/" + href.lstrip("/")
+
+    products: dict[str, dict] = {}
+    for m in re.finditer(r'<a[^>]+href="([^"]*shopdetail/(\d+)[^"]*)"[^>]*>(.*?)</a>', text, re.S):
+        href, num, inner = m.groups()
+        alt = re.search(r'alt="([^"]*)"', inner)
+        name = strip_tags(alt.group(1) if alt and alt.group(1).strip() else inner)
+        name = " ".join(name.split())
+        if name and num not in products:
+            products[num] = {"key": num, "title": name, "url": absolute(href)}
+
+    news: dict[str, dict] = {}
+    for m in re.finditer(r'<a[^>]+href="([^"]*/new/(\d{4}-\d{2}-\d{2})-\d+\.html)"[^>]*>(.*?)</a>', text, re.S):
+        href, day, inner = m.groups()
+        title = " ".join(strip_tags(inner).split())
+        url = absolute(href)
+        if title and url not in news:
+            news[url] = {"key": url, "title": title, "url": url, "published": parse_date(f"{day}T09:00:00+09:00")}
+    return list(products.values()), list(news.values())
+
+
+def fetch_shop_page(page: dict, state: dict) -> list[dict]:
+    """お店のページを見て、前回までに無かった商品・お知らせを新着として返す
+
+    初めて見るページは、今ある商品を覚えるだけにして、登録の新しい数件と
+    直近のお知らせだけを載せる（既存の全商品を「新着」にしないため）。
+    """
+    url, name = page["url"], page.get("name") or page["url"]
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=25)
+        resp.raise_for_status()
+    except requests.RequestException as e:
+        print(f"[ERROR] お店のページの取得に失敗 ({name}): {e}")
+        return []
+    products, news = parse_makeshop_page(_decode_html(resp.content), url)
+    if not products and not news:
+        print(f"[WARN] {name}: 商品・お知らせが見つかりません（ページの作りが変わった可能性）")
+        return []
+
+    memory = state.get(url)
+    first_time = memory is None
+    memory = memory or {"products": [], "news": []}
+    known_products, known_news = set(memory["products"]), set(memory["news"])
+    now = datetime.now(JST).isoformat()
+    news_match = page.get("news_match") or []
+    # products: false のお店は商品一覧を見ない（トップページに定番品しか並ばないお店など）
+    watch_products = page.get("products", True)
+
+    if not watch_products:
+        new_products = []
+    elif first_time:
+        new_products = sorted(products, key=lambda p: int(p["key"]), reverse=True)[:SHOP_BASELINE_ITEMS]
+    else:
+        new_products = [p for p in products if p["key"] not in known_products]
+    new_news = [n for n in news if n["key"] not in known_news]
+    if news_match:
+        new_news = [n for n in new_news if matches_any(n["title"], news_match)]
+
+    memory["products"] = (memory["products"] + [p["key"] for p in products if p["key"] not in known_products])[-SHOP_MEMORY_LIMIT:]
+    memory["news"] = (memory["news"] + [n["key"] for n in news if n["key"] not in known_news])[-SHOP_MEMORY_LIMIT:]
+    state[url] = memory
+
+    items = [
+        {"title": p["title"], "url": p["url"], "published": now, "summary": "", "keyword": "新商品"}
+        for p in new_products
+    ] + [
+        {"title": n["title"], "url": n["url"], "published": n["published"], "summary": "", "keyword": "お知らせ"}
+        for n in new_news
+    ]
+    for item in items:
+        item["source"] = name
+    print(f"[INFO] {name}: 商品 {len(products)} 件・お知らせ {len(news)} 件を確認 → 新着 {len(items)} 件"
+          + ("（初回のため最近の分のみ）" if first_time else ""))
+    return items
 
 
 # ── 同じ話題の記事をまとめる ──────────────────────────────────
@@ -697,7 +813,9 @@ def consolidate(articles: list[dict]) -> list[dict]:
     return [a for a in articles if a["id"] not in merged_ids]
 
 
-def gather(cat_conf: dict, label: str, settings: dict) -> list[tuple[str, list[dict]]]:
+def gather(
+    cat_conf: dict, label: str, settings: dict, shop_state: dict
+) -> list[tuple[str, list[dict]]]:
     """カテゴリー1件分の情報源をすべて取得し、(キーワード, 取得結果) の組で返す"""
     lang: str = cat_conf.get("lang", "ja")
     max_per_kw: int = settings.get("max_articles_per_keyword", 8)
@@ -714,6 +832,12 @@ def gather(cat_conf: dict, label: str, settings: dict) -> list[tuple[str, list[d
     if cat_conf.get("x_accounts"):
         print(f"  [{label}] X: " + "、".join(str(a.get("name") or a.get("id")) for a in cat_conf["x_accounts"] if isinstance(a, dict)))
         batches.append(("", fetch_x_accounts(cat_conf["x_accounts"], cat_conf.get("x_match") or [])))
+    for page in cat_conf.get("shop_pages") or []:
+        if not isinstance(page, dict) or not str(page.get("url", "")).startswith("https://"):
+            continue
+        print(f"  [{label}] お店のページ: {page.get('name') or page['url']}")
+        batches.append(("", fetch_shop_page(page, shop_state)))
+        time.sleep(1.0)  # Rate limit
     for feed in cat_conf.get("feeds") or []:
         if not isinstance(feed, dict) or not str(feed.get("url", "")).startswith("http"):
             continue
@@ -722,8 +846,10 @@ def gather(cat_conf: dict, label: str, settings: dict) -> list[tuple[str, list[d
     return batches
 
 
-def collect(config: dict) -> tuple[list[dict], dict]:
+def collect(config: dict) -> tuple[list[dict], dict, dict]:
+    """(新着の記事, 保存済みのデータ, お店のページの記録) を返す"""
     existing = load_existing()
+    shop_state = load_shop_state()
     # 既存記事の見出しを先に直しておき、今回取得した同じ記事と id をそろえる
     existing["articles"] = consolidate(
         dedupe([repair_title(a) for a in existing.get("articles", [])])
@@ -752,7 +878,7 @@ def collect(config: dict) -> tuple[list[dict], dict]:
         label: str = cat_conf["label"]
         exclude = exclude_words(config, cat_id)
 
-        for keyword, raw_list in gather(cat_conf, label, settings):
+        for keyword, raw_list in gather(cat_conf, label, settings, shop_state):
             for raw in raw_list:
                 art_id = make_id(raw["title"], raw["source"])
                 legacy_id = make_id(raw.get("raw_title") or raw["title"], raw["source"])
@@ -800,7 +926,7 @@ def collect(config: dict) -> tuple[list[dict], dict]:
         f"[INFO] 除外ワードで除外 {counts['excluded']} 件 / 古い記事 {counts['old']} 件 / "
         f"同じ話題として他媒体にまとめた {counts['merged']} 件"
     )
-    return new_articles, existing
+    return new_articles, existing, shop_state
 
 
 def notify_ntfy(new_articles: list[dict], config: dict) -> None:
@@ -997,10 +1123,12 @@ def main() -> None:
             return
 
     print("\n■ 記事収集中...")
-    new_articles, existing = collect(target)
+    new_articles, existing, shop_state = collect(target)
     print(f"\n[INFO] 新着: {len(new_articles)} 件")
+    # お店のページで見た商品は、新着の有無にかかわらず覚えておく（次回の「新着」判定に使う）
+    save_shop_state(shop_state)
     if fast and not new_articles:
-        print("[INFO] 新着なし。保存せずに終了します。")
+        print("[INFO] 新着なし。記事は保存せずに終了します。")
         return
 
     all_articles = existing.get("articles", []) + new_articles
