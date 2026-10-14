@@ -256,6 +256,21 @@
         }
       ],
       "realtime": true
+    },
+    {
+      "id": "c26",
+      "name": "電撃ホビーウェブ",
+      "emoji": "📰",
+      "label": "📰 電撃ホビーウェブ",
+      "lang": "ja",
+      "notify": false,
+      "keywords": [
+        "電撃ホビーウェブ",
+        "フィギュア"
+      ],
+      "exclude": [],
+      "feeds": [],
+      "realtime": false
     }
   ]
 }

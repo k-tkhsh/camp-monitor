@@ -1,0 +1,11 @@
+name: 電撃ホビーウェブ
+emoji: 📰
+order: 90
+lang: ja
+notify: false
+priority: default
+keywords:
+- 電撃ホビーウェブ
+- フィギュア
+exclude: []
+feeds: []
