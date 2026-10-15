@@ -88,6 +88,7 @@
     articles: [],
     categories: [],
     lastUpdated: "",
+    status: {},
     active: "all",
     query: "",
     unreadOnly: load(KEY.unread, false),
@@ -216,11 +217,23 @@
       words.map((a) => `<a class="trend" href="${safeUrl(a.url)}" target="_blank" rel="noopener">${esc(a.title)}</a>`).join("");
   }
 
+  // 今日の時刻は「13:36」、それ以前は「10/14 13:36」（狭い画面でも切れないよう短くする）
+  function stampTime(iso) {
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return "";
+    const hm = `${pad(d.getHours())}:${pad(d.getMinutes())}`;
+    return dayKey(d) === dayKey(new Date()) ? hm : `${d.getMonth() + 1}/${d.getDate()} ${hm}`;
+  }
+
+  // 「更新」は記事が増えた時刻、「確認」は新着の有無にかかわらず最後にチェックした時刻
   function renderStamp() {
-    const d = new Date(state.lastUpdated);
-    $("#stamp").textContent = Number.isNaN(d.getTime())
-      ? ""
-      : `${d.getMonth() + 1}/${d.getDate()} ${pad(d.getHours())}:${pad(d.getMinutes())} 更新`;
+    const updated = stampTime(state.lastUpdated);
+    const checks = [state.status.checked, state.status.fast_checked].filter(Boolean).sort();
+    const checked = checks.length ? stampTime(checks[checks.length - 1]) : "";
+    const text = updated ? `${updated} 更新` : "";
+    $("#stamp").textContent = checked && checked !== updated ? `${text} · ${checked} 確認` : text;
+    $("#stamp").title = state.status.fast_checked
+      ? `酒屋の最終チェック: ${stampTime(state.status.fast_checked)}` : "";
   }
 
   // ── カテゴリー管理 ──────────────────────────────────────
@@ -507,12 +520,14 @@
     bind();
     syncStickyTop();
     try {
-      const [articles, cats] = await Promise.all([
+      const [articles, cats, status] = await Promise.all([
         fetchJson("data/articles.json"),
         fetchJson("data/categories.json").catch(() => null),
+        fetchJson("data/status.json").catch(() => null),
       ]);
       state.articles = articles.articles || [];
       state.lastUpdated = articles.last_updated || "";
+      state.status = status || {};
       state.categories = cats?.categories?.length
         ? cats.categories
         : [...new Map(state.articles.map((a) => [a.category, a])).values()].map((a) => ({

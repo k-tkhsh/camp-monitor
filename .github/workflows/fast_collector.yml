@@ -65,8 +65,13 @@ jobs:
           for i in 1 2 3; do
             python news_collector.py --fast
             git add docs/data state
-            git diff --staged --quiet && echo "新着なし" && exit 0
-            git commit -m "🍶 新着 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
+            git diff --staged --quiet && echo "変更なし" && exit 0
+            # 新着が無い回もチェック時刻（docs/data/status.json）だけは保存する
+            if git diff --staged --quiet -- docs/data/articles.json; then
+              git commit -m "🍶 チェック（新着なし） $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
+            else
+              git commit -m "🍶 新着 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
+            fi
             git push && exit 0
             echo "push が他の更新とぶつかったため、最新の状態で確認し直します ($i)"
             sleep 10

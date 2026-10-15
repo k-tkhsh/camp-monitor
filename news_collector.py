@@ -27,6 +27,7 @@ import yaml
 JST = timezone(timedelta(hours=9))
 DATA_FILE = Path("docs/data/articles.json")
 CATEGORIES_JSON = Path("docs/data/categories.json")
+STATUS_JSON = Path("docs/data/status.json")
 KEYWORDS_FILE = Path("keywords.yaml")
 CATEGORIES_DIR = Path("categories")
 
@@ -72,6 +73,17 @@ def load_config() -> dict:
         config = yaml.safe_load(f) or {}
     config["categories"] = load_categories()
     return config
+
+
+def save_check_time(fast: bool) -> None:
+    """最後にチェックした時刻を記録する（新着が無くても、チェックが動いていると分かるように）"""
+    try:
+        status = json.loads(STATUS_JSON.read_text(encoding="utf-8"))
+    except (FileNotFoundError, ValueError):
+        status = {}
+    status["fast_checked" if fast else "checked"] = datetime.now(JST).isoformat()
+    STATUS_JSON.parent.mkdir(parents=True, exist_ok=True)
+    STATUS_JSON.write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def save_categories_json(config: dict) -> None:
@@ -1129,6 +1141,7 @@ def main() -> None:
     print(f"\n[INFO] 新着: {len(new_articles)} 件")
     # お店のページで見た商品は、新着の有無にかかわらず覚えておく（次回の「新着」判定に使う）
     save_shop_state(shop_state)
+    save_check_time(fast)
     if fast and not new_articles:
         print("[INFO] 新着なし。記事は保存せずに終了します。")
         return
