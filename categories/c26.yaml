@@ -7,5 +7,8 @@ priority: default
 keywords:
 - 電撃ホビーウェブ
 - フィギュア
-exclude: []
+exclude:
+- フィギュアスケート
+- 大会
+- 協会
 feeds: []
