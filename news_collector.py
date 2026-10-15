@@ -1103,7 +1103,8 @@ def prune(
 
 def main() -> None:
     # --fast: fast: true のカテゴリー（酒屋の入荷情報など）だけを集める。
-    # 30分ごとの確認用で、新着が無ければ何も保存しない（無駄なコミットを作らない）
+    # 日中の定期確認用で、新着が無ければ何も保存しない（無駄なコミットを作らない）。
+    # 通常の収集では逆に fast: true のカテゴリーを外す（確認する時間帯を日中に限るため）
     fast = "--fast" in sys.argv[1:]
     now_str = datetime.now(JST).strftime("%Y-%m-%d %H:%M JST")
     print("=" * 60)
@@ -1115,12 +1116,13 @@ def main() -> None:
     retention_days: int = settings.get("retention_days", 7)
     max_total: int = settings.get("max_total_articles", 800)
 
-    target = config
-    if fast:
-        target = {**config, "categories": {k: c for k, c in config["categories"].items() if c.get("fast")}}
-        if not target["categories"]:
-            print("[INFO] fast: true のカテゴリーがありません。終了します。")
-            return
+    target = {
+        **config,
+        "categories": {k: c for k, c in config["categories"].items() if bool(c.get("fast")) == fast},
+    }
+    if not target["categories"]:
+        print("[INFO] 対象のカテゴリーがありません。終了します。")
+        return
 
     print("\n■ 記事収集中...")
     new_articles, existing, shop_state = collect(target)

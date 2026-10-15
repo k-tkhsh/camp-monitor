@@ -1,11 +1,13 @@
-name: 新着の即時チェック
+name: 酒屋の新着チェック
 
-# fast: true のカテゴリー（酒屋の入荷情報など）だけを30分ごとに確認し、
-# 新着があれば保存してスマホに通知する。新着が無ければ何もしない。
-# ※ GitHub の定期実行は混雑時に数分〜十数分遅れることがある
+# fast: true のカテゴリー（酒屋の入荷情報など）だけを、日本時間 9:00〜20:00 の間に
+# 約2時間おきに確認し、新着があれば保存してスマホに通知する。新着が無ければ何もしない。
+# ※ GitHub の定期実行は混雑で1〜数時間遅れることがあるので、混みやすい毎時0分を避け、
+#   遅れて20時を過ぎた回は何もせずに終える（夜間に通知を出さないため）
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    # UTC で指定。日本時間の 9:17 / 11:17 / 13:17 / 15:17 / 17:17 / 19:17
+    - cron: "17 0,2,4,6,8,10 * * *"
   workflow_dispatch:
 
 permissions:
@@ -36,11 +38,25 @@ jobs:
           key: pip-news-${{ hashFiles('news_requirements.txt') }}
           restore-keys: pip-news-
 
+      # 定期実行が遅れて 9:00〜20:00（日本時間）の外にずれ込んだ回は確認しない。手動実行はいつでも動く
+      - name: Check the time window
+        id: window
+        run: |
+          hour=$(TZ=Asia/Tokyo date +%H)
+          if [ "${{ github.event_name }}" = "schedule" ] && { [ $((10#$hour)) -lt 9 ] || [ $((10#$hour)) -ge 20 ]; }; then
+            echo "日本時間 ${hour} 時台のため確認しません（9:00〜20:00 のみ）"
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Install dependencies
+        if: steps.window.outputs.run == 'true'
         run: pip install -r news_requirements.txt
 
       # push がほかの更新とぶつかったら、最新の main で確認し直す（JSON はマージしない）
       - name: Check and push
+        if: steps.window.outputs.run == 'true'
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: |
