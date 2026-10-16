@@ -1,8 +1,21 @@
 {
-  "last_updated": "2026-10-16T16:55:04.194354+09:00",
-  "last_run_new_count": 65,
+  "last_updated": "2026-10-16T18:08:01.813927+09:00",
+  "last_run_new_count": 1,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "8ca47f472614a78700b7077fc3defb6b",
+      "title": "【日本酒】裏 翠玉 純米吟醸",
+      "url": "https://ontable.jp/shopdetail/000000002422/",
+      "source": "桜本商店",
+      "published": "2026-10-16T18:07:52.546579+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新商品",
+      "first_seen": "2026-10-16T18:07:46.193330+09:00",
+      "lang": "ja"
+    },
     {
       "id": "09d7e5bf732577b0e9e859b7e5d634dd",
       "title": "Appleが野心的で高価なiPhone Duoの予約注文日を設定",
@@ -10798,19 +10811,6 @@
       "first_seen": "2026-10-13T06:37:02.451236+09:00",
       "lang": "en",
       "title_en": "German court rules AI music firm Suno broke copyright rules - Reuters"
-    },
-    {
-      "id": "cde705cf0afa4dab1eb65c0dcc1a0a4a",
-      "title": "【令和8年度】練馬区カーボンニュートラル化設備設置補助金：練馬区公式ホームページ - 練馬区公式ホームページ",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9DZTlvaEhQWGFPdWZ4RDJ1c3RWVnZMSDg1dXJEY1JHRmhKVXFObVUxazlfWVUzajVKTUIxY2FIenYzOUZnUEpseElQOU1YdEx4OFRIT0Fub2hydVdINjloV0k4NHhBTWtram1GVEE0MnJpLTA?oc=5",
-      "source": "練馬区公式ホームページ",
-      "published": "2026-10-09T16:00:00+09:00",
-      "summary": "",
-      "category": "housing",
-      "category_label": "🏠 住宅・補助金",
-      "keyword": "省エネ住宅 補助金",
-      "first_seen": "2026-10-13T06:37:02.451236+09:00",
-      "lang": "ja"
     }
   ]
 }
