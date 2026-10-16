@@ -1,13 +1,16 @@
 name: 酒屋の新着チェック
 
 # fast: true のカテゴリー（酒屋の入荷情報など）だけを、日本時間 9:00〜20:00 の間に
-# 約2時間おきに確認し、新着があれば保存してスマホに通知する。新着が無ければ何もしない。
-# ※ GitHub の定期実行は混雑で1〜数時間遅れることがあるので、混みやすい毎時0分を避け、
-#   遅れて20時を過ぎた回は何もせずに終える（夜間に通知を出さないため）
+# 約2時間おきに確認し、新着があれば保存してスマホに通知する。
+#
+# GitHub の定期実行は混雑すると数時間遅れたり、実行自体が飛ばされたりする
+# （2時間おきに予約しても、1日に2回ほどしか動かない日があった）。そこで毎時起動を予約し、
+# 実際に動いた回のうち「前回の確認から100分以上たっている回」だけが確認する。
+# 遅れて 20:00 を過ぎた回は何もせずに終える（夜間に通知を出さないため）。
 on:
   schedule:
-    # UTC で指定。日本時間の 9:17 / 11:17 / 13:17 / 15:17 / 17:17 / 19:17
-    - cron: "17 0,2,4,6,8,10 * * *"
+    # UTC で指定。日本時間 9:23〜19:23 の毎時（混みやすい毎時0分は避ける）
+    - cron: "23 0-10 * * *"
   workflow_dispatch:
 
 permissions:
@@ -38,17 +41,36 @@ jobs:
           key: pip-news-${{ hashFiles('news_requirements.txt') }}
           restore-keys: pip-news-
 
-      # 定期実行が遅れて 9:00〜20:00（日本時間）の外にずれ込んだ回は確認しない。手動実行はいつでも動く
+      # 定期実行のとき、確認するかを決める（手動実行はいつでも確認する）
+      #  - 9:00〜20:00（日本時間）の外にずれ込んだ回は確認しない
+      #  - 前回の確認から100分たっていない回は確認しない（毎時起動しているため）
       - name: Check the time window
         id: window
+        env:
+          EVENT: ${{ github.event_name }}
         run: |
-          hour=$(TZ=Asia/Tokyo date +%H)
-          if [ "${{ github.event_name }}" = "schedule" ] && { [ $((10#$hour)) -lt 9 ] || [ $((10#$hour)) -ge 20 ]; }; then
-            echo "日本時間 ${hour} 時台のため確認しません（9:00〜20:00 のみ）"
-            echo "run=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          fi
+          python3 - <<'PY'
+          import json, os
+          from datetime import datetime, timedelta, timezone
+          jst = timezone(timedelta(hours=9))
+          now = datetime.now(jst)
+          run, reason = True, "手動実行"
+          if os.environ["EVENT"] == "schedule":
+              try:
+                  last = json.load(open("docs/data/status.json", encoding="utf-8")).get("fast_checked")
+                  last = datetime.fromisoformat(last) if last else None
+              except (OSError, ValueError):
+                  last = None
+              if not 9 <= now.hour < 20:
+                  run, reason = False, f"日本時間 {now:%H:%M} は確認する時間帯（9:00〜20:00）の外"
+              elif last and now - last < timedelta(minutes=100):
+                  run, reason = False, f"前回の確認（{last:%H:%M}）から100分たっていない"
+              else:
+                  reason = f"前回の確認: {last:%m/%d %H:%M}" if last else "前回の確認なし"
+          print(("確認します: " if run else "確認しません: ") + reason)
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"run={'true' if run else 'false'}\n")
+          PY
 
       - name: Install dependencies
         if: steps.window.outputs.run == 'true'
