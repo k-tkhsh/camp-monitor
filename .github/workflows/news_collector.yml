@@ -1,19 +1,23 @@
 name: 個人情報収集システム
 
+# 日本酒（fast: true）以外のカテゴリーを、夜間も含めて約2時間おきに集める。
+#
+# GitHub の定期実行は混雑すると数時間遅れたり、実行自体が飛ばされたりする
+# （1日4回の予約で2回しか動かない日があった）。そこで30分おきに起動を予約し、
+# 実際に動いた回のうち「前回の収集から100分以上たっている回」だけが集める。
 on:
   schedule:
-    - cron: "0 22 * * *"   # 7:00 JST
-    - cron: "0 3 * * *"    # 12:00 JST
-    - cron: "0 9 * * *"    # 18:00 JST
-    - cron: "0 13 * * *"   # 22:00 JST
+    - cron: "11,41 * * * *"   # 毎時11分・41分（混みやすい毎時0分は避ける）
   workflow_dispatch:
 
 permissions:
   contents: write
 
-# 記事収集どうしは重ならないよう順番に実行する（待機中の古い実行は新しい実行で置き換わってよい）
+# 記事収集どうしは重ならないよう順番に実行する（待機中の古い実行は新しい実行で置き換わってよい）。
+# 酒屋の新着チェックとは別のグループにする（同じだと、待機中の酒屋チェックが取り消されるため）。
+# push がぶつかった場合は、下の手順で最新の状態から集め直す
 concurrency:
-  group: news-data
+  group: news-data-regular
   cancel-in-progress: false
 
 jobs:
@@ -38,12 +42,41 @@ jobs:
           key: pip-news-${{ hashFiles('news_requirements.txt') }}
           restore-keys: pip-news-
 
+      # 定期実行のとき、前回の収集から100分たっていない回は集めない（30分おきに起動しているため）。
+      # 手動実行はいつでも集める
+      - name: Check the interval
+        id: window
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from datetime import datetime, timedelta, timezone
+          now = datetime.now(timezone(timedelta(hours=9)))
+          run, reason = True, "手動実行"
+          if os.environ["EVENT"] == "schedule":
+              try:
+                  last = json.load(open("docs/data/status.json", encoding="utf-8")).get("checked")
+                  last = datetime.fromisoformat(last) if last else None
+              except (OSError, ValueError):
+                  last = None
+              if last and now - last < timedelta(minutes=100):
+                  run, reason = False, f"前回の収集（{last:%H:%M}）から100分たっていない"
+              else:
+                  reason = f"前回の収集: {last:%m/%d %H:%M}" if last else "前回の収集なし"
+          print(("集めます: " if run else "集めません: ") + reason)
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"run={'true' if run else 'false'}\n")
+          PY
+
       - name: Install dependencies
+        if: steps.window.outputs.run == 'true'
         run: pip install -r news_requirements.txt
 
       # 記事を集めて保存する。カテゴリー変更などが先に push していたら、最新の main で集め直す
       # （articles.json を自動マージすると JSON が壊れうるので、マージはしない）
       - name: Collect articles and push
+        if: steps.window.outputs.run == 'true'
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: |
