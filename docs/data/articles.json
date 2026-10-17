@@ -1,8 +1,21 @@
 {
-  "last_updated": "2026-10-17T16:32:56.806307+09:00",
-  "last_run_new_count": 41,
+  "last_updated": "2026-10-17T18:30:41.224472+09:00",
+  "last_run_new_count": 1,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "9cd2d43960abb9c1c8e800171759272d",
+      "title": "🌾日本酒 新着🌾 山形県東根市 六歌仙様より 「六歌仙 純米にごり酒」 が入荷しました 商品名にはないですが、ラベルには書いてあるように五段仕込。そう、六歌仙 五段仕込み純米のにごりver 蔵元試飲会で…",
+      "url": "https://x.com/sakenomarumi/status/2111260915178086458?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-17T10:00:02+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-10-17T18:30:25.568382+09:00",
+      "lang": "ja"
+    },
     {
       "id": "37370a390ce85124876fd8a7e0e4e797",
       "title": "iPhone Duoは買わない。その理由は次のとおりです。",
@@ -10832,20 +10845,6 @@
       "first_seen": "2026-10-14T04:46:23.764748+09:00",
       "lang": "en",
       "title_en": "HomeView Runs Third-Party Apps From Your iPhone or iPad - MacRumors"
-    },
-    {
-      "id": "4726d771c6493c3761ccee308974f438",
-      "title": "AppleのHomeViewは意図的に退屈 - Bloomberg.com",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNVU42N05LdHpiTWNtYUNkNEgzZEE0OER2SzFoM2VXeWliLWZBRzZFeEhnZFk0YmRBZGwyNGtTdTdlUnpGb3ZJZzB1QWdWX1ZmUlAyd2VlMUs1bXFpSGVLaWJROGtRTE56SjZQMVd2cXpxYVl0QUMyMmRpc0d6S0pPVWt4clV4OWE2ajJvUi1fLVBPby1uWkZXRFl3RDdjcFpXSzlDVVl3YmRnbTBTNFNRUUNNY1R6NkJp?oc=5",
-      "source": "Bloomberg.com",
-      "published": "2026-10-14T03:23:03+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple iPhone",
-      "first_seen": "2026-10-14T04:46:23.764748+09:00",
-      "lang": "en",
-      "title_en": "Apple’s HomeView Is Boring on Purpose - Bloomberg.com"
     }
   ]
 }
