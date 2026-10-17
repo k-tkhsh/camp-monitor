@@ -1,8 +1,60 @@
 {
-  "last_updated": "2026-10-17T09:16:51.744167+09:00",
-  "last_run_new_count": 47,
+  "last_updated": "2026-10-17T13:42:28.784250+09:00",
+  "last_run_new_count": 4,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "1569976dedc00cefbd0bc78add0f9cfb",
+      "title": "🌾日本酒 新着🍁 福岡県八女市 高橋商店様より 「繁桝 限定 純米大吟醸 壱火」 が入荷しました 壱火、一回火入れで夏越し、秋らしさのある純米大吟醸です そしてこの、一本縦に通るラベルを見ると、年末が…",
+      "url": "https://x.com/sakenomarumi/status/2110898522350399655?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-16T10:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-10-17T13:42:09.766854+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "32d29cdf4861ba32fc21bc1bd4ce42ea",
+      "title": "大信州 仕込第一号 純米大吟醸 ふなば詰め生 720",
+      "url": "https://www.winefood.jp/shopdetail/000000002708/",
+      "source": "ワインフードわたらい",
+      "published": "2026-10-17T13:42:13.977213+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新商品",
+      "first_seen": "2026-10-17T13:42:09.766854+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "3978f3ed8973abc01314c77883d7c3a6",
+      "title": "大信州 仕込第一号 純米大吟醸 ふなば詰め生 1.8",
+      "url": "https://www.winefood.jp/shopdetail/000000002929/",
+      "source": "ワインフードわたらい",
+      "published": "2026-10-17T13:42:13.977213+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新商品",
+      "first_seen": "2026-10-17T13:42:09.766854+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "88184a203f55d1684a8a953f2dc35c4c",
+      "title": "【日本酒】仙禽モダン 肆式 (よしき) 貴醸酒",
+      "url": "https://ontable.jp/shopdetail/000000002627/",
+      "source": "桜本商店",
+      "published": "2026-10-17T13:42:15.767445+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新商品",
+      "first_seen": "2026-10-17T13:42:09.766854+09:00",
+      "lang": "ja"
+    },
     {
       "id": "050279954361a4198138d978acc5bc01",
       "title": "Appleの$ 1,999 iPhone Duoは、同社のステータスシンボルのパワーをテストします",
@@ -10790,61 +10842,6 @@
       "first_seen": "2026-10-14T04:46:23.764748+09:00",
       "lang": "en",
       "title_en": "Udio’s licensed AI music app will be called Starstruck, with four creation modes for fans (Report) - Music Business Worldwide"
-    },
-    {
-      "id": "675cadb046dbefc8fc1ee43f973973ee",
-      "title": "5つの新機能！ジェミニ ドロップ 2026 年 2 月 - Jetstream.blog",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5jdFdWYlVKVXUzWUpYZ1RQOGxDWWZibWtOeEhFQmhnSzhsV2lUd3hFMnA5VnFIb2ptY25zMDNHWHNzME1iMTFxWk5pUlFTR2gxRTdrYzZGRk9nUmxtUVVZXzln?oc=5",
-      "source": "jetstream.blog",
-      "published": "2026-02-28T17:00:00+09:00",
-      "summary": "",
-      "category": "music_ai",
-      "category_label": "🎵 音楽AI",
-      "keyword": "音楽生成AI",
-      "first_seen": "2026-10-14T04:46:23.764748+09:00",
-      "lang": "en",
-      "title_en": "5 New Features! Gemini Drop February 2026 - jetstream.blog",
-      "related": []
-    },
-    {
-      "id": "246320e91a3df5a21572dc371bc1de92",
-      "title": "住宅省エネリフォーム補助金 - 十日町市",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPVElpX3NIR3c1V2RQUjlaTUZpU2pPLUVhX25WLUdZLUw4WFJTVHJBZTlLdzdIbG1SREd1ZnMtejVuelo2Ymgybnl6TldqMG4yUDktR1Rua0pFVW9XWml1aHlPUWUtdlljSmVYWHRHbVRBR1V1YjdiXzl5ZFNEbEJVcDBlYlItQW03b28yXw?oc=5",
-      "source": "十日町市",
-      "published": "2026-07-01T16:00:00+09:00",
-      "summary": "",
-      "category": "housing",
-      "category_label": "🏠 住宅・補助金",
-      "keyword": "省エネ住宅 補助金",
-      "first_seen": "2026-10-14T04:46:23.764748+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "48ff106309d28b857ca06134509a7771",
-      "title": "【住宅を新築される方・滋賀への移住を検討されている方必見！】令和8年度「しがZEH新築支援事業費補助金」 - 滋賀県",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE0teUdlaWg3WGc5YjNvaUV6aDJyNUVhLUxxN05hTGdMYTIxNTl6cUxsVHlPZ1RZMXdrNlhXSFR3OUdlZUlJNl82dXdVX3V0dW5zSl8tNFNJMA?oc=5",
-      "source": "滋賀県",
-      "published": "2026-09-07T06:45:39+09:00",
-      "summary": "",
-      "category": "housing",
-      "category_label": "🏠 住宅・補助金",
-      "keyword": "省エネ住宅 補助金",
-      "first_seen": "2026-10-14T04:46:23.764748+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "653646bdc55454dad5d7c855c4a9d53e",
-      "title": "iPhone Duo および 18 Pro 冷却システムの内部: Apple エンジニアが簡単なトリックを明らかに - PCMag",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQMTJXcWI5V0p6UHNwTm10QVhTYXVsSFk0dno3Vmw1MEVqUTlBQTNtMmdVTjhVTmRPbVJ3VXphOGFQZ05SVjlueldSZWNVd1lrSGdJWDJJTDdvNUJhUF9Xc2hoWmJWSXV2a00zc21YV3BpbVpjOVBkTlpMVW9wcWtwMnY3Mk5qYmNFWldwd2h3VEFmcHBYWmpzLWRiZ2lsXzg?oc=5",
-      "source": "PCMag",
-      "published": "2026-10-13T23:54:19+09:00",
-      "summary": "",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple iPhone",
-      "first_seen": "2026-10-14T01:36:42.530843+09:00",
-      "lang": "en",
-      "title_en": "Inside the iPhone Duo and 18 Pro Cooling System: Apple Engineers Reveal a Simple Trick - PCMag"
     }
   ]
 }
