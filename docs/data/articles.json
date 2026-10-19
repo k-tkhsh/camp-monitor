@@ -1,8 +1,34 @@
 {
-  "last_updated": "2026-10-19T09:12:44.841429+09:00",
-  "last_run_new_count": 19,
+  "last_updated": "2026-10-19T13:54:21.039992+09:00",
+  "last_run_new_count": 2,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "b63cc819cff843924353ee1478ad9ef6",
+      "title": "🌾日本酒 新着🌾 愛知県名古屋市 萬乗醸造様より 「醸し人九平次 第二章第三幕 別設 Rue du Faubourg Saint-Honoré」 が入荷しました フォーブール・サン＝トノレ通り…",
+      "url": "https://x.com/sakenomarumi/status/2111985689583829252?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-19T10:00:01+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-10-19T13:54:03.020840+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "677bbac31939e4f2152a28c6bafbdd30",
+      "title": "シャトー ジョリス ヴァンダンジュ タルディヴ",
+      "url": "https://www.winefood.jp/shopdetail/000000002179/",
+      "source": "ワインフードわたらい",
+      "published": "2026-10-19T13:54:08.563449+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新商品",
+      "first_seen": "2026-10-19T13:54:03.020840+09:00",
+      "lang": "ja"
+    },
     {
       "id": "09e96fd6a674ea6d6f2121e1536872ea",
       "title": "Apple Watch SE 3のダイレクトディスカウントで歩みを見守る時間",
@@ -10784,32 +10810,6 @@
       "category": "camp",
       "category_label": "🏕️ キャンプ",
       "keyword": "北海道 キャンプ場 予約 開始",
-      "first_seen": "2026-10-15T05:31:10.371681+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "570b70f2b133d82eac3b6c9196512f67",
-      "title": "国税庁 関連者間取引特例など法基通の趣旨説明を公表",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBpMU5JbUFmNlk1bkNGS1F3WGdsRUwzSFpMWTZSelpHREZMNGRFR1FBQlNYaXdVSnVxdk9oamtSdlFTenZ1Mm5VUWtCNVpYV0s5SFJEa0FKRUMwcXN3V3U5T0VXT0VmS3hxSUpfaHc3LVlaOXZaTlNB?oc=5",
-      "source": "税務研究会",
-      "published": "2026-10-12T17:00:00+09:00",
-      "summary": "国税庁 関連者間取引特例など法基通の趣旨説明を公表  税務研究会",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "税制改正 投資",
-      "first_seen": "2026-10-15T05:31:10.371681+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "a57811470de25ba9bb30bf72af74352d",
-      "title": "「責任ある積極財政」が次のステージへ 税制・歳入改革の論点を読む",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA3S1Rma2t2TTBCU1lmR0o4bVBsUzdKdG9sQ3FEY3FBa1dWeW9mYzduWm1JUExtcW1SYlBkdklPM1pLemZIUWJ3TGUxVU5OLTctOWc1cS1oT2swZFcxeldJbXotcklmTE0?oc=5",
-      "source": "日経ビジネス電子版",
-      "published": "2026-10-14T17:00:00+09:00",
-      "summary": "「責任ある積極財政」が次のステージへ 税制・歳入改革の論点を読む  日経ビジネス電子版",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "税制改正 投資",
       "first_seen": "2026-10-15T05:31:10.371681+09:00",
       "lang": "ja"
     }
