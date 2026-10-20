@@ -1,8 +1,21 @@
 {
-  "last_updated": "2026-10-20T10:16:44.373891+09:00",
-  "last_run_new_count": 32,
+  "last_updated": "2026-10-20T14:00:51.717315+09:00",
+  "last_run_new_count": 1,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "25ffb9d3c96e29d3c08d26e21f358c59",
+      "title": "🌾日本酒 新着🌾 北海道上川郡東川町 三千櫻酒造様より 「三千櫻 純米 愛山60 ひやおろし」 が入荷しました 北海道のお酒としては珍しい\"愛山\"使用の 愛山とのご縁あるのも岐阜での歴史…",
+      "url": "https://x.com/sakenomarumi/status/2112348076597739794?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-20T10:00:01+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-10-20T14:00:35.266899+09:00",
+      "lang": "ja"
+    },
     {
       "id": "33c8188cc52be2a7a36ea890def875d9",
       "title": "WhatsAppはまもなくiPhoneユーザーがアプリ内ブラウザで任意のリンクを開けられるようになるかもしれない",
@@ -10805,19 +10818,6 @@
       "source": "トウシル",
       "published": "2026-10-11T11:00:00+09:00",
       "summary": "「こどもNISAの上限60万円」と「年110万円の基礎控除」は合算できる？…贈与の〈非課税枠〉に潜む落とし穴【FPが警告】  トウシル",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "NISA 新着",
-      "first_seen": "2026-10-15T06:03:51.658052+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "135b32c0f7958cf825ba33b7897676ec",
-      "title": "NISA口座おすすめ比較！新NISAとは？証券会社・銀行74社どこがいい？取引手数料ランキング｜Q&Aも！【2026年10月更新】｜証券会社カタログ",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5XRjFwYUVTQm9vMXhqYmVmRE9meFp0QW1WUnkzRjNJVjQ1eUR0ZUVTQ3FvNlJYa1N1MHlyb1k2YWpKUGFuWklPa0xhQnBQSy1WWHg2Y0pQOWdzMGYtaVFfN0djVDQ5YTFDQUJ5aEQtS01ZcUl1?oc=5",
-      "source": "Yahoo!ファイナンス",
-      "published": "2026-10-08T14:16:45+09:00",
-      "summary": "NISA口座おすすめ比較！新NISAとは？証券会社・銀行74社どこがいい？取引手数料ランキング｜Q&Aも！【2026年10月更新】｜証券会社カタログ  Yahoo!ファイナンス",
       "category": "investment",
       "category_label": "💹 投資",
       "keyword": "NISA 新着",
