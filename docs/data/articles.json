@@ -1,8 +1,47 @@
 {
-  "last_updated": "2026-10-20T15:35:54.948486+09:00",
-  "last_run_new_count": 56,
+  "last_updated": "2026-10-20T19:10:52.067161+09:00",
+  "last_run_new_count": 3,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "a159c08bd3c027517222843e9c9c29b5",
+      "title": "【日本酒】宝剣 純米吟醸 呉",
+      "url": "https://ontable.jp/shopdetail/000000002849/",
+      "source": "桜本商店",
+      "published": "2026-10-20T19:10:44.005091+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新商品",
+      "first_seen": "2026-10-20T19:10:37.230587+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "0904e1a8342128317fbfe250f138906f",
+      "title": "東魁原酒 八犬伝　720ml",
+      "url": "https://senmaru.shop-pro.jp/?pid=194066182",
+      "source": "地酒仙丸",
+      "published": "2026-10-20T15:35:24+09:00",
+      "summary": "◇原材料：米（国産）・米麹（国産米）・醸造アルコール\n◇精米歩合：70％\n◇アルコール度数：19度\n\nまろやかな飲み心地で、上品かつ爽やかな甘み、とろりとしたコクのある味わいです。冷やしても、お燗にしても良し！\nしっかりとした原酒の力強さと、優しい口当たりの...",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新着商品",
+      "first_seen": "2026-10-20T19:10:37.230587+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "7a88d1651423f27a87599b5ca916f273",
+      "title": "東魁原酒 八犬伝　1.8L",
+      "url": "https://senmaru.shop-pro.jp/?pid=194066177",
+      "source": "地酒仙丸",
+      "published": "2026-10-20T15:34:41+09:00",
+      "summary": "◇原材料：米（国産）・米麹（国産米）・醸造アルコール\n◇精米歩合：70％\n◇アルコール度数：19度\n\nまろやかな飲み心地で、上品かつ爽やかな甘み、とろりとしたコクのある味わいです。冷やしても、お燗にしても良し！\nしっかりとした原酒の力強さと、優しい口当たりの...",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新着商品",
+      "first_seen": "2026-10-20T19:10:37.230587+09:00",
+      "lang": "ja"
+    },
     {
       "id": "51451625f417d0f3d9f8525e54ad1fe8",
       "title": "AppleのタッチスクリーンMacイベント：私が楽しみにしている3つのこと–そして私の唯一の懸念",
@@ -10773,47 +10812,6 @@
       "category_label": "🍶 日本酒",
       "keyword": "新着商品",
       "first_seen": "2026-10-15T08:26:43.032483+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "1de285aac34865eb942341920889df82",
-      "title": "9 to 5 Macデイリー： 2026年10月14日– Apple Home Collection、iOS 27.2ベータ4",
-      "url": "https://9to5mac.com/2026/10/14/daily-october-14-2026/",
-      "source": "9to5Mac",
-      "published": "2026-10-15T06:17:25+09:00",
-      "summary": "Listen to a recap of the top stories of the day from 9to5Mac. 9to5Mac Daily is available on iTunes and Apple’s Podcasts app, Stitcher, TuneIn, Google Play, or through our dedicated RSS feed for Overca",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "9to5Mac",
-      "first_seen": "2026-10-15T06:17:38.182472+09:00",
-      "lang": "en",
-      "title_en": "9to5Mac Daily: October 14, 2026 – Apple Home Collection, iOS 27.2 beta 4"
-    },
-    {
-      "id": "af0609e4b678d9e100132f67bde4c6ca",
-      "title": "Appleの招待状の更新により、ゲストの管理とRSVPの追跡が簡単になりました",
-      "url": "https://9to5mac.com/2026/10/14/apple-invites-update-makes-it-easier-to-manage-guests-and-track-rsvps/",
-      "source": "9to5Mac",
-      "published": "2026-10-15T06:15:32+09:00",
-      "summary": "The Apple Invites app got updated yet again today, with new features including RSVP improvements and a larger Home Screen widget. Here are the details.\n\n\n\n more…",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "9to5Mac",
-      "first_seen": "2026-10-15T06:17:38.182472+09:00",
-      "lang": "en",
-      "title_en": "Apple Invites update makes it easier to manage guests and track RSVPs"
-    },
-    {
-      "id": "4d645c8f42338723bbc19abe18c2276a",
-      "title": "新TOPIX誕生で日本株はどう動く？大幅スリム化の全容と投資への影響（土信田雅之）",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBZRndkVUJMVUtBSlEtRE9WdTF6b3d0ekpmWV82TkR6NGVocGlwd3dHRm9Fekttc0N0RlBJMEY5UnFXYmlwWkdUR29uVDBCQnZjd2ZKUWd0dFQ5Zw?oc=5",
-      "source": "トウシル",
-      "published": "2026-10-09T08:00:00+09:00",
-      "summary": "新TOPIX誕生で日本株はどう動く？大幅スリム化の全容と投資への影響（土信田雅之）  トウシル",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "インデックス投資 最新",
-      "first_seen": "2026-10-15T06:17:38.182472+09:00",
       "lang": "ja"
     }
   ]
