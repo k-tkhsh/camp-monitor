@@ -1,8 +1,34 @@
 {
-  "last_updated": "2026-10-21T11:01:12.900200+09:00",
-  "last_run_new_count": 22,
+  "last_updated": "2026-10-21T14:00:30.946255+09:00",
+  "last_run_new_count": 2,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "3c930ea4674706127c5310139693768b",
+      "title": "🍠芋焼酎 新着🍠 鹿児島県日置市 小正醸造様より 「蔵の師魂 新焼酎 The Orange」 が入荷しました 蔵の師魂オレンジも新焼酎の時期がキタ!! 蒸留から3日以内の瓶詰め、まさに出来立て。こ…",
+      "url": "https://x.com/sakenomarumi/status/2112408468615299372?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-20T14:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-10-21T14:00:14.033321+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "1ef18c112cc03e0fbf462a240c6de75e",
+      "title": "【日本酒】紀土 純米吟醸酒 しぼりたて",
+      "url": "https://ontable.jp/shopdetail/000000000793/",
+      "source": "桜本商店",
+      "published": "2026-10-21T14:00:20.914392+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新商品",
+      "first_seen": "2026-10-21T14:00:14.033321+09:00",
+      "lang": "ja"
+    },
     {
       "id": "58b5c1e30ed6b3a0c49b92f0a94e1c0f",
       "title": "Apple Watch Series 11 | 24時間バッテリー、高血圧アラート",
@@ -10845,32 +10871,6 @@
       "first_seen": "2026-10-15T16:59:39.874200+09:00",
       "lang": "en",
       "title_en": "Putin's new propaganda weapon: AI war songs with millions of streams"
-    },
-    {
-      "id": "285325b9826b72b82928bf62eaa400fe",
-      "title": "住宅から約150mの町道で幅約13cmのクマ足跡を発見 散歩中の人が通報し警察がパトロールなど警戒 北海道愛別町",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBRZ2sxR2wta3hfSE14VG9BOHRENkxPZTRCX01ab01wRWlCU2U5MkxFNVJkT3ZodnB4TVIzMHFOMXd5dGVMUXZxS0tUUTB3enN0eTVjZndOUmZKcHJnMGc3bHdXX0JmUTQ?oc=5",
-      "source": "TBS NEWS DIG",
-      "published": "2026-10-13T18:36:00+09:00",
-      "summary": "住宅から約150mの町道で幅約13cmのクマ足跡を発見 散歩中の人が通報し警察がパトロールなど警戒 北海道愛別町  TBS NEWS DIG",
-      "category": "housing",
-      "category_label": "🏠 住宅・補助金",
-      "keyword": "北海道 住宅補助金",
-      "first_seen": "2026-10-15T16:59:39.874200+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "981681ecfa22faac22fb8309bfffb0ea",
-      "title": "米住宅ローン金利の上昇止まらず、30年物7.5%に－購入は大幅減速",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE40RHRaQS1VYmFYQmQ2R0dqa0FsUVJucGhTWGVJSkg1SWppZkJOMDJfUDhGZmFWWXF2UUZObEFxMWZpWlpJYVNHWjExdUVwNGRiV0NjOXBVRUI3b1Z4TWtna0Ruc2JnbHZLOEo2el9qeW1ZV0o0SDFR?oc=5",
-      "source": "Bloomberg.com",
-      "published": "2026-10-14T11:11:58+09:00",
-      "summary": "米住宅ローン金利の上昇止まらず、30年物7.5%に－購入は大幅減速  Bloomberg.com",
-      "category": "housing",
-      "category_label": "🏠 住宅・補助金",
-      "keyword": "住宅ローン 金利",
-      "first_seen": "2026-10-15T16:59:39.874200+09:00",
-      "lang": "ja"
     }
   ]
 }
