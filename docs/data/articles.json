@@ -1,8 +1,34 @@
 {
-  "last_updated": "2026-10-21T16:33:34.547025+09:00",
-  "last_run_new_count": 48,
+  "last_updated": "2026-10-21T19:18:30.840382+09:00",
+  "last_run_new_count": 2,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "e3bce75ec99abf28165195a2d3ec6ead",
+      "title": "【日本酒】赤武 AKABU 純米吟醸酒 NEWBORN ニューボーン",
+      "url": "https://ontable.jp/shopdetail/000000001304/",
+      "source": "桜本商店",
+      "published": "2026-10-21T19:18:21.889993+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新商品",
+      "first_seen": "2026-10-21T19:18:14.126574+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "c25e0d93269995ce8db709ee896ff16b",
+      "title": "【コラボ限定】＠brew（25％・720ml）　720ml",
+      "url": "https://senmaru.shop-pro.jp/?pid=193981788",
+      "source": "地酒仙丸",
+      "published": "2026-10-15T13:49:26+09:00",
+      "summary": "お茶割りをもっと自由に楽しむための本格焼酎をお茶割りのパイオニアである「日本お茶割り協会」とコラボ開発。お茶が持つ豊かな香りや味わい、茶葉ごとの個性に、本格焼酎ならではの複雑さと奥深さを重ね自由に楽しむための1本。香り豊かなお茶、すっきりとしたお茶、個...",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新着商品",
+      "first_seen": "2026-10-21T19:18:14.126574+09:00",
+      "lang": "ja"
+    },
     {
       "id": "16d69a5b3169899a211ed801e83c8059",
       "title": "John TernusはAppleの新時代を設計しています： 2026年の最高の発明",
@@ -10851,32 +10877,6 @@
       "category_label": "📰 電撃ホビーウェブ",
       "keyword": "フィギュア",
       "first_seen": "2026-10-15T22:48:46.151387+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "fe1b32a2a29fd52170d169a3e8605388",
-      "title": "🌾予約商品 発売のお知らせ📢 山口県岩国市 旭酒造様より 「獺祭 無濾過 磨き三割九分 槽場汲み」 が到着しました 秋の獺祭 槽場汲み、本日より発売です 予約でしか出会えないこの瓶、このラベル、そしてこ…",
-      "url": "https://x.com/sakenomarumi/status/2110536136804204698?utm_source=yjrealtime&utm_medium=search",
-      "source": "酒のマルミ（X）",
-      "published": "2026-10-15T10:00:01+09:00",
-      "summary": "",
-      "category": "sake",
-      "category_label": "🍶 日本酒",
-      "keyword": "酒のマルミ",
-      "first_seen": "2026-10-15T18:12:41.603871+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "4597c82f0434ee55bd24e7c441576857",
-      "title": "【日本酒】赤武 AKABU 純米酒 NEWBORN ニューボーン※お1人様1本",
-      "url": "https://ontable.jp/shopdetail/000000000802/",
-      "source": "桜本商店",
-      "published": "2026-10-15T18:12:47.973338+09:00",
-      "summary": "",
-      "category": "sake",
-      "category_label": "🍶 日本酒",
-      "keyword": "新商品",
-      "first_seen": "2026-10-15T18:12:41.603871+09:00",
       "lang": "ja"
     }
   ]
