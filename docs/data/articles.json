@@ -1,8 +1,21 @@
 {
-  "last_updated": "2026-10-22T14:24:37.234105+09:00",
-  "last_run_new_count": 52,
+  "last_updated": "2026-10-22T19:19:04.959303+09:00",
+  "last_run_new_count": 1,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "01a70d0542cf36a105e0114cc94936a9",
+      "title": "仙禽 旅米  秋田県 秋田酒こまち　720ml",
+      "url": "https://senmaru.shop-pro.jp/?pid=194106263",
+      "source": "地酒仙丸",
+      "published": "2026-10-22T17:59:13+09:00",
+      "summary": "「旅をしてきた米」\n令和の米騒動をきっかけに、栃木県さくら市産の原料米の調達に制限。\n醸造家の仲間たちとのつながりから集まった米で、心を込めて特別な一本を仕込みました。\n\n〜蔵元より〜\n新政酒造様よりご紹介いただきました「秋田酒こまち」を大切に使用しま...",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新着商品",
+      "first_seen": "2026-10-22T19:18:49.699759+09:00",
+      "lang": "ja"
+    },
     {
       "id": "75ecaa5ca1b4ffec71cda7174d294ef7",
       "title": "AppleはMac Proを廃止—次に来るものについてプロが知っておくべきこと（ M 5 Ultra Mac Studio ！ ？ ）",
@@ -10906,19 +10919,6 @@
       "merged_ids": [
         "a98183936c006902a00433f878720be3"
       ]
-    },
-    {
-      "id": "f4d1d7d79da81054e0be4cd535b1f822",
-      "title": "北海道の観光情報が集結！東京有楽町「どさんこ旅サロン」リニューアルオープン",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE02alRuamt1al9Za05rcDd3c0RRRFM3bGR5UEpKOFA0WGNBN3hZUHZWT3JlVEhTbFhYOF84bkUzTy1pb3gwdF9EYkxfYWhKVEJKLTVnM9IBWkFVX3lxTFBVSllXbE9CbGtOUXdocG9kYWtQQWJXNHF2SHFWam9yV05qNlhhRnF5bzExMlF3bFptQ3BpcEJzSTFqNTQ0UmViYlhnbDVlQVFqMWxnSVJQRENWUQ?oc=5",
-      "source": "ウォーカープラス",
-      "published": "2026-10-16T10:08:30+09:00",
-      "summary": "北海道の観光情報が集結！東京有楽町「どさんこ旅サロン」リニューアルオープン  ウォーカープラス",
-      "category": "camp",
-      "category_label": "🏕️ キャンプ",
-      "keyword": "北海道 キャンプ場 オープン",
-      "first_seen": "2026-10-16T22:38:40.236108+09:00",
-      "lang": "ja"
     }
   ]
 }
