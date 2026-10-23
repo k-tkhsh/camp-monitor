@@ -1,8 +1,34 @@
 {
-  "last_updated": "2026-10-23T10:28:27.092589+09:00",
-  "last_run_new_count": 43,
+  "last_updated": "2026-10-23T14:03:16.364518+09:00",
+  "last_run_new_count": 2,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "ac26dadefd624595d48168ada43c3a01",
+      "title": "🌾日本酒 新着🌾 長野県松本市 大信州酒造様より 「大信州 雪に松 其ノ弐 創作仕込み」 が入荷しました 若手の想いを詰め込んだ責任仕込み 創作では歴代の経験や勘や技を、知見やデータといった醸造学…",
+      "url": "https://x.com/sakenomarumi/status/2113133247140126779?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-22T14:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-10-23T14:02:57.448583+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "9cd2d43960abb9c1c8e800171759272d",
+      "title": "🌾日本酒 新着🌾 山形県東根市 六歌仙様より 「六歌仙 純米にごり酒」 が入荷しました 商品名にはないですが、ラベルには書いてあるように五段仕込。そう、六歌仙 五段仕込み純米のにごりver 蔵元試飲会で…",
+      "url": "https://x.com/sakenomarumi/status/2111260915178086458?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-17T10:00:02+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-10-23T14:02:57.448583+09:00",
+      "lang": "ja"
+    },
     {
       "id": "a505b22d1a4e669961a6e116558dee74",
       "title": "Appleの1,999ドルのiPhone Duo、供給が限られている中金曜日に店頭に並ぶ",
@@ -10885,33 +10911,6 @@
       "merged_ids": [
         "8781607248ca7f80ba852841be48c5a4"
       ]
-    },
-    {
-      "id": "b4770c9e894d45b71b8ccbc61328f79d",
-      "title": "インディー アプリのスポットライト: 「Hoardware」を使用すると、Apple デバイスのコレクションを簡単に追跡できます",
-      "url": "https://9to5mac.com/2026/10/17/indie-app-spotlight-hoardware-makes-it-easy-to-track-your-apple-device-collection/",
-      "source": "9to5Mac",
-      "published": "2026-10-18T04:30:00+09:00",
-      "summary": "Welcome to Indie App Spotlight. This is a weekly 9to5Mac series where we showcase the latest apps in the indie app world. If you’re a developer and would like your app featured, get in contact.\n\n\n\n\n\n\n",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "9to5Mac",
-      "first_seen": "2026-10-18T05:57:05.579255+09:00",
-      "lang": "en",
-      "title_en": "Indie App Spotlight: ‘Hoardware’ makes it easy to track your Apple device collection"
-    },
-    {
-      "id": "56c62ca3a877d849ad57f49a921858ad",
-      "title": "【コロナ対策情報付き】札幌ステラプレイスの見どころを紹介！札幌駅直結のスポットで買い物、グルメ、映画を欲張りに楽しむ",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5pQWFfZzhCa1g3aC1ETnZLVEdqUWhGeGI0TVJOR3QxXzRNbXg4MkVURFNvaXlYMFp0U1hadVEzTXRWZk12TDQxYzNPdmo5VVBvdTBBTzB30gFbQVVfeXFMTzV5SWJPVFJPdjFYM3lvTE4xaWd3LVVWVmNyaWlld2hmMk1sRVkzdG92M1FyVmFkZGdBdFU4eEtHU0ZaYmtSSzN4bHh1UGtLbDhuSHJHeG5va2dKOA?oc=5",
-      "source": "ウォーカープラス",
-      "published": "2026-10-14T16:00:00+09:00",
-      "summary": "【コロナ対策情報付き】札幌ステラプレイスの見どころを紹介！札幌駅直結のスポットで買い物、グルメ、映画を欲張りに楽しむ  ウォーカープラス",
-      "category": "sapporo",
-      "category_label": "🏗️ 札幌",
-      "keyword": "札幌 商業施設 オープン",
-      "first_seen": "2026-10-18T05:57:05.579255+09:00",
-      "lang": "ja"
     }
   ]
 }
