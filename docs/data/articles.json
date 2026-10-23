@@ -1,8 +1,34 @@
 {
-  "last_updated": "2026-10-23T15:29:03.790972+09:00",
-  "last_run_new_count": 33,
+  "last_updated": "2026-10-23T19:13:24.747837+09:00",
+  "last_run_new_count": 2,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "8c7f5e053e3b05d5174e59a2cb01fb94",
+      "title": "【芋焼酎】ひとり歩き 黒傳",
+      "url": "https://ontable.jp/shopdetail/000000001767/",
+      "source": "桜本商店",
+      "published": "2026-10-23T19:13:14.858975+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新商品",
+      "first_seen": "2026-10-23T19:13:07.166043+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "ebfe5e9b66691acd589ca6e624d92d84",
+      "title": "【日本酒】雅楽代 竜王",
+      "url": "https://ontable.jp/shopdetail/000000002695/",
+      "source": "桜本商店",
+      "published": "2026-10-23T19:13:14.858975+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新商品",
+      "first_seen": "2026-10-23T19:13:07.166043+09:00",
+      "lang": "ja"
+    },
     {
       "id": "13b33ac23e75ecfe8cd9693390c5dada",
       "title": "IPhone Duoの販売開始に伴い、Appleが折りたたみ式市場に参入",
@@ -10874,33 +10900,6 @@
       "keyword": "電撃ホビーウェブ",
       "first_seen": "2026-10-18T14:50:46.024808+09:00",
       "lang": "ja"
-    },
-    {
-      "id": "c621c1d0c90957fc25c6aa8ed61b2237",
-      "title": "グローグーも可愛く立体化！「マンダロリアン・アンド・グローグー」フィギュア付きのボトルキャップ全5種が、ガシャポンで11月展開",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPZTFySWY0Uk9BdDNLNzM1eGVNNjFRR1VlN19WUGowZVFHdGluNURnbFZXNHNCNzYwMUxPdHZ2QUVXbF9mT2RLN0Y2WDBqWmwwZFBqeDhjcGtjYmdTcGUyeFNULUFCdkdNQUpkcVU2bnZCcnBiQzZ5cjhpM2FFdS1fdVpTOA?oc=5",
-      "source": "インサイド",
-      "published": "2026-10-15T09:50:02+09:00",
-      "summary": "グローグーも可愛く立体化！「マンダロリアン・アンド・グローグー」フィギュア付きのボトルキャップ全5種が、ガシャポンで11月展開  インサイド",
-      "category": "c26",
-      "category_label": "📰 電撃ホビーウェブ",
-      "keyword": "フィギュア",
-      "first_seen": "2026-10-18T14:50:46.024808+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "e35c7b3bf4fbb5ad1e751fc73408b616",
-      "title": "スマートホームアクセサリの新ラインナップ「Apple Home Collection」のご紹介",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQmxqV3ducWZrN0Y1NElJejZ0cTRzOFdqMDNsNUFTbzNZLU1PNmhIeDRUcUFGWWgtdi1JWkZtVFFyYTRPb2habVVWb2VHS3hpZUtTakJWUVBkamFReUNFSzE0eHBiODQwa1F3RWdZcUFDRS1FMC02NGlfZGprLVByUDgtUS1fa2pDajlCQnd2RC1ZODA2Q0lEOC1nM0w1SnhOcVFOVGVjVGpFNl92R1FMeWpn?oc=5",
-      "source": "Apple",
-      "published": "2026-10-13T21:58:31+09:00",
-      "summary": "Introducing Apple Home Collection, a new lineup of smart home accessories  Apple",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple Watch",
-      "first_seen": "2026-10-18T09:59:20.821478+09:00",
-      "lang": "en",
-      "title_en": "Introducing Apple Home Collection, a new lineup of smart home accessories"
     }
   ]
 }
