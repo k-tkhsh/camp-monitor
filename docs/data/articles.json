@@ -1,8 +1,21 @@
 {
-  "last_updated": "2026-10-24T16:15:56.671197+09:00",
-  "last_run_new_count": 40,
+  "last_updated": "2026-10-24T18:10:47.940574+09:00",
+  "last_run_new_count": 1,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "d016f0e3551fab08b2ff60f96f682dfc",
+      "title": "❄️日本酒 新着❄️ 新潟県南魚沼市 八海醸造様より 「八海山 しぼりたて原酒 越後で候」 が入荷しました しぼりたての季節、始まります ってことは今年が駆け抜けていきますね 新酒の幕開けは八海山の…",
+      "url": "https://x.com/sakenomarumi/status/2113797629570318492?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-24T10:00:02+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-10-24T18:10:11.473758+09:00",
+      "lang": "ja"
+    },
     {
       "id": "2b54a1fe5a9533795d04c9242ea8354b",
       "title": "iPhone Duo の問題の真実: 見た目が粗末なアプリ、FaceTime カメラ、ヒンジ",
@@ -10902,20 +10915,6 @@
       "first_seen": "2026-10-20T02:46:14.223439+09:00",
       "lang": "en",
       "title_en": "Apple releases iOS 27.2 RC for iPhone"
-    },
-    {
-      "id": "818e1d6793de8eb85ad1d2d86ab73b7b",
-      "title": "この MagSafe バッテリー パックは iPhone Duo に最適に設計されています",
-      "url": "https://9to5mac.com/2026/10/19/this-magsafe-battery-pack-is-designed-perfectly-for-iphone-duo/",
-      "source": "9to5Mac",
-      "published": "2026-10-20T02:18:29+09:00",
-      "summary": "Ahead of iPhone Duo’s launch on Friday, accessory maker BMX is releasing what appears to be one of the first MagSafe batteries designed specifically for Apple’s foldable. \n\n\n\nThe BMX Duo is available ",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "9to5Mac",
-      "first_seen": "2026-10-20T02:46:14.223439+09:00",
-      "lang": "en",
-      "title_en": "This MagSafe battery pack is designed perfectly for iPhone Duo"
     }
   ]
 }
