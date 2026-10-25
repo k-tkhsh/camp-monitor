@@ -1,8 +1,34 @@
 {
-  "last_updated": "2026-10-25T13:35:49.078774+09:00",
-  "last_run_new_count": 39,
+  "last_updated": "2026-10-25T13:56:10.106394+09:00",
+  "last_run_new_count": 2,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "6478f525b564d440d584d48d0f187cbd",
+      "title": "🍠芋焼酎 新着🍠 宮崎県児湯郡高鍋町 黒木本店様より 「㐂六 無濾過」 が入荷しました 㐂六のいわば新焼酎 無濾過で出来立ての風味をしっかりと感じられます 自社農園は有機JAS認定農場。無農薬有機農法…",
+      "url": "https://x.com/sakenomarumi/status/2114175114661007431?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-25T11:00:01+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-10-25T13:55:54.097375+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "25ffb9d3c96e29d3c08d26e21f358c59",
+      "title": "🌾日本酒 新着🌾 北海道上川郡東川町 三千櫻酒造様より 「三千櫻 純米 愛山60 ひやおろし」 が入荷しました 北海道のお酒としては珍しい\"愛山\"使用の 愛山とのご縁あるのも岐阜での歴史…",
+      "url": "https://x.com/sakenomarumi/status/2112348076597739794?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-20T10:00:01+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-10-25T13:55:54.097375+09:00",
+      "lang": "ja"
+    },
     {
       "id": "b9c1578ffca98fa4aa21ebb6fa457e07",
       "title": "Appleが何と主張しても、アプリは今のところiPhone Duoのアキレス腱となるだろう",
@@ -10880,32 +10906,6 @@
       "category": "music_ai",
       "category_label": "🎵 音楽AI",
       "keyword": "Yahoo!ニュース IT",
-      "first_seen": "2026-10-20T15:34:56.416972+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "20c9483c8d7ef964daa1fee6e4ceb71e",
-      "title": "ローカルWordPress開発ツール「WordPress Studio」がv2.0に、「Codex」向けプラグインも(窓の杜)",
-      "url": "https://news.yahoo.co.jp/articles/bdc3d562e47d9f88f22ce38c6df806382455ad45?source=rss",
-      "source": "Yahoo!ニュース IT",
-      "published": "2026-10-20T13:25:00+09:00",
-      "summary": "米Automatticは10月19日（現地時間）、「WordPress Studio」v2.0.0を公開した。2024年4月の初回リリース以降、初めてのメジャーアップデートとなる。【画像】ローカルサイ",
-      "category": "music_ai",
-      "category_label": "🎵 音楽AI",
-      "keyword": "Yahoo!ニュース IT",
-      "first_seen": "2026-10-20T15:34:56.416972+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "b3bc7c2e4a8ac7d692d6f1931d0f374f",
-      "title": "灯油補助金、値下げ効果は不透明 流通目詰まり解消強調 目標価格は明示せず",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5URVloZjNacXlrQTVuZ1poLWhacFZna2dmLXdYZDQ0VHhqR3hPVFBDNWJwaC0wMHdjMnI3WE5jTmsxVTFpVDdlNjU3dzV4b0tTYUZONS1QZ0xhZw?oc=5",
-      "source": "北海道新聞デジタル",
-      "published": "2026-10-16T22:30:00+09:00",
-      "summary": "灯油補助金、値下げ効果は不透明 流通目詰まり解消強調 目標価格は明示せず  北海道新聞デジタル",
-      "category": "housing",
-      "category_label": "🏠 住宅・補助金",
-      "keyword": "北海道 住宅補助金",
       "first_seen": "2026-10-20T15:34:56.416972+09:00",
       "lang": "ja"
     }
