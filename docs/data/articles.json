@@ -1,8 +1,73 @@
 {
-  "last_updated": "2026-10-27T11:26:09.439619+09:00",
-  "last_run_new_count": 40,
+  "last_updated": "2026-10-27T14:16:44.395514+09:00",
+  "last_run_new_count": 5,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "e1e67a3e62db64fd120d7ed92ca48be6",
+      "title": "🌾日本酒 新着🌾 福島県二本松市 大七酒造様より 「大七 西谷棚田 山田錦」 が入荷しました 西谷棚田は二本松市にあり、その美しい風景や棚田文化を守る『つなぐ棚田遺産』にも認定されています 冬にはイル…",
+      "url": "https://x.com/sakenomarumi/status/2114884793930293285?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-27T10:00:02+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-10-27T14:16:27.308327+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "ab3cc89e9261677cb246f8d128fb9edd",
+      "title": "🍠芋焼酎 新着🍠 宮崎県児湯郡木城町 尾鈴山蒸留所様より 「尾鈴山 山ねこ 銅釜蒸留」 が入荷しました ラベルが変わりましたね。もちろん は変わらず。黒猫ちゃんが歩く側に今回のポイン…",
+      "url": "https://x.com/sakenomarumi/status/2114582799634055437?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-26T14:00:01+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-10-27T14:16:27.308327+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "cd46ec16fe0b76e2efc87c11786161fb",
+      "title": "【日本酒】東洋美人 純米大吟醸 特吟 愛山",
+      "url": "https://ontable.jp/shopdetail/000000001404/",
+      "source": "桜本商店",
+      "published": "2026-10-27T14:16:34.842989+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新商品",
+      "first_seen": "2026-10-27T14:16:27.308327+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "93d165c22edd1aa6bd3b22577dd6b997",
+      "title": "素焼きカシューナッツ",
+      "url": "https://senmaru.shop-pro.jp/?pid=194186482",
+      "source": "地酒仙丸",
+      "published": "2026-10-27T13:50:03+09:00",
+      "summary": "◇原材料：カシューナッツ（カンボジア）\n◇内容量：50ｇ\n\nカンボジア産の大粒なカシューナッツ。\n油や塩を使わず、シンプルにじっくりとローストされています。",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新着商品",
+      "first_seen": "2026-10-27T14:16:27.308327+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "0b178da87cef4d0cda29ed5ca64f2f1f",
+      "title": "交風 花風 ハツシボリ 2026　 720ml",
+      "url": "https://senmaru.shop-pro.jp/?pid=194165371",
+      "source": "地酒仙丸",
+      "published": "2026-10-26T14:46:17+09:00",
+      "summary": "〜蔵元より〜\n\n花風とは能の用語で観客を惹きつけるに足る芸風を指します\nシーズンの幕揚げを告げる、記念すべき初搾り花風です。\n\n「交酒 花風」は、副原料としてホップを使用したクラフトサケ。ホップ由来のライチやマスカットのような風味が特徴の大人気銘柄です...",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新着商品",
+      "first_seen": "2026-10-27T14:16:27.308327+09:00",
+      "lang": "ja"
+    },
     {
       "id": "8bf76b5c1a9698af501a6d75def9eb0e",
       "title": "iPhone DuoはAppleが待っていたことが正しかったことを証明する",
@@ -10770,72 +10835,6 @@
       "keyword": "Yahoo!ニュース 経済",
       "first_seen": "2026-10-22T09:40:06.111942+09:00",
       "lang": "ja"
-    },
-    {
-      "id": "d513e059388f1ccc153d57550bf05081",
-      "title": "東京株式　22日09時15分　(共同通信)",
-      "url": "https://news.yahoo.co.jp/articles/f10ab2a0d6d7e3bbb2d428a115a59b5e78a2e4d6?source=rss",
-      "source": "Yahoo!ニュース 経済",
-      "published": "2026-10-22T09:16:19+09:00",
-      "summary": "＜日経平均＞ 64630円67銭 前日比 ＋09円43銭 ＜TOPIX＞ 4062.05 前日比 ＋18.32",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "Yahoo!ニュース 経済",
-      "first_seen": "2026-10-22T09:40:06.111942+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "993c39e9adc0fbe6c3fce71894db6041",
-      "title": "東証、一時上昇に転じる(共同通信)",
-      "url": "https://news.yahoo.co.jp/articles/e05fff3ae78d73350dd53f0b4b5168ec71136b9d?source=rss",
-      "source": "Yahoo!ニュース 経済",
-      "published": "2026-10-22T09:05:03+09:00",
-      "summary": "22日の東京株式市場の日経平均株価（225種）は一時、前日終値と比べ上昇に転じた。",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "Yahoo!ニュース 経済",
-      "first_seen": "2026-10-22T09:40:06.111942+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "c6e7e20d86a52466c3d0438eb2e94afe",
-      "title": "東証、反落して始まる(共同通信)",
-      "url": "https://news.yahoo.co.jp/articles/22dcd4b07e1ca267e73325cbef51977760e58387?source=rss",
-      "source": "Yahoo!ニュース 経済",
-      "published": "2026-10-22T09:03:55+09:00",
-      "summary": "22日の東京株式市場の日経平均株価（225種）は反落して始まった。",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "Yahoo!ニュース 経済",
-      "first_seen": "2026-10-22T09:40:06.111942+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "78824f649d8c31ce6d255a20ca17df4a",
-      "title": "銀行で勧められたファンドラップ。払うのは運用を任せる報酬と中の投資信託の分(マネーの達人)",
-      "url": "https://news.yahoo.co.jp/articles/fe55972c2972a48144523c1829ba22aa0872aa1d?source=rss",
-      "source": "Yahoo!ニュース 経済",
-      "published": "2026-10-22T09:00:03+09:00",
-      "summary": "退職金の預け先を相談した銀行で、運用をまとめて任せられるファンドラップを勧められることがあります。気になるのは、何に対して費用を払うのかという点です。費用には運用を任せる報酬に加え、中で組み入れる投資",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "Yahoo!ニュース 経済",
-      "first_seen": "2026-10-22T09:40:06.111942+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "f5f5c64b1a9ad64d1a968f49ec6dd8ac",
-      "title": "ソニーとユニバーサル、Sunoの投資家ライトスピードに「トレーニングデータの法的リスク」について証言を強制するよう裁判所に要請",
-      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOSFEzaHBld2RVSDJ6bGc4aDZSaU85eUstZHFaeUtYXzZBZDFxSzZIbmQ0di1BeWx4ZEtMZEZjazVlZlM1Y283cGNpTjF6Nnp5eXlpS1N6V1JBN2dUcHoxSmNBTkFXQXBfTWV5ZEplcGpLOFV6RV9ZNDEyOWxGemJwQklDdHNsOTNGazR5UThWUXdYMUg2MUhoY0k5a0FYbGVTWDFoRm0yNVR1bE1pLTV6NlRtVlNKNWh4ZTJfWjB6ZVNFY2x3RjJjMlFoM01wa1JTMjNsdGNtaGFMNE9TdlFxNTc0UGF1QQ?oc=5",
-      "source": "Music Business Worldwide",
-      "published": "2026-10-19T19:37:19+09:00",
-      "summary": "Sony and Universal ask court to force Suno investor Lightspeed to testify about the ‘legal risk of training data’  Music Business Worldwide",
-      "category": "music_ai",
-      "category_label": "🎵 音楽AI",
-      "keyword": "Suno AI music",
-      "first_seen": "2026-10-22T09:40:06.111942+09:00",
-      "lang": "en",
-      "title_en": "Sony and Universal ask court to force Suno investor Lightspeed to testify about the ‘legal risk of training data’"
     }
   ]
 }
