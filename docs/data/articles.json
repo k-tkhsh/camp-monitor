@@ -1,8 +1,125 @@
 {
-  "last_updated": "2026-11-03T15:42:39.265816+09:00",
-  "last_run_new_count": 80,
+  "last_updated": "2026-11-03T15:58:59.846367+09:00",
+  "last_run_new_count": 9,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "5d0a06af148fec35a72de855ba686c00",
+      "title": "🌾日本酒 新着🌾 秋田県大仙市 秋田清酒様より 「刈穂 純米吟醸 Type C」 が入荷しました \"秋田酒こまち\"を酵母違いで楽しめるシリーズ第3弾 タイプCでは\"金沢酵母(K1401)\"を使用 秋田…",
+      "url": "https://x.com/sakenomarumi/status/2117436601664205166?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-11-03T11:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-11-03T15:58:41.272194+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "668ba28643f14e317ef331a6b61f7f6f",
+      "title": "🍠芋焼酎 新着🍠 鹿児島県伊佐市 大山酒造様より 「無濾過 手造り 新焼酎 伊佐大泉」 が入荷しました 新焼酎も続々入荷しております 毎年おなじみ、11月1日の本格焼酎&泡盛の日より発売開始する伊…",
+      "url": "https://x.com/sakenomarumi/status/2117119517906141518?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-11-02T14:00:01+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-11-03T15:58:41.272194+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "4bbd62d625c2fb6d468eea8a139feafa",
+      "title": "🌾日本酒 新着🌾 福岡県久留米市 杜の蔵様より 「杜の蔵 純米 燗ノ酒」 が入荷しました 温泉マーク⋯ではなくお燗の湯気ですかね お燗する温度で表情も変わるのが燗酒の魅力の一つですね。こだわるとかなり沼？ 季節…",
+      "url": "https://x.com/sakenomarumi/status/2115609561797476378?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-29T10:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-11-03T15:58:41.272194+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "8a673808c8b1ed2bd2091a486b3e4b89",
+      "title": "🌾日本酒 新着🌾 福島県会津若松市 名倉山酒造様より 「名倉山 純米大吟醸 別誂 一回火入れ」 が入荷しました 黒地にシルバーで名倉山の文字が光る純米大吟醸酒 別誂と特別感ありますが、そもそもマル…",
+      "url": "https://x.com/sakenomarumi/status/2115307575247855826?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-28T14:00:01+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-11-03T15:58:41.272194+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "68f1cd649f0bcf25b93194012a072872",
+      "title": "🌾日本酒 新着🌾 静岡県島田市 大村屋酒造場様より 「若竹 純米吟醸 生原酒 特別囲い」 が入荷しました 杜氏選抜の限定酒。6月製造9月出荷なので、氷点下5℃の貯蔵庫で3カ月の熟成ですね 酵母は静…",
+      "url": "https://x.com/sakenomarumi/status/2115247174061629694?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-28T10:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-11-03T15:58:41.272194+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "22bf70b8ad7211a0062bdc42d5be5e6a",
+      "title": "大石鶴見　1.8L",
+      "url": "https://senmaru.shop-pro.jp/?pid=194293068",
+      "source": "地酒仙丸",
+      "published": "2026-11-02T16:44:32+09:00",
+      "summary": "熊本県・球磨の「大石酒造」と、鹿児島県・阿久根の「大石酒造」。\n同じ「大石」の名を受け継ぐ二つの蔵が、互いの原酒を交換し、それぞれの蔵で仕上げました。\n異なる風土と技が出会い、新たな味わいを生み出す。\n蔵と蔵、人と人をつなぐ、特別な一本です。\n2026年7...",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新着商品",
+      "first_seen": "2026-11-03T15:58:41.272194+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "2c13fdc3c3913756b3c24b7525f9f791",
+      "title": "千代むすび　シングルモルト　林太郎 Mizunara Cask 3years",
+      "url": "https://senmaru.shop-pro.jp/?pid=194289504",
+      "source": "地酒仙丸",
+      "published": "2026-11-02T16:08:16+09:00",
+      "summary": "北海道でのお取り扱いは当店のみ。\n〜蔵元より〜\n山陰の港町のロケーションで生み出されるウィスキーは、潮風香る独自性を持ちます。\n「ミズナラ樽の新樽」にのみ3年間熟成し、和を感じる香りとスパイシーさを表現。\n張り詰めた静寂の空間で、熟成の時を経たシングル...",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新着商品",
+      "first_seen": "2026-11-03T15:58:41.272194+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "0e5bfa2849460367501cf75dba370f2b",
+      "title": "大和のどぶ　720ｍｌ",
+      "url": "https://senmaru.shop-pro.jp/?pid=194217801",
+      "source": "地酒仙丸",
+      "published": "2026-10-29T12:58:00+09:00",
+      "summary": "◇使用米：五百万石・日本晴\n◇精米歩合：60％・65％\n◇アルコール度数：15度\n※酒度は仕込みタンク毎に異なります。\n\n昔ながらの手造り製法で醸す純米どぶろく。もろみを粗く漉しただけなので、お米の旨味や自然な甘味、発酵由来の豊かな風味をそのまま楽しめます。濃厚...",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新着商品",
+      "first_seen": "2026-11-03T15:58:41.272194+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "bc02547f93ffce9ee58f659b27ba745f",
+      "title": "SAYS FARM RIVATE RESERVE MERLOT 2023　750ml",
+      "url": "https://senmaru.shop-pro.jp/?pid=194217558",
+      "source": "地酒仙丸",
+      "published": "2026-10-29T12:33:45+09:00",
+      "summary": "◇使用品種：富山県氷見市余川産　メルロ100%\n◇アルコール度数：12.56度\n\n※大変人気商品のため、お一人様1本でお願いいたします。実店舗でも販売しておりますため、\nネットショップ在庫の確認が間に合わない場合がございます。売り切れの際はご容赦願います。\n\n〜ワ...",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新着商品",
+      "first_seen": "2026-11-03T15:58:41.272194+09:00",
+      "lang": "ja"
+    },
     {
       "id": "cc4bac017461bba99eba02c4363cc59d",
       "title": "Apple、メモリコストの高騰でホリデー四半期の利益率低下を予測",
@@ -10797,142 +10914,6 @@
       "first_seen": "2026-10-29T17:24:37.715320+09:00",
       "lang": "en",
       "title_en": "Apple video shows new MacBook Pro with 'PROLED' display in action"
-    },
-    {
-      "id": "e9a9de77bae77a61b575af8a9c922b03",
-      "title": "現在、セルラー機能付きの Series 10 が 200 ドル割引になっているのに、5G Apple Watch の全額を支払う必要はありません",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPRzNOMzR1aE5IeWVFMXFGcUJORGdKRnUyRV9KN2NqdmpMaUdnZU1yck05LUVfVTJBNEg4WnJRX3ZidW10Z1o2cTFEeXQ4LUFCSDZUV01HUU9fZE82M0dZc192YUpLbzVVSVpmamlET3lQRzA0b0ZJSVhtOXlUaTVOVi1OVjJ3SEtHWnRtLS13RzZzeEtyWUNrU0Ffc1RhWElzcWZCUDVMd2t1ZGZJVjRoM0hKdFhtVklMQzJmSFNSM01iVE43cVZUM2NNcHk5ekEySWc?oc=5",
-      "source": "Macworld",
-      "published": "2026-10-29T01:01:35+09:00",
-      "summary": "Don’t pay full price for a 5G Apple Watch when the Series 10 with cellular is $200 off today  Macworld",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple Watch",
-      "first_seen": "2026-10-29T17:24:37.715320+09:00",
-      "lang": "en",
-      "title_en": "Don’t pay full price for a 5G Apple Watch when the Series 10 with cellular is $200 off today"
-    },
-    {
-      "id": "458071dfbaca18f5e4aea3fa186b9ca4",
-      "title": "【新店オープン】オーダースーツ専門店グローバルスタイルが『GINZAグローバルスタイル PREMIUM sitatte札幌店』を2026年10月30日(金)にグランドオープン！ご来店予約も受付中(2026年10月24日10時0分)",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBPWDBZYjk4T2hDN2hHaUFvMXJhc0ZoQjJqSmRRRTJ0WjhlMFJ4ajRscWswZVY0Z0RwOHBEanNLUGFYNEhFMUFpR29SS19ncENZMDJEd0FDUkEyYlBCemxEaUNHSWdRMmhOdWtyMXRn?oc=5",
-      "source": "大分合同新聞",
-      "published": "2026-10-24T10:00:00+09:00",
-      "summary": "【新店オープン】オーダースーツ専門店グローバルスタイルが『GINZAグローバルスタイル PREMIUM sitatte札幌店』を2026年10月30日(金)にグランドオープン！ご来店予約も受付中(2026年10月24日10時0分)  大分合同新聞",
-      "category": "sapporo",
-      "category_label": "🏗️ 札幌",
-      "keyword": "札幌 商業施設 オープン",
-      "first_seen": "2026-10-29T17:24:37.715320+09:00",
-      "lang": "ja",
-      "related": [
-        {
-          "source": "毎日新聞",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE52NE1GbkVULVpidjl4SVhrbWw4bzN1cUNDN0w5LVZwWDJocHpONW1tZTFxLW5adUlVbEtCTTdZbTFpM0dQTVpsMDdSYWlmYWhNUk5nZXlIMHhYdFNSUGxLQUxfb2w0V2NI?oc=5"
-        }
-      ],
-      "merged_ids": [
-        "6c2fa14ba04347bf47db0459da158f39"
-      ]
-    },
-    {
-      "id": "f115762f541f0c61fbd568fd136f38b2",
-      "title": "ゴンチャ初のエリア限定商品「北海道限定 ミルクプリン ミルクティー」10/29発売！ 札幌アピア店など北海道内の5店舗のみで入手できる特別な逸品！｜グルメとフード",
-      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE42dDlvQmFSYlB6VFhkRUFKNDg2VGp4UTlIWnFHTTVhc0VIQzdkX2VCUUlPUDJZS1BLeXNQc255dEdaOHcyam4wajhmVHg?oc=5",
-      "source": "旅とおでかけ 鉄道チャンネル",
-      "published": "2026-10-28T05:30:07+09:00",
-      "summary": "ゴンチャ初のエリア限定商品「北海道限定 ミルクプリン ミルクティー」10/29発売！ 札幌アピア店など北海道内の5店舗のみで入手できる特別な逸品！｜グルメとフード  旅とおでかけ 鉄道チャンネル",
-      "category": "sapporo",
-      "category_label": "🏗️ 札幌",
-      "keyword": "札幌 商業施設 オープン",
-      "first_seen": "2026-10-29T17:24:37.715320+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "010e41555d93fedbd30e61a7c031a157",
-      "title": "令和８年度グリーンシーズンは11/10（火）まで！12/23（水）より「滝野スノーワールド」オープン！【滝野すずらん丘陵公園】",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFA4NTFPTHAtbHNMb25QZTBJZng5QW5LeU1FYl83aW5odG9kUWFrdGZQQlpxSXlIQll1XzJ0SE5nLV8yVld3aUt4SDI0U012S2h3UWJOOTJjcVlMNkhwc2VVNjk5WjFoVE1MbXRjdzFvUkVUNV9jMlE?oc=5",
-      "source": "Mantan Web",
-      "published": "2026-10-29T15:56:00+09:00",
-      "summary": "令和８年度グリーンシーズンは11/10（火）まで！12/23（水）より「滝野スノーワールド」オープン！【滝野すずらん丘陵公園】  Mantan Web",
-      "category": "camp",
-      "category_label": "🏕️ キャンプ",
-      "keyword": "北海道 キャンプ場 オープン",
-      "first_seen": "2026-10-29T17:24:37.715320+09:00",
-      "lang": "ja",
-      "related": [
-        {
-          "source": "ニコニコニュース",
-          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1la0x3Q0hVdE5FWW9tbHNOcFN1aVFPUVBsckpRSVNrSUZCTnJlSVhNdkUyUDU5RTlpU0dIOFBSYzU4cEduY1pFamZrZDVlVlZCTEQxU0I3XzJzZHJfeEFGSlVFRFVMQlhJ?oc=5"
-        }
-      ],
-      "merged_ids": [
-        "036d7ee9f8e671531f76c10159598af8"
-      ]
-    },
-    {
-      "id": "9b69217d9bb4ac495a367191357c92a6",
-      "title": "S&P500・オルカン 最新情報。23日は大幅反落、「巨額AI投資への懸念」が市場を強く冷やした",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1aWFdhbGpBTnA1aDNNM0l3NW5pUzc4ZzZaUE5VbUV3YmdGLTFOSV9SUk9jTGxMTFQ5QnpzU01pM2xqX1hrS00xVHR2SVNUdFMyUFRMQzVpVUhKc21mX1JEMkNRZ0JVX0V2MjdXZEo5a3RTSDg1ZjBrMzVHQS1WQTg?oc=5",
-      "source": "Business Insider Japan",
-      "published": "2026-10-23T12:25:00+09:00",
-      "summary": "S&P500・オルカン 最新情報。23日は大幅反落、「巨額AI投資への懸念」が市場を強く冷やした  Business Insider Japan",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "インデックス投資 最新",
-      "first_seen": "2026-10-29T17:24:37.715320+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "0134a1ec1053bd6273d007bf06c420ae",
-      "title": "(NEXT FUNDS)東証銀行業株価指数連動型上場投信【1615】：株価・株式情報（夜間PTS含む）",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5fTDhrZV9KLThoNVp2MzZuTnhHSmxRNGtEcTBkQ1Z1V1FYWjBLZEhSU2xzaVM1ME45VGpmR0M0eUEzVUZuSFRCeGRqTW5DalBVSEE?oc=5",
-      "source": "Yahoo!ファイナンス",
-      "published": "2026-10-29T14:18:39+09:00",
-      "summary": "(NEXT FUNDS)東証銀行業株価指数連動型上場投信【1615】：株価・株式情報（夜間PTS含む）  Yahoo!ファイナンス",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "インデックス投資 最新",
-      "first_seen": "2026-10-29T17:24:37.715320+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "b324e84b6ea88f486019814c7d3ff1a2",
-      "title": "AI関連株が上昇、SKハイニックスが11％急騰、マイクロンとサンディスクも4％上昇",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMS1lMDRvQ2JNUUFQWE9uVGxVRk52UXNyN25SeXVvYXRfMzBfVVd1OGExN25ucnZlR0d2XzhjOEE2YXR3NHI0Z0NYUUFFMjRYekFiV29yd3BZSnY0bnlEU0dLNlRwZy13WllERzRuRkMwSV9KUHpJc3RVTEQ3c1lyN1hncV9wU015YWp4VGRxUmFiZUZtcl9jaUNxbXRoeFVNQlJLUGliYw?oc=5",
-      "source": "CoinDesk",
-      "published": "2026-10-28T18:59:25+09:00",
-      "summary": "AI関連株が上昇、SKハイニックスが11％急騰、マイクロンとサンディスクも4％上昇  CoinDesk",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "インデックス投資 最新",
-      "first_seen": "2026-10-29T17:24:37.715320+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "5c64c680cded8a0344dc36d5c87b7b95",
-      "title": "資産形成に励む40代夫婦が離婚…妻のNISA800万円・夫のiDeCo1,000万円・ジュニアNISA300万円「家族の資産」は誰のもの？【こどもNISAで増えそうなトラブルを弁護士が先回り解説】",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB2T3ZaZXp4QzJaOEx2X3B4ekxOVHFudjJTcTN4MXVoNFhodEVtcWZzNmdERW5YQWVHS3g3VVdBSmpabDQ5dlNEdG1hOFZxc3poSWY5QzVwRk9SUQ?oc=5",
-      "source": "トウシル",
-      "published": "2026-10-24T11:00:00+09:00",
-      "summary": "資産形成に励む40代夫婦が離婚…妻のNISA800万円・夫のiDeCo1,000万円・ジュニアNISA300万円「家族の資産」は誰のもの？【こどもNISAで増えそうなトラブルを弁護士が先回り解説】  トウシル",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "NISA 新着",
-      "first_seen": "2026-10-29T17:24:37.715320+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "003f17baceda58a6ea8ed7cce3d7a12a",
-      "title": "日銀がきょうから金融政策決定会合 政策金利は据え置く見通し 「基調的な物価上昇率」2％到達判断へ",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9TQk5XeDRBenRuekw3WTJzQXVRdDFneWhoLW9aazhFZ21DNkR4SjlZek51czh2SVVkYlpzMW5vWUV6RTFHWTdTY2tpMkd6emJ4bTFPeGVfTQ?oc=5",
-      "source": "TBS NEWS DIG",
-      "published": "2026-10-29T12:17:32+09:00",
-      "summary": "日銀がきょうから金融政策決定会合 政策金利は据え置く見通し 「基調的な物価上昇率」2％到達判断へ  TBS NEWS DIG",
-      "category": "investment",
-      "category_label": "💹 投資",
-      "keyword": "金利 政策",
-      "first_seen": "2026-10-29T17:24:37.715320+09:00",
-      "lang": "ja"
     }
   ]
 }
