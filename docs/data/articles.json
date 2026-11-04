@@ -1,8 +1,86 @@
 {
-  "last_updated": "2026-11-04T10:19:54.749245+09:00",
-  "last_run_new_count": 58,
+  "last_updated": "2026-11-04T15:41:14.543220+09:00",
+  "last_run_new_count": 6,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "69b2deffb0828b1a294d3ef667856486",
+      "title": "🌾日本酒 新着🌾 青森県弘前市 六花酒造様より 「杜來 純米吟醸 無濾過原酒 イエロー」 が入荷しました 六花酒造様は三季醸造、長い期間で出来立てのお酒が届けられる環境ですね。夏は休んで今期、初しぼり…",
+      "url": "https://x.com/sakenomarumi/status/2117783894510403669?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-11-04T10:00:01+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-11-04T15:40:58.054668+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "a66f464de7919461a745d9090bbc6a54",
+      "title": "🍠芋焼酎 新着🍠 鹿児島県伊佐市 大山酒造様より 「HAND MADE 伊佐大泉 虹のかなたに」 が入荷しました 7種類の芋を集めて1つの焼酎になったとき、出てきたのは願いを叶えてくれる神⋯⋯じゃ…",
+      "url": "https://x.com/sakenomarumi/status/2117481900029931814?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-11-03T14:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-11-04T15:40:58.054668+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "091b1fa1a98e262bae5bebd85b3117f9",
+      "title": "🌾日本酒 新着🌾 山口県岩国市 酒井酒造様より 「五橋 純米酒 木桶生酛造り」 が入荷しました 木桶を使い生酛造りで醸すファイブシリーズの⋯⋯じゃない!! 五橋です。ラベルには最近朝ドラでもよく見てた…",
+      "url": "https://x.com/sakenomarumi/status/2116032350266257886?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-30T14:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-11-04T15:40:58.054668+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "a11c033d12f636c7567c5abec51aaad1",
+      "title": "🌾日本酒 新着🌾 宮城県塩竈市 佐浦様より 「浦霞 純米 無濾過生原酒」 が入荷しました 見た目にはTHE シンプル、商品名以上に語ることなしなラベルですね 通年商品「浦霞 純米」があるからこその、その無…",
+      "url": "https://x.com/sakenomarumi/status/2115971950573158781?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-30T10:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-11-04T15:40:58.054668+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "0f18ac4ce81287076123fa8475d67921",
+      "title": "🍠芋写真 新着🍠 宮崎県宮崎市 落合酒造場様より 「零 ZERO 赤江」 が入荷しました 令和8年10月11日に蒸留、令和8年10月11日に瓶詰め ゼロ日、ゆえにゼロ!! 紫芋の\"ムラサキマサリ\"を…",
+      "url": "https://x.com/sakenomarumi/status/2115669960718680493?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-10-29T14:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-11-04T15:40:58.054668+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "1cefe12c41af58c4b23165dd6076b91d",
+      "title": "【日本酒】田中六五",
+      "url": "https://ontable.jp/shopdetail/000000002640/",
+      "source": "桜本商店",
+      "published": "2026-11-04T15:41:04.972602+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新商品",
+      "first_seen": "2026-11-04T15:40:58.054668+09:00",
+      "lang": "ja"
+    },
     {
       "id": "9e612faf910d22f2840e3124e00e28fb",
       "title": "マーク・ガーマン氏：Appleは当初、iPhone Duoを11月にリリースすることを目指していた",
@@ -10807,89 +10885,6 @@
       "merged_ids": [
         "eb47ab32881e20b20cf6e76009443cac"
       ]
-    },
-    {
-      "id": "397ff70a556adc0a211a0bc9743961bf",
-      "title": "クリエイターはどの新しい MacBook Pro を買うべきですか?まだ決め中です",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFA3UkJPR2JXVWR0SmVTR2xrTEhEcjd4eUNlYm9rTE1xSFV4TXlFdzIwUTN2SkVNQUUxSTlzTUdmbndRaGJ1OW9YcGV0dGtHY3FqckNBM0JUUFZUcVVtQjdEaXNiSWxFLVNJZkJfVWxJeFFiM1FCUDk5VVB6RlloUQ?oc=5",
-      "source": "Joe's Daily",
-      "published": "2026-10-29T22:01:42+09:00",
-      "summary": "Which New MacBook Pro Should a Creator Buy? I’m Still Deciding  Joe's Daily",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "MacBook Pro M",
-      "first_seen": "2026-10-30T15:25:35.889193+09:00",
-      "lang": "en",
-      "title_en": "Which New MacBook Pro Should a Creator Buy? I’m Still Deciding"
-    },
-    {
-      "id": "c95913e56464a362e6257702758e0937",
-      "title": "Fitbit Edge と Apple Watch 12 を使って 6,000 歩歩きました - その結果に衝撃を受けました",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPcHg0emJ1MnpHbkREUUN2OUJ2UGdXZnhkUjB2SnBqOEFBUVNpRmNCTGVTYWRyeWlaRXhDLWFOTk5YN2lkUXhJNTM0aXZUbGVRZFhURUhEYk4wbFZNWmM3Rllpa3ZPZWZ6N3B0NTl5emNrTGhLTDhhNFkzZEI4alQtRVJqUFFyRW9sMUdWeF9EbzdIRDZzS2p5cHZQVGk0czFMdmp6WjFaR0JubXVGOVJtay1xdWVTMlRJSzQ2cnFQbXZybDk0YlpzdGNVcldLOUtneHFjdXo1Sy0?oc=5",
-      "source": "Tom's Guide",
-      "published": "2026-10-27T14:00:00+09:00",
-      "summary": "I walked 6,000 steps with the Fitbit Edge vs Apple Watch 12 — and I'm shocked by the results  Tom's Guide",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple Watch",
-      "first_seen": "2026-10-30T15:25:35.889193+09:00",
-      "lang": "en",
-      "title_en": "I walked 6,000 steps with the Fitbit Edge vs Apple Watch 12 — and I'm shocked by the results"
-    },
-    {
-      "id": "1aba3e1baad35d2f68459338f45f74ea",
-      "title": "今週の Apple の最高の MacBook Pro の決定はタッチとは何の関係もありませんでした",
-      "url": "https://9to5mac.com/2026/10/29/apples-best-macbook-pro-decision-this-week-had-nothing-to-do-with-touch/",
-      "source": "9to5Mac",
-      "published": "2026-10-30T11:06:23+09:00",
-      "summary": "Apple’s new touchscreen MacBook Pro brings plenty of welcome upgrades, but one of the best things about this week’s launch is what the company decided not to change.\n\n\n\n more…",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "9to5Mac",
-      "first_seen": "2026-10-30T15:25:35.889193+09:00",
-      "lang": "en",
-      "title_en": "Apple’s best MacBook Pro decision this week had nothing to do with touch"
-    },
-    {
-      "id": "31f5a1a9215049a202f136c0a2c61ca6",
-      "title": "Apple TV の新しいクライム スリラー シリーズ「Nocturne」がストリーミング配信中",
-      "url": "https://9to5mac.com/2026/10/29/apple-tvs-new-crime-thriller-series-nocturne-is-now-streaming/",
-      "source": "9to5Mac",
-      "published": "2026-10-30T10:01:35+09:00",
-      "summary": "The first two episodes for Apple TV’s latest crime thriller, “Nocturne,” are now available to stream. Watch the trailer below.\n\n\n\n more…",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "9to5Mac",
-      "first_seen": "2026-10-30T15:25:35.889193+09:00",
-      "lang": "en",
-      "title_en": "Apple TV’s new crime thriller series ‘Nocturne’ is now streaming"
-    },
-    {
-      "id": "47804304d4e1c33d52e48da9d0a9d62f",
-      "title": "9to5Mac Daily: 2026 年 10 月 29 日 – PROLED XDR ディスプレイを搭載した新しい MacBook Pro",
-      "url": "https://9to5mac.com/2026/10/29/daily-october-29-2026/",
-      "source": "9to5Mac",
-      "published": "2026-10-30T09:58:40+09:00",
-      "summary": "Listen to a recap of the top stories of the day from 9to5Mac. 9to5Mac Daily is available on iTunes and Apple’s Podcasts app, Stitcher, TuneIn, Google Play, or through our dedicated RSS feed for Overca",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "9to5Mac",
-      "first_seen": "2026-10-30T15:25:35.889193+09:00",
-      "lang": "en",
-      "title_en": "9to5Mac Daily: October 29, 2026 – New MacBook Pro with PROLED XDR Display"
-    },
-    {
-      "id": "27ec6da8e5c1071a2fc94440bb60082d",
-      "title": "ゴンチャ「北海道限定 ミルクプリン ミルクティー」阿里山ウーロン使用、ぷるん・とろっ・ザクッと食感",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBQVlFaNmd5U0E1eXdyTURvN083ZGVpTU41aFpOeWdmVUQwUXRwMFR6dUZSN0RGYXhSbWhmMTZVR1EtT2tPWnFLZWlpeG54RWpFaWxB?oc=5",
-      "source": "ファッションプレス",
-      "published": "2026-10-26T11:40:00+09:00",
-      "summary": "ゴンチャ「北海道限定 ミルクプリン ミルクティー」阿里山ウーロン使用、ぷるん・とろっ・ザクッと食感  ファッションプレス",
-      "category": "sapporo",
-      "category_label": "🏗️ 札幌",
-      "keyword": "札幌 商業施設 オープン",
-      "first_seen": "2026-10-30T15:25:35.889193+09:00",
-      "lang": "ja"
     }
   ]
 }
