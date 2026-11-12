@@ -1,8 +1,47 @@
 {
-  "last_updated": "2026-11-12T11:31:11.683503+09:00",
-  "last_run_new_count": 37,
+  "last_updated": "2026-11-12T16:24:44.172465+09:00",
+  "last_run_new_count": 3,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "3182284a6c23e573785b60a0e30640ec",
+      "title": "🌾日本酒 新着🌾 北海道札幌市 日本清酒様より 「ヒトツメ 純米酒 にごりざけ 2025」 が入荷しました 新十津川産の酒米\"吟風\"を使用したヒトツメ、ピンクはにごり酒です。2025はお…",
+      "url": "https://x.com/sakenomarumi/status/2120381004540239994?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-11-11T14:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-11-12T16:24:27.863792+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "a2dd1546f1e7a2f5568ba4918f57cf94",
+      "title": "【日本酒】スーパーくどき上手Jr.雄町",
+      "url": "https://ontable.jp/shopdetail/000000002003/",
+      "source": "桜本商店",
+      "published": "2026-11-12T16:24:34.647438+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新商品",
+      "first_seen": "2026-11-12T16:24:27.863792+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "5612556456e999d6b6275d8bd1b1da44",
+      "title": "【日本酒】雨降 Q",
+      "url": "https://ontable.jp/shopdetail/000000002856/",
+      "source": "桜本商店",
+      "published": "2026-11-12T16:24:34.647438+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新商品",
+      "first_seen": "2026-11-12T16:24:27.863792+09:00",
+      "lang": "ja"
+    },
     {
       "id": "822123e3b94eaa85e9fcb14d12f462b9",
       "title": "私たちは Apple の最初の折りたたみ式 iPhone をテストしており、そのレビューが到着しました。「Duo の使用感は本当に素晴らしかったです」とワイヤーカッターの専門家は書いています。 「そのような感情はまれです。テクノロジー製品はもはやそれほど刺激的ではありません。」",
@@ -10795,46 +10834,6 @@
       "keyword": "新商品",
       "first_seen": "2026-11-06T15:59:32.222960+09:00",
       "lang": "ja"
-    },
-    {
-      "id": "cd97aecf898e3c761fd3ea4dedb264dc",
-      "title": "【日本酒】みむろ杉 木桶菩提もと sparkling",
-      "url": "https://ontable.jp/shopdetail/000000002445/",
-      "source": "桜本商店",
-      "published": "2026-11-06T15:59:38.710754+09:00",
-      "summary": "",
-      "category": "sake",
-      "category_label": "🍶 日本酒",
-      "keyword": "新商品",
-      "first_seen": "2026-11-06T15:59:32.222960+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "d25f21c5b5349558a8860a35f0d1e548",
-      "title": "【日本酒】 ヒトツメ にごりざけ 火入",
-      "url": "https://ontable.jp/shopdetail/000000001298/",
-      "source": "桜本商店",
-      "published": "2026-11-06T15:59:38.710754+09:00",
-      "summary": "",
-      "category": "sake",
-      "category_label": "🍶 日本酒",
-      "keyword": "新商品",
-      "first_seen": "2026-11-06T15:59:32.222960+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "728ed205e688c6e589169f16144a93ed",
-      "title": "Appleの「記念日iPhone」に関するこの噂は？私たちはそれを信じる傾向があります。",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9yRU5pQWV5eGR3c0pGM2dMZktzVEtWdW5NVThaVkhMc0lpYUg1aFU2WVE4Qlg5REtDU1ZqbXZBUXlJRkc0WDdITjhoMFhTZVg1R013TWVWOXphaFFmZU5YOUR2NWhRNVhhVWc?oc=5",
-      "source": "Mashable",
-      "published": "2026-11-06T09:00:54+09:00",
-      "summary": "This rumor about Apple's 'anniversary iPhone'? We tend to believe it.  Mashable",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple iPhone",
-      "first_seen": "2026-11-06T12:39:09.910626+09:00",
-      "lang": "en",
-      "title_en": "This rumor about Apple's 'anniversary iPhone'? We tend to believe it."
     }
   ]
 }
