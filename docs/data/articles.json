@@ -1,8 +1,60 @@
 {
-  "last_updated": "2026-11-16T09:22:15.084475+09:00",
-  "last_run_new_count": 45,
+  "last_updated": "2026-11-16T15:48:24.788312+09:00",
+  "last_run_new_count": 4,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "208ac5d3246cb8c53ea50260668e90ae",
+      "title": "🌾日本酒 新着🌾 新潟県南魚沼市 八海醸造様より 「八海山 純米大吟醸 時期限定」 が入荷しました クリスマスにお正月、年末年始にはめでたい赤色を見かける機会も増えますね そんなハレの日や人の集まる…",
+      "url": "https://x.com/sakenomarumi/status/2122147649281286377?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-11-16T11:00:01+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-11-16T15:48:07.076344+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "6479550ddb252f607a3dcc2d43b1635e",
+      "title": "🌾日本酒 新着🌾 北海道旭川市 髙砂酒造様より 「国士無双 純米大吟醸酒 彗星」 が入荷しました 国士無双シリーズから1000本限定の箱付き純米大吟醸 酒米には\"彗星\"を使用です。そして…",
+      "url": "https://x.com/sakenomarumi/status/2122132552555348463?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-11-16T10:00:02+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-11-16T15:48:07.076344+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "80913d84445502dce289b1e8ce6ece23",
+      "title": "日本酒福袋 2027",
+      "url": "https://www.winefood.jp/shopdetail/000000003222/",
+      "source": "ワインフードわたらい",
+      "published": "2026-11-16T15:48:12.178641+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新商品",
+      "first_seen": "2026-11-16T15:48:07.076344+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "54e74d8fad673c3749e9bb8c6a0aa0b3",
+      "title": "秋鹿　純米　能勢福　1.8L",
+      "url": "https://senmaru.shop-pro.jp/?pid=194477052",
+      "source": "地酒仙丸",
+      "published": "2026-11-16T13:33:08+09:00",
+      "summary": "◇使用米：山田錦\n◇精米歩合：75％\n◇アルコール度数：15度\n◇酒度：+8／酸度：1.8／アミノ酸度：1.3\n\n「秋鹿山田錦栽培会」が生産した地元能勢産山田錦を100%使用。あえて低精米で仕込み、山田錦の柔らかでふくらみのある旨味、秋鹿らしいキリッとした酸味が味わいを引...",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "新着商品",
+      "first_seen": "2026-11-16T15:48:07.076344+09:00",
+      "lang": "ja"
+    },
     {
       "id": "a51ede6a688f9814199f8276e5e28cb2",
       "title": "Amazonのブラックフライデー先行セールでAirPods Pro 3が179.99ドルに値下げ",
@@ -10799,61 +10851,6 @@
       "first_seen": "2026-11-10T05:41:09.057991+09:00",
       "lang": "en",
       "title_en": "Apple Vision Pro: Revolutionizing Face ID with TrueDepth Technology"
-    },
-    {
-      "id": "09c13db139486992f69652be5c2cccd1",
-      "title": "オリヴィア・ディーンがApple Musicアーティスト・オブ・ザ・イヤー2026を受賞",
-      "url": "https://www.apple.com/jp/newsroom/2026/11/olivia-dean-is-apple-musics-artist-of-the-year-for-2026/",
-      "source": "Apple Newsroom",
-      "published": "2026-11-10T01:00:10.682000+09:00",
-      "summary": "Apple Musicは、この1年でスターの座へ駆け上がり目覚ましい飛躍を遂げたことを評価し、オリヴィア・ディーンを2026年のアーティスト・オブ・ザ・イヤーに選出しました。",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple Newsroom",
-      "first_seen": "2026-11-10T05:41:09.057991+09:00",
-      "lang": "ja"
-    },
-    {
-      "id": "c461a1e29f301751bee105a21d4185c6",
-      "title": "iOS 27.2.1には、メッセージ、AirPlayなどのセキュリティ問題の修正が含まれています",
-      "url": "https://9to5mac.com/2026/11/09/ios-27-2-1-has-fixes-for-security-issues-in-messages-airplay-and-more/",
-      "source": "9to5Mac",
-      "published": "2026-11-10T05:20:00+09:00",
-      "summary": "Today Apple released iOS 27.2.1 for iPhone with bug fixes and security updates, alongside a variety of related software updates on other platforms. Here are the security fix details for each update.\n\n",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "9to5Mac",
-      "first_seen": "2026-11-10T05:41:09.057991+09:00",
-      "lang": "en",
-      "title_en": "iOS 27.2.1 has fixes for security issues in Messages, AirPlay, and more"
-    },
-    {
-      "id": "efb44f95a462b56c13e4e6c9e401bcd2",
-      "title": "新しいMacBook Proのセットアップを向上させるためのお気に入りのギア",
-      "url": "https://9to5mac.com/2026/11/09/our-favorite-gear-to-elevate-your-new-macbook-pro-setup/",
-      "source": "9to5Mac",
-      "published": "2026-11-10T05:15:38+09:00",
-      "summary": "The all-new M6 MacBook and the touch display PROLED XDR have now arrived, and we are taking a look at some of our favorite accessories to upgrade the experience. \n\n\n\nFrom the latest Apple Magic Keyboa",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "9to5Mac",
-      "first_seen": "2026-11-10T05:41:09.057991+09:00",
-      "lang": "en",
-      "title_en": "Our favorite gear to elevate your new MacBook Pro setup"
-    },
-    {
-      "id": "f908e93eb1606aabb34754bc6a628d6e",
-      "title": "Apple、トルコへのより広範な投資の一環としてイスタンブールに新しいデベロッパーセンターを開設",
-      "url": "https://9to5mac.com/2026/11/09/apple-to-open-new-developer-center-in-istanbul-as-part-of-broader-turkey-investment/",
-      "source": "9to5Mac",
-      "published": "2026-11-10T05:07:24+09:00",
-      "summary": "Apple today announced a long-term investment in Turkey, with seven new facilities focused on app development and manufacturing set to open in the country starting next year. Here are the details.\n\n\n\n ",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "9to5Mac",
-      "first_seen": "2026-11-10T05:41:09.057991+09:00",
-      "lang": "en",
-      "title_en": "Apple to open new Developer Center in Istanbul as part of broader Turkey investment"
     }
   ]
 }
