@@ -1,8 +1,34 @@
 {
-  "last_updated": "2026-11-25T10:36:43.783111+09:00",
-  "last_run_new_count": 77,
+  "last_updated": "2026-11-25T17:51:08.647506+09:00",
+  "last_run_new_count": 2,
   "total_articles": 800,
   "articles": [
+    {
+      "id": "a4aa3e9d51def85da1f5181bc61cb665",
+      "title": "🌾日本酒 新着🌾 富山県富山市 富美菊酒造様より 「羽根屋 純米吟醸 富の香60 生酒」 が入荷しました 富美菊酒造様、羽根屋の運命を変えた希少な酒米\"富の香\" 四季醸造のきっかけにもなったそう…",
+      "url": "https://x.com/sakenomarumi/status/2125394037842628729?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-11-25T10:00:01+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-11-25T17:50:52.993511+09:00",
+      "lang": "ja"
+    },
+    {
+      "id": "cbfc9d3cbb0a9ad7e7f80b6d96334b4d",
+      "title": "🌾日本酒 新着🌾 岐阜県岐阜市 白木恒助商店様より 「ダルマ正宗 長期熟成古酒 令和9年 未年ブレンド」 が入荷しました 来年の干支を意識し出す時期ですね さあ今年もこの日本酒で確認、来年は未…",
+      "url": "https://x.com/sakenomarumi/status/2125092045060751477?utm_source=yjrealtime&utm_medium=search",
+      "source": "酒のマルミ（X）",
+      "published": "2026-11-24T14:00:00+09:00",
+      "summary": "",
+      "category": "sake",
+      "category_label": "🍶 日本酒",
+      "keyword": "酒のマルミ",
+      "first_seen": "2026-11-25T17:50:52.993511+09:00",
+      "lang": "ja"
+    },
     {
       "id": "64a77f638231f403ba0305dd9acab7b5",
       "title": "T-Mobile の大規模なブラック フライデー セールで iPhone 18 Pro を無料で入手 — 請求方法",
@@ -10773,34 +10799,6 @@
       "keyword": "新着商品",
       "first_seen": "2026-11-19T16:38:48.037672+09:00",
       "lang": "ja"
-    },
-    {
-      "id": "2aefa32e8f4eff5fbdbc3cb490319851",
-      "title": "Apple iPhone Duo、使用開始から 1 か月: もう Pro には戻れない",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE51WGF6c050dkpGUnJHNWJ2R1Z4aUFRSzNTYmlHZlBjQTJ6bWk2Q0ktdU1lcEVZRjlMaVoyU3RQZ2h6Y3VHc0t0MlRjVDBwelVrQXNrTWlfTFpUeHlxZGZPZWFBM0ZUSmhm?oc=5",
-      "source": "Mashable",
-      "published": "2026-11-12T19:00:00+09:00",
-      "summary": "Apple iPhone Duo, one month in: I'm never going back to the Pro  Mashable",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple iPhone",
-      "first_seen": "2026-11-19T09:18:42.069805+09:00",
-      "lang": "en",
-      "title_en": "Apple iPhone Duo, one month in: I'm never going back to the Pro"
-    },
-    {
-      "id": "3c75b30265a0af4c756d069de8b21a67",
-      "title": "Apple、20周年記念iPhoneに向けて2つのデザインを開発中と報じられている",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPbGRKT2NDVzZXOC1yZDIzZm43R1VaMlhDSzM1NnhrMTRJWVVlVWpfZjE0OTVibmQxTjYwTG9FQ1BFSG1kRkRlU0lVbXJNaE1Ud1hLQ1R1dzNYZUVOZnBTVXp5dWRNTEtGYWJ3V2xmT1c2b3pLWWZLWlZqMGZfV25EdE1hQQ?oc=5",
-      "source": "MacRumors",
-      "published": "2026-11-18T21:57:16+09:00",
-      "summary": "Apple Reportedly Developing Two Designs for 20th Anniversary iPhone  MacRumors",
-      "category": "apple",
-      "category_label": "🍎 Apple",
-      "keyword": "Apple iPhone",
-      "first_seen": "2026-11-19T09:18:42.069805+09:00",
-      "lang": "en",
-      "title_en": "Apple Reportedly Developing Two Designs for 20th Anniversary iPhone"
     }
   ]
 }
